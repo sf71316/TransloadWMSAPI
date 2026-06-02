@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="Image12">
+        <Source>Database</Source>
+        <Value>=First(Fields!Barcode.Value, "DataSet1")</Value>
+        <MIMEType>image/png</MIMEType>
+        <Sizing>Fit</Sizing>
+        <Top>0.31302cm</Top>
+        <Left>0.28446cm</Left>
+        <Height>6.39959cm</Height>
+        <Width>17.76188cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+    </ReportItems>
+    <Height>7.2cm</Height>
+    <Style />
+  </Body>
+  <Width>18.5cm</Width>
+  <Page>
+    <PageHeight>7.8cm</PageHeight>
+    <PageWidth>19cm</PageWidth>
+    <InteractiveHeight>7.8cm</InteractiveHeight>
+    <InteractiveWidth>19cm</InteractiveWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="WMS2_set">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>80c6f7d4-1ed1-4a16-8475-4e1c0481b12c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>WMS2_set</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Barcode">
+          <DataField>Barcode</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>WMS2_set_BoxItem</rd:DataSetName>
+        <rd:SchemaPath>D:\Project\AP\PBSC.C.AP\APWebSite\App_Code\WMS2_set_BoxItem.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable1</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>61ec2d88-d081-4bbb-abd1-7abc2cfee447</rd:ReportID>
+</Report>

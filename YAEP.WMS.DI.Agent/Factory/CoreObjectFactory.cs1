@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Unity;
+using YAEP.Data.ORM.Dapper.Contrib;
+using YAEP.Data.ORM.Interfaces;
+using YAEP.Data.ORM.Templates;
+using YAEP.WMS.BLL.Manager;
+using YAEP.WMS.DAL.Repository;
+using YAEP.WMS.Interfaces.Manager;
+
+using YAEP.WMS.Interfaces.Repository;
+using YAEP.WMS.Model;
+using YAEP.WMS.Model.Model;
+using YAEP.Templates.DI.Unity;
+
+namespace YAEP.WMS.DI.Agent.Factory
+{
+    public class CoreObjectFactory : AbstractFactory
+    {
+        public CoreObjectFactory(IUnityContainer container) : base(container)
+        {
+            base.RegisterType<IObjectRelationalMappingLayer, DbEntities>();
+            #region Country,State,City,Zip
+            // 注入 Model 定義 
+            container.RegisterType<IModelDescriptor<ApiModel>, GenericModelDescriptor<ApiModel>>();
+            container.RegisterType<IModelDescriptor<CityModel>, GenericModelDescriptor<CityModel>>();
+            container.RegisterType<IModelDescriptor<StateModel>, GenericModelDescriptor<StateModel>>();
+            container.RegisterType<IModelDescriptor<CountryModel>, GenericModelDescriptor<CountryModel>>();
+            container.RegisterType<IModelDescriptor<ZipModel>, GenericModelDescriptor<ZipModel>>();
+            // 注入 Repository 處理器
+            container.RegisterType<IRepositoryHandler<ApiModel>, GenericRepositoryHandler<ApiModel>>();
+            container.RegisterType<IRepositoryHandler<CityModel>, GenericRepositoryHandler<CityModel>>();
+            container.RegisterType<IRepositoryHandler<StateModel>, GenericRepositoryHandler<StateModel>>();
+            container.RegisterType<IRepositoryHandler<CountryModel>, GenericRepositoryHandler<CountryModel>>();
+            container.RegisterType<IRepositoryHandler<ZipModel>, GenericRepositoryHandler<ZipModel>>();
+            // 注入 Repository 實作
+
+
+            container.RegisterType<IApiRepository, ApiRepository<ApiModel>>();
+            container.RegisterType<ICountryRepository, CountryRepository<CountryModel>>();
+            container.RegisterType<IStateRepository, StateRepository<StateModel>>();
+            container.RegisterType<ICityRepository, CityRepository<CityModel>>();
+            container.RegisterType<IZipRepository, ZipRepository<ZipModel>>();
+            // 注入 Manager 實作
+            base.RegisterType<IInventoryManager, InventoryManager>();
+            #endregion
+    
+
+
+        }
+    }
+}

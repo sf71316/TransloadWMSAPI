@@ -1,0 +1,6 @@
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\bin\Debug\YAEP.WMS.NotificationSender.Common.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\bin\Debug\YAEP.WMS.NotificationSender.Common.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\obj\Debug\YAEP.WMS.NotificationSender.Common.csprojAssemblyReference.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\obj\Debug\YAEP.WMS.NotificationSender.Common.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\obj\Debug\YAEP.WMS.NotificationSender.Common.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Common\obj\Debug\YAEP.WMS.NotificationSender.Common.pdb

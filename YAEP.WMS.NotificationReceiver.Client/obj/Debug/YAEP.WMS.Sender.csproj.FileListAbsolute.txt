@@ -1,0 +1,12 @@
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\YAEP.WMS.Sender.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\YAEP.WMS.Sender.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\Newtonsoft.Json.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\RestSharp.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\Newtonsoft.Json.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\Newtonsoft.Json.xml
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\bin\Debug\RestSharp.xml
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\obj\Debug\YAEP.WMS.Sender.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\obj\Debug\YAEP.WMS.Sender.csproj.CopyComplete
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\obj\Debug\YAEP.WMS.Sender.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\obj\Debug\YAEP.WMS.Sender.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.Sender\obj\Debug\YAEP.WMS.Sender.csprojAssemblyReference.cache

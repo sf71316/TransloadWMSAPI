@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  如需如何設定 ASP.NET 應用程式的詳細資訊，請前往
+  https://go.microsoft.com/fwlink/?LinkId=301879
+  -->
+<configuration>
+  <appSettings>
+    <add key="CORS.Origins" value="*" />
+    
+    
+    <!--<add key="YAEP.Security.SSO.WebApi.AuthenticateApiClient.BaseUrl" value="http://192.168.1.18/api/sso/" />-->
+    
+    
+    <!--<add key="DocumentationCentral_Base_Url" value="https://uat.totalsolutionus.com:4443/" />-->
+    <!--<add key="DocumentationCentral_Base_Url" value="http://localhost:65046/" />-->    
+    <add key="DocumentationCentral_Base_Url" value="https://wms.capbarbell.com:4443/" />
+    <!--<add key="DocumentationCentral_Base_Url" value="http://192.168.1.16:8889/" />-->
+    
+    
+    <!-- Redis Settings -->
+    <!-- Host Name / IP --><!--
+    <add key="YAEP.LittleBirdHead.Redis.Host" value="192.168.1.18" />
+    --><!--<add key="YAEP.LittleBirdHead.Redis.Host" value="60.249.25.178" />--><!--
+    --><!-- Port --><!--
+    <add key="YAEP.LittleBirdHead.Redis.Port" value="5656" />
+    --><!-- Passowrd --><!--
+    <add key="YAEP.LittleBirdHead.Redis.Password" value="5566" />
+    --><!-- Host Address --><!--
+    <add key="YAEP.LittleBirdHead.BaseUrl" value="http://192.168.1.18:5220/api/messaging" />-->
+
+    
+    <!-- Redis Settings -->
+    <!-- Host Name / IP -->
+    <add key="YAEP.LittleBirdHead.Redis.Host" value="184.72.22.138" />
+    <!-- Port -->
+    <add key="YAEP.LittleBirdHead.Redis.Port" value="5456" />
+    <!-- Passowrd -->
+    <add key="YAEP.LittleBirdHead.Redis.Password" value="5566BuNenWan" />
+    
+    
+    
+    <add key="YAEP.WMS.API.Debug" value="True" />
+    <add key="YAEP.WMS.API.IsFixFailureByMoveTicket" value="True" />
+    <add key="YAEP.WMS.API.IsChangeFromPayload" value="True" />
+    <add key="YAEP.WMS.API.IsAllowNegativeOnhandByChangeFromPayload" value="True" />
+    <add key="YAEP.WMS.API.IsAllowNegativeOnhandByFixFailure" value="True" />
+    <add key="YAEP.WMS.API.PalletLabel_Path" value="D:\Project\WMS2\Mainproject\YAEP.WMS.API\App_Data\rdlc\Barcode_P.rdlc" />
+    <add key="YAEP.WMS.API.BoxLabel_Path" value="D:\Project\WMS2\Mainproject\YAEP.WMS.API\App_Data\rdlc\Barcode_BI.rdlc" />
+    <add key="YAEP.WMS.API.SlotLabel_Path" value="D:\Project\WMS2\Mainproject\YAEP.WMS.API\App_Data\rdlc\Barcode_Slot.rdlc" />
+    <add key="YAEP.WMS.LiteDb.ConnectionString" value="Filename=\Litedatabase.db;Limit Size=100MB" />
+    <add key="YAEP.WMS.EnableLocalLogging" value="True" />
+    <add key="YAEP.WMS.EnableTrace" value="True" />
+	<!-- Redis Settings -->
+    <!-- Host Name / IP -->
+    <add key="YAEP.WMS.Cache.Redis.Host" value="52.52.195.93" />
+    <!-- Port -->
+    <add key="YAEP.WMS.Cache.Redis.Port" value="55665" />
+    <!-- Passowrd -->
+    <add key="YAEP.WMS.Cache.Redis.Password" value="twcp5566" />
+    <add key="JaegerServiceName" value="WMS API" />
+    <add key="JaegerServiceIP" value="13.52.67.81" />
+    <add key="JaegerServicePort" value="6831" />
+  </appSettings>
+  <connectionStrings>
+    <add name="YAEP.WMS.ConnectString" connectionString="Data Source=13.57.134.182;Initial Catalog=WMS;Persist Security Info=True;User ID=sa;Password=@0807WMS(;Connection Timeout=600000;MultipleActiveResultSets=true" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.6.2" />
+    <httpRuntime targetFramework="4.6.2" maxRequestLength="2097152" />
+    <globalization culture="auto" uiCulture="auto" enableClientBasedCulture="true" />
+    <httpModules>
+      <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" />
+    </httpModules>
+  </system.web>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" />
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Http" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.6.0" newVersion="5.2.6.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Net.Http.Formatting" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Unity.Abstractions" publicKeyToken="6d32ff45e0ccc69f" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.3.1.0" newVersion="3.3.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Unity.Container" publicKeyToken="489b6accfaf20ef0" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.8.6.0" newVersion="5.8.6.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.0.0.0" newVersion="5.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.1.1" newVersion="4.0.1.1" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.0.0.1" newVersion="5.0.0.1" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Text.Json" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.0.0.2" newVersion="5.0.0.2" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="2147483648" />
+      </requestFiltering>
+    </security>
+    <httpProtocol>
+      <customHeaders>
+        <!-- Allow Web API to be called from a different domain. -->
+        <!--<add name="Access-Control-Allow-Origin" value="*" />-->
+        <!--<add name="Access-Control-Allow-Methods" value="*" />-->
+      </customHeaders>
+    </httpProtocol>
+    <handlers>
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+    </handlers>
+    <staticContent>
+      <mimeMap fileExtension="." mimeType="text/plain" />
+    </staticContent>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <remove name="TelemetryCorrelationHttpModule" />
+      <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" preCondition="managedHandler" />
+    </modules>
+  </system.webServer>
+  <system.codedom>
+    <compilers>
+      <compiler extension=".cs" language="c#;cs;csharp" warningLevel="4" compilerOptions="/langversion:7.0 /nowarn:1659;1699;1701;612;618" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <compiler extension=".vb" language="vb;vbs;visualbasic;vbscript" warningLevel="4" compilerOptions="/langversion:default /nowarn:41008,40000,40008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    </compilers>
+  </system.codedom>
+</configuration>

@@ -1,0 +1,1229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Core.Item.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemFieldManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.CreateField(YAEP.Core.Item.Interfaces.Models.IItemFieldModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model">
+            欄位
+            <para /><see cref="T:YAEP.Core.Item.Interfaces.Models.IItemFieldModel"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.DeleteField(System.Guid)">
+            <summary>
+            刪除欄位
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.UpdateField(YAEP.Core.Item.Interfaces.Models.IItemFieldModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="model">
+            欄位
+            <para /><see cref="T:YAEP.Core.Item.Interfaces.Models.IItemFieldModel"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.GetField(System.Guid)">
+            <summary>
+            取得欄位
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.GetFields(System.Guid)">
+            <summary>
+            取得欄位集合
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.GetFields(System.Guid,System.String)">
+            <summary>
+            取得欄位集合
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID"/>
+            </param>
+            <param name="fieldName">
+            名稱
+            <para />Start with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Name"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.CheckDuplicateField(System.Guid,System.String)">
+            <summary>
+            檢查是否有重複名稱的欄位
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID"/>
+            </param>
+            <param name="fieldName">
+            名稱
+            <para />Contain with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Name"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.CreateOption(System.Guid,System.String)">
+            <summary>
+            建立選項
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <param name="optionValue">
+            選項值
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.DeleteOption(System.Guid)">
+            <summary>
+            刪除選項
+            </summary>
+            <param name="optionUID">
+            選項識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.DeleteFieldOptions(System.Guid)">
+            <summary>
+            刪除欄位的所有選項
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.UpdateOption(System.Guid,System.String)">
+            <summary>
+            修改選項
+            </summary>
+            <param name="optionUID">
+            選項識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.UID"/>
+            </param>
+            <param name="optionValue">
+            選項值
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.GetOptions(System.Guid)">
+            <summary>
+            取得選項集合
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldManager.GetOptions(System.Guid,System.String)">
+            <summary>
+            取得選項集合
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <param name="optionValue">
+            選項值
+            <para />Start with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.Create(YAEP.Core.Item.Interfaces.Models.IItemModel,System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel},System.String)">
+            <summary>
+            建立
+            </summary>
+            <param name="item"></param>
+            <param name="properties"></param>
+            <param name="categoryName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.Create(YAEP.Core.Item.Interfaces.Models.IItemModel,System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel},System.Guid)">
+            <summary>
+            建立
+            </summary>
+            <param name="item"></param>
+            <param name="properties"></param>
+            <param name="categoryUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.Update(YAEP.Core.Item.Interfaces.Models.IItemModel,System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel})">
+            <summary>
+            修改
+            </summary>
+            <param name="item"></param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetItem(System.Guid)">
+            <summary>
+            取得對應識別編號的 Item
+            </summary>
+            <param name="UID">識別編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetItems(YAEP.Core.Item.Interfaces.Models.IItemParameterize)">
+            <summary>
+            取得符合條件的 Item 資料
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetItems(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetItem(System.Guid,System.String)">
+            <summary>
+            取得符合條件的 Item 資料
+            </summary>
+            <param name="groupUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetCategories(YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize)">
+            <summary>
+            取得產品分類清單
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetCategories(System.Guid)">
+            <summary>
+            取得關聯產品的產品分類清單
+            </summary>
+            <param name="itemUID">產品識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.CreateCategory(YAEP.Core.Item.Interfaces.Models.IItemCategoryModel)">
+            <summary>
+            產生產品分類
+            </summary>
+            <param name="itemCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.SetCategoryRelation(System.Guid,System.Guid)">
+            <summary>
+            設定產品所屬的分類
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/> 
+            </param>
+            <param name="categoryUID">
+            產品分類識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.UID"/> 
+            </param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.SetCategoryRelation(System.Guid,System.String)">
+            <summary>
+            設定產品所屬的分類
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/> 
+            </param>
+            <param name="categoryName">
+            產品分類名稱
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.Name"/> 
+            </param>  
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.CheckHasCategoryRelation(System.Guid,System.Guid)">
+            <summary>
+            檢查產品是否已經屬於分類
+            <para />0 = 不屬於分類
+            <para />1 = 屬於分類
+            <para />2 = 無產品
+            <para />3 = 無分類
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/> 
+            </param>
+            <param name="categoryUID">
+            產品分類識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.UID"/> 
+            </param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.RemoveCategoryRelation(System.Guid,System.Guid)">
+            <summary>
+            移除產品所屬的分類
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/> 
+            </param>
+            <param name="categoryUID">
+            產品分類識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.UID"/> 
+            </param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.ClearCategoryRelationByItem(System.Guid)">
+            <summary>
+            移除產品所有關聯的分類
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/> 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetProperty(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetProperties(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetAllProperties">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetAllCategoryRelation">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetRelation(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemManager.GetItems``1(YAEP.Core.Item.Interfaces.Models.IItemParameterize)">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize">
+            <summary>
+            產品分類查詢參數
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize.GroupUID">
+            <summary>
+            群組識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemPropertySearchModel">
+            <summary>
+            產品屬性查詢參數
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertySearchModel.ItemUID">
+            <summary>
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertySearchModel.Name">
+            <summary>
+            屬性名稱
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertySearchModel.Value">
+            <summary>
+            屬性值
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemParameterize">
+            <summary>
+            產品查詢參數
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.GroupUID">
+            <summary>
+            群組識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.ItemCategories">
+            <summary>
+            Item Category 識別編號
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.ItemProperties">
+            <summary>
+            產品屬性查詢條件
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.ListOfItemUID">
+            <summary>
+            array of Item UID
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemParameterize.ListOfGroupUID">
+            <summary>
+            array of Group UID
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.GroupUID"/>
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemFieldModel">
+            <summary>
+            產品欄位定義
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID">
+            <summary>
+            群組識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Type">
+            <summary>
+            分類
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.OptionType">
+            <summary>
+            <para />選項類型 : 
+            <para />0 : TextField (Default)
+            <para />10 : NumberField
+            <para />20 : DateField
+            <para />21 : DateTimeField
+            <para />30 : CheckBoxField
+            <para />31 : CheckBoxList
+            <para />32 : RadioBoxList
+            <para />40 : SingleSelect
+            <para />41 : MultiSelect
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.OptionDataType">
+            <summary>
+            <para />選項值資料類型 : 
+            <para />0 : String (Default)
+            <para />10 : Integer 16bit
+            <para />11 : Integer 32bit
+            <para />12 : Integer 64bit 
+            <para />20 : Float
+            <para />21 : Double
+            <para />22 : Decimal
+            <para />30 : DateTime
+            <para />31 : Date
+            <para />40 : Boolean
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.CreatedOn">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.ModifiedBy">
+            <summary>
+            最後一次異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.ModifiedOn">
+            <summary>
+            最後一次異動時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel">
+            <summary>
+            產品欄位選項
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID">
+            <summary>
+            欄位識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value">
+            <summary>
+            選項值
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemPropertyModel">
+            <summary>
+            產品屬性
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyModel.ItemUID">
+            <summary>
+            產品識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyModel.FieldUID">
+            <summary>
+            欄位識別碼
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemPropertyValueModel">
+            <summary>
+            產品屬性值
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyValueModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyValueModel.PropertyUID">
+            <summary>
+            產品屬性識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertyValueModel.Value">
+            <summary>
+            產品屬性值
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemCategoryRelationModel">
+            <summary>
+            產品與分類關聯
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryRelationModel.ItemUID">
+            <summary>
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryRelationModel.CategoryUID">
+            <summary>
+            分類識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.UID"/>
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel">
+            <summary>
+            產品分類
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.GroupUID">
+            <summary>
+            群組識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.ID">
+            <summary>
+            代碼
+            </summary>  
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.Type">
+            <summary>
+            分類
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.CreatedOn">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemCategoryModel.ModifiedOn">
+            <summary>
+            最後一次異動時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemViewModel">
+            <summary>
+            產品 (檢視用)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemViewModel.Properties">
+            <summary>
+            產品屬性
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemUpdateModel">
+            <summary>
+            產品 (修改用)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemUpdateModel.CategoryName">
+            <summary>
+            產品分類名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemUpdateModel.Properties">
+            <summary>
+            產品屬性
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel">
+            <summary>
+            產品屬性
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel.ItemUID">
+            <summary>
+            產品識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel.Name">
+            <summary>
+            屬性名稱
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel.Value">
+            <summary>
+            屬性值
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel.DataType">
+            <summary>
+            屬性資料型別
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.Models.IItemModel">
+            <summary>
+            產品
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.GroupUID">
+            <summary>
+            群組識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.ID">
+            <summary>
+            代碼
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.Status">
+            <summary>
+            狀態, 預設 1
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.Type">
+            <summary>
+            分類, 預設 0
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.CreatedOn">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Item.Interfaces.Models.IItemModel.ModifiedOn">
+            <summary>
+            最後一次異動時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.Create(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <param name="categoryUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="itemUID"></param>
+            <param name="categoryUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.DeleteItemAllCategoryRelation(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.Exists(System.Guid,System.Guid)">
+            <summary>
+            檢查關聯是否存在
+            </summary>
+            <param name="itemUID"></param>
+            <param name="categoryUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRelationRepository.GetRelation(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemCategoryRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.Create(YAEP.Core.Item.Interfaces.Models.IItemCategoryModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.Update(YAEP.Core.Item.Interfaces.Models.IItemCategoryModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.GetCategories(YAEP.Core.Item.Interfaces.Models.IItemCategoryParameterize)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.GetCategory(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.GetCategory(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemCategoryRepository.GetCategories(System.Guid)">
+            <summary>
+            取得 Item 關聯的 Category
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.Create(YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel)">
+            <summary>
+            建立選項
+            </summary>
+            <param name="model">
+            選項
+            <para /><see cref="T:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.Create(System.Guid,System.String)">
+            <summary>
+            建立選項
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <param name="value">
+            選項值
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.Update(YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="model">
+            選項
+            <para /><see cref="T:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.Update(System.Guid,System.String)">
+            <summary>
+            更新選項值
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.UID"/>
+            </param>
+            <param name="value">
+            選項值
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.DeleteItemFieldOptions(System.Guid)">
+            <summary>
+            刪除欄位的所有選項
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.GetOption(System.Guid)">
+            <summary>
+            取得選項
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.GetCollection(System.Guid)">
+            <summary>
+            取得選項集合
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldOptionRepository.GetCollection(System.Guid,System.String)">
+            <summary>
+            取得選項集合
+            </summary>
+            <param name="fieldUID">
+            欄位識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.FieldUID"/>
+            </param>
+            <param name="value">
+            名稱
+            <para />Contain with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldOptionModel.Value"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemPropertiesRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Create(System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel})">
+            <summary>
+            
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Create(YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Delete(System.Guid,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.DeleteItemAllProperties(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Update(YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.Update(System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemPropertiesModel})">
+            <summary>
+            
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.GetProperty(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.GetProperties(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemPropertiesRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemFieldRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.Create(YAEP.Core.Item.Interfaces.Models.IItemFieldModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.Update(YAEP.Core.Item.Interfaces.Models.IItemFieldModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.GetField(System.Guid)">
+            <summary>
+            取得欄位
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.GetCollection(System.Guid)">
+            <summary>
+            取得欄位集合
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.GetCollection(System.Guid,System.String)">
+            <summary>
+            取得欄位集合
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID"/>
+            </param>
+            <param name="name">
+            名稱
+            <para />Contain with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Name"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemFieldRepository.CheckDuplicate(System.Guid,System.String)">
+            <summary>
+            檢查是否有重複名稱的欄位
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.GroupUID"/>
+            </param>
+            <param name="name">
+            名稱
+            <para />Contain with : <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemFieldModel.Name"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Item.Interfaces.IItemRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.Create(YAEP.Core.Item.Interfaces.Models.IItemModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.Update(YAEP.Core.Item.Interfaces.Models.IItemModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetItem(System.Guid)">
+            <summary>
+            取得對應識別碼的 Item
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetItem(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetItems(YAEP.Core.Item.Interfaces.Models.IItemParameterize)">
+            <summary>
+            取得符合條件的 Item
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetItems(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Item.Interfaces.IItemRepository.GetItems``1(YAEP.Core.Item.Interfaces.Models.IItemParameterize)">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

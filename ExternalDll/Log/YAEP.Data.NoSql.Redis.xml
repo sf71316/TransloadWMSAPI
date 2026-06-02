@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Data.NoSql.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Data.NoSql.Redis.AbstractAgent`1">
+            <summary>
+            基底代理器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.#ctor(YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings)">
+            <summary>
+            建構子
+            </summary>
+            <param name="redisServerSettings">Redis Server 設定</param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Ping">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Ping(System.String,System.Int32)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Ping(System.String,System.Int32,System.String)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Finalize">
+            <summary>
+            解構子
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Dispose">
+            <summary>
+            釋放資源
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.AbstractAgent`1.Dispose(System.Boolean)">
+            <summary>
+            釋放資源
+            </summary>
+            <param name="dispose"></param>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.AbstractAgent`1._Disposed">
+            <summary>
+            是否釋放
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.AbstractAgent`1.Disposed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.SearchOperatorOptions">
+            <summary>
+            查詢邏輯運算子項目列舉
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.SearchOperatorOptions.AND">
+            <summary>
+            AND
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.SearchOperatorOptions.OR">
+            <summary>
+            OR
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.RedisServerSettings">
+            <summary>
+            Redis Server 設定
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.RedisServerSettings.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="host">伺服器名稱或IP</param>
+            <param name="port">Port</param>
+            <param name="password">密碼</param>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.RedisServerSettings.Host">
+            <summary>
+            取得Redis Server 名稱或IP
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.RedisServerSettings.Port">
+            <summary>
+            取得Redis Server Port
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.RedisServerSettings.Password">
+            <summary>
+            取得Redis Server 密碼
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1">
+            <summary>
+            Redis 控制方法 封裝
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.GetKey(`0)">
+            <summary>
+            取得Key值
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Create(`0)">
+            <summary>
+            建立
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Create(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            建立
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Retrieve(System.Object)">
+            <summary>
+            取得符合Key值的資料
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Retrieve(System.Object[])">
+            <summary>
+            取得符合Key值的資料
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Retrieve(System.String,System.Predicate{System.Object})">
+            <summary>
+            取得符合條件的資料
+            </summary>
+            <param name="propertyName"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.RetrieveByConditions(YAEP.Data.NoSql.Redis.SearchCondition[])">
+            <summary>
+            取得符合條件的資料
+            </summary>
+            <param name="tpl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.RetrieveAll">
+            <summary>
+            取得全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Update(`0)">
+            <summary>
+            更新
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.Delete(System.Object)">
+            <summary>
+            刪除
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisController`1.DeleteAll">
+            <summary>
+            刪除全部
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent">
+            <summary>
+            使用 ServiceStack API 控制 Redis 的代理
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.GetPool">
+            <summary>
+            取得連接池管理物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.GetPool(System.String,System.Int32,System.String)">
+            <summary>
+            取得連接池管理物件
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateClient">
+            <summary>
+            取得 Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateIClient">
+            <summary>
+            取得 Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateIClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateReadOnlyClient">
+            <summary>
+            取得 唯讀 Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateReadOnlyClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 唯讀 Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateReadOnlyIClient">
+            <summary>
+            取得 唯讀 Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisAgent.CreateReadOnlyIClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 唯讀 Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent">
+            <summary>
+            Redis 代理器
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.Server">
+            <summary>
+            取得目前設定的伺服器資訊
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.GetHost">
+            <summary>
+            取得目前設定的伺服器名稱 / IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.GetPort">
+            <summary>
+            取得目前設定的 Port
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.GetPassword">
+            <summary>
+            取得目前設定的密碼
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.Ping">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.Ping(System.String,System.Int32)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IRedisAgent.Ping(System.String,System.Int32,System.String)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings">
+            <summary>
+            Redis Server 設定
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings.Host">
+            <summary>
+            取得Redis Server 名稱或IP
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings.Port">
+            <summary>
+            取得Redis Server Port
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings.Password">
+            <summary>
+            取得Redis Server 密碼
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1">
+            <summary>
+            使用 ServiceStack API 控制 Redis 的代理
+            </summary>
+            <typeparam name="T">具名類型</typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1.CreateTypedClient">
+            <summary>
+            取得 Typed Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1.CreateTypedClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 Typed Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1.CreateITypedClient">
+            <summary>
+            取得 Typed Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1.CreateITypedClient(System.String,System.Int32,System.String)">
+            <summary>
+            取得 Typed Client
+            </summary>
+            <param name="host">伺服器</param>
+            <param name="port">連接埠</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent`1.GetNamespacePrefix">
+            <summary>
+            取得命名空間字首
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.#ctor(YAEP.Data.NoSql.Redis.Interfaces.IServiceStackRedisTypedAgent{`0},System.Func{`0,System.Object},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="agent">Redis 代理</param>
+            <param name="getKeyFunc">取得主鍵值的委派</param>
+            <param name="isAutoGenerateIndex"></param>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.NamespacePrefix">
+            <summary>
+            Namespace
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.GetIndexId(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.AppendIndex(System.String,System.Func{`0,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="getValueFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.AutoGenerateIndexes">
+            <summary>
+            自動產生所有屬性的索引設定
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.CheckPropertyIsExists(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="PropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.CheckAndReturnPropertyIsExists(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="PropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.GetKeyFunc">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Indexes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Agent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.GetNextSequence">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.SetSequence(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.DeleteAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.GetKey(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Create(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Create(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Retrieve(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Retrieve(System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Retrieve(System.String,System.Predicate{System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.RetrieveByConditions(YAEP.Data.NoSql.Redis.SearchCondition[])">
+            <summary>
+            
+            </summary>
+            <param name="tpl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.RetrieveAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.CollectKeys(ServiceStack.Redis.IRedisClient,YAEP.Data.NoSql.Redis.SearchCondition)">
+            <summary>
+            
+            </summary>
+            <param name="client"></param>
+            <param name="tpl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Update(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Delete(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Finalize">
+            <summary>
+            解構子
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Dispose">
+            <summary>
+            釋放
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Dispose(System.Boolean)">
+            <summary>
+            釋放
+            </summary>
+            <param name="isDispose"></param>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.Disposed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.AppendIndex(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="K"></typeparam>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.AbstractController`1.GetMemberExpression``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="K"></typeparam>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1">
+            <summary>
+            使用 ServiceStack API 控制 Redis 的代理
+            </summary>
+            <typeparam name="T">具名類型</typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.#ctor(YAEP.Data.NoSql.Redis.Interfaces.IRedisServerSettings)">
+            <summary>
+            建構子
+            </summary>
+            <param name="redisServerSettings"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.GetNamespacePrefix">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.Dispose">
+            <summary>
+            釋放
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.Ping">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.Ping(System.String,System.Int32)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.ServiceStack.ServiceStackRedisAgent`1.Ping(System.String,System.Int32,System.String)">
+            <summary>
+            檢查 服務是否存在目前設定的伺服器
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.Index`1">
+            <summary>
+            索引
+            </summary>
+            <typeparam name="T">提供索引的類型</typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Index`1.#ctor(System.String,System.String,System.Func{`0,System.Object},System.Func{`0,System.Object})">
+            <summary>
+            建構子
+            </summary>
+            <param name="Id"></param>
+            <param name="propertyName">屬性名稱</param>
+            <param name="getKeyFunc">取得主鍵值的方法委派</param>
+            <param name="getValueFunc">取得屬性值的方法委派</param>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.Index`1.Id">
+            <summary>
+            Redis Element Id
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.Index`1.PropertyName">
+            <summary>
+            屬性名稱
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.Index`1.GetKey">
+            <summary>
+            取得主鍵值
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.Index`1.GetValue">
+            <summary>
+            取得屬性值
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.Index`1.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.IndexCollection`1">
+            <summary>
+            索引集合
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.IndexCollection`1.Find(System.String)">
+            <summary>
+            尋找對應屬性名稱的索引
+            </summary>
+            <param name="PropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Redis.SearchCondition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.SearchCondition.#ctor(System.String,System.Predicate{System.Object},YAEP.Data.NoSql.Redis.SearchOperatorOptions)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="predicate"></param>
+            <param name="option"></param>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.SearchCondition.AND(System.String,System.Predicate{System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.SearchCondition.OR(System.String,System.Predicate{System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Redis.SearchCondition.Create(YAEP.Data.NoSql.Redis.SearchCondition[])">
+            <summary>
+            
+            </summary>
+            <param name="nestedConditions"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.NoSql.Redis.SearchCondition.Nested">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.SearchCondition.PropertyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.SearchCondition.Predicate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.NoSql.Redis.SearchCondition.Option">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.NoSql.Interfaces.IRefreshable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.NoSql.Interfaces.IRefreshable.Refresh">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

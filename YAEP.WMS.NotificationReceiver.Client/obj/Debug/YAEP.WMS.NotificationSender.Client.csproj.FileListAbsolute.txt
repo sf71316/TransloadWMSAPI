@@ -1,0 +1,14 @@
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\YAEP.WMS.NotificationSender.Client.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\YAEP.WMS.NotificationSender.Client.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\Newtonsoft.Json.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\RestSharp.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\Newtonsoft.Json.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\Newtonsoft.Json.xml
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\RestSharp.xml
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\obj\Debug\YAEP.WMS.NotificationSender.Client.csprojAssemblyReference.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\obj\Debug\YAEP.WMS.NotificationSender.Client.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\obj\Debug\YAEP.WMS.NotificationSender.Client.csproj.CopyComplete
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\obj\Debug\YAEP.WMS.NotificationSender.Client.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\obj\Debug\YAEP.WMS.NotificationSender.Client.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\YAEP.WMS.NotificationSender.Common.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationSender.Client\bin\Debug\YAEP.WMS.NotificationSender.Common.pdb

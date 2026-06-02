@@ -1,0 +1,3 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,execute workorder data sql error,$,,,,49,SaveAssignedItem,willyc,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,"[{""Success"":false,""Message"":""generate pod label failure."",""InnerException"":null,""Content"":false,""TypeCode"":401}]",null
+TRACE,execute workorder data sql error,$,,,,118,SaveAssignedItem,willyc,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,"[{""Success"":false,""Message"":""generate pod label failure."",""InnerException"":null,""Content"":false,""TypeCode"":401}]",null

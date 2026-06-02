@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="COMMON_ILLEGAL_GUID" xml:space="preserve">
+    <value>illegal guid.</value>
+  </data>
+  <data name="COMMON_ERROR_OCCURED" xml:space="preserve">
+    <value>some error occured.</value>
+  </data>
+  <data name="COMMON_INCORRECT_PARAMETERS" xml:space="preserve">
+    <value>incorrect parameters.</value>
+  </data>
+  <data name="COMMON_INCORRECT_ACCOUNT" xml:space="preserve">
+    <value>incorrect account.</value>
+  </data>
+  <data name="COMMON_INCORRECT_PASSWORD" xml:space="preserve">
+    <value>incorrect password.</value>
+  </data>
+  <data name="COMMON_INCORRECT_FORMAT" xml:space="preserve">
+    <value>incorrect format.</value>
+  </data>
+  <data name="COMMON_DATA_NOT_FOUND" xml:space="preserve">
+    <value>data not found.</value>
+  </data>
+  <data name="PRODUCT_ITEM_ID_EMPTY" xml:space="preserve">
+    <value>"Item#" can't be empty.</value>
+  </data>
+  <data name="PRODUCT_ITEM_NAME_EMPTY" xml:space="preserve">
+    <value>"Item Name" can't be empty.</value>
+  </data>
+  <data name="PRODUCT_UPDATE_ITEM_CATEGORY_FAIL" xml:space="preserve">
+    <value>Fail to update product category.</value>
+  </data>
+  <data name="PRODUCT_DELETE_ITEM_FAIL" xml:space="preserve">
+    <value>Fail to delete item.</value>
+  </data>
+  <data name="PRODUCT_ADD_ITEM_FAIL" xml:space="preserve">
+    <value>Fail to add item.</value>
+  </data>
+  <data name="PRODUCT_QUANTITY_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>The "Quantity" must bigger than zero.</value>
+  </data>
+  <data name="PRODUCT_GW_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>The "Gross Weight" must bigger than zero.</value>
+  </data>
+  <data name="PRODUCT_SIZE_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>The "Length, Width, Height" must bigger than zero.</value>
+  </data>
+  <data name="PRODUCT_ADD_PACKAGE_FAIL" xml:space="preserve">
+    <value>Fail to add package.</value>
+  </data>
+  <data name="PRODUCT_PACKAGE_NOT_EXIST" xml:space="preserve">
+    <value>The package does not exist.</value>
+  </data>
+  <data name="PRODUCT_UPDATE_PACKAGE_FAIL" xml:space="preserve">
+    <value>Fail to update package.</value>
+  </data>
+  <data name="PRODUCT_DELETE_PACKAGE_FAIL" xml:space="preserve">
+    <value>Fail to delete package.</value>
+  </data>
+  <data name="PRODUCT_RECEIVE_QTY_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>The "Receive Quantity" must bigger than zero.</value>
+  </data>
+  <data name="PRODUCT_ADD_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>Fail to add package version.</value>
+  </data>
+  <data name="PRODUCT_CLONE_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>Fail to copy package version.</value>
+  </data>
+  <data name="PRODUCT_DELETE_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>Fail to delete package version.</value>
+  </data>
+  <data name="CUSTOMER_ADD_CUSTOMER_FAIL" xml:space="preserve">
+    <value>Fail to add customer.</value>
+  </data>
+  <data name="CUSTOMER_UPDATE_CUSTOMER_FAIL" xml:space="preserve">
+    <value>Fail to update customer.</value>
+  </data>
+  <data name="CUSTOMER_DELETE_CUSTOMER_FAIL" xml:space="preserve">
+    <value>Fail to delete customer.</value>
+  </data>
+  <data name="CUSTOMER_ADD_CUSTOMER_ADDRESS_FAIL" xml:space="preserve">
+    <value>Fail to add customer address.</value>
+  </data>
+  <data name="CUSTOMER_ID_EMPTY" xml:space="preserve">
+    <value>"Customer ID" can't be empty.</value>
+  </data>
+  <data name="CUSTOMER_COMPANY_EMPTY" xml:space="preserve">
+    <value>"Company" can't be empty.</value>
+  </data>
+  <data name="WAREHOUSE_ADD_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>Fail to add warehouse.</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>Fail to update warehouse.</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>Fail to delete warehouse.</value>
+  </data>
+  <data name="WAREHOUSE_ADD_AREA_FAIL" xml:space="preserve">
+    <value>Fail to add area.</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_AREA_FAIL" xml:space="preserve">
+    <value>Fail to update area.</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_AREA_FAIL" xml:space="preserve">
+    <value>Fail to delete area.</value>
+  </data>
+  <data name="WAREHOUSE_ADD_BIN_FAIL" xml:space="preserve">
+    <value>Fail to add bin.</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_BIN_FAIL" xml:space="preserve">
+    <value>Fail to update bin.</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_BIN_FAIL" xml:space="preserve">
+    <value>Fail to delete bin.</value>
+  </data>
+  <data name="WAREHOUSE_ADD_SLOT_FAIL" xml:space="preserve">
+    <value>Fail to add slot.</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_SLOT_FAIL" xml:space="preserve">
+    <value>Fail to update slot.</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_SLOT_FAIL" xml:space="preserve">
+    <value>Fail to delete slot.</value>
+  </data>
+  <data name="INVENTORY_ADD_QUANTITY_FAIL" xml:space="preserve">
+    <value>Fail to add inventory quantity.</value>
+  </data>
+  <data name="PRODUCT_UPDATE_ITEM_FAIL" xml:space="preserve">
+    <value>Fail to update item.</value>
+  </data>
+  <data name="VENDOR_ADD_VENDOR_FAIL" xml:space="preserve">
+    <value>Fail to add vendor.</value>
+  </data>
+  <data name="VENDOR_UPDATE_VENDOR_FAIL" xml:space="preserve">
+    <value>Fail to update vendor.</value>
+  </data>
+  <data name="VENDOR_DELETE_VENDOR_FAIL" xml:space="preserve">
+    <value>Fail to delete vendor.</value>
+  </data>
+  <data name="VENDOR_ID_EMPTY" xml:space="preserve">
+    <value>"Vendor ID" can't be empty.</value>
+  </data>
+  <data name="VENDOR_COMPANY_EMPTY" xml:space="preserve">
+    <value>"Company" can't be empty.</value>
+  </data>
+  <data name="TICKET_GENERATETICKET_PARAMETER_NULL" xml:space="preserve">
+    <value>must have manifest UID or Bol UID.</value>
+  </data>
+  <data name="MANIFEST_BOL_SUBMIT_STATUS_ERROR" xml:space="preserve">
+    <value>Manifest Status must in Open stage.</value>
+  </data>
+  <data name="MANIFEST_BOL_APPROVE_STATUS_ERROR" xml:space="preserve">
+    <value>Manifest Status must in Open.</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_MANIFESTINFO_DATA" xml:space="preserve">
+    <value>not find manifest info.</value>
+  </data>
+  <data name="MANIFEST_STATUS_NOACTION" xml:space="preserve">
+    <value>this data nothing to do.</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_BOL_DATA" xml:space="preserve">
+    <value>not find BOL info.</value>
+  </data>
+  <data name="MANIFEST_BOL_STATUS_MUST_IN_REVIEW" xml:space="preserve">
+    <value>BOL status must in Reivew.</value>
+  </data>
+  <data name="MANIFEST_MUST_HAVE_ITEM" xml:space="preserve">
+    <value>must have items.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_STOREAGE_METHOD_ERROR" xml:space="preserve">
+    <value>{0} must 1,2 or 3.</value>
+  </data>
+  <data name="MANIFEST_CANNOT_EMPTY" xml:space="preserve">
+    <value>{0} cannot empty.</value>
+  </data>
+  <data name="MANIFEST_QTY_MORE_THAN_ZERO" xml:space="preserve">
+    <value>{0} Quantity must more than zero.</value>
+  </data>
+  <data name="COMMON_ITEM" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_ITEM_INFO" xml:space="preserve">
+    <value>not find any item info.</value>
+  </data>
+  <data name="MANIFEST_CHECKONHAND_LOST_PARAMETERS" xml:space="preserve">
+    <value>WarehouseUID,ItemUID,PackageUID parameters not null</value>
+  </data>
+  <data name="MANIFEST_INSUFFICIENTONHAND" xml:space="preserve">
+    <value>insufficient onhand.</value>
+  </data>
+  <data name="MANIFEST_MUST_HAVE_PACKAGE" xml:space="preserve">
+    <value>must have packageUID</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_DATA" xml:space="preserve">
+    <value>Not find data.</value>
+  </data>
+  <data name="TICKET_BARCODE_HAD_SCANED" xml:space="preserve">
+    <value>following barcode had scanned {0}</value>
+  </data>
+  <data name="TICKET_ACTQTY_MUST_EQUAL_ESTQTY" xml:space="preserve">
+    <value>ActQty must equal EstQty.</value>
+  </data>
+  <data name="TICKET_LOST_ORIGINALSLOTUID" xml:space="preserve">
+    <value>lost  OriginalSlotUID .</value>
+  </data>
+  <data name="TICKET_LOST_TARGETPACKAGE" xml:space="preserve">
+    <value>lost TargetPackage.</value>
+  </data>
+  <data name="TICKET_LOST_PACKAGE" xml:space="preserve">
+    <value>not find package.</value>
+  </data>
+  <data name="MANIFEST_VESSEL_NOT_FIND_BELONGTO_PKG" xml:space="preserve">
+    <value>not find belong to packageUID package info</value>
+  </data>
+  <data name="TICKET_LOST_TARGETSLOTUID" xml:space="preserve">
+    <value>lost TargetSlotUID.</value>
+  </data>
+  <data name="TICKET_NOT_FIND_INVENTORY" xml:space="preserve">
+    <value>not find inventory data.</value>
+  </data>
+  <data name="TICKET_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>not find payload data.</value>
+  </data>
+  <data name="TICKET_LOST_SLOT_INFO" xml:space="preserve">
+    <value>lost TargetSlotUID or OriginalSlotUID.</value>
+  </data>
+  <data name="TICKET_LOST_PACKAGE_INFO" xml:space="preserve">
+    <value>lost TargetPackage or OriginalPackage</value>
+  </data>
+  <data name="TICKET_LOST_WORKORDER_PAYLOAD_DATA" xml:space="preserve">
+    <value>Not find workorder payload data.</value>
+  </data>
+  <data name="TICKET_UNDEFINED_COMMAND" xml:space="preserve">
+    <value>undefined command.</value>
+  </data>
+  <data name="LABEL_NOT_FIND_PKG_TREE" xml:space="preserve">
+    <value>not find package tree.</value>
+  </data>
+  <data name="LABEL_NOT_FIND_LABEL" xml:space="preserve">
+    <value>not find labels.</value>
+  </data>
+  <data name="LABEL_NOT_UPLOAD_FILE" xml:space="preserve">
+    <value>must upload file.</value>
+  </data>
+  <data name="LABEL_CLEAR_FAILURE" xml:space="preserve">
+    <value>clear label failure.</value>
+  </data>
+  <data name="LABEL_UPLOAD_FAILURE" xml:space="preserve">
+    <value>upload label failure please try again.</value>
+  </data>
+  <data name="COMMON_NOT_FIND_WORKORDER_PAYLOAD" xml:space="preserve">
+    <value>Not find workorder payload data.</value>
+  </data>
+  <data name="TICKET_NOT_FIND_TICKETINFO" xml:space="preserve">
+    <value>not find ticket info data.</value>
+  </data>
+  <data name="TICKET_ADD_WORKER_FAILURE" xml:space="preserve">
+    <value>Add workder failure please try again.</value>
+  </data>
+  <data name="MANIFEST_GENERATE_TICKET_ERROR" xml:space="preserve">
+    <value>Not find manifest or BOL.</value>
+  </data>
+  <data name="TICKET_GETATTACHMENTLIST_ERROR" xml:space="preserve">
+    <value>not find attachment folders.</value>
+  </data>
+  <data name="MANIFEST_SAVEOUTBOUNDASSIGNEDITEM_LOST_PARAMETERS" xml:space="preserve">
+    <value>not find request data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MUST_HAVE_POD" xml:space="preserve">
+    <value>Must have POD UID.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MUST_HAVE_ITEM" xml:space="preserve">
+    <value>Must have item data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER" xml:space="preserve">
+    <value>Not find workorder data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_ASSINGED_POD" xml:space="preserve">
+    <value>Have some payload not assigned pod</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_VESSELMANIFST" xml:space="preserve">
+    <value>Not find vessel manifest data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_DEALLOCATED_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>Not find original payload info.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_ALLOCATD_PAYLOAD" xml:space="preserve">
+    <value>not find allocated payload info data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>not find payload info data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER_PAYLOAD" xml:space="preserve">
+    <value>not find workorderpayload data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER_POD" xml:space="preserve">
+    <value>not find workorderpod data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_REMOVEPOD_ERROR" xml:space="preserve">
+    <value>have some tickets must void them.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MERAGE_POD_ERROR_TO" xml:space="preserve">
+    <value>merge to must have data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MERAGE_POD_ERROR_FROM" xml:space="preserve">
+    <value>merge from must have data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_SETLANDINGSLOT_LOST_PARAMETER" xml:space="preserve">
+    <value>must have WorkOrder Pod UID or WorkORder Payload UID</value>
+  </data>
+  <data name="WAREHOUSE_NOT_FIND_LOADING_ZONE" xml:space="preserve">
+    <value>not find loading zone.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_SET_POD_LABEL_ERROR" xml:space="preserve">
+    <value>generate pod label failure.</value>
+  </data>
+  <data name="LABEL_UNDEFINED_BELONGTO_TYPE" xml:space="preserve">
+    <value>Not undefined belong to type.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_GENERATE_TICKET" xml:space="preserve">
+    <value>no data to generate ticket.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_OUTBOUND_INSUFFICIENTQTY" xml:space="preserve">
+    <value>{0} Payload TTL:{1} Allocated:{2} insufficient qty.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_VESSEL" xml:space="preserve">
+    <value>not find vessel data.</value>
+  </data>
+  <data name="MANIFEST_OPERTAE_FAILURE" xml:space="preserve">
+    <value>operate failure,please try again</value>
+  </data>
+  <data name="MANIFEST_BOL_UNCOMPLETE_ASSIGNED" xml:space="preserve">
+    <value>Following Item not assigned complete:</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_AUTO_ASSIGN_NO_ALLOWED_ITEM" xml:space="preserve">
+    <value>There are no items allowed to operate.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_PALLET_UOM" xml:space="preserve">
+    <value>Unable to load the unit of measure data for the pallet</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_REF_PACKAGES" xml:space="preserve">
+    <value>Fail to load the package data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_ALLOWED_SLOT" xml:space="preserve">
+    <value>There are no slots allowed to operate.</value>
+  </data>
+  <data name="MANIFEST_BOL_STATUS_MUST_LESS_THAN" xml:space="preserve">
+    <value>BOL status must less than {0} status</value>
+  </data>
+  <data name="MANIFEST_REJECT_FAILURE_HAS_ASSIGNED_ITEM" xml:space="preserve">
+    <value>Following Vessel# has assgined please remove them {0}</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_TICKETINFO" xml:space="preserve">
+    <value>not find ticket info.</value>
+  </data>
+  <data name="MANIFEST_BOL_REJECT_FAILURE_TICKET_WORKING" xml:space="preserve">
+    <value>Ticket has processed, can't reject </value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_VESSEL_DATA" xml:space="preserve">
+    <value>not find vessel data.</value>
+  </data>
+  <data name="MANIFEST_DELETE_FAILURE_NOT_IN_STATUS" xml:space="preserve">
+    <value>It's not allowed to delete Manifest when the status is in Complete</value>
+  </data>
+  <data name="MANIFEST_OUTBOUND_ALLOCATED_QTY_OVER" xml:space="preserve">
+    <value>VesselManifest Name {0} allocated qty must less vessel manifest qty.</value>
+  </data>
+  <data name="MANIFEST_INBOUND_ALLOCATED_QTY_OVER" xml:space="preserve">
+    <value>VesselManifest Name {0} allocated qty must less vessel manifest qty.</value>
+  </data>
+  <data name="MANIFEST_VESSEL_DELETE_EXIST_ASSIGNED_WPAYLOAD" xml:space="preserve">
+    <value>have assigned item must remove first</value>
+  </data>
+  <data name="MANIFEST_COMMON_PARAMETERS_NULL" xml:space="preserve">
+    <value>not receive parameters</value>
+  </data>
+  <data name="TICKET_UPLOADBYPOD_NOT_FIND_DATA" xml:space="preserve">
+    <value>not find receiving ticket</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_AUTO_ASSIGN_INSUFFICIENT_QTY" xml:space="preserve">
+    <value>Following items are insufficient qty {0}</value>
+  </data>
+  <data name="MANIFEST_COMMON_UNIQUE_NULL" xml:space="preserve">
+    <value>Unique ID is null.</value>
+  </data>
+  <data name="MANIFEST_COMMON_REQUEST_NULL" xml:space="preserve">
+    <value>Not find any request parameters.</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_FIND" xml:space="preserve">
+    <value>Failed to import. following item# is not in wms system {0}</value>
+    
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_PACKAGE" xml:space="preserve">
+    <value>Failed to import. following item# not have package data {0}</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_DUPLICATE" xml:space="preserve">
+    <value>Failed to import. following item# duplicate {0}</value>
+  </data>
+  <data name="MANIFEST_ORDER_ALLOCATED_FAILURE" xml:space="preserve">
+    <value>Allocated Failure</value>
+  </data>
+  <data name="MANIFEST_ORDER_RECEIVING_EXISTITEM" xml:space="preserve">
+    <value>this order has already import</value>
+  </data>
+  <data name="MANIFEST_ORDER_INBOUND_ROLLBACKTICKET_USED" xml:space="preserve">
+    <value>cannot roll back ticket payload had been used</value>
+  </data>
+  <data name="COMMON_INCORRENT_STATUS" xml:space="preserve">
+    <value>{0} status incorrect required:{1} current:{2}</value>
+  </data>
+  <data name="DATA_MANIFEST_KEY" xml:space="preserve">
+    <value>Manifest</value>
+  </data>
+  <data name="DATA_VESSEL_KEY" xml:space="preserve">
+    <value>Vessel</value>
+  </data>
+  <data name="DATA_BOL_KEY" xml:space="preserve">
+    <value>BOL</value>
+  </data>
+  <data name="DATA_TICKET_KEY" xml:space="preserve">
+    <value>Ticket</value>
+  </data>
+  <data name="ORDER_MANIFEST_TYPE_INCORRECT" xml:space="preserve">
+    <value>Manifest type incorrect must outbound</value>
+  </data>
+  <data name="ORDER_ILLEGAL_STATUS" xml:space="preserve">
+    <value>illegal status value</value>
+  </data>
+  <data name="COMMON_NOT_SUPPORT" xml:space="preserve">
+    <value>{0} not support </value>
+  </data>
+  <data name="TICKET_MOVE_SEQMENT_INCORRECT" xml:space="preserve">
+    <value>Move seqment incorrect,please offposition first</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_SLOT_INVALID" xml:space="preserve">
+    <value>Slot#{0} invalid.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETSTATUSINCORRECT" xml:space="preserve">
+    <value>Ticket info status must before complete.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETTYPEINCORRECT" xml:space="preserve">
+    <value>ticket type is not move.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_NOTFINDTICKETINFO" xml:space="preserve">
+    <value>not find ticketinfo.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETMUSTOUTBOUND" xml:space="preserve">
+    <value>ticket must outbound.</value>
+  </data>
+  <data name="WAREHOUSE_ADD_HOMEADDR_FAILURE" xml:space="preserve">
+    <value>Fail to add home location</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_HOMEADDR_FAILURE" xml:space="preserve">
+    <value>Fail to delete home location</value>
+  </data>
+  <data name="WAREHOUSE_CHECK_SLOT_NOT_EXIST" xml:space="preserve">
+    <value>Not find Slot UID {0}</value>
+  </data>
+  <data name="WAREHOUSE_CHECK_SLOT_STATAUS" xml:space="preserve">
+    <value>Slot status incorrect</value>
+  </data>
+  <data name="INVENTORY_MODIFY_INVENTORY_QTY_INSUFFICIENT" xml:space="preserve">
+    <value>Payload#{0} modify qty insufficient</value>
+  </data>
+  <data name="INVENTORY_MODIFY_QTY_UNABLE_CALCULATE" xml:space="preserve">
+    <value>Payload#{0} modify qty can't calculate to package</value>
+  </data>
+  <data name="INVENTORY_MODIFY_INCORRENT_ACTION_TYPE" xml:space="preserve">
+    <value>Action Type incorrent</value>
+  </data>
+  <data name="INVENTORY_NOT_FIND_SLOT" xml:space="preserve">
+    <value>not find Slot</value>
+  </data>
+  <data name="COMMON_NOT_FIND_ITEM" xml:space="preserve">
+    <value>not find item info</value>
+  </data>
+  <data name="COMMON_NOT_FIND_PACKAGE" xml:space="preserve">
+    <value>{0} not find package info</value>
+  </data>
+  <data name="INVENTORY_SLOT_THE_SAME" xml:space="preserve">
+    <value>Payload#{0} source Slot not same target slot</value>
+  </data>
+  <data name="WAREHOUSE_NOT_FIND" xml:space="preserve">
+    <value>not find warehouse </value>
+  </data>
+  <data name="TICKET_TICKET_IN_BULKPICK" xml:space="preserve">
+    <value>Same tickets in following BulkPick {0}</value>
+  </data>
+  <data name="MANIFEST_TICKET_GENERATE_MISS_WAREHOUSE" xml:space="preserve">
+    <value>Generate ticket lost warehouse UID</value>
+  </data>
+  <data name="WAREHOSUE_MOVE_PAYLAOD_MULTIWAREHOUSE_REQUEST" xml:space="preserve">
+    <value>can't move different warehouse at same time</value>
+  </data>
+  <data name="MANIFEST_ORDER_BULKPICK_PROCESSING" xml:space="preserve">
+    <value>BulkPick is processing can't deallcated</value>
+  </data>
+  <data name="INBOUND_RECEIVING_NOT_FIND_LANDINGZONE" xml:space="preserve">
+    <value>not find inbound landing zone</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_USE_CHANGEFROM" xml:space="preserve">
+    <value>Can't use chang from function</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_USE" xml:space="preserve">
+    <value>This ticket type unallowed use change from function</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PKGNOTMATCH" xml:space="preserve">
+    <value>Pkg not match item</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_NEGATIVE" xml:space="preserve">
+    <value>insufficient onhand , can't allocated</value>
+  </data>
+  <data name="COMMON_FILE_INVAILD" xml:space="preserve">
+    <value>file format invaild must {0}.</value>
+  </data>
+  <data name="MANIFEST_STATUS_FAILURE" xml:space="preserve">
+    <value>Manifest status incorrent must before {0}</value>
+  </data>
+  <data name="MANIFEST_VESSEL_STATUS_FAILURE" xml:space="preserve">
+    <value>Vessel status failure , must before {0}</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_FAILURE_STATUS" xml:space="preserve">
+    <value>Workorder status failure ,must before {0} status</value>
+  </data>
+  <data name="COMMON_GENERATE_LABEL_FAILURE" xml:space="preserve">
+    <value>Generate label failure</value>
+  </data>
+  <data name="INBOUND_OVER_VOLUME" xml:space="preserve">
+    <value>Pallet#{0}  item:{1} can't allocated over volume </value>
+  </data>
+  <data name="COMMON_SYNC_ERROR" xml:space="preserve">
+    <value>Sync onhand error please try again</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_FROMSLOT_CANNOT_SAME" xml:space="preserve">
+    <value>Can't be same as To Slot</value>
+  </data>
+  <data name="COMMON_GENERATE_LABEL_NOT_FIND_LABEL" xml:space="preserve">
+    <value>Can't not find UPC/EAN/SCC14/PUOM Label</value>
+  </data>
+  <data name="COMMON_CREATE_INVENTORY_CANNOT_ADD_SINGLE_VIRUALITEM" xml:space="preserve">
+    <value>Can't add singal virtual product please add actual product</value>
+  </data>
+  <data name="COMMON_VIRTUALITEM_COMBINE_FAILURE" xml:space="preserve">
+    <value>Can't combine actual item.</value>
+  </data>
+  <data name="INVENTORY_ITEM_NOT_BELONG_TO_GROUP" xml:space="preserve">
+    <value>have some item not belong to current group</value>
+  </data>
+  <data name="INVENTORY_MODIFY_MOVE_CANNOT_ZERO" xml:space="preserve">
+    <value>Modify qty must more than zero</value>
+  </data>
+  <data name="INVENTORY_SLOT_CANNOT_EMPTY" xml:space="preserve">
+    <value>Modify Slot cannot empty</value>
+  </data>
+  <data name="MANIFEST_ORDER_ALLOCATED_NOT_FIND_CUSTOMERUID" xml:space="preserve">
+    <value>not find customer uid</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_CANNOTCHANGEPKG" xml:space="preserve">
+    <value>Can't change pkg</value>
+  </data>
+  <data name="MANIFEST_PICK_ALL_ALREADY_COMPLETE" xml:space="preserve">
+    <value>Order has complete.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETWAREHOUSEINCORRECT" xml:space="preserve">
+    <value>don't cross warehouse in ticket</value>
+  </data>
+  <data name="TICKET_MOVE_NOTSUPPORT" xml:space="preserve">
+    <value>not support undo action</value>
+  </data>
+  <data name="MANIFEST_PICK_ALL_HAS_FUTURE_ALLOCATED" xml:space="preserve">
+    <value>has future allocated data ,can't pick all</value>
+  </data>
+  <data name="TICKET_MOVETICKET_HAS_FUTURE_ALLOCATED" xml:space="preserve">
+    <value>Ticket item is future allocated data, can't move</value>
+  </data>
+  <data name="MANIFEST_INBOUND_ADD_ITEM_ERROR" xml:space="preserve">
+    <value>Unhandled exception has occurred : Fail to create items.</value>
+  </data>
+  <data name="COMMON_PKG_NOT_MATCH" xml:space="preserve">
+    <value>Item {0} not match this package</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_MATCH_PACKAGE" xml:space="preserve">
+    <value>There is no Crate/Pallet for {0}. Please set up Crate/Pallet in P item Packaging Setting</value>
+  </data>
+  <data name="COMMON_RETRY" xml:space="preserve">
+    <value>Some error occurred,please try again</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PAYLOAD_TYPE_ILLEGAL" xml:space="preserve">
+    <value>payload type  must onhand </value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD" xml:space="preserve">
+    <value>illegal payload data</value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD_TYPE" xml:space="preserve">
+    <value>Unable to process complex  payloads type</value>
+  </data>
+  <data name="COMMON_ILLEGAL_SLOT_STATUS" xml:space="preserve">
+    <value>The slot is for Inbound only.</value>
+  </data>
+  <data name="COMMON_VIRTUAL_ITEM_CHECK_INVALID" xml:space="preserve">
+    <value>{0} has multi-box, please adjust them together
+For item with multi-box, all boxes have to be the same qty and location</value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD_STATUS" xml:space="preserve">
+    <value>Item# {0} Payload status must active </value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PAYLOAD_STATUS_ILLEGAL" xml:space="preserve">
+    <value>The data include processing item, plesae finish scan ticket</value>
+  </data>
+  <data name="COMMON_REQUEST_ISPROCESSING" xml:space="preserve">
+    <value>The previous action is still in processing, please wait for it.</value>
+  </data>
+  <data name="COMMON_WAREHOSUE_SLOT_DIFFERENCE" xml:space="preserve">
+    <value>The warehouse does not have the related Slot, please change it.</value>
+  </data>
+  <data name="MANIFEST_ORDER_NOT_STOCK_REQUEST" xml:space="preserve">
+    <value>Future Allocated only for item of stock condition</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_MATCH_MIN_PACKAGE" xml:space="preserve">
+    <value>The "Stock UOM"  and "Inventory UOM" for {0} are different from the smallest package setting in P item.</value>
+  </data>
+  <data name="MANIFEST_FUTURE_ALLOCATED_NOT_SUPPORT" xml:space="preserve">
+    <value>This warhouse not support future allocated</value>
+  </data>
+</root>

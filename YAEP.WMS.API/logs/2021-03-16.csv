@@ -1,0 +1,8 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,start group by parameter,$,,,,12,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,"""[\""58c055a1-08b5-4d98-80d9-b414c9fd4185\""]""",null
+TRACE,end group by parameter,$,,,,13,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,2,"""[\""58c055a1-08b5-4d98-80d9-b414c9fd4185\""]""",null
+TRACE,search cache data start,$,,,,16,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,3,"""[\""58c055a1-08b5-4d98-80d9-b414c9fd4185\""]""",null
+TRACE,search cache data end,$,,,,17,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,4,"""""",null
+TRACE,Item mgmt init end,$,,,,16,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,6,"""""",null
+TRACE,Item mgmt init start,$,,,,13,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,5,"""""",null
+TRACE,Get Product data,$,,,,16,test,admin,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,7,"""{\""productid\"":[\""58c055a1-08b5-4d98-80d9-b414c9fd4185\""],\""CallMemberName\"":\""ResendSynctoPBSC\"",\""ItemMgmtHashCode\"":48871807}""",null

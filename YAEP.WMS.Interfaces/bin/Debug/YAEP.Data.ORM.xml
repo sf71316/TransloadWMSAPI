@@ -1,0 +1,1480 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Data.ORM</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Data.ORM.AbstractModelCommandBuilder`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.AbstractModelCommandBuilder`1.#ctor(YAEP.Data.ORM.Interfaces.IModelDescriptor{`0},YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="modelDescriptor"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.AbstractModelCommandBuilder`1.ModelDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.AbstractCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.AbstractCommandBuilder.GetDictionary(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="insertObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.GenericDeleteCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.ModelDeleteCommandBuilder`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelDeleteCommandBuilder`1.#ctor(YAEP.Data.ORM.Interfaces.IModelDescriptor{`0},YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="modelDescriptor"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="T:YAEP.Data.ORM.ModelSqlCommand`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelSqlCommand`1.#ctor(YAEP.Data.ORM.Interfaces.IModelDescriptor{`0},YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="modelDescriptor"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.ModelSqlCommand`1.Insert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.ModelSqlCommand`1.Update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.ModelSqlCommand`1.Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.ModelSqlCommand`1.Formatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.GenericSqlCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.GenericSqlCommand.#ctor(YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="formatter"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.GenericSqlCommand.Insert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.GenericSqlCommand.Update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.GenericSqlCommand.Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.GenericSqlCommand.Formatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.ModelInsertCommandBuilder`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelInsertCommandBuilder`1.#ctor(YAEP.Data.ORM.Interfaces.IModelDescriptor{`0},YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="modelDescriptor"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelInsertCommandBuilder`1.GetCommandText">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelInsertCommandBuilder`1.GetCommandText(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="insertObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.GenericInsertCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.GenericInsertCommandBuilder.GetCommandText(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <param name="insertObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.GenericUpdateCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.ModelUpdateCommandBuilder`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.ModelUpdateCommandBuilder`1.#ctor(YAEP.Data.ORM.Interfaces.IModelDescriptor{`0},YAEP.Data.ORM.Interfaces.ISqlCommandFormatter)">
+            <summary>
+            
+            </summary>
+            <param name="modelDescriptor"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IDeleteCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDeleteCommandBuilder.GetCommandText(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <param name="conditionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IModelDeleteCommandBuilder`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDeleteCommandBuilder`1.GetCommandText">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDeleteCommandBuilder`1.GetCommandText(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="conditionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IModelUpdateCommandBuilder`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelUpdateCommandBuilder`1.GetCommandText">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelUpdateCommandBuilder`1.GetCommandText(`0,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="updateModel"></param>
+            <param name="isAllUpdate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelUpdateCommandBuilder`1.GetCommandText(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="updateObject"></param>
+            <param name="conditionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelUpdateCommandBuilder`1.GetParameters(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="updateObject"></param>
+            <param name="conditionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IUpdateCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IUpdateCommandBuilder.GetCommandText(System.String,System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <param name="updateObject"></param>
+            <param name="conditionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IInsertCommandBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IInsertCommandBuilder.GetCommandText(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <param name="insertObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IModelInsertCommandBuilder`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelInsertCommandBuilder`1.GetCommandText">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelInsertCommandBuilder`1.GetCommandText(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="insertObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IModelSqlCommand`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IModelSqlCommand`1.Insert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IModelSqlCommand`1.Update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IModelSqlCommand`1.Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IModelSqlCommand`1.Formatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.ISqlCommandFormatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.ISqlCommandFormatter.Table(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.ISqlCommandFormatter.Column(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.ISqlCommandFormatter.Parameter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IBulkCopy">
+            <summary>
+            批次新增介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IBulkCopy.BulkCopy``1(System.Collections.Generic.IEnumerable{``0},System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IBulkCopy.BulkCopy(System.Data.DataTable,System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(DataTable)
+            </summary>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IConnectionSettings">
+            <summary>
+            資料庫連線資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IConnectionSettings.ProviderName">
+            <summary>
+            database provider name
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IConnectionSettings.ConnectionString">
+            <summary>
+            database connection string
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IConnectionSettings.CommandTimeout">
+            <summary>
+            execute command timeout
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter">
+            <summary>
+             資料庫取存層介面
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.ConnectionSettings">
+            <summary>
+            資料庫連線資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.Transaction">
+            <summary>
+            資料庫交易物件
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.IsTransaction">
+            <summary>
+            是否啟動交易
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.Connection">
+            <summary>
+            資料庫連線物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.CreateCommand">
+            <summary>
+            資料庫指令物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.CommandText">
+            <summary>
+            資料庫指令
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.ClearParameter">
+            <summary>
+            清除指令參數
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.AddParameter(System.String,System.Object)">
+            <summary>
+             新增指令參數
+            </summary>
+            <param name="name">名稱</param>
+            <param name="value">數值</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.AddParameter(System.String,System.Object,System.Nullable{System.Data.DbType})">
+            <summary>
+             新增指令參數
+            </summary>
+            <param name="name">名稱</param>
+            <param name="value">數值</param>
+            <param name="type">資料型態</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.InitCommand">
+            <summary>
+            重置指令物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.GetReader">
+            <summary>
+            取得資料庫讀取器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.GetDataRow">
+            <summary>
+            取得資料行結果集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.GetDataSet">
+            <summary>
+            取得資料結果集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.GetDataTable">
+            <summary>
+            取得資料表結果集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.ExecuteNonQuery">
+            <summary>
+            執行指令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.GetValue">
+            <summary>
+            取得單一數值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.BeginTransaction">
+            <summary>
+            開啟交易
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            開啟交易(指定隔離層級)
+            </summary>
+            <param name="isolationLevel"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.Commit">
+            <summary>
+            交易認可
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter.Rollback">
+            <summary>
+            交易回復
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IDynamicParameters">
+            <summary>
+            動態參數介面
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDynamicParameters.ParameterNames">
+            <summary>
+            參數名稱集合
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDynamicParameters.Add(System.String,System.Object,System.Nullable{System.Data.DbType},System.Nullable{System.Data.ParameterDirection},System.Nullable{System.Int32})">
+            <summary>
+            新增參數
+            </summary>
+            <param name="name">參數名稱</param>
+            <param name="value">參數數值</param>
+            <param name="dbType">資料型別</param>
+            <param name="direction">參數型別</param>
+            <param name="size">參數大小</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDynamicParameters.Get``1(System.String)">
+            <summary>
+            取得指定參數
+            </summary>
+            <typeparam name="T">參數數值型別</typeparam>
+            <param name="name">參數名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IDynamicParameters.Fill``1(``0)">
+            <summary>
+             參數集合注入
+            </summary>
+            <typeparam name="T">參數數值型別</typeparam>
+            <param name="Source">參數數值物件</param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IDynamicParametersExtension`1">
+            <summary>
+             動態參數擴展介面
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IDynamicParametersExtension`1.Parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IGenericSqlCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IGenericSqlCommand.Insert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IGenericSqlCommand.Update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IGenericSqlCommand.Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IGenericSqlCommand.Formatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IORMComponent">
+            <summary>
+            ORM操作內部介面
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IORMComponent.Connection">
+            <summary>
+            資料庫連線物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Insert``1(``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+             單一資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToInsert"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Insert``1(System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            多筆資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Update``1(``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+             單筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToUpdate"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Update``1(System.Collections.Generic.IEnumerable{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            多筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Delete``1(``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            單筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToDelete"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMComponent.Delete``1(System.Collections.Generic.IEnumerable{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            多筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IORMLayer">
+            <summary>
+            ORM操作外部介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Insert``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單一資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToInsert"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Insert``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Update``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToUpdate"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Update``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Delete``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToDelete"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IORMLayer.Delete``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IModelDescriptor`1">
+            <summary>
+            Model 定義提供者
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetTableName">
+            <summary>
+            取得對應的預設資料表名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbTableAttribute.TableName"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetPrimaryKeyName">
+            <summary>
+            取得對應的預設資料主鍵名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetPrimaryKeyNames">
+            <summary>
+            取得對應的預設資料主鍵名稱集合
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetColumnName(System.String)">
+            <summary>
+            取得設定的資料庫欄位名稱
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetProperty(System.String)">
+            <summary>
+            取得對應名稱的屬性
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.GetProperties">
+            <summary>
+            取得所有屬性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.IsPrimaryKey(System.String)">
+            <summary>
+            屬性是主鍵
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.IsPrimaryIdentityKey(System.String)">
+            <summary>
+            屬性是自動編號的主鍵
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.IsWritable(System.String)">
+            <summary>
+            屬性可寫入 DB
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.IsUnwritable(System.String)">
+            <summary>
+            屬性不可寫入 DB
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IModelDescriptor`1.HasProperty(System.String)">
+            <summary>
+            有此屬性
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1">
+            <summary>
+            CRUD Interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Create(`0)">
+            <summary>
+            新增 
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.CreateItemByDynamic(System.Object)">
+            <summary>
+            新增
+            </summary>
+            <param name="dynamicItem">動態物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Create(System.Collections.Generic.IEnumerable{`0},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <param name="ignoreColumns"></param>
+            <param name="timeout"></param>
+            <param name="batchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Retrieve(System.Object)">
+            <summary>
+            取得對應鍵值的物件
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Retrieve(System.String,System.Object)">
+            <summary>
+            取得對應條件的物件
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Retrieve(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得對應條件的物件
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.RetrieveCollection(System.String,System.Object)">
+            <summary>
+            取得對應條件的物件集合
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.RetrieveCollection(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得對應條件的物件集合
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.RetrieveCollectionByDynamicConditions(System.Object)">
+            <summary>
+            取得對應條件的物件集合
+            </summary>
+            <param name="conditions">動態條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Exists(System.String,System.Object)">
+            <summary>
+            檢查資料是否已存在
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Exists(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            檢查資料是否已存在
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.ExistsByDynamicConditions(System.Object)">
+            <summary>
+            檢查資料是否已存在
+            </summary>
+            <param name="conditions">動態條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Update(`0)">
+            <summary>
+            修改
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Update(System.Object,System.Int32)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="key">識別欄位</param>
+            <param name="status">狀態</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Update(System.Object,System.Int32,System.String)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="key">識別欄位</param>
+            <param name="status">狀態</param>
+            <param name="modifiedBy">異動者</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.UpdateByDynamicConditions(System.Object,System.Object)">
+            <summary>
+            修改 (使用動態物件)
+            </summary>
+            <param name="fields">要更新的欄位</param>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Delete(System.Object)">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="key">索引鍵</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Delete(System.String,System.Object)">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="keyColumnName"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Delete(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.DeleteByDynamicConditions(System.Object)">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="conditions">動態條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.DeleteFromDatabase(System.Object)">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.DeleteFromDatabase(System.String,System.Object)">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="keyColumnName"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.DeleteFromDatabase(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.DeleteFromDatabaseByDynamicConditions(System.Object)">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="conditions">動態條件</param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.IsAutoHandleError">
+            <summary>
+            是否自動處理錯誤 (try  log)
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.CommandTimeout">
+            <summary>
+            execute timeout (seconds)
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.IsAllUpdate">
+            <summary>
+            是否全部欄位
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.GetTableName">
+            <summary>
+            取得對應的預設資料表名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.GetPrimaryKeyName">
+            <summary>
+            取得對應的預設資料主鍵名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Instance">
+            <summary>
+            Basic ORM
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Condition(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1.Conditions(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="dynamicObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.BeginTranaction">
+            <summary>
+             開啟交易
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.BeginTranaction(System.Data.IsolationLevel)">
+            <summary>
+             開啟交易
+            </summary>
+            <param name="isolationLevel">交易範圍</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Commit">
+            <summary>
+             交易認可
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Rollback">
+            <summary>
+             交易回復
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Query(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+             查詢資料(回傳動態型別)
+            </summary>
+            <param name="sql">T SQL</param>
+            <param name="param">SQL Parameters</param>
+            <param name="commandTimeout">Time out</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Query``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料(回傳強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.QueryFirst``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            回傳一筆資料
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.ExecuteScalar(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            回傳單一數值
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.ExecuteScalar``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            回傳單一數值(強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Execute(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            執行SQL指令
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.CommandTimeout">
+            <summary>
+            SQL執行逾期時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.Connection">
+            <summary>
+            資料庫連線物件
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer.ConnectionSettings">
+            <summary>
+            資料庫連線資訊
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Interfaces.IParameterInfo">
+            <summary>
+            參數資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IParameterInfo.Name">
+            <summary>
+            參數名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IParameterInfo.Value">
+            <summary>
+            參數資料
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IParameterInfo.ParameterDirection">
+            <summary>
+            參數類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IParameterInfo.DbType">
+            <summary>
+            資料類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Interfaces.IParameterInfo.Size">
+            <summary>
+            參數空間大小
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.SqlCommandFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.SqlCommandFactory.CreateGenericCommand(System.Data.IDbConnection)">
+            <summary>
+            
+            </summary>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SqlCommandFactory.CreateModelCommand``1(System.Data.IDbConnection,YAEP.Data.ORM.Interfaces.IModelDescriptor{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection"></param>
+            <param name="modelDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Attributes.DbColumnAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Attributes.DbColumnAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName">欄位名稱</param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.ColumnName">
+            <summary>
+            欄位名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsIdentity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsWritable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Attributes.DbTableAttribute">
+            <summary>
+             Defines the name of a table
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Attributes.DbTableAttribute.#ctor(System.String)">
+            <summary>
+            Creates a table mapping to a specific name
+            </summary>
+            <param name="tableName">The name of this table in the database.</param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Attributes.DbTableAttribute.TableName">
+            <summary>
+            The name of this table in the database.
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Extensions.FormatterExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Extensions.FormatterExtensions.GetSqlCommandFormatter(System.Data.IDbConnection)">
+            <summary>
+            
+            </summary>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Extensions.GenericExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Extensions.GenericExtension.ToDataTable``1(System.Collections.IEnumerable)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Extensions.TypeExtension">
+            <summary>
+            型別擴充
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Extensions.TypeExtension.GetTableName(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Extensions.TypeExtension.GetPrimaryKeyName(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Extensions.TypeExtension.GetPrimaryKeyNames(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions">
+            <summary>
+            型別快取擴充
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.HasProperty(System.Type,System.String)">
+            <summary>
+            檢查有此屬性
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.IsPrimaryKey(System.Type,System.String)">
+            <summary>
+            檢查屬性是否為主鍵
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.IsPrimaryIdentityKey(System.Type,System.String)">
+            <summary>
+            檢查屬性是否自動編號的主鍵
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.IsWritable(System.Type,System.String)">
+            <summary>
+            檢查屬性是否可寫入 DB
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.IsUnwritable(System.Type,System.String)">
+            <summary>
+                    /// <summary>
+            檢查屬性是否不可寫入 DB
+            </summary>
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetTableName(System.Type)">
+            <summary>
+            取得對應的預設資料表名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbTableAttribute.TableName" /> 
+            or <see cref="P:System.Reflection.MemberInfo.Name" />
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetPrimaryKeyName(System.Type)">
+            <summary>
+            取得對應的預設資料主鍵名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetPrimaryKeyNames(System.Type)">
+            <summary>
+            取得對應的預設資料主鍵名稱集合
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetColumnName(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            取得設定的資料庫欄位名稱
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetCacheProperty(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            取得對應名稱的屬性
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetCacheProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得所有屬性
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetPrimaryKeyProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得主鍵屬性
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetPrimaryIdentityKeyProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得自動編號主鍵屬性
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetUnwritableProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得不可寫入DB的屬性
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetDbColumns(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得型別所有屬性的 Db Columns 集合
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetPrimaryKeyDbColumns(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得型別主鍵屬性的 Db Columns 集合
+            </summary>
+            <param name="type"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Cache.Extensions.TypeCacheExtensions.GetDbTable(System.Type)">
+            <summary>
+            取得型別 Db Table 的特徵項
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.SqlServerFormatter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.SqlServerFormatter.Table(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SqlServerFormatter.Column(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SqlServerFormatter.Parameter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.MySqlFormatter.Table(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.MySqlFormatter.Column(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.MySqlFormatter.Parameter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SQLiteFormatter.Table(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SQLiteFormatter.Column(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.SQLiteFormatter.Parameter(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

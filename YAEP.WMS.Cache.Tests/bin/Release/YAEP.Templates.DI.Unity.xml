@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Templates.DI.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Templates.DI.Unity.AbstractFactory">
+            <summary>
+            DI 基底類別
+            </summary>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.#ctor(Unity.IUnityContainer)">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.InitContainer">
+            <summary>
+            初始化 DI Container
+            </summary>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.Resolve``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.Resolve``1(Unity.Resolution.ResolverOverride[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="overrides"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.Resolve``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.Resolve``1(System.String,Unity.Resolution.ResolverOverride[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name"></param>
+            <param name="overrides"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterSingleton``2">
+            <summary>
+            註冊獨體物件
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterSingleton``2(System.String)">
+            <summary>
+            註冊獨體物件
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+            <param name="name">指定名稱</param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterInstance``1(``0)">
+            <summary>
+            註冊實體
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <param name="instance">物件實體</param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterInstance``1(System.String,``0)">
+            <summary>
+            註冊實體
+            </summary>
+            <typeparam name="TInterface"></typeparam>
+            <param name="name">指定名稱</param>
+            <param name="instance">物件實體</param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterType``2">
+            <summary>
+            註冊 一般型別 的 Pattern
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterType``2(System.String)">
+            <summary>
+            註冊 一般型別 的 Pattern
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+            <param name="name"></param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterTypeInjectionProperties``2(System.String[])">
+            <summary>
+            註冊 一般型別 的 Pattern, 並指定注入屬性
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+            <param name="propertyNames"></param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.RegisterTypeInjectionProperties``2(System.String,System.String[])">
+            <summary>
+            註冊 一般型別 的 Pattern, 並指定注入屬性
+            </summary>
+            <typeparam name="TFrom"></typeparam>
+            <typeparam name="TTo"></typeparam>
+            <param name="name">指定名稱</param>
+            <param name="propertyNames"></param>
+        </member>
+        <member name="M:YAEP.Templates.DI.Unity.AbstractFactory.GenerateModel``1">
+            <summary>
+            實例特定物件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Templates.DI.Unity.AbstractFactory.Container">
+            <summary>
+            DI 容器
+            </summary>
+        </member>
+    </members>
+</doc>

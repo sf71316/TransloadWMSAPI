@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5557DFCD-12A9-4D53-BD25-E02CD51DBA0B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>YAEP.WMS.NotificationSender.Host</RootNamespace>
+    <AssemblyName>YAEP.WMS.NotificationSender.Host</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.1.50.5\lib\net451\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YAEP.Constants">
+      <HintPath>..\ExternalDll\YAEP.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper.Contrib">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Templates">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Templates.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird">
+      <HintPath>..\ExternalDll\YAEP.LittleBird.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird.Log">
+      <HintPath>..\ExternalDll\YAEP.LittleBird.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Log.Constants">
+      <HintPath>..\ExternalDll\YAEP.Log.Constants.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lib\Model\NotificationArg.cs" />
+    <Compile Include="Lib\Model\NotificationRequest.cs" />
+    <Compile Include="Lib\Model\NotificationSenderTaskModel.cs" />
+    <Compile Include="Lib\Module\Logger.cs" />
+    <Compile Include="Lib\Module\SenderAgent.cs" />
+    <Compile Include="Lib\Module\SenderConfigure.cs" />
+    <Compile Include="Lib\Repository\AbstractRepository.cs" />
+    <Compile Include="Lib\Repository\DefaultConnectionSettings.cs" />
+    <Compile Include="Lib\Repository\IGenericRepository.cs" />
+    <Compile Include="Lib\Repository\NotificationSenderTaskRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Constant\YAEP.WMS.Constant.csproj">
+      <Project>{6e9437b5-3773-4f46-a3f8-2b954476a4cc}</Project>
+      <Name>YAEP.WMS.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.NotificationReceiver.Client\YAEP.WMS.NotificationReceiver.Client.csproj">
+      <Project>{3109c7b5-3f08-4a83-b322-104651f535e3}</Project>
+      <Name>YAEP.WMS.NotificationReceiver.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.NotificationReceiver.Common\YAEP.WMS.NotificationReceiver.Common.csproj">
+      <Project>{fcb42067-6537-430b-8e06-79e7e1dcfaf1}</Project>
+      <Name>YAEP.WMS.NotificationReceiver.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

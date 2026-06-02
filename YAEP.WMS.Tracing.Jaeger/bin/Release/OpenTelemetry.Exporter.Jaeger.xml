@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenTelemetry.Exporter.Jaeger</name>
+    </assembly>
+    <members>
+        <member name="F:Thrift.Protocol.TCompactProtocol._lastField">
+            <summary>
+                Used to keep track of the last field for the current and previous structs, so we can do the delta stuff.
+            </summary>
+        </member>
+        <member name="F:Thrift.Protocol.TCompactProtocol._booleanField">
+            <summary>
+                If we encounter a boolean field begin, save the TField here so it can have the value incorporated.
+            </summary>
+        </member>
+        <member name="M:Thrift.Protocol.TCompactProtocol.WriteStructBegin(Thrift.Protocol.Entities.TStruct)">
+            <summary>
+                Write a struct begin. This doesn't actually put anything on the wire. We
+                use it as an opportunity to put special placeholder markers on the field
+                stack so we can get the field id deltas correct.
+            </summary>
+        </member>
+        <member name="T:Thrift.Protocol.TCompactProtocol.Types">
+            <summary>
+                All of the on-wire exType codes.
+            </summary>
+        </member>
+        <member name="T:Thrift.TBaseClient">
+            <summary>
+                TBaseClient.
+                Base client for generated clients.
+                Do not change this class without checking generated code (namings, etc.)
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerExporterEventSource">
+            <summary>
+            EventSource events emitted from the project.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerSpanRef.ToString">
+            <summary>
+            <seealso cref="T:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerSpanRefType"/>
+            </summary>
+            <returns>A string representation of the object.</returns>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerSpanRefType">
+            <summary>
+            Represents the different types of Jaeger Spans.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerSpanRefType.CHILD_OF">
+            <summary>
+            A child span
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerSpanRefType.FOLLOWS_FROM">
+            <summary>
+            A sibling span
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType">
+            <summary>
+            Indicates the data type of a Jaeger tag.
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType.STRING">
+            <summary>
+            Tag contains a string
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType.DOUBLE">
+            <summary>
+            Tag contains a double
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType.BOOL">
+            <summary>
+            Tag contains a boolean
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType.LONG">
+            <summary>
+            Tag contains a long
+            </summary>
+        </member>
+        <member name="F:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerTagType.BINARY">
+            <summary>
+            Tag contains binary data
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerUdpClient.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.Jaeger.Implementation.JaegerUdpClient.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by this class and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><see langword="true"/> to release both managed and unmanaged resources; <see langword="false"/> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.JaegerExporter.Export(OpenTelemetry.Batch{System.Diagnostics.Activity}@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OpenTelemetry.Exporter.JaegerExporter.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.JaegerExporterOptions.AgentHost">
+            <summary>
+            Gets or sets the Jaeger agent host. Default value: localhost.
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.JaegerExporterOptions.AgentPort">
+            <summary>
+            Gets or sets the Jaeger agent "compact thrift protocol" port. Default value: 6831.
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.JaegerExporterOptions.MaxPayloadSizeInBytes">
+            <summary>
+            Gets or sets the maximum payload size in bytes. Default value: 4096.
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.JaegerExporterOptions.ExportProcessorType">
+            <summary>
+            Gets or sets the export processor type to be used with Jaeger Exporter.
+            </summary>
+        </member>
+        <member name="P:OpenTelemetry.Exporter.JaegerExporterOptions.BatchExportProcessorOptions">
+            <summary>
+            Gets or sets the BatchExportProcessor options. Ignored unless ExportProcessorType is BatchExporter.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Trace.JaegerExporterHelperExtensions">
+            <summary>
+            Extension methods to simplify registering a Jaeger exporter.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Trace.JaegerExporterHelperExtensions.AddJaegerExporter(OpenTelemetry.Trace.TracerProviderBuilder,System.Action{OpenTelemetry.Exporter.JaegerExporterOptions})">
+            <summary>
+            Adds Jaeger exporter to the TracerProvider.
+            </summary>
+            <param name="builder"><see cref="T:OpenTelemetry.Trace.TracerProviderBuilder"/> builder to use.</param>
+            <param name="configure">Exporter configuration options.</param>
+            <returns>The instance of <see cref="T:OpenTelemetry.Trace.TracerProviderBuilder"/> to chain the calls.</returns>
+        </member>
+        <member name="T:OpenTelemetry.Trace.SemanticConventions">
+            <summary>
+            Constants for semantic attribute names outlined by the OpenTelemetry specifications.
+            <see href="https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/README.md"/>.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Trace.SpanAttributeConstants">
+            <summary>
+            Defines well-known span attribute keys.
+            </summary>
+        </member>
+        <member name="T:OpenTelemetry.Trace.ActivityHelperExtensions">
+            <summary>
+            Extension methods on Activity.
+            </summary>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.TryGetStatus(System.Diagnostics.Activity,OpenTelemetry.Trace.StatusCode@,System.String@)">
+            <summary>
+            Gets the status of activity execution.
+            Activity class in .NET does not support 'Status'.
+            This extension provides a workaround to retrieve Status from special tags with key name otel.status_code and otel.status_description.
+            </summary>
+            <param name="activity">Activity instance.</param>
+            <param name="statusCode"><see cref="T:OpenTelemetry.Trace.StatusCode"/>.</param>
+            <param name="statusDescription">Status description.</param>
+            <returns><see langword="true"/> if <see cref="T:OpenTelemetry.Trace.Status"/> was found on the supplied Activity.</returns>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.GetTagValue(System.Diagnostics.Activity,System.String)">
+            <summary>
+            Gets the value of a specific tag on an <see cref="T:System.Diagnostics.Activity"/>.
+            </summary>
+            <param name="activity">Activity instance.</param>
+            <param name="tagName">Case-sensitive tag name to retrieve.</param>
+            <returns>Tag value or null if a match was not found.</returns>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.TryCheckFirstTag(System.Diagnostics.Activity,System.String,System.Object@)">
+            <summary>
+            Checks if the user provided tag name is the first tag of the <see cref="T:System.Diagnostics.Activity"/> and retrieves the tag value.
+            </summary>
+            <param name="activity">Activity instance.</param>
+            <param name="tagName">Tag name.</param>
+            <param name="tagValue">Tag value.</param>
+            <returns><see langword="true"/> if the first tag of the supplied Activity matches the user provide tag name.</returns>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.EnumerateTags``1(System.Diagnostics.Activity,``0@)">
+            <summary>
+            Enumerates all the key/value pairs on an <see cref="T:System.Diagnostics.Activity"/> without performing an allocation.
+            </summary>
+            <typeparam name="T">The struct <see cref="T:OpenTelemetry.Trace.IActivityEnumerator`1"/> implementation to use for the enumeration.</typeparam>
+            <param name="activity">Activity instance.</param>
+            <param name="tagEnumerator">Tag enumerator.</param>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.EnumerateLinks``1(System.Diagnostics.Activity,``0@)">
+            <summary>
+            Enumerates all the <see cref="T:System.Diagnostics.ActivityLink"/>s on an <see cref="T:System.Diagnostics.Activity"/> without performing an allocation.
+            </summary>
+            <typeparam name="T">The struct <see cref="T:OpenTelemetry.Trace.IActivityEnumerator`1"/> implementation to use for the enumeration.</typeparam>
+            <param name="activity">Activity instance.</param>
+            <param name="linkEnumerator">Link enumerator.</param>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.EnumerateTags``1(System.Diagnostics.ActivityLink,``0@)">
+            <summary>
+            Enumerates all the key/value pairs on an <see cref="T:System.Diagnostics.ActivityLink"/> without performing an allocation.
+            </summary>
+            <typeparam name="T">The struct <see cref="T:OpenTelemetry.Trace.IActivityEnumerator`1"/> implementation to use for the enumeration.</typeparam>
+            <param name="activityLink">ActivityLink instance.</param>
+            <param name="tagEnumerator">Tag enumerator.</param>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.EnumerateEvents``1(System.Diagnostics.Activity,``0@)">
+            <summary>
+            Enumerates all the <see cref="T:System.Diagnostics.ActivityEvent"/>s on an <see cref="T:System.Diagnostics.Activity"/> without performing an allocation.
+            </summary>
+            <typeparam name="T">The struct <see cref="T:OpenTelemetry.Trace.IActivityEnumerator`1"/> implementation to use for the enumeration.</typeparam>
+            <param name="activity">Activity instance.</param>
+            <param name="eventEnumerator">Event enumerator.</param>
+        </member>
+        <member name="M:OpenTelemetry.Trace.ActivityHelperExtensions.EnumerateTags``1(System.Diagnostics.ActivityEvent,``0@)">
+            <summary>
+            Enumerates all the key/value pairs on an <see cref="T:System.Diagnostics.ActivityEvent"/> without performing an allocation.
+            </summary>
+            <typeparam name="T">The struct <see cref="T:OpenTelemetry.Trace.IActivityEnumerator`1"/> implementation to use for the enumeration.</typeparam>
+            <param name="activityEvent">ActivityEvent instance.</param>
+            <param name="tagEnumerator">Tag enumerator.</param>
+        </member>
+        <member name="T:OpenTelemetry.Trace.IActivityEnumerator`1">
+            <summary>
+            An interface used to perform zero-allocation enumeration of <see cref="T:System.Diagnostics.Activity"/> elements. Implementation must be a struct.
+            </summary>
+            <typeparam name="T">Enumerated item type.</typeparam>
+        </member>
+        <member name="M:OpenTelemetry.Trace.IActivityEnumerator`1.ForEach(`0)">
+            <summary>
+            Called for each <see cref="T:System.Diagnostics.Activity"/> item while the enumeration is executing.
+            </summary>
+            <param name="item">Enumeration item.</param>
+            <returns><see langword="true"/> to continue the enumeration of records or <see langword="false"/> to stop (break) the enumeration.</returns>
+        </member>
+        <member name="M:OpenTelemetry.Internal.ExceptionExtensions.ToInvariantString(System.Exception)">
+            <summary>
+            Returns a culture-independent string representation of the given <paramref name="exception"/> object,
+            appropriate for diagnostics tracing.
+            </summary>
+            <param name="exception">Exception to convert to string.</param>
+            <returns>Exception as string with no culture.</returns>
+        </member>
+        <member name="T:System.ServiceProviderExtensions">
+            <summary>
+            Extension methods for OpenTelemetry dependency injection support.
+            </summary>
+        </member>
+        <member name="M:System.ServiceProviderExtensions.GetOptions``1(System.IServiceProvider)">
+            <summary>
+            Get options from the supplied <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="T">Options type.</typeparam>
+            <param name="serviceProvider"><see cref="T:System.IServiceProvider"/>.</param>
+            <returns>Options instance.</returns>
+        </member>
+    </members>
+</doc>

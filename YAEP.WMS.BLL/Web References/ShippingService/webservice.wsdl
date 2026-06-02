@@ -1,0 +1,4481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:s2="http://tempuri.org/AbstractTypes" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetShippingLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingLogResult" type="tns:ArrayOfShippingLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShippingLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShippingLog" nillable="true" type="tns:ShippingLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShippingLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Logger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClearPrintlog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearPrintlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClearPrintlogResult" type="tns:ResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWMSProductPackConfigurationList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWMSProductPackConfigurationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWMSProductPackConfigurationListResult" type="tns:ArrayOfProductPackModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductPackModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductPackModel" nillable="true" type="tns:ProductPackModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductPackModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DC_Loc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DC_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Parameter_Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProdId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Qty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="WMS_Parameter_CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WMS_Parameter_ModifiedBy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateWMSProductPackConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:UpdateProductPackConfigurationEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateProductPackConfigurationEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DCID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Parameter_Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProdId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParameterValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDelete" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfigurationKey" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateWMSProductPackConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateWMSProductPackConfigurationResult" type="tns:ResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessSeparateBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="separateBoxreplayParameter" type="tns:SeparateBoxRelayParameter" />
+            <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SeparateBoxRelayParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfSeparateBoxItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSeparateBoxItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SeparateBoxItem" nillable="true" type="tns:SeparateBoxItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SeparateBoxItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProdId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExternalKey" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SeparateBoxResultItem">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SeparateBoxItem">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="PackageNo" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumOfShipUOM" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ProcessSeparateBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessSeparateBoxResult" type="tns:SeparateBoxResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SeparateBoxResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Packages" type="tns:ArrayOfSeparateBoxResultPackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSeparateBoxResultPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SeparateBoxResultPackage" nillable="true" type="tns:SeparateBoxResultPackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SeparateBoxResultPackage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PackageNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Depth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfSeparateBoxResultItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSeparateBoxResultItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SeparateBoxResultItem" nillable="true" type="tns:SeparateBoxResultItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckStatusAndDeleteShipmentByPO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerPON" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineNumbers" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckStatusAndDeleteShipmentByPOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckStatusAndDeleteShipmentByPOResult" type="tns:ArrayOfResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResultModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResultModel" nillable="true" type="tns:ResultModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckStatusAndDeleteShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckStatusAndDeleteShipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckStatusAndDeleteShipmentResult" type="tns:ResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteShipmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoiceRelationBySyspon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LineNos" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateInvoiceRelationBySysponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateInvoiceRelationBySysponResult" type="tns:UpdateInvoiceRealtionResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateInvoiceRealtionResultModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateRealtionResult" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UninvoicedItems" type="tns:ArrayOfPackageUninvoiceRelationItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPackageUninvoiceRelationItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageUninvoiceRelationItem" nillable="true" type="tns:PackageUninvoiceRelationItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageUninvoiceRelationItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LINE_NO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPickQty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VoidInvoiceRelationBySyspon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidInvoiceRelationBySysponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VoidInvoiceRelationBySysponResult" type="tns:UpdateInvoiceRealtionResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInboundOrderUseCloud">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dstLocid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInboundOrderUseCloudResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInboundOrderUseCloudResult" type="tns:ServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckInboundOrderCanTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inboundSo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dstLocid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInboundOrderCanTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInboundOrderCanTransferResult" type="tns:ServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateWMSReceivingManifest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inboundSo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dstLocid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateWMSReceivingManifestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateWMSReceivingManifestResult" type="tns:ServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShipmentIsDraft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShipmentIsDraftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ShipmentIsDraftResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShipmentIsShipped">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShipmentIsShippedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ShipmentIsShippedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResubmmitedOrderNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResubmmitedOrderNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResubmmitedOrderNotifyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateShipmentByTradingOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateShipmentByTradingOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateShipmentByTradingOrderResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasShipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasShipmentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHasStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prod_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHasStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckHasStockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAllocate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSON" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteAllocateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteAllocateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBOL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BolNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBOLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelBOLResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBOLBySyspon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBOLBySysponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelBOLBySysponResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadTrackingLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContentBase64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadTrackingLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadTrackingLabelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackingLabelFileNameList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackingLabelFileNameListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrackingLabelFileNameListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncCarryData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Collections" type="tns:ArrayOfScannedSyncSourceEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfScannedSyncSourceEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ScannedSyncSourceEntity" nillable="true" type="tns:ScannedSyncSourceEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ScannedSyncSourceEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PackageEntity">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Carrier" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PackageEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ShipViaUid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstanceNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysPon" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SCACNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cust_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BolNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGenerateASN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipStatus" type="tns:ShipStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstanceStatus" type="tns:ShipStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ShipStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Draft" />
+          <s:enumeration value="Allocate" />
+          <s:enumeration value="Ready_to_Ship" />
+          <s:enumeration value="Shipped" />
+          <s:enumeration value="PartiallyShipped" />
+          <s:enumeration value="PickedbyCarrier" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SyncCarryDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SyncCarryDataResult" type="tns:SccanSyncResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SccanSyncResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Success" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Failure" type="tns:ArrayOfCarrierValidResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCarrierValidResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CarrierValidResult" nillable="true" type="tns:CarrierValidResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CarrierValidResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorStatus" type="tns:CarrierValid" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CarrierValid">
+        <s:restriction base="s:string">
+          <s:enumeration value="EDI856" />
+          <s:enumeration value="Redundant" />
+          <s:enumeration value="NotPick" />
+          <s:enumeration value="HasPickedbyCarrier" />
+          <s:enumeration value="Exception" />
+          <s:enumeration value="ScanQty" />
+          <s:enumeration value="CarrierNotSame" />
+          <s:enumeration value="ShipDate" />
+          <s:enumeration value="QtyNotMatch" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ExecuteScannedPackageSchedule">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExecuteScannedPackageScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteScannedPackageScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratoeEDI810">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratoeEDI810Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneratoeEDI810Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchGeneratoeEDI810">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchGeneratoeEDI810Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchGeneratoeEDI810Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteEDIFileSender">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDIType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fob" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteEDIFileSenderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteEDIFileSenderResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateEDI856">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edi856EDIDataJSON" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientShipDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateEDI856Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenerateEDI856Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSReceivingLabelToSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSReceivingLabelToScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSReceivingLabelToScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratoreTSReceivingLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratoreTSReceivingLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeneratoreTSReceivingLabelResult" type="tns:APIResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="APIResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExcutedTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReturnTSReceivingLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnTSReceivingLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnTSReceivingLabelResult" type="tns:APIResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PickAllAndAddInvoicequeue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PickAllAndAddInvoicequeueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PickAllAndAddInvoicequeueResult" type="tns:ResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAllocated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAllocatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAllocatedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShipPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShipPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateShipPackageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPickStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPickStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckPickStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddInvoicingQueue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddInvoicingQueueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddInvoicingQueueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspons" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckShipmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HasAllocated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syspon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasAllocatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasAllocatedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShipCarrierCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShipCarrierCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShipCarrierCategoriesResult" type="tns:ArrayOfShipCarrierCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShipCarrierCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShipCarrierCategory" nillable="true" type="tns:ShipCarrierCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShipCarrierCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCarrierTruckList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramters" type="tns:SearchCarrierTruckParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SearchCarrierTruckParameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Locid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckStatus" type="tns:ArrayOfShipCarrierTruckStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletStatus" type="tns:ArrayOfShipCarrierPalletStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDateTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDateTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchCarrierPalletDateType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierType" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Option" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShipCarrierTruckStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShipCarrierTruckStatus" type="tns:ShipCarrierTruckStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ShipCarrierTruckStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Void" />
+          <s:enumeration value="Open" />
+          <s:enumeration value="Loaded" />
+          <s:enumeration value="Departing" />
+          <s:enumeration value="Departured" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfShipCarrierPalletStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShipCarrierPalletStatus" type="tns:ShipCarrierPalletStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ShipCarrierPalletStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Void" />
+          <s:enumeration value="Open" />
+          <s:enumeration value="Loaded" />
+          <s:enumeration value="Departing" />
+          <s:enumeration value="Departured" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCarrierTruckListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarrierTruckListResult" type="tns:ArrayOfCarrierTruckViewModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCarrierTruckViewModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CarrierTruckViewModel" nillable="true" type="tns:CarrierTruckViewModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CarrierTruckViewModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PalletCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTruckUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTruckStatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckStatusName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTypeUID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCarrierTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addCarrierTruckDTO" type="tns:AddCarrierTruckDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddCarrierTruckDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="TruckName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Locid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierType" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCarrierTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCarrierTruckResult" type="tns:AddCarrierTruckResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddCarrierTruckResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NewUID" type="tns:ArrayOfGuid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResultBase" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AssignedPalletToTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierTruckName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="carrierType" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletUIDs" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignedPalletToTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssignedPalletToTruckResult" type="tns:AssignedPalletToTruckResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AssignedPalletToTruckResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CarrierTruckDepartured">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierTruckUID" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarrierTruckDeparturedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckDeparturedResult" type="tns:CarrierTruckDeparturedResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CarrierTruckDeparturedResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SendASNByCarrierTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierTruckJSON" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientShipDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendASNByCarrierTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendASNByCarrierTruckResult" type="tns:CarrierTruckDeparturedResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCarrierTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierTruckUIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCarrierTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCarrierTruckResult" type="tns:DeleteCarrierTruckResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteCarrierTruckResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ChangePalletToOtherTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierTruckName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="carrierType" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletUIDs" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePalletToOtherTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePalletToOtherTruckResult" type="tns:ChangePalletToOtherTruckResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangePalletToOtherTruckResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RemovePalletFromTruck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletUIDs" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePalletFromTruckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemovePalletFromTruckResult" type="tns:RemovePalletFromTruckResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RemovePalletFromTruckResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCarrierPallets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramters" type="tns:SearchCarrierPalletParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SearchCarrierPalletParameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDateTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDateTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchCarrierPalletDateType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierType" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Option" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletIDs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletUID" type="tns:ArrayOfGuid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTruckUID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckStatus" type="tns:ArrayOfShipCarrierTruckStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletStatus" type="tns:ArrayOfShipCarrierPalletStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCarrierPalletsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarrierPalletsResult" type="tns:ArrayOfCarrierPalletViewModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCarrierPalletViewModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CarrierPalletViewModel" nillable="true" type="tns:CarrierPalletViewModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CarrierPalletViewModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTypeUID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierTruckID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierTruckUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierPalletUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierPalletStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PackageCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletStatusName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Locid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddShipCarrierPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addCarrierPalletDTO" type="tns:AddCarrierPalletDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddCarrierPalletDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PalletName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Locid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierType" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddShipCarrierPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddShipCarrierPalletResult" type="tns:AddShipCarrierPalletResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddShipCarrierPalletResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AssignedPackageToPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierpackageid" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignedPackageToPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssignedPackageToPalletResult" type="tns:AssignedPackageToPalletResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AssignedPackageToPalletResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="DeleteCarrierPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletUIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCarrierPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCarrierPalletResult" type="tns:DeleteCarrierPalletResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteCarrierPalletResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ChangePackageToOtherPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carrierPalletID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrierpackages" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="locid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePackageToOtherPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePackageToOtherPalletResult" type="tns:ChangePackageToOtherPalletResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangePackageToOtherPalletResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RemovePackageFromPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="palletinfoUIDs" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePackageFromPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemovePackageFromPalletResult" type="tns:RemovePackageFromPalletResultModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RemovePackageFromPalletResultModel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResultBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetCarrierPalletInfos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="tns:SearchCarrierPalletInfoParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SearchCarrierPalletInfoParameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CarrierPalletUIDs" type="tns:ArrayOfGuid" />
+          <s:element minOccurs="0" maxOccurs="1" name="UIDs" type="tns:ArrayOfGuid" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCarrierPalletInfosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarrierPalletInfosResult" type="tns:ArrayOfShipCarrierPalletInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShipCarrierPalletInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShipCarrierPalletInfo" nillable="true" type="tns:ShipCarrierPalletInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShipCarrierPalletInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarrierPalletUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipviaUID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustPON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Syspon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BolNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChangeAllocatedInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="collection" type="tns:ArrayOfWMSChangeAllocatedInfoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWMSChangeAllocatedInfoModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WMSChangeAllocatedInfoModel" nillable="true" type="tns:WMSChangeAllocatedInfoModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WMSChangeAllocatedInfoModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OldAllocatedItemRefUID" type="tns:ArrayOfGuid" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewAllocatedItems" type="tns:ArrayOfNewAllocatedItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNewAllocatedItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NewAllocatedItem" nillable="true" type="tns:NewAllocatedItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NewAllocatedItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BolUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkOrderPodUid" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkOrderPayloadUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemUID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlotName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChangeAllocatedInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeAllocatedInfoResult" type="tns:WMSChangeAllocatedInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WMSChangeAllocatedInfoResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfShippingLog" nillable="true" type="tns:ArrayOfShippingLog" />
+      <s:element name="ResultModel" nillable="true" type="tns:ResultModel" />
+      <s:element name="ArrayOfProductPackModel" nillable="true" type="tns:ArrayOfProductPackModel" />
+      <s:element name="ArrayOfResultModel" nillable="true" type="tns:ArrayOfResultModel" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="UpdateInvoiceRealtionResultModel" nillable="true" type="tns:UpdateInvoiceRealtionResultModel" />
+      <s:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="APIResponse" nillable="true" type="tns:APIResponse" />
+      <s:element name="ArrayOfShipCarrierCategory" nillable="true" type="tns:ArrayOfShipCarrierCategory" />
+      <s:element name="CarrierTruckDeparturedResultModel" nillable="true" type="tns:CarrierTruckDeparturedResultModel" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetShippingLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingLog" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearPrintlog" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearPrintlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWMSProductPackConfigurationList" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWMSProductPackConfigurationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWMSProductPackConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWMSProductPackConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWMSProductPackConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWMSProductPackConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSeparateBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessSeparateBox" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSeparateBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessSeparateBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckStatusAndDeleteShipmentByPO" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckStatusAndDeleteShipmentByPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckStatusAndDeleteShipment" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckStatusAndDeleteShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteShipment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceRelationBySyspon" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceRelationBySysponResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponSoapIn">
+    <wsdl:part name="parameters" element="tns:VoidInvoiceRelationBySyspon" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidInvoiceRelationBySysponResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInboundOrderUseCloud" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInboundOrderUseCloudResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInboundOrderCanTransfer" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInboundOrderCanTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateWMSReceivingManifest" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateWMSReceivingManifestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftSoapIn">
+    <wsdl:part name="parameters" element="tns:ShipmentIsDraft" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftSoapOut">
+    <wsdl:part name="parameters" element="tns:ShipmentIsDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedSoapIn">
+    <wsdl:part name="parameters" element="tns:ShipmentIsShipped" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedSoapOut">
+    <wsdl:part name="parameters" element="tns:ShipmentIsShippedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:ResubmmitedOrderNotify" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:ResubmmitedOrderNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateShipmentByTradingOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateShipmentByTradingOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:HasShipment" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:HasShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckHasStock" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckHasStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteAllocate" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteAllocateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelBOL" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelBOLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelBOLBySyspon" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelBOLBySysponResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadTrackingLabel" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadTrackingLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrackingLabelFileNameList" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrackingLabelFileNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncCarryDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncCarryData" />
+  </wsdl:message>
+  <wsdl:message name="SyncCarryDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncCarryDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteScannedPackageScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteScannedPackageSchedule" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteScannedPackageScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteScannedPackageScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810SoapIn">
+    <wsdl:part name="parameters" element="tns:GeneratoeEDI810" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810SoapOut">
+    <wsdl:part name="parameters" element="tns:GeneratoeEDI810Response" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810SoapIn">
+    <wsdl:part name="parameters" element="tns:BatchGeneratoeEDI810" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810SoapOut">
+    <wsdl:part name="parameters" element="tns:BatchGeneratoeEDI810Response" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteEDIFileSender" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteEDIFileSenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856SoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateEDI856" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856SoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateEDI856Response" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:TSReceivingLabelToSchedule" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:TSReceivingLabelToScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneratoreTSReceivingLabel" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneratoreTSReceivingLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnTSReceivingLabel" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnTSReceivingLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueSoapIn">
+    <wsdl:part name="parameters" element="tns:PickAllAndAddInvoicequeue" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueSoapOut">
+    <wsdl:part name="parameters" element="tns:PickAllAndAddInvoicequeueResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAllocated" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAllocatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShipPackage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShipPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPickStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPickStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueSoapIn">
+    <wsdl:part name="parameters" element="tns:AddInvoicingQueue" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueSoapOut">
+    <wsdl:part name="parameters" element="tns:AddInvoicingQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckShipment" />
+  </wsdl:message>
+  <wsdl:message name="CheckShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedSoapIn">
+    <wsdl:part name="parameters" element="tns:HasAllocated" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedSoapOut">
+    <wsdl:part name="parameters" element="tns:HasAllocatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShipCarrierCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShipCarrierCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetShipCarrierCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShipCarrierCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierTruckListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarrierTruckList" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierTruckListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarrierTruckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCarrierTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCarrierTruck" />
+  </wsdl:message>
+  <wsdl:message name="AddCarrierTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCarrierTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignedPalletToTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignedPalletToTruck" />
+  </wsdl:message>
+  <wsdl:message name="AssignedPalletToTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignedPalletToTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarrierTruckDeparturedSoapIn">
+    <wsdl:part name="parameters" element="tns:CarrierTruckDepartured" />
+  </wsdl:message>
+  <wsdl:message name="CarrierTruckDeparturedSoapOut">
+    <wsdl:part name="parameters" element="tns:CarrierTruckDeparturedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:SendASNByCarrierTruck" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:SendASNByCarrierTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarrierTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCarrierTruck" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarrierTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCarrierTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePalletToOtherTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePalletToOtherTruck" />
+  </wsdl:message>
+  <wsdl:message name="ChangePalletToOtherTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePalletToOtherTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePalletFromTruckSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePalletFromTruck" />
+  </wsdl:message>
+  <wsdl:message name="RemovePalletFromTruckSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePalletFromTruckResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierPalletsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarrierPallets" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierPalletsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarrierPalletsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShipCarrierPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShipCarrierPallet" />
+  </wsdl:message>
+  <wsdl:message name="AddShipCarrierPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShipCarrierPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignedPackageToPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignedPackageToPallet" />
+  </wsdl:message>
+  <wsdl:message name="AssignedPackageToPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignedPackageToPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarrierPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCarrierPallet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarrierPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCarrierPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePackageToOtherPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePackageToOtherPallet" />
+  </wsdl:message>
+  <wsdl:message name="ChangePackageToOtherPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePackageToOtherPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePackageFromPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePackageFromPallet" />
+  </wsdl:message>
+  <wsdl:message name="RemovePackageFromPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePackageFromPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierPalletInfosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarrierPalletInfos" />
+  </wsdl:message>
+  <wsdl:message name="GetCarrierPalletInfosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarrierPalletInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAllocatedInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeAllocatedInfo" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAllocatedInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeAllocatedInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingLogHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShippingLog" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListHttpGetIn">
+    <wsdl:part name="productid" type="s:string" />
+    <wsdl:part name="loc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProductPackModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOHttpGetIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="customerPON" type="s:string" />
+    <wsdl:part name="lineNumbers" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfResultModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+    <wsdl:part name="InvoiceNo" type="s:string" />
+    <wsdl:part name="InvoiceUID" type="s:string" />
+    <wsdl:part name="LineNos" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponHttpGetOut">
+    <wsdl:part name="Body" element="tns:UpdateInvoiceRealtionResultModel" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+    <wsdl:part name="InvoiceNo" type="s:string" />
+    <wsdl:part name="InvoiceUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponHttpGetOut">
+    <wsdl:part name="Body" element="tns:UpdateInvoiceRealtionResultModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudHttpGetIn">
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferHttpGetIn">
+    <wsdl:part name="inboundSo" type="s:string" />
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestHttpGetIn">
+    <wsdl:part name="inboundSo" type="s:string" />
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifyHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifyHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockHttpGetIn">
+    <wsdl:part name="prod_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateHttpGetIn">
+    <wsdl:part name="JSON" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLHttpGetIn">
+    <wsdl:part name="BolNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelHttpGetIn">
+    <wsdl:part name="orderNumber" type="s:string" />
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="fileContentBase64" type="s:string" />
+    <wsdl:part name="fileContentType" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListHttpGetIn">
+    <wsdl:part name="orderNumber" type="s:string" />
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteScannedPackageScheduleHttpGetIn" />
+  <wsdl:message name="ExecuteScannedPackageScheduleHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810HttpGetIn">
+    <wsdl:part name="CustId" type="s:string" />
+    <wsdl:part name="InvoiceId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810HttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810HttpGetIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderHttpGetIn">
+    <wsdl:part name="EDIType" type="s:string" />
+    <wsdl:part name="filePath" type="s:string" />
+    <wsdl:part name="fob" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856HttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="edi856EDIDataJSON" type="s:string" />
+    <wsdl:part name="ClientShipDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856HttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelHttpGetOut">
+    <wsdl:part name="Body" element="tns:APIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelHttpGetIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelHttpGetOut">
+    <wsdl:part name="Body" element="tns:APIResponse" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+    <wsdl:part name="customerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedHttpGetIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetShipCarrierCategoriesHttpGetIn" />
+  <wsdl:message name="GetShipCarrierCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShipCarrierCategory" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckHttpGetIn">
+    <wsdl:part name="carrierTruckJSON" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="clientShipDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckHttpGetOut">
+    <wsdl:part name="Body" element="tns:CarrierTruckDeparturedResultModel" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingLogHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShippingLog" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintlogHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListHttpPostIn">
+    <wsdl:part name="productid" type="s:string" />
+    <wsdl:part name="loc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWMSProductPackConfigurationListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProductPackModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOHttpPostIn">
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="customerPON" type="s:string" />
+    <wsdl:part name="lineNumbers" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentByPOHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfResultModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusAndDeleteShipmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShipmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+    <wsdl:part name="InvoiceNo" type="s:string" />
+    <wsdl:part name="InvoiceUID" type="s:string" />
+    <wsdl:part name="LineNos" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceRelationBySysponHttpPostOut">
+    <wsdl:part name="Body" element="tns:UpdateInvoiceRealtionResultModel" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+    <wsdl:part name="InvoiceNo" type="s:string" />
+    <wsdl:part name="InvoiceUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VoidInvoiceRelationBySysponHttpPostOut">
+    <wsdl:part name="Body" element="tns:UpdateInvoiceRealtionResultModel" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudHttpPostIn">
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderUseCloudHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferHttpPostIn">
+    <wsdl:part name="inboundSo" type="s:string" />
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckInboundOrderCanTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestHttpPostIn">
+    <wsdl:part name="inboundSo" type="s:string" />
+    <wsdl:part name="dstLocid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerateWMSReceivingManifestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsDraftHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ShipmentIsShippedHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifyHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResubmmitedOrderNotifyHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateShipmentByTradingOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasShipmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockHttpPostIn">
+    <wsdl:part name="prod_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckHasStockHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateHttpPostIn">
+    <wsdl:part name="JSON" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteAllocateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLHttpPostIn">
+    <wsdl:part name="BolNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBOLBySysponHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelHttpPostIn">
+    <wsdl:part name="orderNumber" type="s:string" />
+    <wsdl:part name="fileName" type="s:string" />
+    <wsdl:part name="fileContentBase64" type="s:string" />
+    <wsdl:part name="fileContentType" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadTrackingLabelHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListHttpPostIn">
+    <wsdl:part name="orderNumber" type="s:string" />
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTrackingLabelFileNameListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteScannedPackageScheduleHttpPostIn" />
+  <wsdl:message name="ExecuteScannedPackageScheduleHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810HttpPostIn">
+    <wsdl:part name="CustId" type="s:string" />
+    <wsdl:part name="InvoiceId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoeEDI810HttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810HttpPostIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BatchGeneratoeEDI810HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderHttpPostIn">
+    <wsdl:part name="EDIType" type="s:string" />
+    <wsdl:part name="filePath" type="s:string" />
+    <wsdl:part name="fob" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteEDIFileSenderHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856HttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="edi856EDIDataJSON" type="s:string" />
+    <wsdl:part name="ClientShipDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerateEDI856HttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TSReceivingLabelToScheduleHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeneratoreTSReceivingLabelHttpPostOut">
+    <wsdl:part name="Body" element="tns:APIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelHttpPostIn">
+    <wsdl:part name="Syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTSReceivingLabelHttpPostOut">
+    <wsdl:part name="Body" element="tns:APIResponse" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PickAllAndAddInvoicequeueHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultModel" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAllocatedHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShipPackageHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPickStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+    <wsdl:part name="customerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddInvoicingQueueHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedHttpPostIn">
+    <wsdl:part name="syspon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasAllocatedHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetShipCarrierCategoriesHttpPostIn" />
+  <wsdl:message name="GetShipCarrierCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShipCarrierCategory" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckHttpPostIn">
+    <wsdl:part name="carrierTruckJSON" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="clientShipDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendASNByCarrierTruckHttpPostOut">
+    <wsdl:part name="Body" element="tns:CarrierTruckDeparturedResultModel" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="GetShippingLog">
+      <wsdl:input message="tns:GetShippingLogSoapIn" />
+      <wsdl:output message="tns:GetShippingLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <wsdl:input message="tns:ClearPrintlogSoapIn" />
+      <wsdl:output message="tns:ClearPrintlogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <wsdl:input message="tns:GetWMSProductPackConfigurationListSoapIn" />
+      <wsdl:output message="tns:GetWMSProductPackConfigurationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWMSProductPackConfiguration">
+      <wsdl:input message="tns:UpdateWMSProductPackConfigurationSoapIn" />
+      <wsdl:output message="tns:UpdateWMSProductPackConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSeparateBox">
+      <wsdl:input message="tns:ProcessSeparateBoxSoapIn" />
+      <wsdl:output message="tns:ProcessSeparateBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentByPOSoapIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentByPOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentSoapIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <wsdl:input message="tns:DeleteShipmentSoapIn" />
+      <wsdl:output message="tns:DeleteShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <wsdl:input message="tns:UpdateInvoiceRelationBySysponSoapIn" />
+      <wsdl:output message="tns:UpdateInvoiceRelationBySysponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <wsdl:input message="tns:VoidInvoiceRelationBySysponSoapIn" />
+      <wsdl:output message="tns:VoidInvoiceRelationBySysponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <wsdl:input message="tns:CheckInboundOrderUseCloudSoapIn" />
+      <wsdl:output message="tns:CheckInboundOrderUseCloudSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <wsdl:input message="tns:CheckInboundOrderCanTransferSoapIn" />
+      <wsdl:output message="tns:CheckInboundOrderCanTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <wsdl:input message="tns:GenerateWMSReceivingManifestSoapIn" />
+      <wsdl:output message="tns:GenerateWMSReceivingManifestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <wsdl:input message="tns:ShipmentIsDraftSoapIn" />
+      <wsdl:output message="tns:ShipmentIsDraftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <wsdl:input message="tns:ShipmentIsShippedSoapIn" />
+      <wsdl:output message="tns:ShipmentIsShippedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <wsdl:input message="tns:ResubmmitedOrderNotifySoapIn" />
+      <wsdl:output message="tns:ResubmmitedOrderNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <wsdl:input message="tns:CreateShipmentByTradingOrderSoapIn" />
+      <wsdl:output message="tns:CreateShipmentByTradingOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <wsdl:input message="tns:HasShipmentSoapIn" />
+      <wsdl:output message="tns:HasShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <wsdl:input message="tns:CheckHasStockSoapIn" />
+      <wsdl:output message="tns:CheckHasStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <wsdl:input message="tns:ExecuteAllocateSoapIn" />
+      <wsdl:output message="tns:ExecuteAllocateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <wsdl:input message="tns:CancelBOLSoapIn" />
+      <wsdl:output message="tns:CancelBOLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <wsdl:input message="tns:CancelBOLBySysponSoapIn" />
+      <wsdl:output message="tns:CancelBOLBySysponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <wsdl:input message="tns:UploadTrackingLabelSoapIn" />
+      <wsdl:output message="tns:UploadTrackingLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <wsdl:input message="tns:GetTrackingLabelFileNameListSoapIn" />
+      <wsdl:output message="tns:GetTrackingLabelFileNameListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncCarryData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">目前沒上線</wsdl:documentation>
+      <wsdl:input message="tns:SyncCarryDataSoapIn" />
+      <wsdl:output message="tns:SyncCarryDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">目前沒上線</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteScannedPackageScheduleSoapIn" />
+      <wsdl:output message="tns:ExecuteScannedPackageScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <wsdl:input message="tns:GeneratoeEDI810SoapIn" />
+      <wsdl:output message="tns:GeneratoeEDI810SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <wsdl:input message="tns:BatchGeneratoeEDI810SoapIn" />
+      <wsdl:output message="tns:BatchGeneratoeEDI810SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <wsdl:input message="tns:ExecuteEDIFileSenderSoapIn" />
+      <wsdl:output message="tns:ExecuteEDIFileSenderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <wsdl:input message="tns:GenerateEDI856SoapIn" />
+      <wsdl:output message="tns:GenerateEDI856SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <wsdl:input message="tns:TSReceivingLabelToScheduleSoapIn" />
+      <wsdl:output message="tns:TSReceivingLabelToScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <wsdl:input message="tns:GeneratoreTSReceivingLabelSoapIn" />
+      <wsdl:output message="tns:GeneratoreTSReceivingLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <wsdl:input message="tns:ReturnTSReceivingLabelSoapIn" />
+      <wsdl:output message="tns:ReturnTSReceivingLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <wsdl:input message="tns:PickAllAndAddInvoicequeueSoapIn" />
+      <wsdl:output message="tns:PickAllAndAddInvoicequeueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <wsdl:input message="tns:UpdateAllocatedSoapIn" />
+      <wsdl:output message="tns:UpdateAllocatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <wsdl:input message="tns:UpdateShipPackageSoapIn" />
+      <wsdl:output message="tns:UpdateShipPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <wsdl:input message="tns:CheckPickStatusSoapIn" />
+      <wsdl:output message="tns:CheckPickStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <wsdl:input message="tns:AddInvoicingQueueSoapIn" />
+      <wsdl:output message="tns:AddInvoicingQueueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckShipment">
+      <wsdl:input message="tns:CheckShipmentSoapIn" />
+      <wsdl:output message="tns:CheckShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <wsdl:input message="tns:HasAllocatedSoapIn" />
+      <wsdl:output message="tns:HasAllocatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <wsdl:input message="tns:GetShipCarrierCategoriesSoapIn" />
+      <wsdl:output message="tns:GetShipCarrierCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierTruckList">
+      <wsdl:input message="tns:GetCarrierTruckListSoapIn" />
+      <wsdl:output message="tns:GetCarrierTruckListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCarrierTruck">
+      <wsdl:input message="tns:AddCarrierTruckSoapIn" />
+      <wsdl:output message="tns:AddCarrierTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPalletToTruck">
+      <wsdl:input message="tns:AssignedPalletToTruckSoapIn" />
+      <wsdl:output message="tns:AssignedPalletToTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarrierTruckDepartured">
+      <wsdl:input message="tns:CarrierTruckDeparturedSoapIn" />
+      <wsdl:output message="tns:CarrierTruckDeparturedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <wsdl:input message="tns:SendASNByCarrierTruckSoapIn" />
+      <wsdl:output message="tns:SendASNByCarrierTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierTruck">
+      <wsdl:input message="tns:DeleteCarrierTruckSoapIn" />
+      <wsdl:output message="tns:DeleteCarrierTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePalletToOtherTruck">
+      <wsdl:input message="tns:ChangePalletToOtherTruckSoapIn" />
+      <wsdl:output message="tns:ChangePalletToOtherTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePalletFromTruck">
+      <wsdl:input message="tns:RemovePalletFromTruckSoapIn" />
+      <wsdl:output message="tns:RemovePalletFromTruckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPallets">
+      <wsdl:input message="tns:GetCarrierPalletsSoapIn" />
+      <wsdl:output message="tns:GetCarrierPalletsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShipCarrierPallet">
+      <wsdl:input message="tns:AddShipCarrierPalletSoapIn" />
+      <wsdl:output message="tns:AddShipCarrierPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPackageToPallet">
+      <wsdl:input message="tns:AssignedPackageToPalletSoapIn" />
+      <wsdl:output message="tns:AssignedPackageToPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierPallet">
+      <wsdl:input message="tns:DeleteCarrierPalletSoapIn" />
+      <wsdl:output message="tns:DeleteCarrierPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePackageToOtherPallet">
+      <wsdl:input message="tns:ChangePackageToOtherPalletSoapIn" />
+      <wsdl:output message="tns:ChangePackageToOtherPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePackageFromPallet">
+      <wsdl:input message="tns:RemovePackageFromPalletSoapIn" />
+      <wsdl:output message="tns:RemovePackageFromPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPalletInfos">
+      <wsdl:input message="tns:GetCarrierPalletInfosSoapIn" />
+      <wsdl:output message="tns:GetCarrierPalletInfosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAllocatedInfo">
+      <wsdl:input message="tns:ChangeAllocatedInfoSoapIn" />
+      <wsdl:output message="tns:ChangeAllocatedInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="GetShippingLog">
+      <wsdl:input message="tns:GetShippingLogHttpGetIn" />
+      <wsdl:output message="tns:GetShippingLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <wsdl:input message="tns:ClearPrintlogHttpGetIn" />
+      <wsdl:output message="tns:ClearPrintlogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <wsdl:input message="tns:GetWMSProductPackConfigurationListHttpGetIn" />
+      <wsdl:output message="tns:GetWMSProductPackConfigurationListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentByPOHttpGetIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentByPOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentHttpGetIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <wsdl:input message="tns:DeleteShipmentHttpGetIn" />
+      <wsdl:output message="tns:DeleteShipmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <wsdl:input message="tns:UpdateInvoiceRelationBySysponHttpGetIn" />
+      <wsdl:output message="tns:UpdateInvoiceRelationBySysponHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <wsdl:input message="tns:VoidInvoiceRelationBySysponHttpGetIn" />
+      <wsdl:output message="tns:VoidInvoiceRelationBySysponHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <wsdl:input message="tns:CheckInboundOrderUseCloudHttpGetIn" />
+      <wsdl:output message="tns:CheckInboundOrderUseCloudHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <wsdl:input message="tns:CheckInboundOrderCanTransferHttpGetIn" />
+      <wsdl:output message="tns:CheckInboundOrderCanTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <wsdl:input message="tns:GenerateWMSReceivingManifestHttpGetIn" />
+      <wsdl:output message="tns:GenerateWMSReceivingManifestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <wsdl:input message="tns:ShipmentIsDraftHttpGetIn" />
+      <wsdl:output message="tns:ShipmentIsDraftHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <wsdl:input message="tns:ShipmentIsShippedHttpGetIn" />
+      <wsdl:output message="tns:ShipmentIsShippedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <wsdl:input message="tns:ResubmmitedOrderNotifyHttpGetIn" />
+      <wsdl:output message="tns:ResubmmitedOrderNotifyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <wsdl:input message="tns:CreateShipmentByTradingOrderHttpGetIn" />
+      <wsdl:output message="tns:CreateShipmentByTradingOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <wsdl:input message="tns:HasShipmentHttpGetIn" />
+      <wsdl:output message="tns:HasShipmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <wsdl:input message="tns:CheckHasStockHttpGetIn" />
+      <wsdl:output message="tns:CheckHasStockHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <wsdl:input message="tns:ExecuteAllocateHttpGetIn" />
+      <wsdl:output message="tns:ExecuteAllocateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <wsdl:input message="tns:CancelBOLHttpGetIn" />
+      <wsdl:output message="tns:CancelBOLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <wsdl:input message="tns:CancelBOLBySysponHttpGetIn" />
+      <wsdl:output message="tns:CancelBOLBySysponHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <wsdl:input message="tns:UploadTrackingLabelHttpGetIn" />
+      <wsdl:output message="tns:UploadTrackingLabelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <wsdl:input message="tns:GetTrackingLabelFileNameListHttpGetIn" />
+      <wsdl:output message="tns:GetTrackingLabelFileNameListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">目前沒上線</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteScannedPackageScheduleHttpGetIn" />
+      <wsdl:output message="tns:ExecuteScannedPackageScheduleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <wsdl:input message="tns:GeneratoeEDI810HttpGetIn" />
+      <wsdl:output message="tns:GeneratoeEDI810HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <wsdl:input message="tns:BatchGeneratoeEDI810HttpGetIn" />
+      <wsdl:output message="tns:BatchGeneratoeEDI810HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <wsdl:input message="tns:ExecuteEDIFileSenderHttpGetIn" />
+      <wsdl:output message="tns:ExecuteEDIFileSenderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <wsdl:input message="tns:GenerateEDI856HttpGetIn" />
+      <wsdl:output message="tns:GenerateEDI856HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <wsdl:input message="tns:TSReceivingLabelToScheduleHttpGetIn" />
+      <wsdl:output message="tns:TSReceivingLabelToScheduleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <wsdl:input message="tns:GeneratoreTSReceivingLabelHttpGetIn" />
+      <wsdl:output message="tns:GeneratoreTSReceivingLabelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <wsdl:input message="tns:ReturnTSReceivingLabelHttpGetIn" />
+      <wsdl:output message="tns:ReturnTSReceivingLabelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <wsdl:input message="tns:PickAllAndAddInvoicequeueHttpGetIn" />
+      <wsdl:output message="tns:PickAllAndAddInvoicequeueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <wsdl:input message="tns:UpdateAllocatedHttpGetIn" />
+      <wsdl:output message="tns:UpdateAllocatedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <wsdl:input message="tns:UpdateShipPackageHttpGetIn" />
+      <wsdl:output message="tns:UpdateShipPackageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <wsdl:input message="tns:CheckPickStatusHttpGetIn" />
+      <wsdl:output message="tns:CheckPickStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <wsdl:input message="tns:AddInvoicingQueueHttpGetIn" />
+      <wsdl:output message="tns:AddInvoicingQueueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <wsdl:input message="tns:HasAllocatedHttpGetIn" />
+      <wsdl:output message="tns:HasAllocatedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <wsdl:input message="tns:GetShipCarrierCategoriesHttpGetIn" />
+      <wsdl:output message="tns:GetShipCarrierCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <wsdl:input message="tns:SendASNByCarrierTruckHttpGetIn" />
+      <wsdl:output message="tns:SendASNByCarrierTruckHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="GetShippingLog">
+      <wsdl:input message="tns:GetShippingLogHttpPostIn" />
+      <wsdl:output message="tns:GetShippingLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <wsdl:input message="tns:ClearPrintlogHttpPostIn" />
+      <wsdl:output message="tns:ClearPrintlogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <wsdl:input message="tns:GetWMSProductPackConfigurationListHttpPostIn" />
+      <wsdl:output message="tns:GetWMSProductPackConfigurationListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentByPOHttpPostIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentByPOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <wsdl:input message="tns:CheckStatusAndDeleteShipmentHttpPostIn" />
+      <wsdl:output message="tns:CheckStatusAndDeleteShipmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <wsdl:input message="tns:DeleteShipmentHttpPostIn" />
+      <wsdl:output message="tns:DeleteShipmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <wsdl:input message="tns:UpdateInvoiceRelationBySysponHttpPostIn" />
+      <wsdl:output message="tns:UpdateInvoiceRelationBySysponHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <wsdl:input message="tns:VoidInvoiceRelationBySysponHttpPostIn" />
+      <wsdl:output message="tns:VoidInvoiceRelationBySysponHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <wsdl:input message="tns:CheckInboundOrderUseCloudHttpPostIn" />
+      <wsdl:output message="tns:CheckInboundOrderUseCloudHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <wsdl:input message="tns:CheckInboundOrderCanTransferHttpPostIn" />
+      <wsdl:output message="tns:CheckInboundOrderCanTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <wsdl:input message="tns:GenerateWMSReceivingManifestHttpPostIn" />
+      <wsdl:output message="tns:GenerateWMSReceivingManifestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <wsdl:input message="tns:ShipmentIsDraftHttpPostIn" />
+      <wsdl:output message="tns:ShipmentIsDraftHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <wsdl:input message="tns:ShipmentIsShippedHttpPostIn" />
+      <wsdl:output message="tns:ShipmentIsShippedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <wsdl:input message="tns:ResubmmitedOrderNotifyHttpPostIn" />
+      <wsdl:output message="tns:ResubmmitedOrderNotifyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <wsdl:input message="tns:CreateShipmentByTradingOrderHttpPostIn" />
+      <wsdl:output message="tns:CreateShipmentByTradingOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <wsdl:input message="tns:HasShipmentHttpPostIn" />
+      <wsdl:output message="tns:HasShipmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <wsdl:input message="tns:CheckHasStockHttpPostIn" />
+      <wsdl:output message="tns:CheckHasStockHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <wsdl:input message="tns:ExecuteAllocateHttpPostIn" />
+      <wsdl:output message="tns:ExecuteAllocateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <wsdl:input message="tns:CancelBOLHttpPostIn" />
+      <wsdl:output message="tns:CancelBOLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <wsdl:input message="tns:CancelBOLBySysponHttpPostIn" />
+      <wsdl:output message="tns:CancelBOLBySysponHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <wsdl:input message="tns:UploadTrackingLabelHttpPostIn" />
+      <wsdl:output message="tns:UploadTrackingLabelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <wsdl:input message="tns:GetTrackingLabelFileNameListHttpPostIn" />
+      <wsdl:output message="tns:GetTrackingLabelFileNameListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">目前沒上線</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteScannedPackageScheduleHttpPostIn" />
+      <wsdl:output message="tns:ExecuteScannedPackageScheduleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <wsdl:input message="tns:GeneratoeEDI810HttpPostIn" />
+      <wsdl:output message="tns:GeneratoeEDI810HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <wsdl:input message="tns:BatchGeneratoeEDI810HttpPostIn" />
+      <wsdl:output message="tns:BatchGeneratoeEDI810HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <wsdl:input message="tns:ExecuteEDIFileSenderHttpPostIn" />
+      <wsdl:output message="tns:ExecuteEDIFileSenderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <wsdl:input message="tns:GenerateEDI856HttpPostIn" />
+      <wsdl:output message="tns:GenerateEDI856HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <wsdl:input message="tns:TSReceivingLabelToScheduleHttpPostIn" />
+      <wsdl:output message="tns:TSReceivingLabelToScheduleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <wsdl:input message="tns:GeneratoreTSReceivingLabelHttpPostIn" />
+      <wsdl:output message="tns:GeneratoreTSReceivingLabelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <wsdl:input message="tns:ReturnTSReceivingLabelHttpPostIn" />
+      <wsdl:output message="tns:ReturnTSReceivingLabelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <wsdl:input message="tns:PickAllAndAddInvoicequeueHttpPostIn" />
+      <wsdl:output message="tns:PickAllAndAddInvoicequeueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <wsdl:input message="tns:UpdateAllocatedHttpPostIn" />
+      <wsdl:output message="tns:UpdateAllocatedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <wsdl:input message="tns:UpdateShipPackageHttpPostIn" />
+      <wsdl:output message="tns:UpdateShipPackageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <wsdl:input message="tns:CheckPickStatusHttpPostIn" />
+      <wsdl:output message="tns:CheckPickStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <wsdl:input message="tns:AddInvoicingQueueHttpPostIn" />
+      <wsdl:output message="tns:AddInvoicingQueueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <wsdl:input message="tns:HasAllocatedHttpPostIn" />
+      <wsdl:output message="tns:HasAllocatedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <wsdl:input message="tns:GetShipCarrierCategoriesHttpPostIn" />
+      <wsdl:output message="tns:GetShipCarrierCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <wsdl:input message="tns:SendASNByCarrierTruckHttpPostIn" />
+      <wsdl:output message="tns:SendASNByCarrierTruckHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShippingLog">
+      <soap:operation soapAction="http://tempuri.org/GetShippingLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <soap:operation soapAction="http://tempuri.org/ClearPrintlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <soap:operation soapAction="http://tempuri.org/GetWMSProductPackConfigurationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWMSProductPackConfiguration">
+      <soap:operation soapAction="http://tempuri.org/UpdateWMSProductPackConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSeparateBox">
+      <soap:operation soapAction="http://tempuri.org/ProcessSeparateBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <soap:operation soapAction="http://tempuri.org/CheckStatusAndDeleteShipmentByPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <soap:operation soapAction="http://tempuri.org/CheckStatusAndDeleteShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <soap:operation soapAction="http://tempuri.org/DeleteShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <soap:operation soapAction="http://tempuri.org/UpdateInvoiceRelationBySyspon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <soap:operation soapAction="http://tempuri.org/VoidInvoiceRelationBySyspon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <soap:operation soapAction="http://tempuri.org/CheckInboundOrderUseCloud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <soap:operation soapAction="http://tempuri.org/CheckInboundOrderCanTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <soap:operation soapAction="http://tempuri.org/GenerateWMSReceivingManifest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <soap:operation soapAction="http://tempuri.org/ShipmentIsDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <soap:operation soapAction="http://tempuri.org/ShipmentIsShipped" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <soap:operation soapAction="http://tempuri.org/ResubmmitedOrderNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <soap:operation soapAction="http://tempuri.org/CreateShipmentByTradingOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <soap:operation soapAction="http://tempuri.org/HasShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <soap:operation soapAction="http://tempuri.org/CheckHasStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <soap:operation soapAction="http://tempuri.org/ExecuteAllocate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <soap:operation soapAction="http://tempuri.org/CancelBOL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <soap:operation soapAction="http://tempuri.org/CancelBOLBySyspon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <soap:operation soapAction="http://tempuri.org/UploadTrackingLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <soap:operation soapAction="http://tempuri.org/GetTrackingLabelFileNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCarryData">
+      <soap:operation soapAction="http://tempuri.org/SyncCarryData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <soap:operation soapAction="http://tempuri.org/ExecuteScannedPackageSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <soap:operation soapAction="http://tempuri.org/GeneratoeEDI810" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <soap:operation soapAction="http://tempuri.org/BatchGeneratoeEDI810" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <soap:operation soapAction="http://tempuri.org/ExecuteEDIFileSender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <soap:operation soapAction="http://tempuri.org/GenerateEDI856" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <soap:operation soapAction="http://tempuri.org/TSReceivingLabelToSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <soap:operation soapAction="http://tempuri.org/GeneratoreTSReceivingLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <soap:operation soapAction="http://tempuri.org/ReturnTSReceivingLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <soap:operation soapAction="http://tempuri.org/PickAllAndAddInvoicequeue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <soap:operation soapAction="http://tempuri.org/UpdateAllocated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <soap:operation soapAction="http://tempuri.org/UpdateShipPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckPickStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <soap:operation soapAction="http://tempuri.org/AddInvoicingQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckShipment">
+      <soap:operation soapAction="http://tempuri.org/CheckShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <soap:operation soapAction="http://tempuri.org/HasAllocated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <soap:operation soapAction="http://tempuri.org/GetShipCarrierCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierTruckList">
+      <soap:operation soapAction="http://tempuri.org/GetCarrierTruckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCarrierTruck">
+      <soap:operation soapAction="http://tempuri.org/AddCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPalletToTruck">
+      <soap:operation soapAction="http://tempuri.org/AssignedPalletToTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarrierTruckDepartured">
+      <soap:operation soapAction="http://tempuri.org/CarrierTruckDepartured" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <soap:operation soapAction="http://tempuri.org/SendASNByCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierTruck">
+      <soap:operation soapAction="http://tempuri.org/DeleteCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePalletToOtherTruck">
+      <soap:operation soapAction="http://tempuri.org/ChangePalletToOtherTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePalletFromTruck">
+      <soap:operation soapAction="http://tempuri.org/RemovePalletFromTruck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPallets">
+      <soap:operation soapAction="http://tempuri.org/GetCarrierPallets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShipCarrierPallet">
+      <soap:operation soapAction="http://tempuri.org/AddShipCarrierPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPackageToPallet">
+      <soap:operation soapAction="http://tempuri.org/AssignedPackageToPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierPallet">
+      <soap:operation soapAction="http://tempuri.org/DeleteCarrierPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePackageToOtherPallet">
+      <soap:operation soapAction="http://tempuri.org/ChangePackageToOtherPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePackageFromPallet">
+      <soap:operation soapAction="http://tempuri.org/RemovePackageFromPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPalletInfos">
+      <soap:operation soapAction="http://tempuri.org/GetCarrierPalletInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAllocatedInfo">
+      <soap:operation soapAction="http://tempuri.org/ChangeAllocatedInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShippingLog">
+      <soap12:operation soapAction="http://tempuri.org/GetShippingLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <soap12:operation soapAction="http://tempuri.org/ClearPrintlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <soap12:operation soapAction="http://tempuri.org/GetWMSProductPackConfigurationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWMSProductPackConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/UpdateWMSProductPackConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSeparateBox">
+      <soap12:operation soapAction="http://tempuri.org/ProcessSeparateBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <soap12:operation soapAction="http://tempuri.org/CheckStatusAndDeleteShipmentByPO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <soap12:operation soapAction="http://tempuri.org/CheckStatusAndDeleteShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <soap12:operation soapAction="http://tempuri.org/DeleteShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <soap12:operation soapAction="http://tempuri.org/UpdateInvoiceRelationBySyspon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <soap12:operation soapAction="http://tempuri.org/VoidInvoiceRelationBySyspon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <soap12:operation soapAction="http://tempuri.org/CheckInboundOrderUseCloud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <soap12:operation soapAction="http://tempuri.org/CheckInboundOrderCanTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <soap12:operation soapAction="http://tempuri.org/GenerateWMSReceivingManifest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <soap12:operation soapAction="http://tempuri.org/ShipmentIsDraft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <soap12:operation soapAction="http://tempuri.org/ShipmentIsShipped" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <soap12:operation soapAction="http://tempuri.org/ResubmmitedOrderNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <soap12:operation soapAction="http://tempuri.org/CreateShipmentByTradingOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <soap12:operation soapAction="http://tempuri.org/HasShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <soap12:operation soapAction="http://tempuri.org/CheckHasStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteAllocate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <soap12:operation soapAction="http://tempuri.org/CancelBOL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <soap12:operation soapAction="http://tempuri.org/CancelBOLBySyspon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <soap12:operation soapAction="http://tempuri.org/UploadTrackingLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <soap12:operation soapAction="http://tempuri.org/GetTrackingLabelFileNameList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCarryData">
+      <soap12:operation soapAction="http://tempuri.org/SyncCarryData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteScannedPackageSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <soap12:operation soapAction="http://tempuri.org/GeneratoeEDI810" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <soap12:operation soapAction="http://tempuri.org/BatchGeneratoeEDI810" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteEDIFileSender" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <soap12:operation soapAction="http://tempuri.org/GenerateEDI856" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <soap12:operation soapAction="http://tempuri.org/TSReceivingLabelToSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <soap12:operation soapAction="http://tempuri.org/GeneratoreTSReceivingLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <soap12:operation soapAction="http://tempuri.org/ReturnTSReceivingLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <soap12:operation soapAction="http://tempuri.org/PickAllAndAddInvoicequeue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAllocated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShipPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <soap12:operation soapAction="http://tempuri.org/CheckPickStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <soap12:operation soapAction="http://tempuri.org/AddInvoicingQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckShipment">
+      <soap12:operation soapAction="http://tempuri.org/CheckShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <soap12:operation soapAction="http://tempuri.org/HasAllocated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <soap12:operation soapAction="http://tempuri.org/GetShipCarrierCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierTruckList">
+      <soap12:operation soapAction="http://tempuri.org/GetCarrierTruckList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCarrierTruck">
+      <soap12:operation soapAction="http://tempuri.org/AddCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPalletToTruck">
+      <soap12:operation soapAction="http://tempuri.org/AssignedPalletToTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarrierTruckDepartured">
+      <soap12:operation soapAction="http://tempuri.org/CarrierTruckDepartured" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <soap12:operation soapAction="http://tempuri.org/SendASNByCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierTruck">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCarrierTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePalletToOtherTruck">
+      <soap12:operation soapAction="http://tempuri.org/ChangePalletToOtherTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePalletFromTruck">
+      <soap12:operation soapAction="http://tempuri.org/RemovePalletFromTruck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPallets">
+      <soap12:operation soapAction="http://tempuri.org/GetCarrierPallets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShipCarrierPallet">
+      <soap12:operation soapAction="http://tempuri.org/AddShipCarrierPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignedPackageToPallet">
+      <soap12:operation soapAction="http://tempuri.org/AssignedPackageToPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrierPallet">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCarrierPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePackageToOtherPallet">
+      <soap12:operation soapAction="http://tempuri.org/ChangePackageToOtherPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePackageFromPallet">
+      <soap12:operation soapAction="http://tempuri.org/RemovePackageFromPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierPalletInfos">
+      <soap12:operation soapAction="http://tempuri.org/GetCarrierPalletInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAllocatedInfo">
+      <soap12:operation soapAction="http://tempuri.org/ChangeAllocatedInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetShippingLog">
+      <http:operation location="/GetShippingLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <http:operation location="/ClearPrintlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <http:operation location="/GetWMSProductPackConfigurationList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <http:operation location="/CheckStatusAndDeleteShipmentByPO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <http:operation location="/CheckStatusAndDeleteShipment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <http:operation location="/DeleteShipment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <http:operation location="/UpdateInvoiceRelationBySyspon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <http:operation location="/VoidInvoiceRelationBySyspon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <http:operation location="/CheckInboundOrderUseCloud" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <http:operation location="/CheckInboundOrderCanTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <http:operation location="/GenerateWMSReceivingManifest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <http:operation location="/ShipmentIsDraft" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <http:operation location="/ShipmentIsShipped" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <http:operation location="/ResubmmitedOrderNotify" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <http:operation location="/CreateShipmentByTradingOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <http:operation location="/HasShipment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <http:operation location="/CheckHasStock" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <http:operation location="/ExecuteAllocate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <http:operation location="/CancelBOL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <http:operation location="/CancelBOLBySyspon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <http:operation location="/UploadTrackingLabel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <http:operation location="/GetTrackingLabelFileNameList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <http:operation location="/ExecuteScannedPackageSchedule" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <http:operation location="/GeneratoeEDI810" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <http:operation location="/BatchGeneratoeEDI810" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <http:operation location="/ExecuteEDIFileSender" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <http:operation location="/GenerateEDI856" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <http:operation location="/TSReceivingLabelToSchedule" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <http:operation location="/GeneratoreTSReceivingLabel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <http:operation location="/ReturnTSReceivingLabel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <http:operation location="/PickAllAndAddInvoicequeue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <http:operation location="/UpdateAllocated" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <http:operation location="/UpdateShipPackage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <http:operation location="/CheckPickStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <http:operation location="/AddInvoicingQueue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <http:operation location="/HasAllocated" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <http:operation location="/GetShipCarrierCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <http:operation location="/SendASNByCarrierTruck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetShippingLog">
+      <http:operation location="/GetShippingLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintlog">
+      <http:operation location="/ClearPrintlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWMSProductPackConfigurationList">
+      <http:operation location="/GetWMSProductPackConfigurationList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipmentByPO">
+      <http:operation location="/CheckStatusAndDeleteShipmentByPO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatusAndDeleteShipment">
+      <http:operation location="/CheckStatusAndDeleteShipment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShipment">
+      <http:operation location="/DeleteShipment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceRelationBySyspon">
+      <http:operation location="/UpdateInvoiceRelationBySyspon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidInvoiceRelationBySyspon">
+      <http:operation location="/VoidInvoiceRelationBySyspon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderUseCloud">
+      <http:operation location="/CheckInboundOrderUseCloud" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInboundOrderCanTransfer">
+      <http:operation location="/CheckInboundOrderCanTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWMSReceivingManifest">
+      <http:operation location="/GenerateWMSReceivingManifest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsDraft">
+      <http:operation location="/ShipmentIsDraft" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShipmentIsShipped">
+      <http:operation location="/ShipmentIsShipped" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmmitedOrderNotify">
+      <http:operation location="/ResubmmitedOrderNotify" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShipmentByTradingOrder">
+      <http:operation location="/CreateShipmentByTradingOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasShipment">
+      <http:operation location="/HasShipment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHasStock">
+      <http:operation location="/CheckHasStock" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAllocate">
+      <http:operation location="/ExecuteAllocate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOL">
+      <http:operation location="/CancelBOL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBOLBySyspon">
+      <http:operation location="/CancelBOLBySyspon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTrackingLabel">
+      <http:operation location="/UploadTrackingLabel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackingLabelFileNameList">
+      <http:operation location="/GetTrackingLabelFileNameList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScannedPackageSchedule">
+      <http:operation location="/ExecuteScannedPackageSchedule" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoeEDI810">
+      <http:operation location="/GeneratoeEDI810" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchGeneratoeEDI810">
+      <http:operation location="/BatchGeneratoeEDI810" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteEDIFileSender">
+      <http:operation location="/ExecuteEDIFileSender" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEDI856">
+      <http:operation location="/GenerateEDI856" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSReceivingLabelToSchedule">
+      <http:operation location="/TSReceivingLabelToSchedule" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratoreTSReceivingLabel">
+      <http:operation location="/GeneratoreTSReceivingLabel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTSReceivingLabel">
+      <http:operation location="/ReturnTSReceivingLabel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickAllAndAddInvoicequeue">
+      <http:operation location="/PickAllAndAddInvoicequeue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocated">
+      <http:operation location="/UpdateAllocated" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipPackage">
+      <http:operation location="/UpdateShipPackage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPickStatus">
+      <http:operation location="/CheckPickStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInvoicingQueue">
+      <http:operation location="/AddInvoicingQueue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasAllocated">
+      <http:operation location="/HasAllocated" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipCarrierCategories">
+      <http:operation location="/GetShipCarrierCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendASNByCarrierTruck">
+      <http:operation location="/SendASNByCarrierTruck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://192.168.1.19/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://192.168.1.19/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://192.168.1.19/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://192.168.1.19/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+@using System.Web.Http
+@using YAEP.WMS.Api.Areas.HelpPage.Models
+@model HelpPageApiModel
+
+@{
+    var description = Model.ApiDescription;
+    ViewBag.Title = description.HttpMethod.Method + " " + description.RelativePath;
+}
+
+<script type='text/javascript'>
+    var c = function (id) {
+        var div1 = document.getElementById(id);
+        div1.style.display = (div1.style.display == 'none') ? 'block' : 'none';
+    };
+</script>
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css?ver=@DateTime.Now.ToString("yyyyMMdd")" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                [<b>@Html.ActionLink("Help Page Home", "Index")</b>]
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @Html.DisplayForModel()
+    </section>
+</div>

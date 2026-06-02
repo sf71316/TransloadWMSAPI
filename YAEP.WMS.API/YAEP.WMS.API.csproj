@@ -1,0 +1,681 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9009CE90-7D6D-4BEF-8D68-5883F46AE9C7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.API</RootNamespace>
+    <AssemblyName>YAEP.WMS.API</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44364</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>
+    </IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>None.None.IncrementWithResetOnIncrease.None</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>None.None.Increment.None</AssemblyFileVersionSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AEP.Utilities">
+      <HintPath>..\ExternalDll\AEP.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXssLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.1.50.5\lib\net451\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.2.4.0\lib\net461\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.ConfigurationExtensions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.1.1.0\lib\net461\OpenTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.Api.1.1.0\lib\net452\OpenTelemetry.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Exporter.Jaeger, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.Exporter.Jaeger.1.1.0\lib\net46\OpenTelemetry.Exporter.Jaeger.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Instrumentation.AspNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.Instrumentation.AspNet.1.0.0-rc7\lib\net46\OpenTelemetry.Instrumentation.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Instrumentation.SqlClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.Instrumentation.SqlClient.1.0.0-rc7\lib\net461\OpenTelemetry.Instrumentation.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.Constants">
+      <HintPath>..\ExternalDll\YAEP.Common.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.DI">
+      <HintPath>..\ExternalDll\YAEP.Common.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.Models">
+      <HintPath>..\ExternalDll\YAEP.Common.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.BLL">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.DAL">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.DI">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Interfaces, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Models">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Constants">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.DI">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Models">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper.Contrib, Version=1.0.15.21494, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Constants">
+      <HintPath>..\ExternalDll\YAEP.Identities.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.DI">
+      <HintPath>..\ExternalDll\YAEP.Identities.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Identities.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Models">
+      <HintPath>..\ExternalDll\YAEP.Identities.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Log.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Log.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Package.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Constants">
+      <HintPath>..\ExternalDll\YAEP.Package.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.DAL">
+      <HintPath>..\ExternalDll\YAEP.Package.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.DI">
+      <HintPath>..\ExternalDll\YAEP.Package.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Package.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Models">
+      <HintPath>..\ExternalDll\YAEP.Package.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.SSO.Constants">
+      <HintPath>..\ExternalDll\YAEP.SSO.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.SSO.DI">
+      <HintPath>..\ExternalDll\YAEP.SSO.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.SSO.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.SSO.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.SSO.Models">
+      <HintPath>..\ExternalDll\YAEP.SSO.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Templates.DI.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Templates.DI.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\YAEP.WMS.API.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Global.asax" />
+    <Content Include="RecoveryAllocatedData.aspx" />
+    <Content Include="TranTest.aspx" />
+    <None Include="Web.config.production" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.config.Debug.production">
+      <DependentUpon>Web.config.production</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.production">
+      <DependentUpon>Web.config.production</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Attributes\AllowCrossSiteAttribute.cs" />
+    <Compile Include="Attributes\CompressionAttribute.cs" />
+    <Compile Include="Attributes\ConnectionLogAttribute.cs" />
+    <Compile Include="Attributes\MobileAuthenticationAttribute.cs" />
+    <Compile Include="Attributes\AuthenticationAttribute.cs" />
+    <Compile Include="Attributes\Permissions\ValidatePermissionsAttribute.cs" />
+    <Compile Include="Attributes\SkipAuthenticationAttribute.cs" />
+    <Compile Include="Code\AbstractApiController.cs" />
+    <Compile Include="Code\DefaultAppSettings.cs" />
+    <Compile Include="Code\ConfigHelper.cs" />
+    <Compile Include="Code\Extensions\AuthenticationExtensions.cs" />
+    <Compile Include="Code\Auth\DrKnowAllAuthenticationInfo.cs" />
+    <Compile Include="Code\Auth\AuthenticationInfo.cs" />
+    <Compile Include="Code\Auth\AuthenticationInfoProvider.cs" />
+    <Compile Include="Code\Auth\IdentityHelper.cs" />
+    <Compile Include="Code\Auth\JwtHelper.cs" />
+    <Compile Include="Code\Cache\DrKnowAll.DI.cs" />
+    <Compile Include="Code\Cache\DrKnowAll.cs" />
+    <Compile Include="Code\Cache\DrKnowAllKeys.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Identities.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Package.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Warehouse.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Product.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Party.cs" />
+    <Compile Include="Code\Cache\DrKnowAll​.Common.cs" />
+    <Compile Include="Code\ConnectionSettings.cs" />
+    <Compile Include="Code\Extensions\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Code\Extensions\StringExtensions.cs" />
+    <Compile Include="Code\FactoryUtils.cs" />
+    <Compile Include="Code\Extensions\PropertyInfoExtensions.cs" />
+    <Compile Include="Code\ProductManager.cs" />
+    <Compile Include="Code\RefreshDrKnowAll.cs" />
+    <Compile Include="Code\VersionSerialNumberGenerator.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BulkPickController.cs" />
+    <Compile Include="Controllers\BolController.cs" />
+    <Compile Include="Controllers\ComponentController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\MobileController.Attachment.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="Controllers\OrderController.Inbound.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\IdentityController .cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\TransloadController.cs" />
+    <Compile Include="Controllers\LabelController.cs" />
+    <Compile Include="Controllers\ManifestController.cs" />
+    <Compile Include="Controllers\OrderController.Outbound.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ThirdPartyController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="Controllers\VesselController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
+    <Compile Include="Controllers\WorkOrderController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthenticationContainer.cs" />
+    <Compile Include="Models\Cache\PackageCacheModel.cs" />
+    <Compile Include="Models\Cache\ProductCacheModel.cs" />
+    <Compile Include="Models\DefaultAppConfigure.cs" />
+    <Compile Include="Models\Request\AddCarrierPalletDTO.cs" />
+    <Compile Include="Models\Request\TransloadReceivingRequestModel.cs" />
+    <Compile Include="Models\Request\TransloadCompleteReceivingRequestModel.cs" />
+    <Compile Include="Models\Request\TransloadAddProductRequestModel.cs" />
+    <Compile Include="Models\Response\TransloadReceivingResponseModel.cs" />
+    <Compile Include="Models\Request\AddCarrierTruckDTO.cs" />
+    <Compile Include="Models\Request\SplitPayloadInventoryParameters.cs" />
+    <Compile Include="Models\Request\MeragePayloadInventoryParameters.cs" />
+    <Compile Include="Models\Request\AddInventoryParameters.cs" />
+    <Compile Include="Models\Request\AddUserWithGroupsRequestModel.cs" />
+    <Compile Include="Models\Request\AllocatedItemRequest.cs" />
+    <Compile Include="Models\Request\AllocatedRequest.cs" />
+    <Compile Include="Models\Request\AppLoginRequestModel.cs" />
+    <Compile Include="Models\Request\AssignedPackageToPalletRequest.cs" />
+    <Compile Include="Models\Request\AssignedPalletToTruckRequest.cs" />
+    <Compile Include="Models\Request\AssignedPayloadtoPodParameters.cs" />
+    <Compile Include="Models\Request\AttachItemLabelRequest.cs" />
+    <Compile Include="Models\Request\BatchChangeToSlotParameter.cs" />
+    <Compile Include="Models\Request\BolDeleteParameters.cs" />
+    <Compile Include="Models\Request\BOLRequestModel.cs" />
+    <Compile Include="Models\Request\BulkPickBathAddWorkModel.cs" />
+    <Compile Include="Models\Request\BulkPickManifestSearchRequestModel.cs" />
+    <Compile Include="Models\Request\BulkPickSaveModel.cs" />
+    <Compile Include="Models\Request\BulkPickSearchRequestModel.cs" />
+    <Compile Include="Models\Request\CancelReceivingRequest.cs" />
+    <Compile Include="Models\Request\ChangeFromSlotParameter.cs" />
+    <Compile Include="Models\Request\ChangePackageToOtherPalletRequest.cs" />
+    <Compile Include="Models\Request\ChangePalletToOtherTruckRequest.cs" />
+    <Compile Include="Models\Request\ChangeToSlotParameter.cs" />
+    <Compile Include="Models\Request\CheckItemRequestModel.cs" />
+    <Compile Include="Models\Request\CheckOutboundAvailabilityRequest.cs" />
+    <Compile Include="Models\Request\CustomerAddressRequestModel.cs" />
+    <Compile Include="Models\Request\CustomerRequestModel.cs" />
+    <Compile Include="Models\Request\CustomerSearchRequestModel.cs" />
+    <Compile Include="Models\Request\CustomerUpdateRequestModel.cs" />
+    <Compile Include="Models\Request\DeallocatedRequest.cs" />
+    <Compile Include="Models\Request\DeleteManifestRequest.cs" />
+    <Compile Include="Models\Request\DeparturedRequest.cs" />
+    <Compile Include="Models\Request\EditWorkOrderPodParameters.cs" />
+    <Compile Include="Models\Request\GenerateLabelRequestModel.cs" />
+    <Compile Include="Models\Request\GetAvailableInventoryRequest.cs" />
+    <Compile Include="Models\Request\GetHomeAddressListParameters.cs" />
+    <Compile Include="Models\Request\GetOnhandRequest.cs" />
+    <Compile Include="Models\Request\GetSequenceRequest.cs" />
+    <Compile Include="Models\Request\HomeAddressRelationRequest.cs" />
+    <Compile Include="Models\Request\IGetLocationItemListRequest.cs" />
+    <Compile Include="Models\Request\ImportTotalSolutionReceivingDataRequest.cs" />
+    <Compile Include="Models\Request\ImportTSReceivingDataRequestModel.cs" />
+    <Compile Include="Models\Request\LoginRequestModel.cs" />
+    <Compile Include="Models\Request\LogParameters.cs" />
+    <Compile Include="Models\Request\ManinfestItemRequestCollection.cs" />
+    <Compile Include="Models\Request\ManinfestItemRequestModel.cs" />
+    <Compile Include="Models\Request\ManinfestRequestModel.cs" />
+    <Compile Include="Models\Request\PackageRequestModel.cs" />
+    <Compile Include="Models\Request\PackageSyncRequestModel.cs" />
+    <Compile Include="Models\Request\PickAllRequest.cs" />
+    <Compile Include="Models\Request\ProductRequestModel.cs" />
+    <Compile Include="Models\Request\ProductSearchRequestModel.cs" />
+    <Compile Include="Models\Request\ProductSyncRequestModel.cs" />
+    <Compile Include="Models\Request\ProductThirdPartySearchRequestModel.cs" />
+    <Compile Include="Models\Request\ReceivingRequest.cs" />
+    <Compile Include="Models\Request\RollbackTicketRequest.cs" />
+    <Compile Include="Models\Request\SearchCarrierPalletInfoParameters.cs" />
+    <Compile Include="Models\Request\SearchCarrierPalletParameters.cs" />
+    <Compile Include="Models\Request\SearchCarrierTruckParameters.cs" />
+    <Compile Include="Models\Request\SetSlotParameters.cs" />
+    <Compile Include="Models\Request\SetWorkOrderPodBarcodeParameters.cs" />
+    <Compile Include="Models\Request\SyncProNoRequest.cs" />
+    <Compile Include="Models\Request\SyncTrackingNoRequest.cs" />
+    <Compile Include="Models\Request\VendorRequestModel.cs" />
+    <Compile Include="Models\Request\VesselManifestRequestModel.cs" />
+    <Compile Include="Models\Request\VesselRequestModel.cs" />
+    <Compile Include="Models\Response\APIResult.cs" />
+    <Compile Include="Models\Response\BatchSyncProductResponseModel.cs" />
+    <Compile Include="Models\Response\BulkPickInfoResponseModel.cs" />
+    <Compile Include="Models\Response\BulkPickInfoViewResponseModel.cs" />
+    <Compile Include="Models\Response\BulkPickManifestResponseModel.cs" />
+    <Compile Include="Models\Response\BulkPickResponseModel.cs" />
+    <Compile Include="Models\Response\CompentResponse.cs" />
+    <Compile Include="Models\Response\ManifestProductResponseModel.cs" />
+    <Compile Include="Models\Response\ProductNameResponseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoveryAllocatedData.aspx.cs">
+      <DependentUpon>RecoveryAllocatedData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TranTest.aspx.cs">
+      <DependentUpon>TranTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TranTest.aspx.designer.cs">
+      <DependentUpon>TranTest.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Compile Include="Controllers\OrderController.General.cs" />
+    <Content Include="NLog.config" />
+    <Content Include="libman.json" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MessageHandler\" />
+    <Folder Include="Views\ThirdParty\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Cache.Models\YAEP.WMS.Cache.Models.csproj">
+      <Project>{ffc34544-f5c5-4701-bb59-68b2a4451c75}</Project>
+      <Name>YAEP.WMS.Cache.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Cache\YAEP.WMS.Cache.csproj">
+      <Project>{23e53d4d-0153-4e42-977e-058c02a49d7f}</Project>
+      <Name>YAEP.WMS.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Constant\YAEP.WMS.Constant.csproj">
+      <Project>{6E9437B5-3773-4F46-A3F8-2B954476A4CC}</Project>
+      <Name>YAEP.WMS.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.DI.Agent\YAEP.WMS.DI.Agent.csproj">
+      <Project>{6b7ea1d2-c582-472f-a0dc-ce16186bd6cf}</Project>
+      <Name>YAEP.WMS.DI.Agent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45e7d686-0cfe-4e2d-93ba-df3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Language\YAEP.WMS.Language.csproj">
+      <Project>{83c9f2c2-3938-4089-a2df-9c14b5500870}</Project>
+      <Name>YAEP.WMS.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Model\YAEP.WMS.Model.csproj">
+      <Project>{D1147254-0B64-49FA-8426-054EBFECF0B2}</Project>
+      <Name>YAEP.WMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Tracing.Jaeger\YAEP.WMS.Tracing.Jaeger.csproj">
+      <Project>{4B8C1193-7DF8-41E9-8ECB-3AD958072D07}</Project>
+      <Name>YAEP.WMS.Tracing.Jaeger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_Data\rdlc\Barcode_BI.rdlc" />
+    <EmbeddedResource Include="App_Data\rdlc\Barcode_P.rdlc" />
+    <EmbeddedResource Include="App_Data\rdlc\Barcode_Slot.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35736</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8081/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

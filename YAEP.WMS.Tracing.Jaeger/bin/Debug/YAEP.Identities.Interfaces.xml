@@ -1,0 +1,1717 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Identities.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Identities.Interfaces.IGroupManager">
+            <summary>
+            群組相關方法介面
+            </summary>
+        </member>
+        <!-- 已忽略成員 "M:YAEP.Identities.Interfaces.IGroupManager.CreateGroup(YAEP.Identities.Interfaces.Models.IGroupModel)" 中格式錯誤的 XML 註解 -->
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.UpdateGroup(YAEP.Identities.Interfaces.Models.IGroupModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.DeleteGroup(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.ChangeName(System.Guid,System.String)">
+            <summary>
+            修改群組名稱
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <param name="name">名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.ChangeParent(System.Guid,System.Guid)">
+            <summary>
+            修改群組父項
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <param name="parentUID">父項識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroup(System.Guid)">
+            <summary>
+            取得群組
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroups(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            取得群組
+            </summary>
+            <param name="groupUID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroups(YAEP.Identities.Interfaces.Models.IGroupParameterize)">
+            <summary>
+            取得群組
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroupsByType(YAEP.Identities.Constants.GroupTypes)">
+            <summary>
+            查詢對應類型名稱的Group 集合
+            </summary>
+            <param name="type">類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetChildren(System.Guid)">
+            <summary>
+            取得子層群組集合
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetAllSubGroups(System.Guid,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            取得所有下層群組集合
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetParent(System.Guid)">
+            <summary>
+            取得父層群組物件
+            </summary>
+            <param name="parentUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroupKeysByUser(System.Guid,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            取得對應使用者關聯的所有 Group UID
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroupsByUser(System.Guid,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            取得對應使用者關聯的所有 Group
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetUserKeysByGroup(System.Guid)">
+            <summary>
+            取得對應群組關聯的所有 User UID
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IGroupModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetUsersByGroup(System.Guid)">
+            <summary>
+            取得對應群組關聯的所有 User
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroupUserViewByUser(System.Guid)">
+            <summary>
+            取得使用者所屬群組清單
+            </summary>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.GetGroupUserView(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            取得群組的使用者清單
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupManager.AppendPath(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IGroupMembershipModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupMembershipModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupMembershipModel.UserUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupMembershipModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupMembershipModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IGroupModel">
+            <summary>
+            群組
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.UID">
+            <summary>
+            識別碼
+            </summary>  
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.ID">
+            <summary>
+            編號
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.ParentUID">
+            <summary>
+            父項編號
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Abbrev">
+            <summary>
+            簡稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Type">
+            <summary>
+            類別
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Status">
+            <summary>
+            資料狀態：
+            刪除 = 0,
+            啟用 = 1 (Default) 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupModel.DefaultRoleUID">
+            <summary>
+            Default Role UID
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.ParentUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupParameterize.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IGroupPathModel">
+            <summary>
+             
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupPathModel.Descendant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupPathModel.Ancestor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IGroupUserViewModel">
+            <summary>
+             
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupUserViewModel.GroupUID">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupUserViewModel.GroupID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupUserViewModel.GroupName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IGroupUserViewModel.Members">
+            <summary>
+             
+            </summary> 
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.ISiteMapModel">
+            <summary>
+            Sitemap
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.ISiteMapNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapNode.Level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapNode.Children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapNode.Parent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.ISiteMapTree">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapTree.WebSiteUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapTree.WebSiteName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.ISiteMapTree.Children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IResourceModel">
+            <summary>
+            資源
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.ParentUID">
+            <summary>
+            父項編號
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.Type">
+            <summary>
+            Resource 類型
+            <para /><see cref="T:YAEP.Identities.Constants.ResourceTypes"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.Status">
+            <summary>
+            <para />資料狀態：
+            <para />刪除 = 0,
+            <para />啟用 = 1 (Default) 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.Sort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IResourcePathModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourcePathModel.Descendant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourcePathModel.Ancestor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.ResourceUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.ResourceName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.Icon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.Path">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.LocaleId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.Remark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IResourceSiteMapModel.IsDisplay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.RoleUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.RelationUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.Type">
+            <summary>
+            <para />類型：
+            <para />Role = 0,
+            <para />Group = 100,
+            <para />User = 200
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IUserRoleModel">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserRoleModel.UserUID">
+            <summary>
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserRoleModel.UserAccount">
+            <summary>
+            使用者帳號
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.Account"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserRoleModel.UserEmail">
+            <summary>
+            使用者郵件
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.Email"/>
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IRoleModel">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.Type">
+            <summary>
+            <para />角色類型：
+            <para />Role = 0,
+            <para />Group = 100,
+            <para />User = 200 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.Status">
+            <summary>
+            <para />資料狀態：
+            <para />刪除 = 0,
+            <para />啟用 = 1 (Default) 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.UID">
+            <summary>
+            
+            </summary>            
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.ID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.Name">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.Description">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.Type">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleParameterize.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IRoleResourceRelationModel">
+            <summary>
+            關聯 資源-角色
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleResourceRelationModel.RoleUID">
+            <summary>
+            角色識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleResourceRelationModel.ResourceUID">
+            <summary>
+            資源識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IRoleResourceRelationModel.Permission">
+            <summary>
+            權限
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel">
+            <summary>
+            使用者權限
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.UserUID">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.UserAccount">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.Account"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.ResourceUID">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IResourceModel.UID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.ResourceID">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IResourceModel.ID"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.ResourceName">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IResourceModel.Name"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.ResourceType">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IResourceModel.Type"/>
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserResourcePermissionModel.Permission">
+            <summary>
+            <see cref="P:YAEP.Identities.Interfaces.Models.IRoleResourceRelationModel.Permission"/>
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.Models.IUserModel">
+            <summary>
+            使用者
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.UID">
+            <summary>
+            識別碼
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.ID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Account">
+            <summary>
+            帳號
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Password">
+            <summary>
+            密碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Email">
+            <summary>
+            電子郵件信箱
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Skype">
+            <summary>
+            Skype帳號
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.FirstName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.LastName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Telephone">
+            <summary>
+            電話
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Fax">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.CellPhone">
+            <summary>
+            手機
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Theme">
+            <summary>
+            網站樣式
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Type">
+            <summary>
+            使用者分類
+            Unknow = 0,
+            Internal = 1000,
+            External = 2000
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Status">
+            <summary>
+            資料狀態：
+            刪除 = 0,
+            啟用 = 1 (Default) 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserModel.DefaultRoleUID">
+            <summary>
+            Default Role UID
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.UID">
+            <summary>
+            
+            </summary>            
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.ID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Account">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Password">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Email">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Skype">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.UserName">
+            <summary>
+            使用者名稱
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Country">
+            <summary>
+            國家
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.State">
+            <summary>
+            州郡
+            </summary> 
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Type">
+            <summary>
+            使用者分類 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.Status">
+            <summary>
+            狀態：
+            Void = 0,
+            Active = 1 
+            </summary>
+        </member>
+        <member name="P:YAEP.Identities.Interfaces.Models.IUserParameterize.AccountOrName">
+            <summary>
+            帳號或名稱
+            </summary>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IGroupMembershipRepository">
+            <summary>
+            群組使用者關係相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.Create(System.Guid,System.Guid)">
+            <summary>
+            建立
+            </summary>
+            <param name="groupUID"></param>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.Create(YAEP.Identities.Interfaces.Models.IGroupMembershipModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="groupUID"></param>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.DeleteByUser(System.Guid)">
+            <summary>
+            刪除
+            </summary> 
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.DeleteByGroup(System.Guid)">
+            <summary>
+            刪除
+            </summary> 
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetGroupKeysByUser(System.Guid,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            取得對應使用者關聯的所有 Group UID
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <param name="groupType">
+            群組類型
+            <para /><see cref="T:YAEP.Identities.Constants.GroupTypes"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetGroupsByUser(System.Guid,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            取得對應使用者關聯的所有 Group
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <param name="groupType">
+            群組類型
+            <para /><see cref="T:YAEP.Identities.Constants.GroupTypes"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetUserKeysByGroup(System.Guid)">
+            <summary>
+            取得對應群組關聯的所有 User UID
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IGroupModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetUsersByGroup(System.Guid)">
+            <summary>
+            取得對應群組關聯的所有 User
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IGroupModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetGroupUserViewByUser(System.Guid)">
+            <summary>
+            取得使用者所屬群組清單
+            </summary>
+            <param name="userUID">使用者識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupMembershipRepository.GetGroupUserView(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            取得群組的使用者清單
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupPathRepository.Create(YAEP.Identities.Interfaces.Models.IGroupPathModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupPathRepository.Create(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ancestor"></param>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupPathRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ancestor"></param>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupPathRepository.DeleteByAncestor(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupPathRepository.DeleteByDescendant(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IGroupRepository">
+            <summary>
+            群組相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.Create(YAEP.Identities.Interfaces.Models.IGroupModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.Update(YAEP.Identities.Interfaces.Models.IGroupModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.ChangeName(System.Guid,System.String)">
+            <summary>
+            修改群組名稱
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <param name="Name">名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.ChangeParent(System.Guid,System.Guid)">
+            <summary>
+            修改群組父項
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <param name="parentUID">父項識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetGroup(System.Guid)">
+            <summary>
+            取得群組
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetParent(System.Guid)">
+            <summary>
+            取得父層群組物件
+            </summary>
+            <param name="parentUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetChildren(System.Guid)">
+            <summary>
+            取得子層群組集合
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetAllSubGroups(System.Guid)">
+            <summary>
+            取得所有下層群組集合
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetGroupsByType(YAEP.Identities.Constants.GroupTypes)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetGroups(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetGroups(YAEP.Identities.Interfaces.Models.IGroupParameterize)">
+            <summary>
+            取得群組集合
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IGroupRepository.GetParentUID(System.Guid)">
+            <summary>
+            取得父群組識別碼
+            </summary>
+            <param name="groupUID">群組識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IResourceManager">
+            <summary>
+            Resource 相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceManager.Create(YAEP.Identities.Interfaces.Models.IResourceModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceManager.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="resourceUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceManager.GetResources(YAEP.Identities.Constants.ResourceTypes)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceManager.GetSiteMapTree(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="webSiteUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceManager.GetWebSite(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="webSiteId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IResourceSiteMapRepository">
+            <summary>
+            Resource Sitemap 相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceSiteMapRepository.Create(YAEP.Identities.Interfaces.Models.IResourceSiteMapModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceSiteMapRepository.Update(YAEP.Identities.Interfaces.Models.IResourceSiteMapModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceSiteMapRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="resourceUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IResourcePathRepository">
+            <summary>
+            Resource Path 相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourcePathRepository.Create(YAEP.Identities.Interfaces.Models.IResourcePathModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourcePathRepository.Create(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ancestor"></param>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourcePathRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ancestor"></param>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourcePathRepository.DeleteByAncestor(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourcePathRepository.DeleteByDescendant(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="descendant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IResourceRepository">
+            <summary>
+            Resource 相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.Create(YAEP.Identities.Interfaces.Models.IResourceModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.Update(YAEP.Identities.Interfaces.Models.IResourceModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetResources(YAEP.Identities.Constants.ResourceTypes)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetWebSite(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="webSiteUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetWebSiteById(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="webSiteId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetAllWebSite">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetAllSiteMap">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IResourceRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IRoleManager">
+            <summary>
+            角色相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.GetRolesBelongGroup(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.GetRolesRelationUser(System.Guid)">
+            <summary>
+            取得使用者所有關連的Role
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.GetRolesRelationAllUsers">
+            <summary>
+            取得使用者與角色關聯清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.CreateGroupRoleRelation(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.CreateUserRoleRelation(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID">
+            角色識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IRoleModel.UID"/>
+            </param>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.CreateRoleRelation(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID">
+            角色識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IRoleModel.UID"/>
+            </param>
+            <param name="relationRoleUID">
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IRoleAssignmentModel.RoleUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.CreateUserDefaultRole(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourceUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.CreateGroupDefaultRole(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourceUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.Create(YAEP.Identities.Interfaces.Models.IRoleModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleManager.Update(YAEP.Identities.Interfaces.Models.IRoleModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IRoleAssignmentRepository">
+            <summary>
+            角色關聯相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleAssignmentRepository.Create(System.Guid,System.Guid,YAEP.Identities.Constants.RoleTypes)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="relationUID"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleAssignmentRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="relationUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleAssignmentRepository.GetRoleAssignments(System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="relationUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IRoleRepository">
+            <summary>
+            角色相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.CreateUserDefaultRole(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourceUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.CreateGroupDefaultRole(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourceUID"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.Create(YAEP.Identities.Interfaces.Models.IRoleModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.Update(YAEP.Identities.Interfaces.Models.IRoleModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.GetRole(System.Guid)">
+            <summary>
+            取得角色
+            </summary>
+            <param name="UID">識別編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.GetRolesBelongGroup(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID">
+            群組識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IGroupModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.GetRolesRelationAllUsers">
+            <summary>
+            取得使用者與角色關聯清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.GetRolesRelationUser(System.Guid)">
+            <summary>
+            取得對應使用者關聯的角色
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleRepository.GetRoles(YAEP.Identities.Interfaces.Models.IRoleParameterize)">
+            <summary>
+            取得角色集合
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <!-- 已忽略成員 "T:YAEP.Identities.Interfaces.IRoleResourceRelationRepository" 中格式錯誤的 XML 註解 -->
+        <member name="M:YAEP.Identities.Interfaces.IRoleResourceRelationRepository.Create(System.Guid,System.Guid,YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="resourceUID"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleResourceRelationRepository.Update(System.Guid,System.Guid,YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="resourceUID"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IRoleResourceRelationRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="roleUID"></param>
+            <param name="resourceUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IUserManager">
+            <summary>
+            使用者相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.CheckAccountExists(System.String)">
+            <summary>
+            檢查帳號是否存在(狀態為已刪除的不算)
+            </summary>
+            <param name="Account">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.ChangePassword(System.Guid,System.String)">
+            <summary>
+            更改密碼
+            </summary>
+            <param name="UID">識別碼</param>
+            <param name="password">密碼</param>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.ChangePassword(System.String,System.String)">
+            <summary>
+            更改密碼
+            </summary>
+            <param name="account">帳號</param>
+            <param name="password">密碼</param>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetUser(System.Guid)">
+            <summary>
+            取得使用者
+            </summary>
+            <param name="UID">識別編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetUser(System.String,System.String)">
+            <summary>
+            取得使用者
+            </summary>
+            <param name="account">帳號</param>
+            <param name="Password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetUsers(YAEP.Identities.Interfaces.Models.IUserParameterize)">
+            <summary>
+            取得使用者集合
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <!-- 已忽略成員 "M:YAEP.Identities.Interfaces.IUserManager.CreateUser(YAEP.Identities.Interfaces.Models.IUserModel)" 中格式錯誤的 XML 註解 -->
+        <!-- 已忽略成員 "M:YAEP.Identities.Interfaces.IUserManager.CreateUser(YAEP.Identities.Interfaces.Models.IUserModel,System.Guid[])" 中格式錯誤的 XML 註解 -->
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.UpdateUser(YAEP.Identities.Interfaces.Models.IUserModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.DeleteUser(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetUserRoles(System.Guid)">
+            <summary>
+            取得使用者所有關連的Role
+            </summary>
+            <param name="userUID">
+            使用者識別碼
+            <para /><see cref="P:YAEP.Identities.Interfaces.Models.IUserModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetAllUserRoles">
+            <summary>
+            取得使用者與角色關聯清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetUserResourcePermissions(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserManager.GetAllUserResourcePermissions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Identities.Interfaces.IUserRepository">
+            <summary>
+            使用者相關方法介面
+            </summary>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.Create(YAEP.Identities.Interfaces.Models.IUserModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.Update(YAEP.Identities.Interfaces.Models.IUserModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.CheckAccountExists(System.String)">
+            <summary>
+            檢查帳號是否存在(狀態為已刪除的不算)
+            </summary>
+            <param name="account">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.ChangePassword(System.Guid,System.String)">
+            <summary>
+            更改密碼
+            </summary>
+            <param name="UID">識別碼</param>
+            <param name="password">密碼</param>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.ChangePassword(System.String,System.String)">
+            <summary>
+            更改密碼
+            </summary>
+            <param name="account">帳號</param>
+            <param name="password">密碼</param>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.GetUser(System.Guid)">
+            <summary>
+            取得使用者
+            </summary>
+            <param name="UID">識別編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.GetUser(System.String,System.String)">
+            <summary>
+            取得使用者
+            </summary>
+            <param name="account">帳號</param>
+            <param name="password">密碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.GetUsers(YAEP.Identities.Interfaces.Models.IUserParameterize)">
+            <summary>
+            取得使用者集合
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.GetUserResourcePermissions(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Identities.Interfaces.IUserRepository.GetAllUserResourcePermissions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

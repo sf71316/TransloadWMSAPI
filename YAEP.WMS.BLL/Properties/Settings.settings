@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="YAEP.WMS.BLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="YAEP_WMS_BLL_ShippingService_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://pbscdc.capbarbell.com/webservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

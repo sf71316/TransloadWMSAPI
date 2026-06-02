@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DE06A17-D750-4510-BD85-13D0AF6E3CDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.BLL</RootNamespace>
+    <AssemblyName>YAEP.WMS.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AEP.ClientAPI.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\AEP.ClientAPI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.2.4.0\lib\netstandard2.0\BarcodeStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.8.0.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.7.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.7.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="General">
+      <HintPath>..\ExternalDll\General.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.ConfigurationExtensions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WebForms.12.0.2402.15\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.1.1.0\lib\net461\OpenTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7bd6737fe5b67e3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTelemetry.Api.1.1.0\lib\net452\OpenTelemetry.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp, Version=106.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.1.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YAEP.Attachment.ClientAPI">
+      <HintPath>..\ExternalDll\YAEP.Attachment.ClientAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.ClientAPI.Core">
+      <HintPath>..\ExternalDll\YAEP.ClientAPI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Constants">
+      <HintPath>..\ExternalDll\YAEP.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Interfaces, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Constants, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="YAEP.Core.Party.Interfaces, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Identities.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Identities.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird">
+      <HintPath>..\ExternalDll\YAEP.LittleBird.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird.CapPBSC">
+      <HintPath>..\ExternalDll\YAEP.LittleBird.CapPBSC.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird.Log">
+      <HintPath>..\ExternalDll\YAEP.LittleBird.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.LittleBird.WMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.LittleBird.WMS.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Log.Constants">
+      <HintPath>..\ExternalDll\YAEP.Log.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Constants">
+      <HintPath>..\ExternalDll\YAEP.Package.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Package.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Varys.CapPBSC.Models">
+      <HintPath>..\ExternalDll\YAEP.Varys.CapPBSC.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\ReplicationType.cs" />
+    <Compile Include="Extension\DeepCopyByExpressionTrees.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\PackageExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Interfaces\IAllocateExecutorParameters.cs" />
+    <Compile Include="Interfaces\IAttachmentFileViewModel.cs" />
+    <Compile Include="Interfaces\IExtensionActionResult.cs" />
+    <Compile Include="Interfaces\IReplicationManagerInitParameters.cs" />
+    <Compile Include="Interfaces\ITransacationScope.cs" />
+    <Compile Include="Interfaces\ITransactionAction.cs" />
+    <Compile Include="Interfaces\IWMSReplicateExtModel.cs" />
+    <Compile Include="Manager\AbstractManager.cs" />
+    <Compile Include="Manager\AreaManager.cs" />
+    <Compile Include="Manager\BinManager.cs" />
+    <Compile Include="Manager\HomeAddressRelationManager.cs" />
+    <Compile Include="Manager\InventoryManager.cs" />
+    <Compile Include="Manager\LabelManager.cs" />
+    <Compile Include="Manager\ManifestManager.Bol.cs" />
+    <Compile Include="Manager\ManifestManager.BulkPick.cs" />
+    <Compile Include="Manager\ManifestManager.CarrierTruck.cs" />
+    <Compile Include="Manager\ManifestManager.Manifest.cs" />
+    <Compile Include="Manager\ManifestManager.Order.Inbound.cs" />
+    <Compile Include="Manager\ManifestManager.Order.Outbound.cs" />
+    <Compile Include="Manager\ManifestManager.Ticket.cs" />
+    <Compile Include="Manager\ManifestManager.Ticket.Mobile.cs" />
+    <Compile Include="Manager\ManifestManager.Vessel.cs" />
+    <Compile Include="Manager\ManifestManager.WorkOrder.cs" />
+    <Compile Include="Manager\ManifestManager._.cs" />
+    <Compile Include="Manager\ProductUtility.cs" />
+    <Compile Include="Manager\SeniorManager.cs" />
+    <Compile Include="Manager\SlotManager.cs" />
+    <Compile Include="Manager\WarehouseAgent.cs" />
+    <Compile Include="Manager\WarehouseManager.cs" />
+    <Compile Include="Model\ImportItem\PackageSyncModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCItemModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCItemPackagingModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCPackagingModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCVirtualItem.cs" />
+    <Compile Include="Model\ImportItem\WMSItemExtendModel.cs" />
+    <Compile Include="Model\InnerModel\AllocatedInnerResponse.cs" />
+    <Compile Include="Model\InnerModel\TransloadReceivingInnerRequest.cs" />
+    <Compile Include="Model\InnerModel\TransloadReceivingResult.cs" />
+    <Compile Include="Model\InnerModel\AllocatedItemInnerResponse.cs" />
+    <Compile Include="Model\InnerModel\AllocatedItemRequest.cs" />
+    <Compile Include="Model\InnerModel\AllocatedRequest.cs" />
+    <Compile Include="Model\InnerModel\AllocatedRequesttotalModel.cs" />
+    <Compile Include="Model\InnerModel\AssignedBulkPickWorkOrderPayload.cs" />
+    <Compile Include="Model\InnerModel\AssignedOutboundWorkOrderCollection.cs" />
+    <Compile Include="Model\InnerModel\AssignedWorkOrderInnerCollection.cs" />
+    <Compile Include="Model\InnerModel\AttachmentFilesInfoInnerModel.cs" />
+    <Compile Include="Model\InnerModel\AttachmentFileViewModel.cs" />
+    <Compile Include="Model\InnerModel\AttachmentResultModel.cs" />
+    <Compile Include="Model\InnerModel\AutoASN\ShipCarrierCategory.cs" />
+    <Compile Include="Model\InnerModel\AutoASN\ShipCarrierPalletInfo.cs" />
+    <Compile Include="Model\InnerModel\AutoAssignedParameters.cs" />
+    <Compile Include="Model\InnerModel\AutoAssignedResult.cs" />
+    <Compile Include="Model\InnerModel\BolInnerModel.cs" />
+    <Compile Include="Model\InnerModel\BulkPickInnerModel.cs" />
+    <Compile Include="Model\InnerModel\BulkPickTicketInfoRelationInnerModel.cs" />
+    <Compile Include="Model\InnerModel\BulkPickWorkOrderPayloadModel.cs" />
+    <Compile Include="Model\InnerModel\BulkPickWorkOrderPayloadRelationModel.cs" />
+    <Compile Include="Model\InnerModel\BulkPikcAssignedWorkOrderPayload.cs" />
+    <Compile Include="Model\InnerModel\CancelReceivingResponse.cs" />
+    <Compile Include="Model\InnerModel\CarrierPalletViewModel.cs" />
+    <Compile Include="Model\InnerModel\CarrierTruckViewModel.cs" />
+    <Compile Include="Model\InnerModel\CheckBolResponse.cs" />
+    <Compile Include="Model\InnerModel\CheckPodBarcodeInfoParameters.cs" />
+    <Compile Include="Model\InnerModel\CloneLabelModel.cs" />
+    <Compile Include="Model\InnerModel\CommonResponse.cs" />
+    <Compile Include="Model\InnerModel\DefaultAppConfigure.cs" />
+    <Compile Include="Model\InnerModel\DeleteManifestRequest.cs" />
+    <Compile Include="Model\InnerModel\ExtensionActionResultContainer.cs" />
+    <Compile Include="Model\InnerModel\FileRecord.cs" />
+    <Compile Include="Model\InnerModel\GeneratePalletLabelModel.cs" />
+    <Compile Include="Model\InnerModel\GetBulkPicklistParameters.cs" />
+    <Compile Include="Model\InnerModel\GetOnhandResponse.cs" />
+    <Compile Include="Model\InnerModel\HomeAddressRelationModel.cs" />
+    <Compile Include="Model\InnerModel\HomeAddressSlotSsageInfoModel.cs" />
+    <Compile Include="Model\InnerModel\ImportHomeLocation.cs" />
+    <Compile Include="Model\InnerModel\ImportTSReceivingDataResponseModel.cs" />
+    <Compile Include="Model\InnerModel\InsertInventoryParameter.cs" />
+    <Compile Include="Model\InnerModel\InventoryInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ItemCategoryModel.cs" />
+    <Compile Include="Model\InnerModel\ItemInfo.cs" />
+    <Compile Include="Model\InnerModel\ItemModel.cs" />
+    <Compile Include="Model\InnerModel\ItemPropertiesModel.cs" />
+    <Compile Include="Model\InnerModel\ItemPropertySearchInnerModel.cs" />
+    <Compile Include="Model\InnerModel\LabelInnerModel.cs" />
+    <Compile Include="Model\InnerModel\LabelInnerViewModel.cs" />
+    <Compile Include="Model\InnerModel\LocationItemInnerViewModel.cs" />
+    <Compile Include="Model\InnerModel\ManifestInnerViewModel.cs" />
+    <Compile Include="Model\InnerModel\ManifestItemInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ManinfestInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ModifyPayloadPackageItem.cs" />
+    <Compile Include="Model\InnerModel\NominateReplenishmentModel.cs" />
+    <Compile Include="Model\InnerModel\NotificationProcessInfo.cs" />
+    <Compile Include="Model\InnerModel\NotificationReceiverModel.cs" />
+    <Compile Include="Model\InnerModel\NotificationSendTaskModel.cs" />
+    <Compile Include="Model\InnerModel\OnHandInnerModel.cs" />
+    <Compile Include="Model\InnerModel\OutboundMoveTicketGroupModel.cs" />
+    <Compile Include="Model\InnerModel\OutboundTicketInfoCompleteRequest.cs" />
+    <Compile Include="Model\InnerModel\OutboundTicketInfoProcessingReqeust.cs" />
+    <Compile Include="Model\InnerModel\OutboundUnAssignedGroupModel.cs" />
+    <Compile Include="Model\InnerModel\OutboundUnAssignedListInnerModel.cs" />
+    <Compile Include="Model\InnerModel\PackageEstimateQtyListInnerModel.cs" />
+    <Compile Include="Model\InnerModel\PackageModel.cs" />
+    <Compile Include="Model\InnerModel\PackageNode.cs" />
+    <Compile Include="Model\InnerModel\PackageViewInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ParentTicketGenerateItem.cs" />
+    <Compile Include="Model\InnerModel\Party\PartyParameterize.cs" />
+    <Compile Include="Model\InnerModel\PayloadChangeModel.cs" />
+    <Compile Include="Model\InnerModel\PayloadInnerModel.cs" />
+    <Compile Include="Model\InnerModel\PayloadTransactionLogInnerModel.cs" />
+    <Compile Include="Model\InnerModel\PickAllInnerResponse.cs" />
+    <Compile Include="Model\InnerModel\PickAllParameters.cs" />
+    <Compile Include="Model\InnerModel\PickItemInnerResponse.cs" />
+    <Compile Include="Model\InnerModel\PodInnerModel.cs" />
+    <Compile Include="Model\InnerModel\PodInSlotInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ProductExtendModel.cs" />
+    <Compile Include="Model\InnerModel\ProductPackageExtendModel.cs" />
+    <Compile Include="Model\InnerModel\ReceivingContainer.cs" />
+    <Compile Include="Model\InnerModel\ReceivingContainerItem.cs" />
+    <Compile Include="Model\InnerModel\ReceivingExternalModel.cs" />
+    <Compile Include="Model\InnerModel\ReplenishmentInnerModel.cs" />
+    <Compile Include="Model\InnerModel\ReplicationlogModel.cs" />
+    <Compile Include="Model\InnerModel\RollbackInnerTicketResponse.cs" />
+    <Compile Include="Model\InnerModel\RollbackTicketParameters.cs" />
+    <Compile Include="Model\InnerModel\SenderConfig.cs" />
+    <Compile Include="Model\InnerModel\SyncProNoResponse.cs" />
+    <Compile Include="Model\InnerModel\SyncTrackingResponse.cs" />
+    <Compile Include="Model\InnerModel\TicketAssignedListViewInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketGenerateInnerParameter.cs" />
+    <Compile Include="Model\InnerModel\TicketGroupAssignedModel.cs" />
+    <Compile Include="Model\InnerModel\TicketInfoListInnerViewModel.cs" />
+    <Compile Include="Model\InnerModel\TicketInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketLabelInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketLocationInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketRelationInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketSummaryViewInnerModel.cs" />
+    <Compile Include="Model\InnerModel\TicketViewGroup.cs" />
+    <Compile Include="Model\InnerModel\UnAssignedListViewInnerModel.cs" />
+    <Compile Include="Model\InnerModel\UploadTicketDataInnerParameter.cs" />
+    <Compile Include="Model\InnerModel\VesselAddItemListInnerVewModel.cs" />
+    <Compile Include="Model\InnerModel\VesselInnerModel.cs" />
+    <Compile Include="Model\InnerModel\VesselManifestItemInnerModel.cs" />
+    <Compile Include="Model\InnerModel\VoidTicketInnerParameters.cs" />
+    <Compile Include="Model\InnerModel\WarehouseInnerModel.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderAssignAgentExecuteParameters.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderAssignAgentParameters.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderInnerModel.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderPayloadInnerModel.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderPodInnerModel.cs" />
+    <Compile Include="Model\InnerModel\WorkOrderResult.cs" />
+    <Compile Include="Model\Interface\IAutoAssignAgentProviders.cs" />
+    <Compile Include="Model\Interface\IInboundInitImportParameters.cs" />
+    <Compile Include="Model\Interface\IStatusAgentParamters.cs" />
+    <Compile Include="Model\Interface\IWorkOrderAssignAgentParameters.cs" />
+    <Compile Include="Model\PackageTree.cs" />
+    <Compile Include="Model\Parameters\AddOnhandInnerParameters.cs" />
+    <Compile Include="Model\Parameters\AllocatedPlannerInnerParameter.cs" />
+    <Compile Include="Model\Parameters\AllocatedPlannerResult.cs" />
+    <Compile Include="Model\Parameters\AllocateExecutorParameters.cs" />
+    <Compile Include="Model\Parameters\AutoAssignAgentProviders.cs" />
+    <Compile Include="Model\Parameters\AutoAssignParameters.cs" />
+    <Compile Include="Model\Parameters\BolDeleteInnerParameters.cs" />
+    <Compile Include="Model\Parameters\BolSearchInnerParameters.cs" />
+    <Compile Include="Model\Parameters\CheckOutboundAvailabilityResponse.cs" />
+    <Compile Include="Model\Parameters\DeallocatedParameters.cs" />
+    <Compile Include="Model\Parameters\DeallocateInnerResponse.cs" />
+    <Compile Include="Model\Parameters\DeleteManifestInnerResponse.cs" />
+    <Compile Include="Model\Parameters\EditOnhandInnerParameters.cs" />
+    <Compile Include="Model\Parameters\GenerateLabelInnerRequest.cs" />
+    <Compile Include="Model\Parameters\GetAllcoatedParameter.cs" />
+    <Compile Include="Model\Parameters\GetAvailableInventoryInnerListParameters.cs" />
+    <Compile Include="Model\Parameters\GetAvailableInventoryListInnerParameters.cs" />
+    <Compile Include="Model\Parameters\GetBulkPickInfoParameters.cs" />
+    <Compile Include="Model\Parameters\GetTicketInfoParameters.cs" />
+    <Compile Include="Model\Parameters\HaveTicketParameters.cs" />
+    <Compile Include="Model\Parameters\ItemCategoryInnerParameterize.cs" />
+    <Compile Include="Model\Parameters\ItemInnerParameterize.cs" />
+    <Compile Include="Model\Parameters\ItemPropertySearchModel.cs" />
+    <Compile Include="Model\Parameters\MaintainWorkderInnerParameters.cs" />
+    <Compile Include="Model\Parameters\ManifestDeleteInnerParameters.cs" />
+    <Compile Include="Model\Parameters\ManifestItemListDeleteInnerParameters.cs" />
+    <Compile Include="Model\Parameters\PickAllParameters.cs" />
+    <Compile Include="Model\Parameters\ReplicationManagerInitParameters.cs" />
+    <Compile Include="Model\Parameters\ServiceItemProcessModuleParameters.cs" />
+    <Compile Include="Model\Parameters\SetWorkOrderPodBarcodeInnerParameters.cs" />
+    <Compile Include="Model\Parameters\StatusAgentParamters.cs" />
+    <Compile Include="Model\Parameters\TicketGeneratorParameters.cs" />
+    <Compile Include="Model\Parameters\TicketInfoInnerParameter.cs" />
+    <Compile Include="Model\Parameters\UploadResult.cs" />
+    <Compile Include="Model\Parameters\UploadTicketDataParameter.cs" />
+    <Compile Include="Model\Parameters\UploadTicketResult.cs" />
+    <Compile Include="Model\Parameters\VesselDeleteInnerParamters.cs" />
+    <Compile Include="Model\Parameters\VesselManifestSearchInnerParameters.cs" />
+    <Compile Include="Model\Parameters\VesselSearchInnerParameters.cs" />
+    <Compile Include="Model\Parameters\WMSReplicateMoveModel.cs" />
+    <Compile Include="Model\Parameters\WMSReplicateOnhandModel.cs" />
+    <Compile Include="Model\ReceivingResult.cs" />
+    <Compile Include="Module\Barcode\BarCode.cs" />
+    <Compile Include="Module\Barcode\BarCodeModule.cs" />
+    <Compile Include="Module\Common\LockBuilder.cs" />
+    <Compile Include="Module\Common\PackageCacheManager.cs" />
+    <Compile Include="Module\Common\Policy.cs" />
+    <Compile Include="Module\Common\SlotCacheManager.cs" />
+    <Compile Include="Module\Common\ProductPackageCacheManager.cs" />
+    <Compile Include="Module\Common\ProductCacheManager.cs" />
+    <Compile Include="Module\Common\TracingAgent.cs" />
+    <Compile Include="Module\Common\TransactionInfo.cs" />
+    <Compile Include="Module\HomeAddress\AbstractInboundHomeAddressBuilder.cs" />
+    <Compile Include="Module\HomeAddress\AbstractOutboundHomeAddressBuilder.cs" />
+    <Compile Include="Module\HomeAddress\InboundDefaultHomeAddressBuilder.cs" />
+    <Compile Include="Module\HomeAddress\InboundHomeAddressBuilderInitParameters.cs" />
+    <Compile Include="Module\HomeAddress\InboundHomeAddressMap.cs" />
+    <Compile Include="Module\HomeAddress\OutboundDefaultHomeAddressBuilder.cs" />
+    <Compile Include="Module\HomeAddress\OutboundHomeAddressBuilderInitParameters.cs" />
+    <Compile Include="Module\HomeAddress\OutboundHomeAddressMap.cs" />
+    <Compile Include="Module\Label\LabelAgent.cs" />
+    <Compile Include="Module\Label\LabelAgentInitParameter.cs" />
+    <Compile Include="Module\Log\InternalLogger.cs" />
+    <Compile Include="Module\Log\Logger.cs" />
+    <Compile Include="Module\Manifest\ImportProcess\AbstractInboundImportModule.cs" />
+    <Compile Include="Module\Manifest\ImportProcess\DefaultInboundImportModule.cs" />
+    <Compile Include="Module\Manifest\ImportProcess\Model\DefaultInboudImportModel.cs" />
+    <Compile Include="Module\Manifest\ImportProcess\Model\InboundInitImportModelParameters.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\BolStatusManageAgent.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\Center\StatusCenter.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\Center\StatusCenter.sub.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\ManifestStatusManageAgent.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\RollbackProcesser\InboundRollbackProcesser.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\RollbackProcesser\MoveRollbackProcesser.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\RollbackProcesser\OutboundRollbackProcesser.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\RollbackProcesser\RollbackProcesserAbstract.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\StatusManageAgent.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\TicketStatusManageAgent.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\VesselStatusManageAgent.cs" />
+    <Compile Include="Module\Manifest\StatusAgent\WorkOrderStatusManageAgent.cs" />
+    <Compile Include="Module\Replication\AbstractReplication.cs" />
+    <Compile Include="Module\Replication\AllocatedReplication.cs" />
+    <Compile Include="Module\Replication\ExpandObject\WmsAllocatedExtendModel.cs" />
+    <Compile Include="Module\Replication\ExpandObject\WmsReceivingExtModel.cs" />
+    <Compile Include="Module\Replication\OnhandReplication.cs" />
+    <Compile Include="Module\Replication\ReceiviedReplication.cs" />
+    <Compile Include="Module\Replication\ReplicationManager.cs" />
+    <Compile Include="Module\RequestManager\RequestAction.cs" />
+    <Compile Include="Module\RequestManager\Requestidentifier.cs" />
+    <Compile Include="Module\RequestManager\RequestManager.cs" />
+    <Compile Include="Module\Sequence\SequenceAgent.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\AbstractTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\InventoryCountingTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\MoveTicketToConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\OutboundMoveTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\OutboundTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\ReceivingMoveTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketFromToConvert\ReceivingTicketConverter.cs" />
+    <Compile Include="Module\Ticket\TicketGeneralOperationalModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\AbstractTicketGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\BulkTicketGenerateor.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\InboundTicketGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\AbstractInstructionBuilder.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Generators\DefaultInstructionGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\IInstructionBuilder.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\IInstructionGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\InboundInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\InboundMoveInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\InventoryCountingInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\OutboundInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\OutboundMoveInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\Instruction\Modules\WarehouseMoveInstructionModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\InventoryCountingTicketGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\MoveTicketGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\OutboundTicketBatchGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\OutboundTicketGenerator.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\AbstractServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\BulkPickServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\InboundServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\InventoryCountingServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\Move\AbstractMoveServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\Move\InboundMoveServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\Move\OutboundMoveServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\OutboundServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketGenerate\SubModule\WarehouseMoveServiceItemProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketInfoConvert\AbstractTicketViewParser.cs" />
+    <Compile Include="Module\Ticket\TicketInfoConvert\InboundTicketViewParser.cs" />
+    <Compile Include="Module\Ticket\TicketInfoConvert\InventoryCountingTicketVieweParser.cs" />
+    <Compile Include="Module\Ticket\TicketInfoConvert\MoveTicketViewParser.cs" />
+    <Compile Include="Module\Ticket\TicketInfoConvert\OutboundTicketViewParser.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\AbstractProcessAgent.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\interfaces\IPoolManager.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\interfaces\IPoolModel.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\interfaces\IProcessModel.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\interfaces\ITicketProcessAgentParameter.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\interfaces\ITicketViewGroupItem.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\Pool\PoolManager.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\Pool\PoolModel.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\Pool\TicketProcessAgentParameter.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\AbstractSubProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\InboundSubProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\InventoryCountingSubProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\MoveSubProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\OutboundSubProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\TicketExtraProcess\OutboundTicketExtraProcessModule.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\ProcessModule\TicketExtraProcess\TicketExtraProcessParameters.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\TicketProcessAgent.cs" />
+    <Compile Include="Module\Ticket\TicketProcess\TicketProcessModel.cs" />
+    <Compile Include="Module\TransactionScopeAgent.cs" />
+    <Compile Include="Module\VarysSyncer\AbstractSyncer.cs" />
+    <Compile Include="Module\VarysSyncer\ReplenishmentSyncer.cs" />
+    <Compile Include="Module\WorkOrder\AbstractWorkOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AssignedParameterConverter\AssignedParameterConverter.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\AbstractAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\AbstractAutoAssignTicketExecutor.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\AbstractAutoAssignWorkOrderExecutor.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\DefaultAutoAssignTicketExecutor.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\InboundAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\InboundAutoAssignWorkOrderExecutor.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OrderAutoAssign\AbstractExternalAutoInboundAssignedAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OrderAutoAssign\AbstractExternalAutoOutboundAssignedAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OrderAutoAssign\ExternalInboundAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OrderAutoAssign\ExternalOutboundAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OrderAutoAssign\ExternalOutboundFullAllocatedAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OutboundAutoAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\AutoAssign\OutboundAutoAssignWorkOrderExecutor.cs" />
+    <Compile Include="Module\WorkOrder\BulkPickOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\InboundWorkOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IAutoAssignInboundProcessArgs.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IAutoAssignOutboundProcessArgs.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IAutoAssignProcessArgs.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IAutoAssignTicketExecutor.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IAutoAssignWorkOrderExecutor.cs" />
+    <Compile Include="Module\WorkOrder\Interface\IWorkOrderAssignAgentExecuteParameters.cs" />
+    <Compile Include="Module\WorkOrder\InventoryCountingWorkOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\MoveWorkOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\OutboundWorkOrderAssignAgent.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Executor\AllocatedExecutorResult.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\AbstractAllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\AllocatedPlannerInitParameters.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Executor\AllocateExecutor.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\AllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Executor\FullAllocatedExecutor.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Executor\FullAllocatedTemporaryOnhandExecutor.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\FullAllocatedPlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\FutureFullAllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\FutureAllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\IAllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Allocated\Planner\NewAllocatePlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Receiving\AbstractReceivingPlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Receiving\DefaultReceivingPlanner.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Receiving\ReceivingPlannerInitParameters.cs" />
+    <Compile Include="Module\WorkOrder\Planner\Receiving\ReceivingPlannerParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ShippingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Cache.Models\YAEP.WMS.Cache.Models.csproj">
+      <Project>{ffc34544-f5c5-4701-bb59-68b2a4451c75}</Project>
+      <Name>YAEP.WMS.Cache.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Cache\YAEP.WMS.Cache.csproj">
+      <Project>{23e53d4d-0153-4e42-977e-058c02a49d7f}</Project>
+      <Name>YAEP.WMS.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Constant\YAEP.WMS.Constant.csproj">
+      <Project>{6E9437B5-3773-4F46-A3F8-2B954476A4CC}</Project>
+      <Name>YAEP.WMS.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45e7d686-0cfe-4e2d-93ba-df3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Language\YAEP.WMS.Language.csproj">
+      <Project>{83C9F2C2-3938-4089-A2DF-9C14B5500870}</Project>
+      <Name>YAEP.WMS.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.NotificationReceiver.Common\YAEP.WMS.NotificationReceiver.Common.csproj">
+      <Project>{fcb42067-6537-430b-8e06-79e7e1dcfaf1}</Project>
+      <Name>YAEP.WMS.NotificationReceiver.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Tracing.Jaeger\YAEP.WMS.Tracing.Jaeger.csproj">
+      <Project>{4B8C1193-7DF8-41E9-8ECB-3AD958072D07}</Project>
+      <Name>YAEP.WMS.Tracing.Jaeger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ShippingService\AddCarrierTruckResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\AddShipCarrierPalletResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\APIResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\AssignedPackageToPalletResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\AssignedPalletToTruckResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\CarrierPalletViewModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\CarrierTruckDeparturedResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\CarrierTruckViewModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ChangePackageToOtherPalletResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ChangePalletToOtherTruckResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\DeleteCarrierPalletResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\DeleteCarrierTruckResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ProductPackModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ShippingService\RemovePackageFromPalletResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\RemovePalletFromTruckResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\SccanSyncResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\SeparateBoxResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ServiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ShipCarrierCategory.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ShipCarrierPalletInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\ShippingLog.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\UpdateInvoiceRealtionResultModel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ShippingService\webservice.wsdl" />
+    <None Include="Web References\ShippingService\WMSChangeAllocatedInfoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
+    <EmbeddedResource Include="rdlc\Barcode_BI.rdlc" />
+    <EmbeddedResource Include="rdlc\Barcode_P.rdlc" />
+    <EmbeddedResource Include="rdlc\Barcode_Slot.rdlc" />
+    <EmbeddedResource Include="rdlc\Barcode_TS_P.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.19/WebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ShippingService\</RelPath>
+      <UpdateFromURL>http://192.168.1.19/WebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>YAEP_WMS_BLL_ShippingService_WebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ShippingService\webservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Cache\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

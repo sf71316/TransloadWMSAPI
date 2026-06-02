@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Data.ORM.Dapper</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Data.ORM.Dapper.AbstractBulkCopy">
+            <summary>
+            批次更新抽象模型
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractBulkCopy.BulkCopy``1(System.Collections.Generic.IEnumerable{``0},System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractBulkCopy.BulkCopy(System.Data.DataTable,System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(DataTable)
+            </summary>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractBulkCopy.GetInstance(YAEP.Data.ORM.Interfaces.IDataAccessLayerAdapter)">
+            <summary>
+             取得批認更新實體
+            </summary>
+            <param name="adapter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Dapper.BulkCopy.MSSqlClientBulkCopy">
+            <summary>
+            MS SQL 批次新增模型
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.BulkCopy.MSSqlClientBulkCopy.BulkCopy(System.Data.DataTable,System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(DataTable)
+            </summary>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.BulkCopy.MSSqlClientBulkCopy.BulkCopy``1(System.Collections.Generic.IEnumerable{``0},System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="tableName"></param>
+            <param name="IgonreColumns"></param>
+            <param name="timeOut"></param>
+            <param name="BatchSize"></param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Dapper.AbstractDbEntities">
+            <summary>
+            資料庫操作抽象物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.#ctor">
+            <summary>
+            測試使用，正式環境少用
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.#ctor(YAEP.Data.ORM.Interfaces.IConnectionSettings)">
+            <summary>
+            建構子(注入ConnectionSetting)
+            </summary>
+            <param name="connectionSettings"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.BeginTranaction">
+            <summary>
+            開啟交易
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.BeginTranaction(System.Data.IsolationLevel)">
+            <summary>
+            開啟交易(指定隔離層級)
+            </summary>
+            <param name="isolationLevel">隔離層級</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Commit">
+            <summary>
+            交易認可
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Query(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳動態集合
+            </summary>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Query``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳強型別
+            </summary>
+            <typeparam name="T">回傳型別</typeparam>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.QueryFirst``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳單筆資料
+            </summary>
+            <typeparam name="T">回傳型別</typeparam>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.QueryMultiple(System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳多筆資料(SQL需用;號分斷) transaction 會被取代用內部元件，不用傳
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.ExecuteScalar(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳單一數值物件
+            </summary>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.ExecuteScalar``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            查詢資料回傳單一數值(強型別)
+            </summary>
+            <typeparam name="T">指定型別</typeparam>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Execute(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            執行SQL語法
+            </summary>
+            <param name="sql">SQL指令</param>
+            <param name="param">參數集合</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <param name="commandType">指令型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Insert``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            新增單筆資料
+            </summary>
+            <typeparam name="T">資料型別</typeparam>
+            <param name="entityToInsert">資料物件</param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Insert``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Update``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToUpdate"></param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Update``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Delete``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToDelete"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Delete``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout">執行逾期時間(秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.BulkCopy``1(System.Collections.Generic.IEnumerable{``0},System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(強型別)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection">新增資料集合</param>
+            <param name="tableName">資料表名稱</param>
+            <param name="IgonreColumns">略過欄位</param>
+            <param name="timeOut">執行逾期時間(秒)</param>
+            <param name="BatchSize">緩衝大小</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.BulkCopy(System.Data.DataTable,System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次新增(DataTable)
+            </summary>
+            <param name="collection">新增資料集合</param>
+            <param name="tableName">資料表名稱</param>
+            <param name="IgonreColumns">略過欄位</param>
+            <param name="timeOut">執行逾期時間(秒)</param>
+            <param name="BatchSize">緩衝大小</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Rollback">
+            <summary>
+            交易回復
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.GetCommandTimeout(System.Nullable{System.Int32})">
+            <summary>
+            取得指令執行逾期時間
+            </summary>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.AbstractDbEntities.DbAdapter">
+            <summary>
+             資料庫操作內部物件
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.AbstractDbEntities.Transaction">
+            <summary>
+            資料庫交易物件
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.AbstractDbEntities.CommandTimeout">
+            <summary>
+            資料庫指令執行逾期時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.AbstractDbEntities.ConnectionSettings">
+            <summary>
+            資料庫連線資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.AbstractDbEntities.Connection">
+            <summary>
+            資料庫連接物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Finalize">
+            <summary>
+            解構子
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Dispose">
+            <summary>
+            處置物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.AbstractDbEntities.Dispose(System.Boolean)">
+            <summary>
+            處置物件
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Dapper.DynamicParameters">
+            <summary>
+            動態參數物件
+            </summary>
+        </member>
+        <member name="F:YAEP.Data.ORM.Dapper.DynamicParameters._Parameters">
+            <summary>
+            參數集合變數
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.DynamicParameters.ParameterNames">
+            <summary>
+            參數名稱集合
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.DynamicParameters.Parameters">
+            <summary>
+            參數集合
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.DynamicParameters.Add(System.String,System.Object,System.Nullable{System.Data.DbType},System.Nullable{System.Data.ParameterDirection},System.Nullable{System.Int32})">
+            <summary>
+            新增參數
+            </summary>
+            <param name="name">參數名稱</param>
+            <param name="value">參數數值</param>
+            <param name="dbType">資料型別</param>
+            <param name="direction">參數型別</param>
+            <param name="size">參數大小</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.DynamicParameters.Fill``1(``0)">
+            <summary>
+            參數集合注入
+            </summary>
+            <typeparam name="T">參數數值型別</typeparam>
+            <param name="Source">參數數值物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.DynamicParameters.Get``1(System.String)">
+            <summary>
+            取得指定參數
+            </summary>
+            <typeparam name="T">參數數值型別</typeparam>
+            <param name="name">參數名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.DynamicParameters.Clean(System.String)">
+            <summary>
+            清除參數
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Dapper.ParameterInfo">
+            <summary>
+            參數資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.ParameterInfo.Name">
+            <summary>
+            參數名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.ParameterInfo.Value">
+            <summary>
+            參數資料
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.ParameterInfo.ParameterDirection">
+            <summary>
+            參數類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.ParameterInfo.DbType">
+            <summary>
+            資料類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Dapper.ParameterInfo.Size">
+            <summary>
+            參數空間大小
+            </summary>
+        </member>
+    </members>
+</doc>

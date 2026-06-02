@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using YAEP.WMS.Interfaces;
+
+namespace YAEP.WMS.BLL.Model
+{
+    internal class VesselAddItemListInnerVewModel : IVesselAddItemListVewModel
+    {
+        public VesselAddItemListInnerVewModel()
+        {
+            this.EstimateQtyList = new List<IPackageEstimateQtyList>();
+        }
+        public Guid ItemUID { get; set; }
+        public Guid ManifestItemUID  { get; set; }
+        public string ItemID { get; set; }
+        public string PackPackageName { get; set; }
+        public Guid PackPackageUID { get; set; }
+
+        public decimal Volume { get; set; }
+        public decimal Weight { get; set; }
+        public ICollection<IPackageEstimateQtyList> EstimateQtyList { get; set; }
+        public Guid ReceivePackage { get; set; }
+        public int ReceiveQty { get; set; }
+        public int PackageQty { get; set; }
+        public int FreeQty { get; set; }
+        public int AllocatedQty { get; set; }
+    }
+}

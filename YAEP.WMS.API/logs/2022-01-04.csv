@@ -1,0 +1,11 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Tracing#8f0a5c2e-b91a-47a6-8f16-3fc4b788967a begin trace,$,,,,6,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,8f0a5c2e-b91a-47a6-8f16-3fc4b788967a,1,,
+TRACE,Start to prepare for items from cache.,$,,,,10,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,8f0a5c2e-b91a-47a6-8f16-3fc4b788967a,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,6,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,8f0a5c2e-b91a-47a6-8f16-3fc4b788967a,3,null,null
+TRACE,Start to payload data from database.,$,,,,11,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,8f0a5c2e-b91a-47a6-8f16-3fc4b788967a,4,null,null
+TRACE,Tracing#318d314d-11ef-4396-af88-bda93dc9cf84 begin trace,$,,,,6,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,1,,
+TRACE,Start to prepare for items from cache.,$,,,,6,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,10,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,3,null,null
+TRACE,Start to payload data from database.,$,,,,17,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,4,null,null
+TRACE,Got payload data from database.,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,5,null,null
+TRACE,Start to fill payload data.,$,,,,23,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,318d314d-11ef-4396-af88-bda93dc9cf84,6,null,null

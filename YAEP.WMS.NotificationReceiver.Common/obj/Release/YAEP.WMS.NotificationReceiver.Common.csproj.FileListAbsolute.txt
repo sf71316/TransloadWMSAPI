@@ -1,0 +1,17 @@
+E:\公司\公司專案\WMS\API\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.dll
+E:\公司\公司專案\WMS\API\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+E:\公司\公司專案\WMS\API\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.csproj.CoreCompileInputs.cache
+E:\公司\公司專案\WMS\API\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.dll
+E:\公司\公司專案\WMS\API\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.dll
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+D:\Project\WMS2\Mainproject\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.csproj.AssemblyReference.cache
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.dll
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\bin\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.dll
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.pdb
+D:\Project\WMS2\Mainproject_Production\YAEP.WMS.NotificationReceiver.Common\obj\Release\YAEP.WMS.NotificationReceiver.Common.csproj.AssemblyReference.cache

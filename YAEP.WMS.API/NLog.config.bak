@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      >
+  <extensions>
+    <add assembly="NLog.Extended" />
+  </extensions>
+  <targets>
+    <target name="database" xsi:type="Database" connectionStringName="YAEP.WMS.ConnectString"  >
+      <commandText>
+        INSERT INTO [WMS_Log]
+        ([Level]
+        ,[Content]
+        ,[ExceptionMessage]
+        ,[ExceptionStackTrace]
+        ,[MachineName]
+        ,[Source]
+        ,[ThreadId]
+        ,[Type]
+        ,[Logger]
+        ,[IP]
+        ,[Application]
+        ,[SubApplication]
+        ,[Alias]
+        ,[BelongToType]
+        ,[BelongToUID]
+        ,[BelongToRemark]
+        ,[ObjectBefore]
+        ,[ObjectAfter])
+        VALUES
+        ( 
+        @Level,
+        @Content,
+        @ExceptionMessage,
+        @ExceptionStackTrace,
+        @MachineName,
+        @Source,
+        @ThreadId,
+        @Type,
+        @Logger,
+        @IP,
+        @Application,
+        @SubApplication,
+        @Alias,
+        @BelongToType,
+        @BelongToUID,
+        @BelongToRemark,
+        @ObjectBefore,
+        @ObjectAfter)
+      </commandText>
+
+      <parameter name="@Level" layout="${event-properties:item=Level}" />
+      <parameter name="@Content" layout="${event-properties:item=Content}" />
+      <parameter name="@ExceptionMessage" layout="$${event-properties:item=ExceptionMessage}" />
+      <parameter name="@ExceptionStackTrace" layout="${event-properties:item=ExceptionStackTrace}" />
+      <parameter name="@MachineName" layout="${event-properties:item=MachineName}" />
+      <parameter name="@Source" layout="${event-properties:item=Source}" />
+      <parameter name="@ThreadId" layout="${event-properties:item=ThreadId}" />
+      <parameter name="@Type" layout="${event-properties:item=Type}" />
+      <parameter name="@Logger" layout="${event-properties:item=Logger}" />
+      <parameter name="@IP" layout="${event-properties:item=IP}" />
+      <parameter name="@Application" layout="${event-properties:item=Application}" />
+      <parameter name="@SubApplication" layout="$${event-properties:item=SubApplication}" />
+      <parameter name="@Alias" layout="${event-properties:item=Alias}" />
+      <parameter name="@BelongToType" layout="${event-properties:item=BelongToType}" />
+      <parameter name="@BelongToUID" layout="${event-properties:item=BelongToUID}" />
+      <parameter name="@BelongToRemark" layout="${event-properties:item=BelongToRemark}" />
+      <parameter name="@ObjectBefore" layout="${event-properties:item=ObjectBefore}" />
+      <parameter name="@ObjectAfter" layout="${event-properties:item=ObjectAfter}" />
+    </target>
+
+  </targets>
+
+  <rules>
+    <logger name="*" level="Trace" writeTo="database" />
+    <logger name="*" level="Info" writeTo="database" />
+    <logger name="*" level="Error" writeTo="database" />
+    <logger name="*" level="Debug" writeTo="database" />
+  </rules>
+</nlog>

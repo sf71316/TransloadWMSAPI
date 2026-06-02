@@ -1,0 +1,39 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Tracing#caa3457a-54ed-47e3-b9f6-326fec0e6342 begin trace,$,,,,7,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,caa3457a-54ed-47e3-b9f6-326fec0e6342,1,"[{""WarehouseUID"":""66272bde-922b-48f7-89b3-0d201f8322cc"",""PayloadUID"":""00000000-0000-0000-0000-000000000000"",""ItemUID"":""ffc4b68d-1ebe-455d-8ae0-4fa0ebeea1c4"",""ModifyPackageUID"":""f7fbb0db-5b7a-46d8-b0f2-f952dc982845"",""ModifyQty"":11,""ModifySlotUID"":""d652aa18-352d-451f-a82a-a0a9b73598b0"",""ActionType"":2,""isNew"":true,""AdjustType"":0}]",
+TRACE,Tracing#caa3457a-54ed-47e3-b9f6-326fec0e6342 execute time:14046 ms end trace,$,,,,9,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,caa3457a-54ed-47e3-b9f6-326fec0e6342,2,"{""Success"":false,""Message"":""Slot 不屬於該倉庫，請確認"",""InnerException"":null,""Content"":false,""TypeCode"":null}",
+TRACE,Tracing#0656c83c-5dca-487b-90bd-25228cd355bd begin trace,$,,,,6,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,0656c83c-5dca-487b-90bd-25228cd355bd,1,"[{""WarehouseUID"":""66272bde-922b-48f7-89b3-0d201f8322cc"",""PayloadUID"":""00000000-0000-0000-0000-000000000000"",""ItemUID"":""ffc4b68d-1ebe-455d-8ae0-4fa0ebeea1c4"",""ModifyPackageUID"":""f7fbb0db-5b7a-46d8-b0f2-f952dc982845"",""ModifyQty"":11,""ModifySlotUID"":""d652aa18-352d-451f-a82a-a0a9b73598b0"",""ActionType"":2,""isNew"":true,""AdjustType"":0}]",
+TRACE,Tracing#0656c83c-5dca-487b-90bd-25228cd355bd execute time:1484 ms end trace,$,,,,9,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,0656c83c-5dca-487b-90bd-25228cd355bd,2,"{""Success"":false,""Message"":""The warehouse does not have the related Slot, please change it."",""InnerException"":null,""Content"":false,""TypeCode"":null}",
+TRACE,Tracing#239b253a-2f69-40e4-8ec5-9f197d54e4db begin trace,$,,,,6,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,239b253a-2f69-40e4-8ec5-9f197d54e4db,1,"[{""WarehouseUID"":""66272bde-922b-48f7-89b3-0d201f8322cc"",""PayloadUID"":""00000000-0000-0000-0000-000000000000"",""ItemUID"":""ffc4b68d-1ebe-455d-8ae0-4fa0ebeea1c4"",""ModifyPackageUID"":""f7fbb0db-5b7a-46d8-b0f2-f952dc982845"",""ModifyQty"":11,""ModifySlotUID"":""d652aa18-352d-451f-a82a-a0a9b73598b0"",""ActionType"":2,""isNew"":true,""AdjustType"":0}]",
+TRACE,Tracing#239b253a-2f69-40e4-8ec5-9f197d54e4db execute time:1578 ms end trace,$,,,,6,CreateAdjustmentTicket,willk,,WMS-Web-API-Tracing,,,980,239b253a-2f69-40e4-8ec5-9f197d54e4db,2,"{""Success"":false,""Message"":""The warehouse does not have the related Slot, please change it."",""InnerException"":null,""Content"":false,""TypeCode"":null}",
+TRACE,Tracing#8a58cbf5-46d7-43fa-b190-8cf112c51a7b begin trace,$,,,,6,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,8a58cbf5-46d7-43fa-b190-8cf112c51a7b,1,,
+TRACE,Start to prepare for items from cache.,$,,,,11,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,8a58cbf5-46d7-43fa-b190-8cf112c51a7b,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,7,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,8a58cbf5-46d7-43fa-b190-8cf112c51a7b,3,null,null
+TRACE,Tracing#e256dfaa-ec3c-4d9e-ac63-4b61d60b00bf begin trace,$,,,,5,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,e256dfaa-ec3c-4d9e-ac63-4b61d60b00bf,1,,
+TRACE,Start to prepare for items from cache.,$,,,,9,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,e256dfaa-ec3c-4d9e-ac63-4b61d60b00bf,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,5,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,e256dfaa-ec3c-4d9e-ac63-4b61d60b00bf,3,null,null
+TRACE,Tracing#bda172b7-6c53-44bf-8fc6-6d6edd6b1fb0 begin trace,$,,,,6,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,bda172b7-6c53-44bf-8fc6-6d6edd6b1fb0,1,,
+TRACE,Start to prepare for items from cache.,$,,,,6,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,bda172b7-6c53-44bf-8fc6-6d6edd6b1fb0,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,6,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,bda172b7-6c53-44bf-8fc6-6d6edd6b1fb0,3,null,null
+TRACE,Tracing#3bd4bc14-6326-478d-9640-3661ad56fe88 begin trace,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3bd4bc14-6326-478d-9640-3661ad56fe88,1,,
+TRACE,Start to prepare for items from cache.,$,,,,12,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3bd4bc14-6326-478d-9640-3661ad56fe88,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3bd4bc14-6326-478d-9640-3661ad56fe88,3,null,null
+TRACE,Tracing#e433f5d8-904e-44cd-93aa-e9b271abb37a begin trace,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,e433f5d8-904e-44cd-93aa-e9b271abb37a,1,,
+TRACE,Start to prepare for items from cache.,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,e433f5d8-904e-44cd-93aa-e9b271abb37a,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,e433f5d8-904e-44cd-93aa-e9b271abb37a,3,null,null
+TRACE,Tracing#0f313ed2-24b0-4d47-ab5e-dd22e2840457 begin trace,$,,,,8,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,0f313ed2-24b0-4d47-ab5e-dd22e2840457,1,,
+TRACE,Start to prepare for items from cache.,$,,,,8,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,0f313ed2-24b0-4d47-ab5e-dd22e2840457,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,9,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,0f313ed2-24b0-4d47-ab5e-dd22e2840457,3,null,null
+TRACE,Tracing#c74ae890-fe71-4802-8783-9b636d3417da begin trace,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,c74ae890-fe71-4802-8783-9b636d3417da,1,,
+TRACE,Start to prepare for items from cache.,$,,,,32,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,c74ae890-fe71-4802-8783-9b636d3417da,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,26,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,c74ae890-fe71-4802-8783-9b636d3417da,3,null,null
+TRACE,Tracing#cf7faa74-ff27-40ea-9490-a698a50bef34 begin trace,$,,,,7,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,cf7faa74-ff27-40ea-9490-a698a50bef34,1,,
+TRACE,Start to prepare for items from cache.,$,,,,23,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,cf7faa74-ff27-40ea-9490-a698a50bef34,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,26,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,cf7faa74-ff27-40ea-9490-a698a50bef34,3,null,null
+TRACE,Start to payload data from database.,$,,,,23,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,cf7faa74-ff27-40ea-9490-a698a50bef34,4,null,null
+TRACE,Tracing#3676189f-8a22-4ba9-9355-eedfd5f0ec53 begin trace,$,,,,17,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,1,,
+TRACE,Start to prepare for items from cache.,$,,,,25,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,2,null,null
+TRACE,Done prepare for items from cache.,$,,,,23,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,3,null,null
+TRACE,Start to payload data from database.,$,,,,17,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,4,null,null
+TRACE,Got payload data from database.,$,,,,23,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,5,null,null
+TRACE,Start to fill payload data.,$,,,,39,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,6,null,null
+TRACE,Filled payload data.,$,,,,39,GetModifyPayloadList,admin,,WMS-Web-API-Tracing,,,980,3676189f-8a22-4ba9-9355-eedfd5f0ec53,7,null,null

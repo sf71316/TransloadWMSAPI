@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E9437B5-3773-4F46-A3F8-2B954476A4CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.Constant</RootNamespace>
+    <AssemblyName>YAEP.WMS.Constant</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YAEP.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbTableName.cs" />
+    <Compile Include="Enums\AllocatedComponentType.cs" />
+    <Compile Include="Enums\AllocatedStatus.cs" />
+    <Compile Include="Enums\BulkPickStatus.cs" />
+    <Compile Include="Enums\BulkPickWorkOrderPayloadStatus.cs" />
+    <Compile Include="Enums\ChangePayloadResultCategories.cs" />
+    <Compile Include="Enums\ExpcetionType.cs" />
+    <Compile Include="Enums\RequestFunction.cs" />
+    <Compile Include="Enums\TransactionlogAction.cs" />
+    <Compile Include="Enums\TransactionlogExternalfunction.cs" />
+    <Compile Include="Enums\HomeAddressOutboundType.cs" />
+    <Compile Include="Enums\HomeAddressRelationStatus.cs" />
+    <Compile Include="Enums\HomeAddressType.cs" />
+    <Compile Include="Enums\InventoryStatus.cs" />
+    <Compile Include="Enums\ItemStorageStatus.cs" />
+    <Compile Include="Enums\ManifestItemListStatus.cs" />
+    <Compile Include="Enums\MobileAttachmentBelongToType.cs" />
+    <Compile Include="Enums\MobileAttachmentType.cs" />
+    <Compile Include="Enums\AdjuestType.cs" />
+    <Compile Include="Enums\ModifyInventoryActionType.cs" />
+    <Compile Include="Enums\MoveTicketCommand.cs" />
+    <Compile Include="Enums\PackingStationCarrier.cs" />
+    <Compile Include="Enums\AllocateType.cs" />
+    <Compile Include="Enums\PayloadTransactionLogTypes.cs" />
+    <Compile Include="Enums\PayloadType.cs" />
+    <Compile Include="Enums\PickItemStatus.cs" />
+    <Compile Include="Enums\ReceiverStatus.cs" />
+    <Compile Include="Enums\ReplenishmentProcessStatus.cs" />
+    <Compile Include="Enums\ReplicationAction.cs" />
+    <Compile Include="Enums\ScanType.cs" />
+    <Compile Include="Enums\SenderTaskStatus.cs" />
+    <Compile Include="Enums\SlotType.cs" />
+    <Compile Include="Enums\StorageMethod.cs" />
+    <Compile Include="Enums\StorageType.cs" />
+    <Compile Include="Enums\ProcessKind.cs" />
+    <Compile Include="Enums\TransactionlogSubfunction.cs" />
+    <Compile Include="Enums\TicketInfoMappingType.cs" />
+    <Compile Include="Enums\TicketRelationStatus.cs" />
+    <Compile Include="Enums\VesselManifestStatus.cs" />
+    <Compile Include="Enums\WorkOrderPayloadType.cs" />
+    <Compile Include="Enums\WorkOrderPodProcessStatus.cs" />
+    <Compile Include="ItemPropertyFields.cs" />
+    <Compile Include="OrderType.cs" />
+    <Compile Include="SequenceTag.cs" />
+    <Compile Include="WMSAPIParameters.cs" />
+    <Compile Include="Enums\InventoryTypes.cs" />
+    <Compile Include="Enums\PayloadTransactionLogStatus.cs" />
+    <Compile Include="Enums\ServiceItem.cs" />
+    <Compile Include="Enums\TicketInfoAssigneeRelationStatus.cs" />
+    <Compile Include="Enums\TicketInfoStatus.cs" />
+    <Compile Include="Enums\TicketStatus.cs" />
+    <Compile Include="Enums\WarehouseStatus.cs" />
+    <Compile Include="Enums\BinStatus.cs" />
+    <Compile Include="Enums\BarcodeKind.cs" />
+    <Compile Include="Enums\BarcodeMethod.cs" />
+    <Compile Include="Enums\BarcodeType.cs" />
+    <Compile Include="Enums\BolStatus.cs" />
+    <Compile Include="Enums\LabelBelongType.cs" />
+    <Compile Include="Enums\LabelStatus.cs" />
+    <Compile Include="Enums\LabelType.cs" />
+    <Compile Include="Enums\ManifestType.cs" />
+    <Compile Include="Enums\ManifestStatus.cs" />
+    <Compile Include="Enums\AreaStatus.cs" />
+    <Compile Include="Enums\SlotStatus.cs" />
+    <Compile Include="Enums\PayloadStatus.cs" />
+    <Compile Include="Enums\PodStatus.cs" />
+    <Compile Include="Enums\TicketCategory.cs" />
+    <Compile Include="Enums\VesselStatus.cs" />
+    <Compile Include="Enums\WorkOrderPayloadStatus.cs" />
+    <Compile Include="Enums\WorkOrderPodStatus.cs" />
+    <Compile Include="Enums\WorkOrderStatus.cs" />
+    <Compile Include="FlowStatusCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFC34544-F5C5-4701-BB59-68B2A4451C75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.Cache.Models</RootNamespace>
+    <AssemblyName>YAEP.WMS.Cache.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="YAEP.Common.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\YAEP.WMS.BLL\bin\Debug\YAEP.Core.Party.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Identities.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Identities.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Package.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="0_basic\AbstractCacheModel.cs" />
+    <Compile Include="2_package\PackageUomCacheModel.cs" />
+    <Compile Include="2_package\PackageVersionCacheModel.cs" />
+    <Compile Include="3_party\CustomerCacheModel.cs" />
+    <Compile Include="1_product\ProductCategoryRelationCacheModel.cs" />
+    <Compile Include="1_product\ProductCategoryCacheModel.cs" />
+    <Compile Include="4_warehouse\WarehouseCacheModel.cs" />
+    <Compile Include="3_party\PartyCacheModel.cs" />
+    <Compile Include="2_package\PackageCacheModel.cs" />
+    <Compile Include="1_product\ProductCacheModel.cs" />
+    <Compile Include="5_Identities\GroupCacheModel.cs" />
+    <Compile Include="5_Identities\UserResourcePermissionCacheModel.cs" />
+    <Compile Include="5_Identities\UserCacheModel.cs" />
+    <Compile Include="6_common\StateCacheModel.cs" />
+    <Compile Include="6_common\CityCacheModel.cs" />
+    <Compile Include="6_common\ZipCacheModel.cs" />
+    <Compile Include="6_common\CountryCacheModel.cs" />
+    <Compile Include="Board.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45e7d686-0cfe-4e2d-93ba-df3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

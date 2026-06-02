@@ -1,0 +1,714 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Data.ORM.Templates</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1">
+            <summary>
+            基底 Repository 處理器
+            <para />implement <see cref="T:YAEP.Data.ORM.Interfaces.IRepositoryHandler`1"/>
+            </summary>
+            <typeparam name="T">類別</typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.#ctor(YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer,YAEP.Interfaces.IAuthenticationProvider,YAEP.Data.ORM.Interfaces.IModelDescriptor{`0})">
+            <summary>
+            建構子
+            </summary>
+            <param name="instance">ORM 實體</param>
+            <param name="authenticationProvider">認證提供者</param>
+            <param name="modelDescriptor">Model 定義提供者</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.GetPrimaryKeyName">
+            <summary>
+            取得對應的預設資料主鍵名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.GetTableName">
+            <summary>
+            取得對應的預設資料表名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreateByDynamic(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="dynamicItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreateByDynamic(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+            <param name="dynamicItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.BatchCreateByDynamic(System.Object,System.String,System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="dynamicCollection"></param>
+            <param name="tableName"></param>
+            <param name="ignoreColumns"></param>
+            <param name="timeout"></param>
+            <param name="batchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreateItem(`0)">
+            <summary>
+            建立
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreateCollection(System.Collections.Generic.IEnumerable{`0},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            批次建立
+            </summary>
+            <param name="collection"></param>
+            <param name="ignoreColumns"></param>
+            <param name="timeout"></param>
+            <param name="batchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.UpdateItem(`0)">
+            <summary>
+            修改
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Update(System.Object,System.Int32,System.String)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="UID">識別碼</param>
+            <param name="Status">狀態</param>
+            <param name="ModifiedBy">異動者</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Update(System.String,System.Object,System.Int32,System.String)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="keyColumnName">識別欄位名稱</param>
+            <param name="key">識別欄位值</param>
+            <param name="Status">狀態</param>
+            <param name="ModifiedBy">異動者</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Update(System.Int32,System.String,System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="Status">狀態</param>
+            <param name="ModifiedBy">異動者</param>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Delete(System.String,System.Object)">
+            <summary>
+            刪除
+            </summary>
+            <param name="keyColumnName">欄位名稱</param>
+            <param name="key">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Delete(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            刪除
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Exists(System.Dynamic.ExpandoObject)">
+            <summary>
+            
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Exists(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得資料是否已存在
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.ExistsByDynamicConditions(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Retrieve(System.String,System.Object)">
+            <summary>
+            取得
+            </summary>
+            <param name="keyColumnName">欄位名稱</param>
+            <param name="key">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Retrieve(System.Dynamic.ExpandoObject)">
+            <summary>
+            取得
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Retrieve(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.RetrieveCollection(System.String,System.Object)">
+            <summary>
+            取得物件集合
+            </summary>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.RetrieveCollection(System.Dynamic.ExpandoObject)">
+            <summary>
+            
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.RetrieveCollection(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得物件集合
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.RetrieveCollectionByDynamicConditions(System.Object)">
+            <summary>
+            取得物件集合
+            </summary>
+            <param name="conditions">動態條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.GetUpdateCommandText(`0)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.GetInsertCommandText(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.SafelyInvoke(System.Action,System.String)">
+            <summary>
+            安全執行動作 (try catch)
+            </summary>
+            <param name="action">動作委派</param>
+            <param name="actionName">動作名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.SafelyInvoke``1(System.Func{``0},System.String)">
+            <summary>
+            安全執行動作 (try catch)
+            </summary>
+            <typeparam name="R">回傳型別</typeparam>
+            <param name="func">動作委派</param>
+            <param name="actionName">動作名稱</param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Maintain">
+            <summary>
+            CRUD Implementation
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.AuthenticationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.ModelDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.RepositorySettings">
+            <summary>
+            Configuration Settings
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Instance">
+            <summary>
+            ORM instance
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.SqlFormatter">
+            <summary>
+            Sql 字串針對不同資料庫來源做格式處理
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.AuthenticationInfo">
+            <summary>
+            登入者資訊
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnCompleted(`0)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="E:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Completed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CompletedEventArgs`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TCompletedItem"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CompletedEventArgs`1.#ctor(`1)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CompletedEventArgs`1.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnError(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="E:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Error">
+            <summary>
+            錯誤事件
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.ErrorEventArgs">
+            <summary>
+            錯誤事件引數
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.ErrorEventArgs.#ctor(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.ErrorEventArgs.Exception">
+            <summary>
+            例外
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnCreated(`0,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="success"></param>
+        </member>
+        <member name="E:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Created">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreatedEventArgs`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="E"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreatedEventArgs`1.#ctor(`1,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <param name="success"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreatedEventArgs`1.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.CreatedEventArgs`1.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnUpdated(`0,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="success"></param>
+        </member>
+        <member name="E:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Updated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.UpdatedEventArgs`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="E"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.UpdatedEventArgs`1.#ctor(`1,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <param name="success"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.UpdatedEventArgs`1.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.UpdatedEventArgs`1.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnDeleted(System.Object,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnDeleted(`0,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.OnDeleted(System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="count"></param>
+            <param name="success"></param>
+        </member>
+        <member name="E:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.Deleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="E"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.#ctor(System.Object,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.#ctor(`1,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="count"></param>
+            <param name="success"></param>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.Key">
+            <summary>
+            主鍵
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1.DeletedEventArgs`1.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.GenericModelDescriptor`1">
+            <summary>
+            Model 定義提供者
+            <para />implement <see cref="T:YAEP.Data.ORM.Interfaces.IModelDescriptor`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetTableName">
+            <summary>
+            取得對應的預設資料表名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbTableAttribute.TableName"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetPrimaryKeyName">
+            <summary>
+            取得對應的預設資料主鍵名稱
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetPrimaryKeyNames">
+            <summary>
+            取得對應的預設資料主鍵名稱集合
+            <para /><see cref="P:YAEP.Data.ORM.Attributes.DbColumnAttribute.IsPrimaryKey"/> is true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetColumnName(System.String)">
+            <summary>
+            取得設定的資料庫欄位名稱
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetProperty(System.String)">
+            <summary>
+            取得對應名稱的屬性
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.GetProperties">
+            <summary>
+            取得所有屬性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.IsPrimaryKey(System.String)">
+            <summary>
+            屬性是主鍵
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.IsPrimaryIdentityKey(System.String)">
+            <summary>
+            屬性是自動編號的主鍵
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.IsWritable(System.String)">
+            <summary>
+            屬性可寫入 DB
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.IsUnwritable(System.String)">
+            <summary>
+            屬性不可寫入 DB
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.IsIdentity(System.String)">
+            <summary>
+            屬性是自動編號
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericModelDescriptor`1.HasProperty(System.String)">
+            <summary>
+            有此屬性
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.GenericRepositoryHandler`1">
+            <summary>
+            Repository 處理器
+            <para />inherit <see cref="T:YAEP.Data.ORM.Templates.AbstractRepositoryHandler`1"/>
+            </summary>
+            <typeparam name="T">Model 類型</typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.GenericRepositoryHandler`1.#ctor(YAEP.Data.ORM.Interfaces.IObjectRelationalMappingLayer,YAEP.Interfaces.IAuthenticationProvider,YAEP.Data.ORM.Interfaces.IModelDescriptor{`0})">
+            <summary>
+            建構子
+            </summary>
+            <param name="instance">ORM 實體</param>
+            <param name="authenticationProvider">認證提供者</param>
+            <param name="typeDescriptor">Model 定義提供者</param>
+        </member>
+        <member name="T:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1">
+            <summary>
+            CRUD Interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Create(`0)">
+            <summary>
+            新增 
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Create(System.Collections.Generic.IEnumerable{`0},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+            <param name="ignoreColumns"></param>
+            <param name="timeout"></param>
+            <param name="batchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Retrieve(System.Object)">
+            <summary>
+            取得對應鍵值的物件
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Retrieve(System.String,System.Object)">
+            <summary>
+            取得對應條件的物件
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Retrieve(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得對應條件的物件
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.RetrieveCollection(System.String,System.Object)">
+            <summary>
+            取得對應條件的物件集合
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.RetrieveCollection(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得對應條件的物件集合
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Exists(System.String,System.Object)">
+            <summary>
+            取得資料是否已存在
+            </summary>
+            <param name="columnName">要查詢的欄位名稱</param>
+            <param name="value">要查詢的值</param> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Exists(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            取得資料是否已存在
+            </summary>
+            <param name="conditions">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Update(`0)">
+            <summary>
+            修改
+            </summary>
+            <param name="item">物件</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Update(System.Object,System.Int32)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="key">識別欄位</param>
+            <param name="status">狀態</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Update(System.Object,System.Int32,System.String)">
+            <summary>
+            更改資料狀態
+            </summary>
+            <param name="key">識別欄位</param>
+            <param name="status">狀態</param>
+            <param name="modifiedBy">異動者</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Delete(System.Object)">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="key">索引鍵</param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Delete(System.String,System.Object)">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="keyColumnName"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.Delete(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            刪除(更改狀態)
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.DeleteFromDatabase(System.Object)">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.DeleteFromDatabase(System.String,System.Object)">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="keyColumnName"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.DeleteFromDatabase(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            刪除(從資料庫)
+            </summary>
+            <param name="conditions">條件集合</param>
+            <returns></returns>
+        </member>
+        <!-- 已忽略成員 "P:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.IsAutoHandleError" 中格式錯誤的 XML 註解 -->
+        <member name="P:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.CommandTimeout">
+            <summary>
+            execute timeout (seconds)
+            </summary>
+        </member>
+        <member name="P:YAEP.Data.ORM.Templates.Interfaces.IMaintainable`1.IsAllUpdate">
+            <summary>
+            是否全部欄位
+            </summary>
+        </member>
+    </members>
+</doc>

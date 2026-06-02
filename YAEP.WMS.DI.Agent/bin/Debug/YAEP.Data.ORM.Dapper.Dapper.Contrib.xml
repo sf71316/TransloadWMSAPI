@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Data.ORM.Dapper.Dapper.Contrib</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Data.ORM.Dapper.Contrib.DbEntities">
+            <summary>
+            資料庫操作物件
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.#ctor">
+            <summary>
+            測試使用，正式環境少用
+            </summary>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.#ctor(YAEP.Data.ORM.Interfaces.IConnectionSettings)">
+            <summary>
+            注入資料庫連線資訊
+            </summary>
+            <param name="connectionSettings"></param>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Delete``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToDelete"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Delete``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料刪除
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Insert``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單一資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToInsert"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Insert``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料新增
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Update``1(``0,System.Nullable{System.Int32})">
+            <summary>
+            單筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityToUpdate"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Data.ORM.Dapper.Contrib.DbEntities.Update``1(System.Collections.Generic.IEnumerable{``0},System.Nullable{System.Int32})">
+            <summary>
+            多筆資料更新
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

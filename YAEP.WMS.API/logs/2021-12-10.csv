@@ -1,0 +1,2 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Tracing#089909a0-c60e-4969-a89d-f7cdfc4c0651 begin trace,$,,,,6,GetTicketInfoList,admin,,WMS-Web-API-Tracing,System.Guid[],,980,089909a0-c60e-4969-a89d-f7cdfc4c0651,1,"[""31b2e61a-afbf-4be7-8614-03560640b892""]",

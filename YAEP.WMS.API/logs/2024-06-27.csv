@@ -1,0 +1,7 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Tracing#83bd862c-c58e-4016-90fd-35ec05a812ab begin trace,$,,,,6,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,83bd862c-c58e-4016-90fd-35ec05a812ab,1,,
+TRACE,Tracing#afabe454-838c-4c5d-8058-e3cde5083167 begin trace,$,,,,5,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,afabe454-838c-4c5d-8058-e3cde5083167,1,,
+TRACE,Tracing#0409825a-015c-4686-8efd-634f456f0dc3 begin trace,$,,,,5,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,0409825a-015c-4686-8efd-634f456f0dc3,1,,
+TRACE,Tracing#ccc9421d-0d3b-4edd-a943-0ddf2f2b7281 begin trace,$,,,,5,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,ccc9421d-0d3b-4edd-a943-0ddf2f2b7281,1,,
+TRACE,Tracing#ce1d6217-99af-4c19-97ce-f5a460486e78 begin trace,$,,,,6,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,ce1d6217-99af-4c19-97ce-f5a460486e78,1,,
+TRACE,Tracing#6fa613e8-74b5-46ba-a995-7b46a3c646af begin trace,$,,,,8,GetPalletLabels,willyc,,WMS-Web-API-Tracing,,,980,6fa613e8-74b5-46ba-a995-7b46a3c646af,1,,

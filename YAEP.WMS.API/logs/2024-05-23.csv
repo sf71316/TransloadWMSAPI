@@ -1,0 +1,2 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Tracing#6c0e0454-8cf2-40a6-8fc4-d838c8bfb49e begin trace,$,,,,7,GetShipCarrierCategories,admin,,WMS-Web-API-Tracing,,,980,6c0e0454-8cf2-40a6-8fc4-d838c8bfb49e,1,,

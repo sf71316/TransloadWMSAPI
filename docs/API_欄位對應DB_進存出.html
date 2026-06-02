@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI 列表 API ↔ DB 欄位對應表（進 / 存 / 出）</title>
+<style>
+  :root{
+    --green:#16a34a; --blue:#2563eb; --orange:#ea580c; --red:#dc2626; --purple:#7c3aed;
+    --bg:#f6f7f9; --paper:#fff; --ink:#1f2430; --mut:#6b7280; --line:#e5e7eb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 -apple-system,"Segoe UI",Roboto,"Noto Sans TC",Arial,sans-serif}
+  header{position:sticky;top:0;z-index:5;background:#0f172a;color:#fff;padding:14px 22px;box-shadow:0 1px 6px rgba(0,0,0,.2)}
+  header h1{margin:0;font-size:17px;font-weight:700}
+  header .sub{color:#9fb3c8;font-size:12px;margin-top:2px}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 20px}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}
+  .t-green{background:var(--green)} .t-blue{background:var(--blue)} .t-orange{background:var(--orange)}
+  .t-red{background:var(--red)} .t-new{background:var(--purple)}
+  .legend .item{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12px}
+  h2{margin:30px 0 6px;font-size:16px;border-left:4px solid #0f172a;padding-left:10px}
+  h3{margin:18px 0 6px;font-size:13.5px;color:#0f172a}
+  .api{font-family:"SF Mono",Consolas,monospace;font-size:12px;background:#eef2ff;color:#3730a3;padding:2px 7px;border-radius:6px;display:inline-block;margin:2px 0}
+  .sys{font-size:11px;font-weight:700;padding:1px 6px;border-radius:5px;color:#fff;margin-left:6px}
+  .sys.wms{background:#0e7490}.sys.t2{background:#9333ea}
+  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:8px 0 14px;font-size:13px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#eef1f5;font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:#475569;font-weight:700}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafbfc}
+  code{font-family:"SF Mono",Consolas,monospace;font-size:12px;background:#f1f5f9;padding:1px 5px;border-radius:4px}
+  .db{font-family:"SF Mono",Consolas,monospace;font-size:12px;color:#0f172a}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:12.5px}
+  .req td{background:#fbfdff}
+  .muted{color:var(--mut)}
+  .toc{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:18px}
+  .toc a{color:#2563eb;text-decoration:none;margin-right:14px;font-size:13px;white-space:nowrap}
+  .toc a:hover{text-decoration:underline}
+  .pill{font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid;font-weight:600}
+  .p-real{color:#15803d;border-color:#86efac;background:#f0fdf4}
+  .p-mock{color:#b45309;border-color:#fcd34d;background:#fffbeb}
+  .p-todo{color:#b91c1c;border-color:#fca5a5;background:#fef2f2}
+</style>
+</head>
+<body>
+<header>
+  <h1>UI 列表 API ↔ DB 欄位對應表（進 / 存 / 出）</h1>
+  <div class="sub">t2_wms_transload_ui · DB 欄位實機撈出 2026-05-29（WMS@192.168.1.21 · T2 Heptarun@192.168.88.16）· 信封 WMS=APIResult&lt;T&gt; / T2=ResultModel · 路由以 Transload_API_路由清單.md 為準（/api/Transload/{Action}）</div>
+</header>
+<div class="wrap">
+
+  <div class="legend">
+    <span class="item"><span class="tag t-green">🟩 直接</span> 該表本身就有</span>
+    <span class="item"><span class="tag t-blue">🟦 join</span> join 其他表帶出</span>
+    <span class="item"><span class="tag t-orange">🟧 計算</span> DB 無此欄，後端算</span>
+    <span class="item"><span class="tag t-red">🟥 T2</span> 跨系統，WMS 沒有</span>
+    <span class="item"><span class="tag t-new">🆕 新增</span> WMS 需新增欄位</span>
+  </div>
+
+  <div class="toc">
+    <strong>目錄：</strong>
+    <a href="#A">A 共用元件</a><a href="#B">B Customer</a><a href="#C">C Inbound 進</a>
+    <a href="#D">D Inventory 存</a><a href="#E">E Outbound 出</a><a href="#F">F 其餘頁</a><a href="#G">G 重點備註</a>
+  </div>
+
+  <!-- ================= A ================= -->
+  <h2 id="A">A. 共用元件（Inbound / Outbound filter + 表單下拉）</h2>
+
+  <h3>A1. 客戶下拉 <span class="api">GET /api/Transload/GetCustomerList</span><span class="sys wms">WMS</span></h3>
+  <p class="muted">用於：Inbound/Inventory/Outbound 的 filter 與表單。Request：無（或 keyword）。</p>
+  <table>
+    <tr><th>欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>UID</code></td><td>guid</td><td class="db">YAEP_Party.UID</td><td><span class="tag t-green">🟩</span></td><td>WMS 客戶主鍵</td></tr>
+    <tr><td><code>ID</code></td><td>string</td><td class="db">YAEP_Party.ID</td><td><span class="tag t-green">🟩</span></td><td>=T2 S_Client.ID 同字串</td></tr>
+    <tr><td><code>Name</code></td><td>string</td><td class="db">YAEP_Party.Name</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>FreeDays</code></td><td>int</td><td class="db">S_Contract_Demurrage.Free_Days / S_Client.Free_Days</td><td><span class="tag t-red">🟥</span></td><td>在 T2，WMS 無；給 aging 門檻</td></tr>
+  </table>
+
+  <h3>A2. 倉庫下拉 <span class="api">GET /api/Transload/GetWarehouseList</span><span class="sys wms">WMS</span></h3>
+  <table>
+    <tr><th>欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th></tr>
+    <tr><td><code>UID</code></td><td>guid</td><td class="db">WMS_Warehouse.UID</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>ID</code></td><td>string</td><td class="db">WMS_Warehouse.ID</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>Name</code></td><td>string</td><td class="db">WMS_Warehouse.Name</td><td><span class="tag t-green">🟩</span></td></tr>
+  </table>
+
+  <h3>A3. SKU 下拉 / 查詢 <span class="api">GET /api/Transload/GetProducts</span><span class="sys wms">WMS</span></h3>
+  <p class="muted">用於：Inbound SKU 明細、Outbound Items。Request：CustomerUID(必填)→filter YAEP_Party.UID、keyword/ItemIDs[]→filter YAEP_Item.ID。</p>
+  <table>
+    <tr><th>欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>UID</code></td><td>guid</td><td class="db">YAEP_Item.UID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>ID</code> (SKU)</td><td>string</td><td class="db">YAEP_Item.ID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Name</code></td><td>string</td><td class="db">YAEP_Item.Name</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CustomerUID</code></td><td>guid</td><td class="db">item↔party 關聯（DrKnowAll 快取）</td><td><span class="tag t-blue">🟦</span></td><td>YAEP_Item 只有 GroupUID</td></tr>
+    <tr><td><code>PcsPerCarton</code></td><td>int</td><td class="db">YAEP_Package.Quantity (carton 層)</td><td><span class="tag t-blue">🟦</span></td><td>包裝階層件/箱</td></tr>
+    <tr><td><code>CartonsPerPallet</code></td><td>int</td><td class="db">YAEP_Package.Quantity (pallet÷carton)</td><td><span class="tag t-orange">🟧</span></td><td>由 package tree 推</td></tr>
+  </table>
+
+  <!-- ================= B ================= -->
+  <h2 id="B">B. Customer 頁 <code>/customer</code> <span class="pill p-real">已接真 API</span></h2>
+  <h3>客戶列表 <span class="api">POST {T2}/client/search/customer</span><span class="sys t2">T2</span></h3>
+  <p class="muted"><b>Request</b>：UID→filter S_Client.UID、ID→filter S_Client.ID、SCAC→filter S_Client.SCAC（空=不限）</p>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>UID</code></td><td>guid</td><td class="db">S_Client.UID</td><td><span class="tag t-green">🟩</span></td><td>=Client_UID</td></tr>
+    <tr><td><code>ID</code> (Cust.ID)</td><td>string</td><td class="db">S_Client.ID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Name</code></td><td>string</td><td class="db">S_Client.Name</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Phone</code></td><td>string</td><td class="db">S_Client.Phone</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Email</code></td><td>string</td><td class="db">S_Client.Email</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Status</code></td><td>int</td><td class="db">S_Client.Status</td><td><span class="tag t-green">🟩</span></td><td>前端 clientStatus.js enum 上色</td></tr>
+  </table>
+  <div class="note">缺（spec §6.3 有、UI 未顯示）：WMS_Party_UID(🟦 YAEP_Party.UID via ID)、Billing_Term(🟩 S_Client.Payment_Term_ID)、Contact(S_Client.Phone/Email)。</div>
+
+  <!-- ================= C ================= -->
+  <h2 id="C">C. Inbound 頁 <code>/inbound</code>（進）<span class="pill p-mock">目前 mock</span></h2>
+  <h3>C1. 入倉列表 <span class="api">POST /api/Transload/GetManifestList</span><span class="sys wms">WMS</span></h3>
+  <p class="muted"><b>Request</b>：customerUID→WMS_Manifest.PartyUID、keyword→WMS_Manifest.Name/.RefNo/SealNo🆕、status→WMS_Manifest.Status</p>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>ManifestUID</code></td><td>guid</td><td class="db">WMS_Manifest.UID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>ManifestName</code></td><td>string</td><td class="db">WMS_Manifest.Name（或 Batch_Ref🆕，依 D1）</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CustomerUID</code></td><td>guid</td><td class="db">WMS_Manifest.PartyUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CustomerName</code></td><td>string</td><td class="db">YAEP_Party.Name</td><td><span class="tag t-blue">🟦</span></td><td>via PartyUID</td></tr>
+    <tr><td><code>WarehouseUID</code></td><td>guid</td><td class="db">WMS_Manifest.WarehouseUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>WarehouseName</code></td><td>string</td><td class="db">WMS_Warehouse.Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>ArrivalDate</code></td><td>date</td><td class="db">MIN(WMS_PayLoad.ReceivedDate)</td><td><span class="tag t-orange">🟧</span></td><td>不存 Manifest</td></tr>
+    <tr><td><code>Description</code></td><td>string</td><td class="db">WMS_Manifest.Description</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Status</code></td><td>int</td><td class="db">WMS_Manifest.Status</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CreatedOn</code></td><td>date</td><td class="db">WMS_Manifest.CreatedOn</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>AgingDays</code></td><td>int</td><td class="db">today − MIN(WMS_PayLoad.ReceivedDate)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>containerCount</code></td><td>int</td><td class="db">COUNT(該 batch 的櫃)</td><td><span class="tag t-orange">🟧</span></td><td>依 D1</td></tr>
+    <tr><td><code>totalQty</code></td><td>int</td><td class="db">SUM(WMS_Manifest_Item_List.PackageQty×pkg)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>totalCartons / totalPallets</code></td><td>int</td><td class="db">YAEP_Package 階層推</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+  </table>
+
+  <h3>C2. Container 結構（展開 / 編輯）</h3>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>VesselUID</code></td><td>guid</td><td class="db">WMS_Manifest.UID（每櫃1manifest, 依 D1）</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>ConNo</code></td><td>string</td><td class="db">WMS_Manifest.RefNo</td><td><span class="tag t-green">🟩</span></td><td>=櫃號</td></tr>
+    <tr><td><code>SealNo</code></td><td>string</td><td class="db">WMS_Manifest.SealNo</td><td><span class="tag t-new">🆕</span></td><td></td></tr>
+    <tr><td><code>ContainerType</code></td><td>int</td><td class="db">WMS_Manifest.ContainerType</td><td><span class="tag t-new">🆕</span></td><td>int enum</td></tr>
+    <tr><td><code>LoadingType</code></td><td>int</td><td class="db">WMS_Manifest.LoadingType</td><td><span class="tag t-new">🆕</span></td><td>10F2F/20F2P/30P2P/40Full</td></tr>
+    <tr><td><code>StackableType</code></td><td>int</td><td class="db">WMS_Vessel.StackableType</td><td><span class="tag t-new">🆕</span></td><td>⚠️spec 放出倉；UI 放入倉（衝突）</td></tr>
+    <tr><td><code>Weight</code></td><td>dec</td><td class="db">WMS_Manifest.Weight</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Cbm</code></td><td>dec</td><td class="db">WMS_Manifest.Volume</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>TotalQty</code></td><td>int</td><td class="db">SUM(WMS_Manifest_Item_List.PackageQty)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>Cartons / Pallets</code></td><td>int</td><td class="db">YAEP_Package 階層推</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>Skus[].ItemUID</code></td><td>guid</td><td class="db">WMS_Manifest_Item_List.ItemUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Skus[].SKU / Name</code></td><td>string</td><td class="db">YAEP_Item.ID / .Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>Skus[].Qty</code></td><td>int</td><td class="db">WMS_Manifest_Item_List.PackageQty×pkg</td><td><span class="tag t-orange">🟧</span></td><td>pieces</td></tr>
+    <tr><td><code>Skus[].Cartons / Pallets</code></td><td>int</td><td class="db">YAEP_Package 推</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+  </table>
+
+  <h3>C3. 建立入倉 <span class="api">POST /api/Transload/Receiving</span><span class="sys wms">WMS</span> <span class="muted">(重用 Order/Receiving)</span></h3>
+  <div class="note">寫入：每櫃→1 <code>WMS_Manifest</code>(RefNo=ConNo, PartyUID=CustomerUID, WarehouseUID, SealNo🆕, ContainerType🆕, LoadingType🆕, Volume=Cbm, Weight) → Skus 寫 <code>WMS_Manifest_Item_List</code>(ItemUID, PackageQty) → 收貨流程寫 <code>WMS_PayLoad.ReceivedDate</code>=ArrivalDate。<br>
+  <b>Response</b>：{ ManifestUID=WMS_Manifest.UID, RefNo=WMS_Manifest.RefNo, Status=WMS_Manifest.Status }。雙寫 T2 由 SPA 接呼。</div>
+
+  <!-- ================= D ================= -->
+  <h2 id="D">D. Inventory 頁 <code>/inventory</code>（存）<span class="pill p-mock">目前 mock</span></h2>
+  <h3>D1. 庫存列表 <span class="api">POST /api/Transload/GetInventory</span><span class="sys wms">WMS</span></h3>
+  <p class="muted"><b>Request</b>：customerUID→WMS_Manifest.PartyUID(反查)、warehouseUID→WMS_Inventory.WarehouseUID、keyword→YAEP_Item.ID/.Name/WMS_Manifest.RefNo、status→StorageStatus🟧</p>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>id</code></td><td>string</td><td class="db">WMS_Inventory.UID(+SKU) 組合</td><td><span class="tag t-orange">🟧</span></td><td>grid key</td></tr>
+    <tr><td><code>ManifestUID / ManifestName</code></td><td></td><td class="db">WMS_Manifest.UID / .Name</td><td><span class="tag t-blue">🟦</span></td><td>via PayLoad/ItemList</td></tr>
+    <tr><td><code>ItemUID</code></td><td>guid</td><td class="db">WMS_Inventory.ItemUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>SKU / ItemName</code></td><td>string</td><td class="db">YAEP_Item.ID / .Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>CustomerUID</code></td><td>guid</td><td class="db">WMS_Manifest.PartyUID</td><td><span class="tag t-blue">🟦</span></td><td>Inventory 無 PartyUID，經 ItemList→Manifest</td></tr>
+    <tr><td><code>CustomerName</code></td><td>string</td><td class="db">YAEP_Party.Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>WarehouseUID</code></td><td>guid</td><td class="db">WMS_Inventory.WarehouseUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>WarehouseName</code></td><td>string</td><td class="db">WMS_Warehouse.Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>ConNo</code></td><td>string</td><td class="db">WMS_Manifest.RefNo</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>LoadingType</code></td><td>int</td><td class="db">WMS_Manifest.LoadingType</td><td><span class="tag t-new">🆕</span><span class="tag t-blue">🟦</span></td><td>彩色 badge</td></tr>
+    <tr><td><code>Onhand</code></td><td>int</td><td class="db">WMS_Inventory.Qty − 已配</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>AllocatedQty</code></td><td>int</td><td class="db">SUM(WMS_WorkOrder_Payload / 出貨配貨)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>AvailableQty</code></td><td>int</td><td class="db">WMS_Inventory.Qty − allocated</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>Cartons / Pallets</code></td><td>int</td><td class="db">YAEP_Package 階層推</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>ArrivalDateActual</code></td><td>date</td><td class="db">MIN(WMS_PayLoad.ReceivedDate)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>AgingDays</code></td><td>int</td><td class="db">today − ArrivalDateActual</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>FreeDays</code></td><td>int</td><td class="db">S_Contract_Demurrage.Free_Days / S_Client.Free_Days</td><td><span class="tag t-red">🟥</span></td><td>T2</td></tr>
+    <tr><td><code>BillableStorageDays</code></td><td>int</td><td class="db">max(0, Aging − FreeDays)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>StorageStatus</code></td><td>enum</td><td class="db">allocated vs onhand 推</td><td><span class="tag t-orange">🟧</span></td><td>IN_STORAGE / PARTIAL_OUT / FULLY_OUT</td></tr>
+  </table>
+
+  <h3>D2. KPI 卡（前端聚合 D1 結果）</h3>
+  <table>
+    <tr><th>KPI</th><th>來源</th></tr>
+    <tr><td>Total Units on Hand</td><td class="db">SUM(Onhand) 🟧</td></tr>
+    <tr><td>Total Cartons</td><td class="db">SUM(Cartons) 🟧</td></tr>
+    <tr><td>Total Pallets</td><td class="db">SUM(Pallets) 🟧</td></tr>
+    <tr><td>SKUs Aging &gt; 30</td><td class="db">COUNT(AgingDays&gt;30) 🟧</td></tr>
+  </table>
+
+  <h3>D3. 單 SKU 可出量 <span class="api">GET /api/Transload/GetItemAvailability</span><span class="sys wms">WMS</span></h3>
+  <div class="note"><b>Request</b>：customerUID(WMS_Manifest.PartyUID)、itemUID(WMS_Inventory.ItemUID)。<br>
+  <b>Response</b>：{ SKU(🟦 YAEP_Item.ID), TotalOnhand(🟧), Allocations[]{ ConNo(🟦 RefNo), WarehouseName(🟦), LoadingType(🆕), Onhand(🟧), ArrivalDateActual(🟧 MIN PayLoad), AgingDays(🟧) } } — 依 ArrivalDate ASC = FIFO。</div>
+
+  <!-- ================= E ================= -->
+  <h2 id="E">E. Outbound 頁 <code>/outbound</code>（出）<span class="pill p-mock">目前 mock</span></h2>
+  <h3>E1. 出貨列表 <span class="api">GET /api/Transload/GetBOLList</span><span class="sys wms">WMS</span></h3>
+  <p class="muted"><b>Request</b>：customerUID→WMS_Vessel_Manifest.PartyUID、keyword→WMS_Vessel.RefNo/WMS_BOL.TrackingNumber🆕、status→WMS_BOL.Status</p>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th><th>說明</th></tr>
+    <tr><td><code>VesselUID</code></td><td>guid</td><td class="db">WMS_Vessel.UID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>BolUID</code></td><td>guid</td><td class="db">WMS_BOL.UID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>ShipOrderNo</code></td><td>string</td><td class="db">WMS_Vessel.RefNo（或 WMS_BOL.RefNo）</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CustomerUID</code></td><td>guid</td><td class="db">WMS_Vessel_Manifest.PartyUID</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>CustomerName</code></td><td>string</td><td class="db">YAEP_Party.Name</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>WarehouseUID / Name</code></td><td></td><td class="db">WMS_Manifest.WarehouseUID → WMS_Warehouse.Name</td><td><span class="tag t-blue">🟦</span></td><td>BOL 無 warehouse</td></tr>
+    <tr><td><code>ShipDate</code></td><td>date</td><td class="db">WMS_BOL.DeliveryDate（待確認 ETD）</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Carrier</code></td><td>string</td><td class="db">WMS_ShipMethod.MethodName</td><td><span class="tag t-blue">🟦</span></td><td>via WMS_BOL.ShipMethodUID</td></tr>
+    <tr><td><code>TrackingNumber</code></td><td>string</td><td class="db">WMS_BOL.TrackingNumber</td><td><span class="tag t-new">🆕</span></td><td></td></tr>
+    <tr><td><code>BolNo</code></td><td>string</td><td class="db">WMS_BOL.ID / .RefNo</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>ShipMethod</code></td><td>string</td><td class="db">WMS_ShipMethod.MethodName (LTL/FTL)</td><td><span class="tag t-blue">🟦</span></td><td></td></tr>
+    <tr><td><code>StackableType</code></td><td>int</td><td class="db">WMS_Vessel.StackableType</td><td><span class="tag t-new">🆕</span></td><td></td></tr>
+    <tr><td><code>ShipToName</code></td><td>string</td><td class="db">WMS_BOL.Contact</td><td><span class="tag t-green">🟩</span></td><td>無獨立 ShipToName，用 Contact</td></tr>
+    <tr><td><code>Address / City / State / Zip / Country</code></td><td>string</td><td class="db">WMS_BOL.ShipToAddress / ShipToCity / ShipToState / ShipToZip / ShipToCountry</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>Status</code></td><td>string</td><td class="db">WMS_BOL.Status / WMS_Vessel.Status</td><td><span class="tag t-green">🟩</span></td><td></td></tr>
+    <tr><td><code>SourceCons</code></td><td>string</td><td class="db">來源 WMS_Manifest.RefNo (via Vessel_Manifest)</td><td><span class="tag t-orange">🟧</span></td><td>跨櫃聚合 "N1 +2"</td></tr>
+    <tr><td><code>ShippedQty</code></td><td>int</td><td class="db">SUM(WMS_Vessel_Manifest.Qty)</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>ShippedCartons / Pallets</code></td><td>int</td><td class="db">YAEP_Package 推</td><td><span class="tag t-orange">🟧</span></td><td></td></tr>
+    <tr><td><code>ShipTo</code></td><td>string</td><td class="db">Contact+City+State 組合</td><td><span class="tag t-orange">🟧</span></td><td>顯示用</td></tr>
+    <tr><td><code>ServiceLines[]</code></td><td>array</td><td class="db">S_Order_Container_Leg_Journal</td><td><span class="tag t-red">🟥</span></td><td>T2（計費）</td></tr>
+  </table>
+
+  <h3>E2. 出貨 Items（拆單後）</h3>
+  <table>
+    <tr><th>UI 欄位</th><th>型別</th><th>對應 DB 欄位</th><th>類型</th></tr>
+    <tr><td><code>ItemUID</code></td><td>guid</td><td class="db">WMS_Vessel_Manifest.ItemUID</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>SKU / Name</code></td><td>string</td><td class="db">YAEP_Item.ID / .Name</td><td><span class="tag t-blue">🟦</span></td></tr>
+    <tr><td><code>SourceConNo</code></td><td>string</td><td class="db">來源 WMS_Manifest.RefNo</td><td><span class="tag t-blue">🟦</span></td></tr>
+    <tr><td><code>QtyToShip</code></td><td>int</td><td class="db">WMS_Vessel_Manifest.Qty</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>Cartons / Pallets</code></td><td>int</td><td class="db">YAEP_Package 推</td><td><span class="tag t-orange">🟧</span></td></tr>
+  </table>
+
+  <h3>E3. 建立出貨 <span class="api">POST /api/Transload/Allocated</span><span class="sys wms">WMS</span> <span class="muted">(+ Bol* + SaveOutboundAssignedItem)</span></h3>
+  <table>
+    <tr><th>UI 欄位(送入)</th><th>對應 DB 欄位(寫入)</th><th>類型</th></tr>
+    <tr><td><code>CustomerUID</code></td><td class="db">WMS_Vessel_Manifest.PartyUID</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>WarehouseUID</code></td><td class="db">(來源 manifest)</td><td><span class="tag t-blue">🟦</span></td></tr>
+    <tr><td><code>ShipOrderNo</code></td><td class="db">WMS_Vessel.RefNo</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>ShipDate</code></td><td class="db">WMS_BOL.DeliveryDate</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>ShipMethod / Carrier</code></td><td class="db">WMS_BOL.ShipMethodUID → WMS_ShipMethod.MethodName</td><td><span class="tag t-blue">🟦</span></td></tr>
+    <tr><td><code>TrackingNumber</code></td><td class="db">WMS_BOL.TrackingNumber</td><td><span class="tag t-new">🆕</span></td></tr>
+    <tr><td><code>StackableType</code></td><td class="db">WMS_Vessel.StackableType</td><td><span class="tag t-new">🆕</span></td></tr>
+    <tr><td><code>ShipToName</code></td><td class="db">WMS_BOL.Contact</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>Address/City/State/Zip/Country</code></td><td class="db">WMS_BOL.ShipTo*</td><td><span class="tag t-green">🟩</span></td></tr>
+    <tr><td><code>Items[].SKU + QtyToShip + Unit</code></td><td class="db">FIFO 拆 → WMS_Vessel_Manifest(ItemUID, Qty) + 扣 WMS_Inventory.Qty</td><td><span class="tag t-orange">🟧</span></td></tr>
+    <tr><td><code>ServiceLines[]</code></td><td class="db">S_Order_Container_Leg_Journal</td><td><span class="tag t-red">🟥</span></td></tr>
+  </table>
+  <div class="note"><b>Response</b>：{ VesselUID=WMS_Vessel.UID, BolUID=WMS_BOL.UID, ShipOrderNo=WMS_Vessel.RefNo, Items[](拆單後) }。雙寫 T2 outbound 由 SPA 接呼。</div>
+
+  <!-- ================= F ================= -->
+  <h2 id="F">F. 其餘頁（目前無真 API）</h2>
+  <table>
+    <tr><th>頁 / 元件</th><th>現況</th><th>未來 API → DB</th></tr>
+    <tr><td><b>Dashboard</b> KPI/表</td><td><span class="pill p-mock">hardcoded</span></td><td class="db">KPI=WMS Inventory 聚合🟧 + T2 未開票(S_Order_Container_Leg_Journal.Remain_Amount🟥)；客戶表=YAEP_Party + WMS_Inventory 聚合</td></tr>
+    <tr><td><b>Billing</b></td><td><span class="pill p-todo">placeholder</span></td><td class="db">全 T2 🟥：S_Order_Container_Leg_Journal(Service/Charge_Type/Qty/Rate/Amount/Remain_Amount)、S_Invoice</td></tr>
+    <tr><td><b>Warehouse</b></td><td><span class="pill p-mock">前端 mock</span></td><td class="db">WMS_Warehouse(UID/ID/Name/Address🟩/Status🟩)</td></tr>
+    <tr><td><b>Login</b></td><td><span class="pill p-real">auth 真</span></td><td class="db">Core_User(Account/Password) via CA 中央認證；非列表</td></tr>
+    <tr><td><b>Settings</b></td><td>localStorage</td><td>無 DB</td></tr>
+  </table>
+
+  <!-- ================= G ================= -->
+  <h2 id="G">G. 重點備註</h2>
+  <ol>
+    <li><b>🟧 計算欄位最多</b>：aging(MIN(WMS_PayLoad.ReceivedDate))、Onhand(WMS_Inventory.Qty−配貨)、Cartons/Pallets(YAEP_Package 階層)、各 SUM、StorageStatus、SourceCons。DB 無現成欄位，後端 Transload 層算。</li>
+    <li><b>🟥 跨系統 T2</b>：FreeDays、ServiceLines、Billing、Dashboard 未開票金額。WMS 拿不到，需 SPA 另呼或後端跨呼。</li>
+    <li><b>🆕 需新增 WMS 欄位</b>：WMS_Manifest.SealNo/ContainerType/LoadingType、WMS_BOL.TrackingNumber/PODUrl、WMS_Vessel.StackableType、WMS_ShipMethod 補 LTL/FTL 兩筆。</li>
+    <li><b>客戶資訊鏈</b>：WMS_Inventory 無 PartyUID → 一律經 WMS_Manifest_Item_List.ManifestUID → WMS_Manifest.PartyUID → YAEP_Party。</li>
+    <li><b>Cartons/Pallets 換算</b>全靠 YAEP_Package（階層 ParentUID + Quantity），DB 無「PcsPerCarton」單一欄位。</li>
+    <li><b>D1 未定</b>：ManifestName batch vs 每櫃 1 manifest，影響 ManifestName/containerCount/VesselUID 的對應。</li>
+  </ol>
+
+  <p class="muted" style="margin-top:24px">來源檔：docs/API_欄位對應DB_進存出.md · docs/API_Required_byUI_進存出.md · docs/WMS_Transload_API_實作方案.md</p>
+</div>
+</body>
+</html>

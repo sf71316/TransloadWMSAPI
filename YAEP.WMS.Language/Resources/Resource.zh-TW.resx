@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="COMMON_ILLEGAL_GUID" xml:space="preserve">
+    <value>不合法的Guid</value>
+  </data>
+  <data name="COMMON_ERROR_OCCURED" xml:space="preserve">
+    <value>發生錯誤</value>
+  </data>
+  <data name="COMMON_INCORRECT_PARAMETERS" xml:space="preserve">
+    <value>參數不正確</value>
+  </data>
+  <data name="COMMON_INCORRECT_ACCOUNT" xml:space="preserve">
+    <value>帳號不正確</value>
+  </data>
+  <data name="COMMON_INCORRECT_PASSWORD" xml:space="preserve">
+    <value>密碼不正確</value>
+  </data>
+  <data name="COMMON_INCORRECT_FORMAT" xml:space="preserve">
+    <value>格式不正確</value>
+  </data>
+  <data name="COMMON_DATA_NOT_FOUND" xml:space="preserve">
+    <value>查無資料</value>
+  </data>
+  <data name="PRODUCT_ITEM_ID_EMPTY" xml:space="preserve">
+    <value>產品代號不能為空</value>
+  </data>
+  <data name="PRODUCT_ITEM_NAME_EMPTY" xml:space="preserve">
+    <value>產品名稱不能為空</value>
+  </data>
+  <data name="PRODUCT_UPDATE_ITEM_CATEGORY_FAIL" xml:space="preserve">
+    <value>更新產品分類資料失敗</value>
+  </data>
+  <data name="PRODUCT_DELETE_ITEM_FAIL" xml:space="preserve">
+    <value>刪除產品資料失敗</value>
+  </data>
+  <data name="PRODUCT_ADD_ITEM_FAIL" xml:space="preserve">
+    <value>建立產品資料失敗</value>
+  </data>
+  <data name="PRODUCT_QUANTITY_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>數量必須大於零.</value>
+  </data>
+  <data name="PRODUCT_GW_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>毛重必須大於零</value>
+  </data>
+  <data name="PRODUCT_SIZE_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>長寬高必須大於零</value>
+  </data>
+  <data name="PRODUCT_ADD_PACKAGE_FAIL" xml:space="preserve">
+    <value>建立產品包裝資料失敗</value>
+  </data>
+  <data name="PRODUCT_PACKAGE_NOT_EXIST" xml:space="preserve">
+    <value>包裝資料不存在</value>
+  </data>
+  <data name="PRODUCT_UPDATE_PACKAGE_FAIL" xml:space="preserve">
+    <value>更新產品包裝資料失敗</value>
+  </data>
+  <data name="PRODUCT_DELETE_PACKAGE_FAIL" xml:space="preserve">
+    <value>刪除產品包裝資料失敗</value>
+  </data>
+  <data name="PRODUCT_RECEIVE_QTY_BIGGER_THAN_ZERO" xml:space="preserve">
+    <value>數量必須大於零.</value>
+  </data>
+  <data name="PRODUCT_ADD_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>建立產品包裝版本資料失敗</value>
+  </data>
+  <data name="PRODUCT_CLONE_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>複製產品包裝版本資料失敗.</value>
+  </data>
+  <data name="PRODUCT_DELETE_PACKAGE_VERSION_FAIL" xml:space="preserve">
+    <value>刪除產品包裝版本資料失敗</value>
+  </data>
+  <data name="CUSTOMER_ADD_CUSTOMER_FAIL" xml:space="preserve">
+    <value>建立客戶資料失敗</value>
+  </data>
+  <data name="CUSTOMER_UPDATE_CUSTOMER_FAIL" xml:space="preserve">
+    <value>更新客戶資料失敗</value>
+  </data>
+  <data name="CUSTOMER_DELETE_CUSTOMER_FAIL" xml:space="preserve">
+    <value>刪除客戶資料失敗</value>
+  </data>
+  <data name="CUSTOMER_ADD_CUSTOMER_ADDRESS_FAIL" xml:space="preserve">
+    <value>建立客戶地址資料失敗</value>
+  </data>
+  <data name="CUSTOMER_ID_EMPTY" xml:space="preserve">
+    <value>客戶代號不能為空</value>
+  </data>
+  <data name="CUSTOMER_COMPANY_EMPTY" xml:space="preserve">
+    <value>客戶公司名稱不能為空</value>
+  </data>
+  <data name="WAREHOUSE_ADD_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>建立倉庫資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>更新倉庫資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_WAREHOUSE_FAIL" xml:space="preserve">
+    <value>刪除倉庫資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_ADD_AREA_FAIL" xml:space="preserve">
+    <value>建立區域資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_AREA_FAIL" xml:space="preserve">
+    <value>更新區域資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_AREA_FAIL" xml:space="preserve">
+    <value>刪除區域資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_ADD_BIN_FAIL" xml:space="preserve">
+    <value>建立貨架資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_BIN_FAIL" xml:space="preserve">
+    <value>更新貨架資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_BIN_FAIL" xml:space="preserve">
+    <value>刪除貨架資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_ADD_SLOT_FAIL" xml:space="preserve">
+    <value>建立儲位資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_UPDATE_SLOT_FAIL" xml:space="preserve">
+    <value>更新儲位資料失敗</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_SLOT_FAIL" xml:space="preserve">
+    <value>刪除儲位資料失敗</value>
+  </data>
+  <data name="INVENTORY_ADD_QUANTITY_FAIL" xml:space="preserve">
+    <value>建立庫存數量資料失敗</value>
+  </data>
+  <data name="PRODUCT_UPDATE_ITEM_FAIL" xml:space="preserve">
+    <value>更新產品資料失敗</value>
+  </data>
+  <data name="VENDOR_ADD_VENDOR_FAIL" xml:space="preserve">
+    <value>建立供應商資料失敗</value>
+  </data>
+  <data name="VENDOR_UPDATE_VENDOR_FAIL" xml:space="preserve">
+    <value>更新供應商資料失敗</value>
+  </data>
+  <data name="VENDOR_DELETE_VENDOR_FAIL" xml:space="preserve">
+    <value>刪除供應商資料失敗</value>
+  </data>
+  <data name="VENDOR_ID_EMPTY" xml:space="preserve">
+    <value>供應商代號不能為空</value>
+  </data>
+  <data name="VENDOR_COMPANY_EMPTY" xml:space="preserve">
+    <value>供應商公司名稱不能為空</value>
+  </data>
+  <data name="TICKET_GENERATETICKET_PARAMETER_NULL" xml:space="preserve">
+    <value>必需有總表唯一碼 或 運輸資訊唯一碼</value>
+  </data>
+  <data name="MANIFEST_BOL_APPROVE_STATUS_ERROR" xml:space="preserve">
+    <value>Manifest 狀態必需是Open 階段</value>
+  </data>
+  <data name="MANIFEST_BOL_SUBMIT_STATUS_ERROR" xml:space="preserve">
+    <value>Manifest 狀態必需是Open 階段</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_MANIFESTINFO_DATA" xml:space="preserve">
+    <value>找不到總表資料</value>
+  </data>
+  <data name="MANIFEST_STATUS_NOACTION" xml:space="preserve">
+    <value>目前沒有可以進行的動作</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_BOL_DATA" xml:space="preserve">
+    <value>找不到 運輸資訊資料</value>
+  </data>
+  <data name="MANIFEST_BOL_STATUS_MUST_IN_REVIEW" xml:space="preserve">
+    <value>BOL 狀態必需在Review  階段</value>
+  </data>
+  <data name="MANIFEST_MUST_HAVE_ITEM" xml:space="preserve">
+    <value>必需要有產品資料</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_STOREAGE_METHOD_ERROR" xml:space="preserve">
+    <value>{0} 必需是 1,2 或 3</value>
+  </data>
+  <data name="MANIFEST_CANNOT_EMPTY" xml:space="preserve">
+    <value>{0} 不可為空</value>
+  </data>
+  <data name="MANIFEST_QTY_MORE_THAN_ZERO" xml:space="preserve">
+    <value> {0}數量必需大於0</value>
+  </data>
+  <data name="COMMON_ITEM" xml:space="preserve">
+    <value>產品</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_ITEM_INFO" xml:space="preserve">
+    <value>找不到總表細項資料</value>
+  </data>
+  <data name="MANIFEST_CHECKONHAND_LOST_PARAMETERS" xml:space="preserve">
+    <value>倉庫唯一碼、產品唯一碼、包裝唯一碼不可為空</value>
+  </data>
+  <data name="MANIFEST_INSUFFICIENTONHAND" xml:space="preserve">
+    <value>儲存不足.</value>
+  </data>
+  <data name="MANIFEST_MUST_HAVE_PACKAGE" xml:space="preserve">
+    <value>必需要有包裝資料</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_DATA" xml:space="preserve">
+    <value>找不到資料</value>
+  </data>
+  <data name="TICKET_BARCODE_HAD_SCANED" xml:space="preserve">
+    <value>以下條碼已經被使用過:{0}</value>
+  </data>
+  <data name="TICKET_ACTQTY_MUST_EQUAL_ESTQTY" xml:space="preserve">
+    <value>操作數量必需等於預計操作數量.</value>
+  </data>
+  <data name="TICKET_LOST_ORIGINALSLOTUID" xml:space="preserve">
+    <value>缺少來源儲位唯一碼</value>
+  </data>
+  <data name="TICKET_LOST_TARGETPACKAGE" xml:space="preserve">
+    <value>缺少目的地包裝唯一碼</value>
+  </data>
+  <data name="TICKET_LOST_PACKAGE" xml:space="preserve">
+    <value>找不到包裝資料</value>
+  </data>
+  <data name="MANIFEST_VESSEL_NOT_FIND_BELONGTO_PKG" xml:space="preserve">
+    <value>找不到這個包裝唯一碼的資料</value>
+  </data>
+  <data name="TICKET_LOST_TARGETSLOTUID" xml:space="preserve">
+    <value>缺少目的儲位唯一碼</value>
+  </data>
+  <data name="TICKET_NOT_FIND_INVENTORY" xml:space="preserve">
+    <value>找不到儲存資料</value>
+  </data>
+  <data name="TICKET_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>not find payload data</value>
+  </data>
+  <data name="TICKET_LOST_SLOT_INFO" xml:space="preserve">
+    <value>缺少目的儲位唯一碼或來源儲位唯一碼</value>
+  </data>
+  <data name="TICKET_LOST_PACKAGE_INFO" xml:space="preserve">
+    <value>缺少目的包裝唯一碼或來源包裝唯一碼</value>
+  </data>
+  <data name="TICKET_LOST_WORKORDER_PAYLOAD_DATA" xml:space="preserve">
+    <value>not find workorder payload data</value>
+  </data>
+  <data name="TICKET_UNDEFINED_COMMAND" xml:space="preserve">
+    <value>未定義的指令</value>
+  </data>
+  <data name="LABEL_NOT_FIND_PKG_TREE" xml:space="preserve">
+    <value>找不到包裝結構</value>
+  </data>
+  <data name="LABEL_NOT_FIND_LABEL" xml:space="preserve">
+    <value>找不到標籤</value>
+  </data>
+  <data name="LABEL_NOT_UPLOAD_FILE" xml:space="preserve">
+    <value>必需夾帶檔案</value>
+  </data>
+  <data name="LABEL_CLEAR_FAILURE" xml:space="preserve">
+    <value>清除資料失敗</value>
+  </data>
+  <data name="LABEL_UPLOAD_FAILURE" xml:space="preserve">
+    <value>上傳失敗，請重試</value>
+  </data>
+  <data name="COMMON_NOT_FIND_WORKORDER_PAYLOAD" xml:space="preserve">
+    <value>not find workorder payload data.</value>
+  </data>
+  <data name="TICKET_NOT_FIND_TICKETINFO" xml:space="preserve">
+    <value>not find ticket info data.</value>
+  </data>
+  <data name="TICKET_ADD_WORKER_FAILURE" xml:space="preserve">
+    <value>新增失敗，請重試</value>
+  </data>
+  <data name="MANIFEST_GENERATE_TICKET_ERROR" xml:space="preserve">
+    <value>找不到總表或運輸資料</value>
+  </data>
+  <data name="TICKET_GETATTACHMENTLIST_ERROR" xml:space="preserve">
+    <value>找不到附件目錄</value>
+  </data>
+  <data name="MANIFEST_SAVEOUTBOUNDASSIGNEDITEM_LOST_PARAMETERS" xml:space="preserve">
+    <value>找不到要求資料</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MUST_HAVE_POD" xml:space="preserve">
+    <value>必需要有板唯一碼</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MUST_HAVE_ITEM" xml:space="preserve">
+    <value>必需要有產品資料</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER" xml:space="preserve">
+    <value>找不到WorkOrder </value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_ASSINGED_POD" xml:space="preserve">
+    <value>Have some payload not assigned pod</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_VESSELMANIFST" xml:space="preserve">
+    <value>not find vessel manifest data.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_DEALLOCATED_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>not find original payload info</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_ALLOCATD_PAYLOAD" xml:space="preserve">
+    <value>not find allocated payload info data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_PAYLOAD" xml:space="preserve">
+    <value>not find payload info data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER_PAYLOAD" xml:space="preserve">
+    <value>not find workorderpayload data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_WORKORDER_POD" xml:space="preserve">
+    <value>not find workorderpod data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_REMOVEPOD_ERROR" xml:space="preserve">
+    <value>需先刪除工單資料.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MERAGE_POD_ERROR_TO" xml:space="preserve">
+    <value>merge to must have data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_MERAGE_POD_ERROR_FROM" xml:space="preserve">
+    <value>merge from must have data</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_SETLANDINGSLOT_LOST_PARAMETER" xml:space="preserve">
+    <value>must have WorkOrder Pod UID or WorkORder Payload UID</value>
+  </data>
+  <data name="WAREHOUSE_NOT_FIND_LOADING_ZONE" xml:space="preserve">
+    <value>找不到暫存區</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_SET_POD_LABEL_ERROR" xml:space="preserve">
+    <value>產生POD標籤失敗</value>
+  </data>
+  <data name="LABEL_UNDEFINED_BELONGTO_TYPE" xml:space="preserve">
+    <value>Not undefined belong to type.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_GENERATE_TICKET" xml:space="preserve">
+    <value>沒有資料可以產生工單</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_OUTBOUND_INSUFFICIENTQTY" xml:space="preserve">
+    <value>{0} 儲存數量:{1} 要求配置數量:{2} 儲存不足.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NOT_FIND_VESSEL" xml:space="preserve">
+    <value>not find vessel data.</value>
+  </data>
+  <data name="MANIFEST_OPERTAE_FAILURE" xml:space="preserve">
+    <value>操作失敗,請重新嘗試</value>
+  </data>
+  <data name="MANIFEST_BOL_UNCOMPLETE_ASSIGNED" xml:space="preserve">
+    <value>以下產品尚未分配完成:</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_AUTO_ASSIGN_NO_ALLOWED_ITEM" xml:space="preserve">
+    <value>沒有可以操作的項目</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_PALLET_UOM" xml:space="preserve">
+    <value>無法讀取托盤的計量單位數據</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_REF_PACKAGES" xml:space="preserve">
+    <value>讀取包裝資料失敗.</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_NO_ALLOWED_SLOT" xml:space="preserve">
+    <value>沒有可以存放的空間</value>
+  </data>
+  <data name="MANIFEST_BOL_STATUS_MUST_LESS_THAN" xml:space="preserve">
+    <value>BOL 狀態必需在{0} 狀態之前</value>
+  </data>
+  <data name="MANIFEST_REJECT_FAILURE_HAS_ASSIGNED_ITEM" xml:space="preserve">
+    <value>下列Vessel# 仍有被指派的產品，請將其刪除 {0}</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_TICKETINFO" xml:space="preserve">
+    <value>找不到工單細項資料</value>
+  </data>
+  <data name="MANIFEST_BOL_REJECT_FAILURE_TICKET_WORKING" xml:space="preserve">
+    <value>工單已經開始操作，不能退回</value>
+  </data>
+  <data name="MANIFEST_NOT_FIND_VESSEL_DATA" xml:space="preserve">
+    <value>找不到運輸資訊</value>
+  </data>
+  <data name="MANIFEST_DELETE_FAILURE_NOT_IN_STATUS" xml:space="preserve">
+    <value>總表已經完成，不能刪除</value>
+  </data>
+  <data name="MANIFEST_OUTBOUND_ALLOCATED_QTY_OVER" xml:space="preserve">
+    <value>車次編號:{0} 配置數量必需小於需求數量</value>
+  </data>
+  <data name="MANIFEST_INBOUND_ALLOCATED_QTY_OVER" xml:space="preserve">
+    <value>車次編號:{0} 配置數量必需小於需求數量</value>
+  </data>
+  <data name="MANIFEST_VESSEL_DELETE_EXIST_ASSIGNED_WPAYLOAD" xml:space="preserve">
+    <value>此產品還有被配置的數量，請先移除</value>
+  </data>
+  <data name="MANIFEST_COMMON_PARAMETERS_NULL" xml:space="preserve">
+    <value>沒有收到參數</value>
+  </data>
+  <data name="TICKET_UPLOADBYPOD_NOT_FIND_DATA" xml:space="preserve">
+    <value>找不到收貨工單</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_AUTO_ASSIGN_INSUFFICIENT_QTY" xml:space="preserve">
+    <value>以下產品庫存不足 {0}</value>
+  </data>
+  <data name="MANIFEST_COMMON_UNIQUE_NULL" xml:space="preserve">
+    <value>唯一示辨碼為空</value>
+  </data>
+  <data name="MANIFEST_COMMON_REQUEST_NULL" xml:space="preserve">
+    <value>找不到要求參數</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_FIND" xml:space="preserve">
+    <value>下列產品並不存在系統 {0}</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_PACKAGE" xml:space="preserve">
+    <value>下列產品沒有設定包裝資料 {0}</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_DUPLICATE" xml:space="preserve">
+    <value>下列產品編號重複 {0}</value>
+  </data>
+  <data name="MANIFEST_ORDER_ALLOCATED_FAILURE" xml:space="preserve">
+    <value>配貨失敗</value>
+  </data>
+  <data name="MANIFEST_ORDER_RECEIVING_EXISTITEM" xml:space="preserve">
+    <value>此張訂單已經匯入</value>
+  </data>
+  <data name="MANIFEST_ORDER_INBOUND_ROLLBACKTICKET_USED" xml:space="preserve">
+    <value>恢復工單失敗，庫存已經被使用</value>
+  </data>
+  <data name="COMMON_INCORRENT_STATUS" xml:space="preserve">
+    <value>{0} 狀態不正確 要求:{1} 目前:{2}</value>
+  </data>
+  <data name="DATA_MANIFEST_KEY" xml:space="preserve">
+    <value>總表</value>
+  </data>
+  <data name="DATA_VESSEL_KEY" xml:space="preserve">
+    <value>Vessel</value>
+  </data>
+  <data name="DATA_BOL_KEY" xml:space="preserve">
+    <value>BOL</value>
+  </data>
+  <data name="DATA_TICKET_KEY" xml:space="preserve">
+    <value>工單</value>
+  </data>
+  <data name="ORDER_MANIFEST_TYPE_INCORRECT" xml:space="preserve">
+    <value>必需是出貨單</value>
+  </data>
+  <data name="ORDER_ILLEGAL_STATUS" xml:space="preserve">
+    <value>不合法的狀態值</value>
+  </data>
+  <data name="COMMON_NOT_SUPPORT" xml:space="preserve">
+    <value>{0} 不支援這個方法</value>
+  </data>
+  <data name="TICKET_MOVE_SEQMENT_INCORRECT" xml:space="preserve">
+    <value>移動異常，請先將產品下架</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_SLOT_INVALID" xml:space="preserve">
+    <value>Slot#{0} 無效.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETSTATUSINCORRECT" xml:space="preserve">
+    <value>Ticket info 狀態必需在完成之前才能操作</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETTYPEINCORRECT" xml:space="preserve">
+    <value>工單類型必需是移動工單</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_NOTFINDTICKETINFO" xml:space="preserve">
+    <value>找不到工單項目</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETMUSTOUTBOUND" xml:space="preserve">
+    <value>工單類型必需是出貨</value>
+  </data>
+  <data name="WAREHOUSE_ADD_HOMEADDR_FAILURE" xml:space="preserve">
+    <value>Fail to delete home location</value>
+  </data>
+  <data name="WAREHOUSE_DELETE_HOMEADDR_FAILURE" xml:space="preserve">
+    <value>Fail to delete home location</value>
+  </data>
+  <data name="WAREHOUSE_CHECK_SLOT_NOT_EXIST" xml:space="preserve">
+    <value>找不到儲位資料 SlotUID{0}</value>
+  </data>
+  <data name="WAREHOUSE_CHECK_SLOT_STATAUS" xml:space="preserve">
+    <value>儲存狀態不正確</value>
+  </data>
+  <data name="INVENTORY_MODIFY_INVENTORY_QTY_INSUFFICIENT" xml:space="preserve">
+    <value>Payload#{0} 修改數量不足</value>
+  </data>
+  <data name="INVENTORY_MODIFY_QTY_UNABLE_CALCULATE" xml:space="preserve">
+    <value>Payload#{0} 無法換算成指定包裝</value>
+  </data>
+  <data name="INVENTORY_MODIFY_INCORRENT_ACTION_TYPE" xml:space="preserve">
+    <value>Action Type  不正確</value>
+  </data>
+  <data name="INVENTORY_NOT_FIND_SLOT" xml:space="preserve">
+    <value>找不到儲位資料</value>
+  </data>
+  <data name="COMMON_NOT_FIND_ITEM" xml:space="preserve">
+    <value>找不到產品資料</value>
+  </data>
+  <data name="COMMON_NOT_FIND_PACKAGE" xml:space="preserve">
+    <value>{0} 找不到包裝資料</value>
+  </data>
+  <data name="INVENTORY_SLOT_THE_SAME" xml:space="preserve">
+    <value>Payload#{0}  移動時 Slot 不可相同</value>
+  </data>
+  <data name="WAREHOUSE_NOT_FIND" xml:space="preserve">
+    <value>找不到倉庫</value>
+  </data>
+  <data name="TICKET_TICKET_IN_BULKPICK" xml:space="preserve">
+    <value>Same tickets in following BulkPick {0}</value>
+  </data>
+  <data name="MANIFEST_TICKET_GENERATE_MISS_WAREHOUSE" xml:space="preserve">
+    <value>Generate ticket lost warehouse UID</value>
+  </data>
+  <data name="WAREHOSUE_MOVE_PAYLAOD_MULTIWAREHOUSE_REQUEST" xml:space="preserve">
+    <value>不能同時間移動不同倉庫庫存</value>
+  </data>
+  <data name="MANIFEST_ORDER_BULKPICK_PROCESSING" xml:space="preserve">
+    <value>批次撿貨單已經在進行，無法取消配置</value>
+  </data>
+  <data name="INBOUND_RECEIVING_NOT_FIND_LANDINGZONE" xml:space="preserve">
+    <value>找不到進貨卸貨區</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_USE_CHANGEFROM" xml:space="preserve">
+    <value>目前修改儲位功能關閉</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_USE" xml:space="preserve">
+    <value>此工單類別不允許使用修改功能</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PKGNOTMATCH" xml:space="preserve">
+    <value>該包裝編號不屬於此產品</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_UNALLOWED_NEGATIVE" xml:space="preserve">
+    <value>庫存不足，無法配置</value>
+  </data>
+  <data name="COMMON_FILE_INVAILD" xml:space="preserve">
+    <value>檔案格式不正確，必須為 {0}.</value>
+  </data>
+  <data name="MANIFEST_STATUS_FAILURE" xml:space="preserve">
+    <value>總表狀態不正確，必須在 {0} 之前</value>
+  </data>
+  <data name="MANIFEST_VESSEL_STATUS_FAILURE" xml:space="preserve">
+    <value>車單狀態無效 ,必須在 {0} 狀態之前</value>
+  </data>
+  <data name="MANIFEST_WORKORDER_FAILURE_STATUS" xml:space="preserve">
+    <value>Workorder status failure ,must before {0} status</value>
+  </data>
+  <data name="COMMON_GENERATE_LABEL_FAILURE" xml:space="preserve">
+    <value>標籤產生失敗</value>
+  </data>
+  <data name="INBOUND_OVER_VOLUME" xml:space="preserve">
+    <value>Pallet#{0}  item:{1} can't allocated over volume </value>
+  </data>
+  <data name="COMMON_SYNC_ERROR" xml:space="preserve">
+    <value>同步庫存失敗，請重試</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_FROMSLOT_CANNOT_SAME" xml:space="preserve">
+    <value>不能和目的地相同位置</value>
+  </data>
+  <data name="COMMON_GENERATE_LABEL_NOT_FIND_LABEL" xml:space="preserve">
+    <value>找不到UPC/EAN/SCC14/PUOM 標籤</value>
+  </data>
+  <data name="COMMON_CREATE_INVENTORY_CANNOT_ADD_SINGLE_VIRUALITEM" xml:space="preserve">
+    <value>不能單獨新增虛擬產品，請新增實體產品</value>
+  </data>
+  <data name="COMMON_VIRTUALITEM_COMBINE_FAILURE" xml:space="preserve">
+    <value>無法合併成實體產品</value>
+  </data>
+  <data name="INVENTORY_ITEM_NOT_BELONG_TO_GROUP" xml:space="preserve">
+    <value>產品不屬於這個群組</value>
+  </data>
+  <data name="INVENTORY_MODIFY_MOVE_CANNOT_ZERO" xml:space="preserve">
+    <value>移動數量必需大於0</value>
+  </data>
+  <data name="INVENTORY_SLOT_CANNOT_EMPTY" xml:space="preserve">
+    <value>修改儲位不可為空</value>
+  </data>
+  <data name="MANIFEST_ORDER_ALLOCATED_NOT_FIND_CUSTOMERUID" xml:space="preserve">
+    <value>找不到相關客戶編號</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_CANNOTCHANGEPKG" xml:space="preserve">
+    <value>不可轉換包裝</value>
+  </data>
+  <data name="MANIFEST_PICK_ALL_ALREADY_COMPLETE" xml:space="preserve">
+    <value>訂單已經完成.</value>
+  </data>
+  <data name="TICKET_MOBILE_CHANGESLOT_TICKETWAREHOUSEINCORRECT" xml:space="preserve">
+    <value>不能跨倉庫操作工單</value>
+  </data>
+  <data name="TICKET_MOVE_NOTSUPPORT" xml:space="preserve">
+    <value>目前不支援回復動作</value>
+  </data>
+  <data name="MANIFEST_PICK_ALL_HAS_FUTURE_ALLOCATED" xml:space="preserve">
+    <value>有Future allocated 資料，無法Pick all</value>
+  </data>
+  <data name="TICKET_MOVETICKET_HAS_FUTURE_ALLOCATED" xml:space="preserve">
+    <value>Future allocated  資料不可操作</value>
+  </data>
+  <data name="MANIFEST_INBOUND_ADD_ITEM_ERROR" xml:space="preserve">
+    <value>新增產品失敗</value>
+  </data>
+  <data name="COMMON_PKG_NOT_MATCH" xml:space="preserve">
+    <value>{0} 與這包裝不 匹配</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_MATCH_PACKAGE" xml:space="preserve">
+    <value> {0} 沒有Crate/Pallet 包裝，請至P Item 設定</value>
+  </data>
+  <data name="COMMON_RETRY" xml:space="preserve">
+    <value>處理失敗，請重試</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PAYLOAD_TYPE_ILLEGAL" xml:space="preserve">
+    <value>此資料非庫存資料，無法修改</value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD" xml:space="preserve">
+    <value>不合法的payload 資料</value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD_TYPE" xml:space="preserve">
+    <value>不能處理多種Payload Type</value>
+  </data>
+  <data name="COMMON_ILLEGAL_SLOT_STATUS" xml:space="preserve">
+    <value>該儲位為收貨儲位，不可移入</value>
+  </data>
+  <data name="COMMON_VIRTUAL_ITEM_CHECK_INVALID" xml:space="preserve">
+    <value>{0} 請選擇全部虛擬產品 </value>
+  </data>
+  <data name="COMMON_ILLEGAL_PAYLOAD_STATUS" xml:space="preserve">
+    <value>產品{0} 狀態必須是可使用狀態</value>
+  </data>
+  <data name="WAREHOUSE_MODIFIED_ONHAND_PAYLOAD_STATUS_ILLEGAL" xml:space="preserve">
+    <value>修改的庫存包含尚未處理完的資料，請完成相關工單</value>
+  </data>
+  <data name="COMMON_REQUEST_ISPROCESSING" xml:space="preserve">
+    <value>正在處理，請稍後</value>
+  </data>
+  <data name="COMMON_WAREHOSUE_SLOT_DIFFERENCE" xml:space="preserve">
+    <value>Slot 不屬於該倉庫，請確認</value>
+  </data>
+  <data name="MANIFEST_ORDER_NOT_STOCK_REQUEST" xml:space="preserve">
+    <value>Future Allocated only for item of stock condition</value>
+  </data>
+  <data name="MANIFEST_ORDER_ITEM_NOT_MATCH_MIN_PACKAGE" xml:space="preserve">
+    <value>The "Stock UOM"  and "Inventory UOM" for {0} are different from the smallest package setting in P item.</value>
+  </data>
+  <data name="MANIFEST_FUTURE_ALLOCATED_NOT_SUPPORT" xml:space="preserve">
+    <value>這個倉庫不支援Future allocated</value>
+  </data>
+</root>

@@ -1,0 +1,1318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Utilities.ActionResultContainer`1">
+            <summary>
+            執行結果
+            </summary>
+            <typeparam name="T">回傳內容的類型</typeparam>
+        </member>
+        <member name="P:YAEP.Utilities.ActionResultContainer`1.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.ActionResultContainer`1.Message">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.ActionResultContainer`1.InnerException">
+            <summary>
+            例外
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.ActionResultContainer`1.Content">
+            <summary>
+            回傳內容
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.ActionResultContainer`1.TypeCode">
+            <summary>
+            (預留)
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultContainer`1.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.ActionResultTemplates">
+            <summary>
+            回傳結果樣板
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.ArgumentNullExceptionResult(System.String,System.String)">
+            <summary>
+            參數為空的例外結果
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.ArgumentNullExceptionResult``1(System.String,System.String)">
+            <summary>
+            參數為空的例外結果
+            </summary>
+            <typeparam name="T">內容類型</typeparam>
+            <param name="parameterName">參數名稱</param>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.ArgumentExceptionResult(System.String)">
+            <summary>
+            參數有錯誤的例外結果
+            </summary>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.ArgumentExceptionResult``1(System.String)">
+            <summary>
+            參數有錯誤的例外結果
+            </summary>
+            <typeparam name="T">內容類型</typeparam>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.KeyNotFoundExceptionResult(System.String,System.String)">
+            <summary>
+            無Key值的例外結果
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.KeyNotFoundExceptionResult``1(System.String,System.String)">
+            <summary>
+            無Key值的例外結果
+            </summary>
+            <typeparam name="T">內容類型</typeparam>
+            <param name="parameterName">參數名稱</param>
+            <param name="message">訊息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.OK``1(System.String,``0,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="message"></param>
+            <param name="content"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.OK(System.String,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Error``1(System.String,``0,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="message"></param>
+            <param name="content"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Error(System.String,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Result``1(System.Boolean,System.String,``0,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="success"></param>
+            <param name="message"></param>
+            <param name="content"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Result(System.Boolean,System.String,System.Boolean,System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="success"></param>
+            <param name="message"></param>
+            <param name="content"></param>
+            <param name="innerException"></param>
+            <param name="typeCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Result(System.Func{System.Boolean},System.Func{System.String},System.Action{YAEP.Interfaces.IActionResult{System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="executeDelegate"></param>
+            <param name="messageDelegate"></param>
+            <param name="exceptionDelegate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ActionResultTemplates.Result``1(System.Func{``0},System.Func{System.String},System.Action{YAEP.Interfaces.IActionResult{``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="R"></typeparam>
+            <param name="executeDelegate"></param>
+            <param name="messageDelegate"></param>
+            <param name="exceptionDelegate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.Attributes.EnumFieldInfoAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Text"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="Text"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Text">
+            <summary>
+            顯示文字
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Color">
+            <summary>
+            色碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.CssClass">
+            <summary>
+            Css class
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Other">
+            <summary>
+            額外屬性
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Parent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Attributes.EnumFieldInfoAttribute.Sort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.Extensions.DynamicObjectExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.DynamicObjectExtensions.ConvertToExpandoObject(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.Extensions.IDictionaryExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.IDictionaryExtensions.SetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="source"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.IDictionaryExtensions.GetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="source"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.IDictionaryExtensions.GetValue``3(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TConvert"></typeparam>
+            <param name="source"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.Extensions.ObjectExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ObjectExtensions.TryConvert``1(System.Object,``0@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ObjectExtensions.ConvertTo``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.Extensions.ReflectionCacheExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ReflectionCacheExtensions.GetCacheProperty(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            取得對應名稱的屬性
+            </summary>
+            <param name="type">型別</param>
+            <param name="propertyName">屬性名稱</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ReflectionCacheExtensions.GetCacheProperty``1(``0,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            取得對應名稱的屬性
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="propertyName">屬性名稱</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ReflectionCacheExtensions.GetCacheProperties(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            取得所有屬性
+            </summary>
+            <param name="type">型別</param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Extensions.ReflectionCacheExtensions.GetCacheProperties``1(``0,System.Reflection.BindingFlags)">
+            <summary>
+            取得所有屬性
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="bindingFlags"><see cref="T:System.Reflection.BindingFlags"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.IEnumFieldInfo">
+            <summary>
+            列舉欄位定義
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Color">
+            <summary>
+            顏色
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.CssClass">
+            <summary>
+            CSS Class Name
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Text">
+            <summary>
+            顯示內容
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Value">
+            <summary>
+            數值
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Level">
+            <summary>
+            階層編號
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Parent">
+            <summary>
+            父層
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.IEnumFieldInfo.Other">
+            <summary>
+            其他擴充屬性
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.Model.EnumFieldInfo">
+            <summary>
+            列舉欄位定義
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Color">
+            <summary>
+            顏色
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.CssClass">
+            <summary>
+            CSS Class Name
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Text">
+            <summary>
+            顯示內容
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Value">
+            <summary>
+            數值
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Level">
+            <summary>
+            階層編號
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Parent">
+            <summary>
+            父層
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Model.EnumFieldInfo.Other">
+            <summary>
+            其他擴充屬性
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.Security.CipherType">
+            <summary>
+            加密演算法類型
+            </summary>
+        </member>
+        <member name="F:YAEP.Utilities.Security.CipherType.DES">
+            <summary>
+            DES 演算法
+            </summary>
+        </member>
+        <member name="F:YAEP.Utilities.Security.CipherType.Rijndael">
+            <summary>
+            Rijndael 對稱加密演算法
+            </summary>
+        </member>
+        <member name="F:YAEP.Utilities.Security.CipherType.RSA">
+            <summary>
+            非對稱加密演算法
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.Security.IDecryptable">
+            <summary>
+            定義是否支援解密作業
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.IDecryptable.Decrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            解密
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="T:YAEP.Utilities.Security.IEncryptable">
+            <summary>
+            定義是否支援加密作業
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.IEncryptable.Encrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            加密
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="publicKey"></param>
+            <param name="privateKey"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.Encode(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.Decode(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.Encrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Security.RSACipher.Decrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="T:YAEP.Utilities.Security.XCipher">
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_RIJNDAEL_KEY">
+            <summary>
+            Rijndael 金鑰 預設值
+            </summary> 
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_RIJNDAEL_IV">
+            <summary>
+            Rijndael 向量 預設值
+            </summary> 
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_DES_KEY">
+            <summary>
+            DES 金鑰 預設值
+            </summary> 
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_DES_IV">
+            <summary>
+            DES 向量 預設值
+            </summary> 
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_RSA_PUBLIC_KEY">
+            <summary>
+            RSA 公鑰 預設值
+            </summary>
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.DEFAULT_RSA_PRIVATE_KEY">
+            <summary>
+            RSA 私鑰 預設值
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.CreateDefaultCipher(YAEP.Utilities.Security.CipherType)">
+            <summary>
+            取得預設加解密器
+            </summary>
+            <param name="type">演算法類型</param> 
+            <returns>CAPCipher</returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.CreateCipher(YAEP.Utilities.Security.CipherType,System.String,System.String)">
+            <summary>
+            取得加解密器
+            </summary>
+            <param name="type">演算法類型</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns>CAPCipher</returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.CreateCipher(YAEP.Utilities.Security.CipherType,System.Byte[],System.Byte[])">
+            <summary>
+            取得加解密器
+            </summary>
+            <param name="type">演算法類型</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns>CAPCipher</returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.GenerateNewKey">
+            <summary>
+            產生隨機的Key值
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.GenerateNewIV">
+            <summary>
+            產生隨機的IV值
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.Encode(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.Decode(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.Encrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.Decrypt(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="output"></param>
+        </member>
+        <member name="F:YAEP.Utilities.Security.XCipher.SymmetricAlgorithm">
+            <summary>
+            對稱式演算法基底類別
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.ParseToBytes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Security.XCipher.ValidateKeyIV(System.Byte[],System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="bufferKey"></param>
+            <param name="bufferIV"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Utilities.Security.XCipher.Key">
+            <summary>
+            取得目前金鑰
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.Security.XCipher.IV">
+            <summary>
+            取得目前向量
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.AttributeHelper">
+            <summary>
+            特徵項協助方法
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.AttributeHelper.GetAttribute``1(System.Reflection.MemberInfo)">
+            <summary>
+            取得特徵項
+            </summary>
+            <typeparam name="T">特徵項類型</typeparam>
+            <param name="member">成員</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.AttributeHelper.GetAttributes``1(System.Reflection.MemberInfo)">
+            <summary>
+            取得特徵項集合
+            </summary>
+            <typeparam name="T">特徵項類型</typeparam>
+            <param name="member">成員</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.DebugUtilities">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="M:YAEP.Utilities.DebugUtilities.PrintLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="line"></param>
+        </member>
+        <member name="M:YAEP.Utilities.DebugUtilities.Action(System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:YAEP.Utilities.DebugUtilities.Look(System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:YAEP.Utilities.EnumerableData">
+            <summary>
+            列舉型別的公用程式
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.#ctor(System.Type)">
+            <summary>
+            建構子
+            </summary>
+            <param name="enumType">列舉的型別</param>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetData">
+            <summary>
+            取得資料集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetAttribute``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetData(System.String[])">
+            <summary>
+            取得資料集合
+            </summary>
+            <param name="hideNames">要隱藏的項目名稱陣列</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetDataByGeneric(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="hideNames"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetData(System.String)">
+            <summary>
+            取得列舉內容形成的資料表
+            </summary>
+            <param name="enumTypeName">型別名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetData(System.Type)">
+            <summary>
+            取得列舉內容形成的資料表
+            </summary>
+            <param name="enumType">列舉的型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetData(System.Type,System.String[])">
+            <summary>
+            取得列舉內容形成的資料表
+            </summary>
+            <param name="enumType">列舉的型別</param>
+            <param name="hideNames">不顯示的列舉項目文字</param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Utilities.EnumerableData.EnumType">
+            <summary>
+            列舉的型別
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetDataFor(System.Type)">
+            <summary>
+            取得資料集合
+            </summary> 
+            <param name="enumType">列舉的型別</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetDataForGeneric(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetDataFor(System.Type,System.String[])">
+            <summary>
+            取得列舉內容形成的資料表
+            </summary>
+            <param name="enumType">列舉的型別</param>
+            <param name="hideNames">不顯示的列舉項目文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetName``1(System.Object)">
+            <summary>
+            取得列舉名稱的字串(如果數值不在列舉內將顯示空字串)
+            </summary>
+            <typeparam name="T">列舉的型別</typeparam>
+            <param name="value">列舉值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetName``1(System.Object,System.String)">
+            <summary>
+            取得列舉名稱的字串(如果數值不在列舉內將顯示nothingNote參數內容)
+            </summary>
+            <typeparam name="T">列舉的型別</typeparam>
+            <param name="value">列舉值</param>
+            <param name="nothingNote">數值不在列舉內時回傳的字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.Parse(System.Type,System.Object)">
+            <summary>
+            將對應型別的列舉值轉換成列舉物件
+            </summary>
+            <param name="type">列舉的型別</param>
+            <param name="value">名稱或數值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.Exists(System.Type,System.Object)">
+            <summary>
+            判斷值是否在列舉內
+            </summary>
+            <param name="type">列舉的型別</param>
+            <param name="value">名稱或數值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.Exists``1(System.Object)">
+            <summary>
+            判斷值是否在列舉內
+            </summary>
+            <typeparam name="T">列舉的型別</typeparam>
+            <param name="value">名稱或數值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.Parse(System.Type,System.Object,System.String)">
+            <summary>
+            將對應型別的列舉值轉換成列舉物件
+            </summary>
+            <param name="type">列舉的型別</param>
+            <param name="value">名稱或數值</param>
+            <param name="nothingNote">如果找不到對應值或名稱的內容時出現的提示字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.Parse``1(System.Object)">
+            <summary>
+            將對應型別的列舉值轉換成列舉物件
+            </summary>
+            <typeparam name="T">列舉的型別</typeparam>
+            <param name="value">名稱或數值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetValue``1(System.Enum)">
+            <summary>
+            將列舉值轉換成對應型別並傳回
+            </summary>
+            <typeparam name="T">要轉換的型別</typeparam>
+            <param name="e">列舉物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.EnumerableData.GetValue(System.Enum)">
+            <summary>
+            取得列舉值
+            </summary>
+            <param name="e">列舉物件</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.ExpressionUtilities">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.GetPropertyName``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyGetterExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.GetProperty``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.GetMemberExpression``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.CreateSetter``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.CreateGetter``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="property"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.ExpressionUtilities.CreateDefaultConstructor``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.UniqueActuator">
+            <summary>
+            唯一執行器
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.#ctor(System.String,System.Action)">
+            <summary>
+            建構子
+            </summary>
+            <param name="identifier">識別碼</param>
+            <param name="action">執行動作</param>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.Invoke">
+            <summary>
+            執行
+            </summary>
+        </member>
+        <member name="E:YAEP.Utilities.UniqueActuator.Error">
+            <summary>
+            錯誤事件
+            </summary>
+        </member>
+        <member name="E:YAEP.Utilities.UniqueActuator.UnauthorizedAccess">
+            <summary>
+            拒絕存取引發的事件
+            </summary>
+        </member>
+        <member name="E:YAEP.Utilities.UniqueActuator.NonUnique">
+            <summary>
+            不是唯一時引發的事件
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.UniqueActuator.ErrorEventArgs">
+            <summary>
+            錯誤事件引數
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.ErrorEventArgs.#ctor(System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="message">訊息</param>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.ErrorEventArgs.#ctor(System.Exception)">
+            <summary>
+            建構子
+            </summary>
+            <param name="exception">例外</param>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.ErrorEventArgs.#ctor(System.String,System.Exception)">
+            <summary>
+            建構子
+            </summary>
+            <param name="message">訊息</param>
+            <param name="exception">例外</param>
+        </member>
+        <member name="P:YAEP.Utilities.UniqueActuator.ErrorEventArgs.Message">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="P:YAEP.Utilities.UniqueActuator.ErrorEventArgs.Exception">
+            <summary>
+            例外
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.UniqueActuator.UnauthorizedAccessEventArgs">
+            <summary>
+            拒絕存取引發的事件引數
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.UnauthorizedAccessEventArgs.#ctor(System.Exception)">
+            <summary>
+            建構子
+            </summary>
+            <param name="exception">例外</param>
+        </member>
+        <member name="T:YAEP.Utilities.UniqueActuator.NonUniqueEventArgs">
+            <summary>
+            不是唯一時引發的事件引數
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.UniqueActuator.NonUniqueEventArgs.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            建構子
+            </summary>
+            <param name="messages">訊息</param>
+        </member>
+        <member name="P:YAEP.Utilities.UniqueActuator.NonUniqueEventArgs.Messages">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="T:YAEP.Utilities.Utility">
+            <summary>
+            公用程式
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.MD5Encrypt(System.String)">
+            <summary>
+            MD5 加密
+            </summary>
+            <param name="original">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelEncode(System.String)">
+            <summary>
+            Rijndael 加密
+            </summary>
+            <param name="original">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelEncode(System.String,System.String,System.String)">
+            <summary>
+            Rijndael 加密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelEncode(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Rijndael 加密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelDecode(System.String)">
+            <summary>
+            Rijndael 解密
+            </summary>
+            <param name="original">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelDecode(System.String,System.String,System.String)">
+            <summary>
+            Rijndael 解密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RijndaelDecode(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Rijndael 解密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESEncode(System.String)">
+            <summary>
+            DES 加密
+            </summary>
+            <param name="original">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESEncode(System.String,System.String,System.String)">
+            <summary>
+            DES 加密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESEncode(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            DES 加密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESDecode(System.String)">
+            <summary>
+            DES 解密
+            </summary>
+            <param name="original">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESDecode(System.String,System.String,System.String)">
+            <summary>
+            DES 解密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.DESDecode(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            DES 解密
+            </summary>
+            <param name="original">字串</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RSAEncode(System.String)">
+            <summary>
+            RSA 加密
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RSADecode(System.String)">
+            <summary>
+            RSA 解密
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetCipher(YAEP.Utilities.Security.CipherType)">
+            <summary>
+            取得加密器
+            </summary>
+            <param name="type">演算法類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetCipher(YAEP.Utilities.Security.CipherType,System.String,System.String)">
+            <summary>
+            取得加密器
+            </summary>
+            <param name="type">演算法類型</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetCipher(YAEP.Utilities.Security.CipherType,System.Byte[],System.Byte[])">
+            <summary>
+            取得加密器
+            </summary>
+            <param name="type">演算法類型</param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.Serialize(System.Object,System.String,System.Boolean)">
+            <summary>
+            物件 序列化 至 XML檔案
+            </summary>
+            <param name="o">物件</param>
+            <param name="filePath">存入路徑</param>
+            <param name="omitXmlDeclaration"></param>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.Deserialize``1(System.String)">
+            <summary>
+            將 XML檔案內容 反序列化 成 物件
+            </summary>
+            <typeparam name="T">物件型別</typeparam>
+            <param name="filePath">檔案路徑</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.MakeToCorrectFileName(System.String)">
+            <summary>
+            檢查檔案名稱正確性, 並回傳正確檔案名稱
+            </summary>
+            <param name="filename">檔案名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.MakeToCorrectFolderName(System.String)">
+            <summary>
+            檢查資料夾名稱正確性, 並回傳正確資料夾名稱
+            </summary>
+            <param name="foldername">資料夾名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.AppendDays(System.DateTime,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            將特定日期加上天數並回傳加總後的日期
+            </summary>
+            <param name="source">要計算的日期</param>
+            <param name="days">天數</param>
+            <param name="IsWorkDate">是否以工作天為計算方式，預設false．</param>
+            <param name="IsIncludeFirstDay">是否包含第一天，預設true．</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetWorkDays(System.DateTime,System.DateTime,System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            取得時間區間內的工作天
+            </summary>
+            <param name="dtfrom">開始時間</param>
+            <param name="dtto">結束時間</param>
+            <param name="bankHolidays">特殊假日</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.Split(System.String,System.String[])">
+            <summary>
+            傳回用指定的字串分隔後的字串陣列
+            </summary>
+            <param name="source">要處理的字串</param>
+            <param name="separator">分隔字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.Split(System.String,System.Char[])">
+            <summary>
+            傳回用指定的字元分隔後的字串陣列
+            </summary>
+            <param name="source">要處理的字串</param>
+            <param name="separator">分隔字元</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.ToGuid(System.String)">
+            <summary>
+            將字串轉換為Guid
+            </summary>
+            <param name="uid">要轉換的字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.IsGuid(System.String)">
+            <summary>
+            判斷字串是否為Guid
+            </summary>
+            <param name="uid">要判斷的字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetDomainDirectory">
+            <summary>
+            取得組件的基底目錄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.RemoveSpecialCharacters(System.String)">
+            <summary>
+            移除特殊字元
+            </summary>
+            <param name="text">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetNowDateTime">
+            <summary>
+            取得現在時間, 取得統一時區的時間
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Utilities.Utility.GetExecutingDirectoryPath">
+            <summary>
+            取得目前執行檔所在資料夾路徑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.TypeUtilities">
+            <summary>
+            Type convert utilities.
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.TypeUtilities.TryConvert``1(System.Object,``0@)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Utilities.WebUtilities">
+            <summary>
+            Response generation utilities.
+            </summary>
+        </member>
+        <member name="M:YAEP.Utilities.WebUtilities.AddQueryString(System.String,System.String)">
+            <summary>
+            Append the given query to the uri.
+            </summary>
+            <param name="uri">The base uri.</param>
+            <param name="queryString">The query string to append, if any.</param>
+            <returns>The combine result.</returns>
+        </member>
+        <member name="M:YAEP.Utilities.WebUtilities.AddQueryString(System.String,System.String,System.String)">
+            <summary>
+            Append the given query key and value to the uri.
+            </summary>
+            <param name="uri">The base uri.</param>
+            <param name="name">The name of the query key.</param>
+            <param name="value">The query value.</param>
+            <returns>The combine result.</returns>
+        </member>
+        <member name="M:YAEP.Utilities.WebUtilities.AddQueryString(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Append the given query keys and values to the uri.
+            </summary>
+            <param name="uri">The base uri.</param>
+            <param name="queryString">A collection of name value query pairs to append.</param>
+            <returns>The combine result.</returns>
+        </member>
+    </members>
+</doc>

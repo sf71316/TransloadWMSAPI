@@ -1,0 +1,880 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Package.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Package.Interfaces.IPackageVersionSerialNumberGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionSerialNumberGenerator.GetSerialNumber(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageUomParameterize.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageUomParameterize.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageUomParameterize.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageUomParameterize.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageUomParameterize.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageParameterize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.ParentUID">
+            <summary>
+            上層包裝識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.ItemUID">
+            <summary>
+            產品識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.VersionUID">
+            <summary>
+            版本識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.IPackageParameterize.UOM">
+            <summary>
+            計量單位識別碼
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageUomManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomManager.GetPackageUomList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomManager.GetPackageUom(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageVersionManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.AddPackageVersion(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>  
+            <param name="versionId">
+            版本代碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.AddPackageVersion(System.Guid,System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param> 
+            <param name="defaultUomUID">預設 Package UOM UID</param> 
+            <param name="versionId">
+            版本代碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.GetPackageVersionList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.DeletePackageVersion(System.Guid)">
+            <summary>
+            刪除 Package Version 資料
+            </summary> 
+            <param name="versionUID">
+            Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.ClonePackageVersion(System.Guid)">
+            <summary>
+            建立副本
+            </summary>
+            <param name="versionUID">
+            Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.CheckVersionIdIsExists(System.Guid,System.String)">
+            <summary>
+            檢查版本代碼是否存在
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>
+            <param name="versionId">
+            版本代碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionManager.GetPackageVersion(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="versionUID">
+            Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackage(System.Guid)">
+            <summary>
+            取得對應識別碼的 Package
+            </summary>
+            <param name="packageUID">
+            識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackages(System.Guid[])">
+            <summary>
+            取得對應識別碼的 Package 
+            </summary>
+            <param name="packageUID">
+            識別碼陣列
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackagesByVersion(System.Guid)">
+            <summary>
+            取得對應 Version 的 Packages
+            </summary>
+            <param name="versionUID">
+            版本識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackagesByItem(System.Guid)">
+            <summary>
+            取得對應 Item 的 Packages
+            </summary>
+            <param name="itemUID">
+            版本識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.ItemUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.AddPackage(YAEP.Package.Interfaces.Models.IPackageModel)">
+            <summary>
+            新增
+            </summary>
+            <param name="package"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.UpdatePackage(YAEP.Package.Interfaces.Models.IPackageModel)">
+            <summary>
+            
+            </summary>
+            <param name="package"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.DeletePackage(System.Guid)">
+            <summary>
+            刪除 Package
+            </summary>
+            <param name="packageUID">
+            Package識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetReceivePackageUomQuantity(System.Guid,System.Guid,System.Int32)">
+            <summary>
+            取得包裝轉換單位數量總計
+            </summary>
+            <param name="packageUID">
+            包裝識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <param name="receivePackageUID">
+            轉換包裝識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UOM"/>
+            </param>
+            <param name="quantity">
+            數量
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.Quantity"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetReceivePackageUomQuantity(YAEP.Package.Interfaces.Models.IPackageTree,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            取得包裝轉換單位數量總計
+            </summary>
+            <param name="tree">包裝樹狀物件</param>
+            <param name="packageUID">
+            包裝識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <param name="receivePackageUID">
+            轉換包裝識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UOM"/>
+            </param>
+            <param name="quantity">
+            數量
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.Quantity"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackageTree(System.Guid)">
+            <summary>
+            取得 同 Version 的 Package Tree
+            </summary>
+            <param name="packageUID">
+            包裝識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageManager.GetPackageTrees(System.Guid[])">
+            <summary>
+            取得 同 Version 的 Package Tree
+            </summary>
+            <param name="packageUID">
+            包裝識別碼
+            <para />array of <see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.Models.IPackageViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.VersionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.UomName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.ParentUomName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.ParentUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.Sort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.CanEdit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.CanDelete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageViewModel.AssignedCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageTree.Root">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.Models.IPackageNode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageNode.ParentUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageNode.Children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageNode.Level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageNode.Parent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.Models.IPackageUomModel">
+            <summary>
+            包裝計量單位
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageUomModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.Models.IPackageVersionModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID">
+            <summary>
+            產品識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId">
+            <summary>
+            版本代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.SerialNumber">
+            <summary>
+            序號 (自動編號)
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.Models.IPackageModel">
+            <summary>
+            包裝
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ParentUID">
+            <summary>
+            上層包裝識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ItemUID">
+            <summary>
+            產品識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID">
+            <summary>
+            版本識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.UOM">
+            <summary>
+            計量單位識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Quantity">
+            <summary>
+            數量
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Width">
+            <summary>
+            寬度
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.Length">
+            <summary>
+            長度
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.GrossWeight">
+            <summary>
+            毛重
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ImageUID">
+            <summary>
+            圖片UID
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.CreatedBy">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.CreatedOn">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ModifiedBy">
+            <summary>
+            異動者
+            </summary>
+        </member>
+        <member name="P:YAEP.Package.Interfaces.Models.IPackageModel.ModifiedOn">
+            <summary>
+            異動日期
+            </summary>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageVersionRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.Create(System.Guid,System.Int64,System.String)">
+            <summary>
+            建立
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>
+            <param name="serialNumber">
+            序號
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.SerialNumber"/>
+            </param>
+            <param name="versionId">
+            版本代碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.Create(YAEP.Package.Interfaces.Models.IPackageVersionModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="packageVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.Update(YAEP.Package.Interfaces.Models.IPackageVersionModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="packageVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.CheckExists(System.Guid,System.String)">
+            <summary>
+            檢查版本代碼是否存在
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>
+            <param name="versionId">
+            版本代碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.VersionId"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.GetPackageVersion(System.Guid)">
+            <summary>
+            取得對應識別碼的 Package Version
+            </summary>
+            <param name="versionUID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.GetPackageVersions(System.Guid)">
+            <summary>
+            取得對應產品識別碼的 Package Version
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.ItemUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.GetPackageVersionByPackage(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="packageUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageVersionRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageUomRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.Create(YAEP.Package.Interfaces.Models.IPackageUomModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="packageUom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.Update(YAEP.Package.Interfaces.Models.IPackageUomModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="packageUom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.GetPackageUom(System.Guid)">
+            <summary>
+            取得對應識別碼的 Package Unit of measure
+            </summary>
+            <param name="UID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.GetPackageUoms(YAEP.Package.Interfaces.IPackageParameterize)">
+            <summary>
+            取得符合條件的 Package Unit of measure
+            </summary>
+            <param name="parameters">條件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageUomRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Package.Interfaces.IPackageRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.Create(YAEP.Package.Interfaces.Models.IPackageModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="package"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.CreateDefaultPackage(System.Guid,System.Guid,System.Guid,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="versionUID"></param>
+            <param name="itemUID"></param>
+            <param name="uomUID"></param>
+            <param name="packageId"></param>
+            <param name="packageName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.Update(YAEP.Package.Interfaces.Models.IPackageModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="package"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetPackage(System.Guid)">
+            <summary>
+            取得對應識別碼的 Package
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetPackage(System.Guid[])">
+            <summary>
+            取得對應識別碼的 Package
+            </summary>
+            <param name="UID">
+            識別碼陣列
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetPackagesByVersion(System.Guid)">
+            <summary>
+            取得對應 Version 的 Packages
+            </summary>
+            <param name="versionUID">
+            版本識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetPackagesByItem(System.Guid)">
+            <summary>
+            取得對應 Item 的 Packages
+            </summary>
+            <param name="itemUID">
+            版本識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.ItemUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetSameVersionPackages(System.Guid[])">
+            <summary>
+            取得同樣 Version 的所有 Packages
+            </summary>
+            <param name="packageUID">
+            識別碼
+            <para />array of <see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetSameVersionPackages(System.Guid)">
+            <summary>
+            取得同樣 Version 的所有 Packages
+            </summary>
+            <param name="packageUID">
+            識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetRootPackage(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="packageUID">
+            識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.UID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetRootPackage(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID">
+            產品識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.ItemUID" />
+            </param>
+            <param name="versionUID">
+            Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID" />
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Package.Interfaces.IPackageRepository.CopyPackages(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary> 
+            <param name="sourceVersionUID">
+            來源 Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID" />
+            </param>
+            <param name="targetVersionUID">
+            目的 Version 識別碼
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageModel.VersionUID" />
+            </param>
+            <returns></returns> 
+        </member>
+    </members>
+</doc>

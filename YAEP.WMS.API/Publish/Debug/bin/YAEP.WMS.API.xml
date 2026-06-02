@@ -1,0 +1,4980 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.WMS.API</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.WMS.API.Models.Request.AppLoginRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.ApplicationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.ClientIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.OsType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.OsVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.DeviceIDl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.DeviceModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.AppLoginRequestModel.NotificationToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.BulkPickSaveModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSaveModel.ManifestItemUID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSaveModel.TicketInfoUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSaveModel.CustomerPartyName">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSaveModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.BulkPickBathAddWorkModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickBathAddWorkModel.BulkPickUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickBathAddWorkModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.Customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.RefNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.DateBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.StartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.EndDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.OptionText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel.OptionValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.PartyUID">
+            <summary>
+            Party 識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.ID">
+            <summary>
+            代碼
+            </summary> 
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Country">
+            <summary>
+            國家 (3 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.State">
+            <summary>
+            州 / 省 (2 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Zip">
+            <summary>
+            區號
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Address1">
+            <summary>
+            地址1
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Address2">
+            <summary>
+            地址2
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Address3">
+            <summary>
+            地址3
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.Email">
+            <summary>
+            電子郵件
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.PhoneHome">
+            <summary>
+            市內電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.PhoneCell">
+            <summary>
+            手機電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.PhoneOffice">
+            <summary>
+            辦公室電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.FaxHome">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.FaxOffice">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerAddressRequestModel.IsDefault">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel.BulkPickNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel.Customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel.CustomerPartyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Ext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.CustomerSearchRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerSearchRequestModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerSearchRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerSearchRequestModel.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.PackageSyncRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestModel.Package">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.UOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.GrossWeight">
+            <summary>
+            gross weight
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.SCC14">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.PUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageSyncRequestEntity.Children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.ProductSyncRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.CategoryName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.UPC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.EAN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.IsBOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.LengthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.WidthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.HeightInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.LengthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.WidthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.HeightCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.NetWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.NetWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.GrossWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.GrossWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.StockUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.PurchaseUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.SellingUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSyncRequestModel.ShipUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel.CustomerID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel.CustomerUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.ProductBatchSyncRequestModel">
+            <summary>
+            批次同步產品
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductBatchSyncRequestModel.CustomerID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductBatchSyncRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductBatchSyncRequestModel.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.VendorRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Ext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.VendorRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.LoginRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.LoginRequestModel.account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.LoginRequestModel.password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.LoginRequestModel.applicationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.LoginRequestModel.clientIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.CustomerRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Ext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.CustomerRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.PackageRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.VersionUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.UOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.ParentUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.GrossWeight">
+            <summary>
+            gross weight
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageRequestModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.UOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.GrossWeight">
+            <summary>
+            gross weight
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.PackageUpdateRequestModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.ProductSearchRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.PHierarchy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.CHierarchy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.CustomerUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.PageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductSearchRequestModel.PageNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Request.ProductRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.CustomerUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.CategoryUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.UPC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.EAN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.IsBOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.LengthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.WidthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.HeightInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.LengthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.WidthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.HeightCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.NetWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.NetWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.GrossWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.GrossWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.StockUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.PurchaseUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.SellingUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Request.ProductRequestModel.ShipUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.AddUserWithGroupsRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.AddUserWithGroupsRequestModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.RollbackTicketRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.RollbackTicketRequest.BolRefUID">
+            <summary>
+            Bol Ref UID (Ship via UID)
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.RollbackTicketRequest.RefNo">
+            <summary>
+            Syspon
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.AddInventoryParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.BulkPickUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.ManifestNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.TicketInfoUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.TicketInfoID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.RefNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.ItemNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.EstQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.ActQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.FromSlot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.ToSlot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoViewResponseModel.Shipvia">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.BulkPickUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.BulkPickID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.PartyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.ItemNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.EstQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.ActQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.ShtQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.SavQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.From">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.To">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.TicketInfoUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickInfoResponseModel.TicketInfoRelationID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.TicketInfoUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.TicketInfoID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ManifestUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ManifestNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ManifestItemListUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ManifestItemListID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.CustomerPartyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.RefNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ItemNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.EstQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.FromSlot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ToSlot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickManifestResponseModel.ShipVia">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.BulkPickResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.BulkPickUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.BulkPickNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.TicketID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.TicketUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.StatusName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.AssignedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BulkPickResponseModel.AssignedTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.BatchSyncProductResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BatchSyncProductResponseModel.ProductId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BatchSyncProductResponseModel.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BatchSyncProductResponseModel.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.BatchSyncProductResponseModel.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.ManifestProductResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductResponseModel.Packages">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.ManifestProductPackageResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductPackageResponseModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductPackageResponseModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductPackageResponseModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ManifestProductPackageResponseModel.VersionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.ProductNameResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNameResponseModel.ItemID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNameResponseModel.ItemName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNameResponseModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNameResponseModel.Package">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel.VersionID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel.ItemName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel.PackageName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel.PackageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.Response.ProductNamePackageResponseModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Models.CompentResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.CompentResponse.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.CompentResponse.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Models.CompentResponse.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.CompressionAttribute">
+            <summary>
+            實作資料壓縮
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.BulkPickController">
+            <summary>
+            Bulk Pick API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.GetBulkPickList(YAEP.WMS.API.Models.Request.BulkPickSearchRequestModel)">
+            <summary>
+            查詢  Bulk Pick 資料列表
+            </summary>
+            <param name="requestModel">The model of search parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.Delete(System.Guid[])">
+            <summary>
+            刪除  Bulk Pick 資料列表
+            </summary>
+            <param name="uid"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.Save(YAEP.WMS.API.Models.Request.BulkPickSaveModel)">
+            <summary>
+            儲存BulkPick資料
+            </summary>
+            <param name="requestModel">request data</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.BatchAddWorker(YAEP.WMS.API.Models.Request.BulkPickBathAddWorkModel)">
+            <summary>
+            批次附加Worker
+            </summary>
+            <param name="requestModel">request data</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.GetManifestList(YAEP.WMS.API.Models.Request.BulkPickManifestSearchRequestModel)">
+            <summary>
+            Manifest 選取列表
+            </summary>
+            <param name="requestModel">The model of search parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.GetInfo(System.Guid)">
+            <summary>
+            BulkPick Info  
+            </summary>
+            <param name="bulkPickUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BulkPickController.GetInfoView(System.Guid)">
+            <summary>
+            BulkPick Info  
+            </summary>
+            <param name="bulkPickUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.BolController">
+            <summary>
+            卡車(BOL)相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.DeleteBOL(System.Guid[])">
+            <summary>
+            刪除 BOL
+            </summary>
+            <param name="muid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.AddBol(YAEP.WMS.API.Models.Request.BOLRequestModel)">
+            <summary>
+            新增 Bol
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.EditBol(YAEP.WMS.API.Models.Request.BOLRequestModel)">
+            <summary>
+            編輯 Bol
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.GetBOLList(System.Guid)">
+            <summary>
+            查詢Bol 資料列表
+            </summary>
+            <param name="muid">Manifest UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.SubmitBol(System.Guid)">
+            <summary>
+            Submit BOL
+            </summary>
+            <param name="boluid">BOL UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.ApproveBol(System.Guid)">
+            <summary>
+            Approve BOL
+            </summary>
+            <param name="boluid">BOL UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.RejectBol(System.Guid)">
+            <summary>
+            Reject BOL
+            </summary>
+            <param name="boluid">BOL UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.BolController.CheckHaveUnassignedTicket(System.Guid)">
+            <summary>
+            Check have Unassigned Ticket
+            </summary>
+            <param name="boluid">BOL UID</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.OrderController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.Receiving(YAEP.WMS.API.Models.ReceivingRequest)">
+            <summary>
+            新增入庫單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.CancelReceiving(YAEP.WMS.API.Models.Request.CancelReceivingRequest)">
+            <summary>
+            取消入庫單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.ImportInboundData">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.Allocated(YAEP.WMS.API.Models.AllocatedRequest)">
+            <summary>
+            出貨配置產品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.DeleteManifest(YAEP.WMS.API.Models.DeleteManifestRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.DeAllocated(YAEP.WMS.API.Models.DeallocatedRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.PickItem(YAEP.WMS.API.Models.Request.PickItemRequest)">
+            <summary>
+            Pick by item (Only change ticket status)
+            </summary>
+            <param name="request">
+            <![CDATA[
+            RefNo:External order serial no
+            ChangeStatus:狀態值 1:Processing 2:Complete
+            ItemRefUID:WorkOrderPayload UID
+            ]]>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.PickAll(YAEP.WMS.API.Models.Request.PickAllRequest)">
+            <summary>
+            Pick complete by order
+            </summary>
+            <param name="request">RefNo:External order serial no</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.OrderController.RollbackTicket(YAEP.WMS.API.Models.RollbackTicketRequest)">
+            <summary>
+            退回 Ticket 處理狀態
+            </summary>
+            <param name="request">
+            <![CDATA[
+            BolRefUID:BolUID
+            RefNo:External order serial no
+            ]]>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.LabelController">
+            <summary>
+            標籤相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.GetBelongtoBarcode(System.Guid)">
+            <summary>
+             取得 屬於某資料下的Barcode
+            </summary>
+            <param name="BelongToUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.GeneratoreBarcode(System.Int32)">
+            <summary>
+            取得 Barcode
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.BatchGeneratoreBarcode(System.Int32,System.Int32)">
+            <summary>
+            批次取得 Barcode
+            </summary>
+            <param name="t">Barcode類別</param>
+            <param name="c">要求Barcode數量</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.GenerateLabel">
+            <summary>
+            產生Label
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.GenerateSlotLabel(System.String,System.String,YAEP.WMS.Constant.Enums.BarcodeType,YAEP.WMS.Constant.Enums.LabelType,YAEP.WMS.Constant.Enums.LabelBelongType,System.Guid)">
+            <summary>
+            產生Slot Label
+            </summary>
+            <param name="barCode"></param>
+            <param name="LabelText"></param>
+            <param name="barcodeType"></param>
+            <param name="labelType"></param>
+            <param name="labelBelongType"></param>
+            <param name="belongToUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.LabelController.ClearLabel(System.Guid[])">
+            <summary>
+            清除Label
+            </summary>
+            <param name="btu">Belong to guid array</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.MobileController">
+            <summary>
+            手持相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.GetAttachmentType(System.Int32)">
+            <summary>
+            取得Attachment Type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.GetTicketList(YAEP.WMS.Model.GetTicketListParameters)">
+            <summary>
+            查詢 Ticket 資料列表
+            </summary>
+            <param name="parameters">Ticket 項目</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.GetTicketInfoList(System.Guid[])">
+            <summary>
+            查詢 Ticket Info 資料列表
+            </summary>
+            <param name="tuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.GetTickeInfotListDetail(System.Guid[],System.Guid)">
+            <summary>
+            查詢 Ticket Info Items資料列表
+            </summary>
+            <param name="ticketinfouid"></param>
+            <param name="workorderpoduid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.GetTicketSummary(System.Guid)">
+            <summary>
+            Ticket Summary
+            </summary>
+            <param name="ticketuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.UploadTicketData(YAEP.WMS.Model.UploadTicketDataParameter)">
+            <summary>
+            上傳 Ticket 結果
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.UploadTicketDataByPod(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.UploadOutboundTicketDataByPod(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.ChangeToSlot(YAEP.WMS.API.Models.ChangeToSlotParameter)">
+            <summary>
+            改變Ticket目的地位置
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.ChangeFromSlot(YAEP.WMS.API.Models.ChangeFromSlotParameter)">
+            <summary>
+            改變Ticket來源位置(重新Allocated)
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.AddLog(YAEP.WMS.API.Models.LogParameters)">
+            <summary>
+            加log 
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.BatchAddLog(YAEP.WMS.API.Models.LogParameters[])">
+            <summary>
+            批次新增log
+            </summary>
+            <param name="logs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.MobileController.CompleteTicket(System.String[])">
+            <summary>
+            自動完成Ticket 
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.ProductController">
+            <summary>
+            Product 相關存取資料 API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.Test">
+            <summary>
+            Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetProducts(System.String,System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="keyword">Product ID, The length is at least 3</param>
+            <param name="customerUID">Customer UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetManifestProductList(YAEP.WMS.API.Models.Request.ProductSearchRequestModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.AddProduct(YAEP.WMS.API.Models.Request.ProductRequestModel)">
+            <summary>
+            Create Product
+            </summary>
+            <param name="product">product model</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.UpdateProduct(YAEP.WMS.API.Models.Request.ProductRequestModel)">
+            <summary>
+            Update Product
+            </summary>
+            <param name="product">product model</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.Sync(YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel)">
+            <summary>
+             Sync Product
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.BatchSync2(System.Collections.Generic.IEnumerable{YAEP.WMS.API.Models.Request.ProductSingleSyncRequestModel})">
+            <summary>
+             Batch Sync Product
+            </summary>
+            <param name="products"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.BatchSync(System.Collections.Generic.IEnumerable{YAEP.WMS.API.Models.Request.ProductBatchSyncRequestModel})">
+            <summary>
+            
+            </summary>
+            <param name="batchRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.DeleteProduct(System.Guid)">
+            <summary>
+            Delete Product
+            </summary>
+            <param name="pid">unique identifier of product item</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetProductInfo(System.Guid)">
+            <summary>
+            Get Product Information
+            </summary>
+            <param name="pid">unique identifier of product item</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetProductNameList(System.Guid)">
+            <summary>
+            Get product name collection
+            </summary>
+            <param name="cuid">unique identifier of customer</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetProductList(YAEP.WMS.API.Models.Request.ProductSearchRequestModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.RefreshProductCache">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetProductCategory">
+            <summary>
+            Get all of Product category
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.AddPackage(YAEP.WMS.API.Models.Request.PackageRequestModel)">
+            <summary>
+            Create Package
+            </summary>
+            <param name="package">package model</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.UpdatePackage(YAEP.WMS.API.Models.Request.PackageUpdateRequestModel)">
+            <summary>
+            Update Package
+            </summary>
+            <param name="package">package model</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.DeletePackage(System.Guid)">
+            <summary>
+            Delete Package
+            </summary>
+            <param name="pid">unique identifier of product item</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetReceivePackageUomQty(System.Guid,System.Guid,System.Int32)">
+            <summary>
+            Get Receive UOM Quantity
+            </summary>
+            <param name="pid">unique identifier of package</param>
+            <param name="rpid">unique identifier of receive package</param>
+            <param name="qty">receive quantity</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetPackageList(System.Guid)">
+            <summary>
+            Get package list current version
+            </summary>
+            <param name="vid">unique identifier of package version</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetAllPackageList(System.Guid)">
+            <summary>
+            Get all packages of product
+            </summary>
+            <param name="pid">unique identifier of product</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetPackageInfo(System.Guid)">
+            <summary>
+            Get package info
+            </summary>
+            <param name="pgid">unique identifier of package</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.SyncPackage(YAEP.WMS.API.Models.Request.PackageSyncRequestModel)">
+            <summary>
+            Sync Package
+            </summary>
+            <param name="package">package model</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.AddPackageVersion(System.Guid,System.Guid)">
+            <summary>
+            add a default package version (include a default package)
+            </summary>
+            <param name="pid">unique identifier of product item</param>
+            <param name="uuid">unique identifier of package unit of measure</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.ClonePackageVersion(System.Guid)">
+            <summary>
+            Copy Package Version
+            </summary>
+            <param name="vid">unique identifier of package version</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.DeletePackageVersion(System.Guid)">
+            <summary>
+            Delete Package Version
+            </summary>
+            <param name="vid">unique identifier of package version</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetPackageVersionList(System.Guid)">
+            <summary>
+            Get Package Version List 
+            </summary>
+            <param name="pid">unique identifier of product item</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetPackageUomList">
+            <summary>
+            Get Package UOM List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetVirtualItems(System.String,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="actualProductID"></param>
+            <param name="customerUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.ProductController.GetActualItem(System.Collections.Generic.IEnumerable{YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo})">
+            <summary>
+            
+            </summary>
+            <param name="requestModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo.ProductId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo.ProductUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo.CustomerUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo.ActualProduct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.API.Controllers.ProductController.VirtualItemInfo.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.VesselController">
+            <summary>
+            車斗相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.GetVesselList(System.Guid)">
+            <summary>
+            查詢Vessel 資料列表
+            </summary>
+            <param name="boluid">Bol UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.GetAddItemList(YAEP.WMS.Model.GetAddItemListParameters)">
+            <summary>
+            查詢Vessel Item 新增資料列表
+            </summary>
+            <param name="uid">Bol UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.GetUnAssignedList(System.Guid)">
+            <summary>
+            查詢Vessel assign Item 資料列表
+            </summary>
+            <param name="vuid">Vessel UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.GetOutboundUnAssignedList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="vuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.GetAvailableInventoryList(YAEP.WMS.API.Models.Request.IGetLocationItemListRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.AddVessel(YAEP.WMS.API.Models.Request.VesselRequestModel)">
+            <summary>
+            新增 Vessel
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.EditVessel(YAEP.WMS.API.Models.Request.VesselRequestModel)">
+            <summary>
+            編輯 Vessel
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.DeleteVessel(System.Guid[])">
+            <summary>
+            刪除 Vessel
+            </summary>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.AddVesselManifestItem(YAEP.WMS.API.Models.Request.VesselManifestRequestModel)">
+            <summary>
+            新增 VesselManifest
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.BatchAddVesselManifestItem(YAEP.WMS.API.Models.Request.VesselManifestRequestModel[])">
+            <summary>
+            批次新增 VesselManifest
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.VesselController.DeleteVesselManifestItem(System.Guid[])">
+            <summary>
+            刪除 VesselManifest
+            </summary>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.API.Controllers.WorkOrderController">
+            <summary>
+            WorkOrder相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.GetWorkOrderPodNameList(System.Nullable{System.Guid})">
+            <summary>
+             下拉選單
+            </summary>
+            <param name="vuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.GetLandingZoneList(System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="wuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.GetWorkOrderPod(System.Nullable{System.Guid})">
+            <summary>
+            取得WorkOrder Pod 列表
+            </summary>
+            <param name="vuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.GetWorkOrderPayload(System.Nullable{System.Guid})">
+            <summary>
+            取得WorkOrder Payload 列表
+            </summary>
+            <param name="vuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.SaveAssignedItem(YAEP.WMS.Model.AssignedWorkOrderCollection)">
+            <summary>
+            儲存 Work Order Pod/ Payload
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.SaveOutboundAssignedItem(YAEP.WMS.Model.AssignedOutboundWorkOrderCollection)">
+            <summary>
+            儲存 Outbound Work Order Pod/ Payload
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.MergePallet(YAEP.WMS.Model.WorkOrderMergePalletParameter)">
+            <summary>
+            合併WorkOrder Pod
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.AddWorkOrderPod(YAEP.WMS.Model.WorkOrderPodParameter)">
+            <summary>
+            儲存 Work Order Pod
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.EditWorkOrderPod(YAEP.WMS.API.Models.Request.EditWorkOrderPodParameters)">
+            <summary>
+            
+            </summary>
+            <param name=""></param>
+            <param name="workOrderPodUID"></param>
+            <param name="podName"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.EditOperationSuggestion(System.Guid,System.String)">
+            <summary>
+            編輯操作指示
+            </summary>
+            <param name="workorderpodUID"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.SetSlot(YAEP.WMS.API.Models.SetSlotParameters)">
+            <summary>
+            指派 Slot  給Work Order pod
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.SetLoadingZoneSlot(YAEP.WMS.API.Models.SetSlotParameters)">
+            <summary>
+             指定LoadingZone
+            </summary>
+            <param name="Parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.AssignedPayloadtoPod(YAEP.WMS.API.Models.Request.AssignedPayloadtoPodParameters)">
+            <summary>
+             指定LoadingZone
+            </summary>
+            <param name="Parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.SetWorkOrderPodBarcode(System.Guid,System.String)">
+            <summary>
+            指派 Barocde  給Work Order pod
+            </summary>
+            <param name="WorkOrderPodUID"></param>
+            <param name="customerBarcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.RemoveWorkOrderPod(System.Guid[])">
+            <summary>
+            移除WorkOrder Pod
+            </summary>
+            <param name="wuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.RemoveWorkOrderPayload(System.Guid[])">
+            <summary>
+            
+            </summary>
+            <param name="wpluid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.CheckOutboundAvailabilityQty(YAEP.WMS.API.Models.Request.CheckOutboundAvailabilityRequest)">
+            <summary>
+            取得Outbound估算值
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.ExecuteInboundAutoAssign(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="vesselUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.API.Controllers.WorkOrderController.ExecuteOutboundAutoAssign(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="vesselUID"></param>
+            <returns></returns>
+        </member>
+        <member name="F:YAEP.WMS.API.TranTest.txtDataSource">
+            <summary>
+            txtDataSource 控制項。
+            </summary>
+            <remarks>
+            自動產生的欄位。
+            若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+            </remarks>
+        </member>
+        <member name="F:YAEP.WMS.API.TranTest.txtUserId">
+            <summary>
+            txtUserId 控制項。
+            </summary>
+            <remarks>
+            自動產生的欄位。
+            若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+            </remarks>
+        </member>
+        <member name="F:YAEP.WMS.API.TranTest.txtPassword">
+            <summary>
+            txtPassword 控制項。
+            </summary>
+            <remarks>
+            自動產生的欄位。
+            若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+            </remarks>
+        </member>
+        <member name="F:YAEP.WMS.API.TranTest.btnTest">
+            <summary>
+            btnTest 控制項。
+            </summary>
+            <remarks>
+            自動產生的欄位。
+            若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+            </remarks>
+        </member>
+        <member name="F:YAEP.WMS.API.TranTest.preDisplay">
+            <summary>
+            preDisplay 控制項。
+            </summary>
+            <remarks>
+            自動產生的欄位。
+            若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+            </remarks>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:YAEP.WMS.Api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,YAEP.WMS.Api.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,YAEP.WMS.Api.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},YAEP.WMS.Api.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(YAEP.WMS.Api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,YAEP.WMS.Api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:YAEP.WMS.Api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:YAEP.WMS.Api.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.AbstractApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.AbstractApiController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.AbstractApiController.GetDataNotFoundResult(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="errorCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.AbstractApiController.GetAuthenticationInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.AbstractApiController.GetAuthenticationInfoProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.IdentityHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetGroupKeys(YAEP.Interfaces.IAuthenticationInfo,System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetGroups(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetGroupUsers(YAEP.Interfaces.IAuthenticationInfo,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetUserResourcePermissions(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetPermission(YAEP.Interfaces.IAuthenticationInfo,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="resourceUID"></param>
+            <param name="resourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.GetPermission(YAEP.Interfaces.IAuthenticationInfo,System.String,YAEP.Identities.Constants.ResourceTypes)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="resourceType"></param>
+            <param name="resourceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.HasPermission(YAEP.Interfaces.IAuthenticationInfo,System.Guid,YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="resourceUID"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.HasPermission(YAEP.Interfaces.IAuthenticationInfo,System.String,YAEP.Identities.Constants.ResourceTypes,YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="resourceId"></param>
+            <param name="resourceType"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.CheckSitemapPermission(YAEP.Identities.Interfaces.Models.ISiteMapTree,YAEP.Interfaces.IAuthenticationInfo,System.Predicate{YAEP.Identities.Interfaces.Models.ISiteMapNode},YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="tree"></param>
+            <param name="info"></param>
+            <param name="predicate"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ActionEnableView(YAEP.Interfaces.IAuthenticationInfo,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ActionEnableAdd(YAEP.Interfaces.IAuthenticationInfo,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ActionEnableEdit(YAEP.Interfaces.IAuthenticationInfo,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ActionEnableDelete(YAEP.Interfaces.IAuthenticationInfo,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ActionEnablePermissions(YAEP.Interfaces.IAuthenticationInfo,System.String,System.String,YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <param name="actionName"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.IdentityHelper.ControllerEnable(YAEP.Interfaces.IAuthenticationInfo,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="controllerName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.JwtHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.JwtHelper.Encode(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.JwtHelper.Decode(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.DrKnowAll">
+            <summary>
+            全知博士
+            </summary>
+            <summary>
+            全知博士
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetIdentityFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCommonFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetItemFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPartyFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackageFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetDIContainer">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetIdentityFactoryInstance">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetConnectionSettings">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetAuthenticationInfo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.Reload(YAEP.WMS.Api.Code.DrKnowAllKeys)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.Forget(YAEP.WMS.Api.Code.DrKnowAllKeys)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAll.Instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAll.ReloadMappings">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetGroup">
+            <summary>
+            取得所有群組物件集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetGroup(System.Guid)">
+            <summary>
+            取得群組物件
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetGroup(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            取得群組物件集合
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetUser">
+            <summary>
+            取得所有使用者物件集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetUser(System.Guid)">
+            <summary>
+            取得所有使用者物件
+            </summary>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetUser(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            userUID
+            </summary>
+            <param name="userUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshUser(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="userUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RecordUserResourcePermissions(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetUserResourcePermissions(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackage">
+            <summary>
+            get package list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackage(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="packageUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshPackage(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="packageUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackageVersion">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackageVersion(System.Guid)">
+            <summary>
+            get package version
+            </summary>
+            <param name="versionUID">
+            Version UID
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageVersionModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshPackageVersion(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="versionUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackageUom">
+            <summary>
+            get package UOM list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetPackageUom(System.Guid)">
+            <summary>
+            get package UOM
+            </summary>
+            <param name="uomUID">
+            UOM UID
+            <para /><see cref="P:YAEP.Package.Interfaces.Models.IPackageUomModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshPackageUom(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="uomUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetWarehouse">
+            <summary>
+            get warehouse list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetWarehouse(System.Guid)">
+            <summary>
+            get warehouse
+            </summary>
+            <param name="warehouseUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProduct">
+            <summary>
+            get product list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProduct(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProduct(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProductByCustomer(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="customerUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshProduct(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProductCategory">
+            <summary>
+            get product category list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProductCategoryRelation">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetProductCategoryRelation(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RefreshProductCategoryRelation(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.RemoveProductCategoryRelation(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="itemUID"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.SetProductCategoryRelation(System.Collections.Generic.IEnumerable{YAEP.Core.Item.Interfaces.Models.IItemCategoryRelationModel})">
+            <summary>
+            
+            </summary>
+            <param name="itemCategoryRelations"></param>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCustomer">
+            <summary>
+            get customer list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCustomer(System.Guid)">
+            <summary>
+            get customer
+            </summary>
+            <param name="customerUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCustomer(System.String)">
+            <summary>
+            get customer
+            </summary>
+            <param name="customerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCountry">
+            <summary>
+            取得所有國家物件集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCountry(System.String)">
+            <summary>
+            取得國家物件
+            </summary>
+            <param name="countryID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetState">
+            <summary>
+            取得所有州郡物件集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetState(System.String)">
+            <summary>
+            取得州郡物件集合
+            </summary>
+            <param name="countryID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCity">
+            <summary>
+            取得所有城市物件集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCityByID(System.String)">
+            <summary>
+            取得城市物件
+            </summary>
+            <param name="cityID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetCity(System.String,System.String)">
+            <summary>
+            取得城市物件集合
+            </summary>
+            <param name="countryID"></param>
+            <param name="stateID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetZip">
+            <summary>
+            取得所有Zip物件集合
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetZip(System.String,System.String,System.String)">
+            <summary>
+            取得Zip物件集合
+            </summary>
+            <param name="countryID"></param>
+            <param name="stateID"></param>
+            <param name="cityID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.DrKnowAll.GetZip(System.String)">
+            <summary>
+            取得對應識別碼的Zip物件
+            </summary>
+            <param name="zipUID">識別碼</param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.DrKnowAllKeys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.ALL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Resource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.PackageUom">
+            <summary>
+            UOM
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.PackageVersion">
+            <summary>
+            Package
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Package">
+            <summary>
+            Package
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Product">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.ProductCategory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.ProductCategoryRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YAEP.WMS.Api.Code.DrKnowAllKeys.Warehouse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.FactoryUtils">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetPackageFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <param name="agent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetItemFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetCommonFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetPartyFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetSsoFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetDeviceFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetIdentityFactory(YAEP.Interfaces.IAuthenticationInfo)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.FactoryUtils.GetConnectionSettings">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.Models.PackageCacheModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.VersionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.UomName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ParentUomName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ParentUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Sort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.CanEdit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.CanDelete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.AssignedCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ParentUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ItemUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.VersionUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.UOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.GrossWeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.WidthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.HeightCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.LengthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.GrossWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.SCC14">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.CreatedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.CreatedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ModifiedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.PackageCacheModel.ModifiedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Api.Code.Models.PackageCacheModel.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Api.Code.Models.ProductCacheModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.IsVirtualItem">
+            <summary>
+            是否為虛擬 Item
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CombinedQuantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CustomerUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CustomerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CategoryUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.UPC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.EAN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.IsBOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ImageUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.LengthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.WidthInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.HeightInch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.LengthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.WidthCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.HeightCM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.NetWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.NetWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.GrossWeightKG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.GrossWeightLB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.StockUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.PurchaseUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.SellingUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ShipUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ActualProduct">
+            <summary>
+            實際 Item ID
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.BoxQuantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.PUOM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CreatedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.CreatedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ModifiedBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Code.Models.ProductCacheModel.ModifiedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Api.Models.APIResult`1">
+            <summary>
+            Web API 回傳結果集
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Models.APIResult`1.IsComplete">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Models.APIResult`1.Code">
+            <summary>
+            Error Code
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Models.APIResult`1.Message">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Models.APIResult`1.ResponseTime">
+            <summary>
+            回應時間
+            </summary>
+        </member>
+        <member name="P:YAEP.WMS.Api.Models.APIResult`1.Data">
+            <summary>
+            資料
+            </summary>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.Attributes.ConnectionLogAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.ConnectionLogAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.Attributes.MobileAuthenticationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.MobileAuthenticationAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.Attributes.AuthenticationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.AuthenticationAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.Attributes.ValidatePermissionsAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.ValidatePermissionsAttribute.#ctor(YAEP.Identities.Constants.Permissions)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.ValidatePermissionsAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.Attributes.SkipAuthenticationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.Attributes.SkipAuthenticationAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.GetToken(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.CheckToken(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.GetAuthenticationInfo(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.ValidToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.CheckIsConflict(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.CheckIsTimeout(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthenticationExtensions.CheckIsKickout(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.AuthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.Test">
+            <summary>
+            Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.AppLogin(YAEP.WMS.API.Models.Request.AppLoginRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.AppLogout(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.AddDeviceInfo(YAEP.Common.Models.DeviceInfoModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.GetDeviceInfo(System.String)">
+            <summary>
+            /
+            </summary>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.Login(YAEP.WMS.API.Models.Request.LoginRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.CheckToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.AuthController.GenerateToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="identification"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.ComponentController">
+            <summary>
+            共用套件相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetCommonFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetPartyFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetIdentityFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetCountry">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetState(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="countryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetCity(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="countryId"></param>
+            <param name="stateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetZip(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="countryId"></param>
+            <param name="stateId"></param>
+            <param name="cityIdOrName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetWarehouseNameList">
+            <summary>
+            回傳Warehouse Name 清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetAreaNameList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="wuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetSlotNameList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="buid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetBinNameList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="auid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetCustomerNameList">
+            <summary>
+            get customer name list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ComponentController.GetGroupNameList(System.Nullable{YAEP.Identities.Constants.GroupTypes})">
+            <summary>
+            get group name list
+            </summary>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.CustomerController">
+            <summary>
+            Customer API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.GetPartyFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.GetCustomerList(YAEP.WMS.API.Models.Request.CustomerSearchRequestModel)">
+            <summary>
+            get customer list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.GetCustomerInfo(System.Guid)">
+            <summary>
+            get customer Info
+            </summary>
+            <param name="cid">unique identifier of customer</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.AddCustomer(YAEP.WMS.API.Models.Request.CustomerRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.UpdateCustomer(YAEP.WMS.API.Models.Request.CustomerUpdateRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.GetCustomerAddressList(System.Guid)">
+            <summary>
+            get customer address list
+            </summary>
+            <param name="cid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.AddCustomerAddress(YAEP.WMS.API.Models.Request.CustomerAddressRequestModel)">
+            <summary>
+            add customer address
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.UpdateCustomerAddress(YAEP.WMS.API.Models.Request.CustomerAddressRequestModel)">
+            <summary>
+            update customer address
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.DeleteCustomerAddress(System.Guid)">
+            <summary>
+            delete customer address
+            </summary>
+            <param name="cid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.CustomerController.GetCustomerAddressTypes">
+            <summary>
+            get customer address types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.IdentityController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.IdentityController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.IdentityController.Test">
+            <summary>
+            Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.IdentityController.AddGroup(YAEP.Identities.Models.GroupModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.IdentityController.ParseJwtToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.InventoryController">
+            <summary>
+            庫存相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.GetInventory(YAEP.WMS.Model.InventorySearchParameters)">
+            <summary>
+            get inventory list
+            </summary>
+            <param name="parameters">search parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.GetInventoryDetail(System.Guid)">
+            <summary>
+            get inventory detail list
+            </summary>
+            <param name="itemUID">
+            unique identifier of product item
+            <para /><see cref="P:YAEP.WMS.Interfaces.IInventoryModel.ItemUID"/> or <see cref="P:YAEP.Core.Item.Interfaces.Models.IItemModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.GetTranascationList(YAEP.WMS.Model.PayloadTransactionLogParameters)">
+            <summary>
+            get inventory list
+            </summary>
+            <param name="parameters">search parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.AddInventoryQty(YAEP.WMS.API.Models.AddInventoryParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.GetModifyPayloadList(YAEP.WMS.Model.ModifyPayloadListParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.InventoryController.CreateAdjustmentTicket(System.Collections.Generic.List{YAEP.WMS.Model.CretaeAdjustmentTicket})">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.ManifestController">
+            <summary>
+            清冊相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetDefaultFolderName(System.Guid,System.Int32)">
+            <summary>
+            取得預設目錄夾名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetManifestList(YAEP.WMS.Model.ManifestSearchParameters)">
+            <summary>
+            查詢Manifest 資料列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetManifestTypeList">
+            <summary>
+            取得Manifest Type 清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetManifestInfo(System.Guid)">
+            <summary>
+            取得Manifest Info 資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.DeleteManifest(System.Guid[])">
+            <summary>
+            刪除Manifest
+            </summary>
+            <param name="muid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.AddManifest(YAEP.WMS.API.Models.ManinfestRequestModel)">
+            <summary>
+            新增 Manifest
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.EditManifest(YAEP.WMS.API.Models.ManinfestRequestModel)">
+            <summary>
+             編輯 Manifest
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetManifestItemList(System.Guid)">
+            <summary>
+            取得Manifest Item List 資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.DeleteManinfestItem(System.Guid[])">
+            <summary>
+            刪除 Manifest Item
+            </summary>
+            <param name="miuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.AddManinfestItem(YAEP.WMS.API.Models.Request.ManinfestItemRequestModel[])">
+            <summary>
+            新增 Manifest Item array
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetVesselManifestItemList(System.Nullable{System.Guid})">
+            <summary>
+            查詢 Vessel Manifest Item 資料列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.CheckOnhand(System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="warhouseUID"></param>
+            <param name="itemUID"></param>
+            <param name="packageUID"></param>
+            <param name="Qty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.SubmitManifest(System.Guid)">
+            <summary>
+            Submit Manifest
+            </summary>
+            <param name="manifestuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.RejectManifest(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="manifestuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.ManifestController.GetShipMethodList(System.Nullable{System.Guid})">
+            <summary>
+            取得Ship via 運送形式列表
+            </summary>
+            <param name="partyuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.TicketController">
+            <summary>
+            工單相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetServiceItemNameList">
+            <summary>
+            取得Service Item  清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.VoidTicket(System.Guid)">
+            <summary>
+            刪除Ticket
+            </summary>
+            <param name="uid">Manifest UID</param>
+            <param name="wuid">Workder UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GenerateTicket(System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            產生 Ticket 
+            </summary>
+            <param name="muid"></param>
+            <param name="boluid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetBolNameList(System.Guid)">
+            <summary>
+            取得BOL Name 清單 by Manifest
+            </summary>
+            <param name="ManifestUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetBolInfo(System.Guid)">
+            <summary>
+            取得BOL Info 
+            </summary>
+            <param name="BolUID">Bol UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetTicketIDList(System.Guid)">
+            <summary>
+            取得Ticket 清單
+            </summary>
+            <param name="BolUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetVesselRefNoList(System.Guid)">
+            <summary>
+            取得 Vessel RefNo 清單
+            </summary>
+            <param name="BolUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetGroupUserList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.AddWorker(YAEP.WMS.Model.MaintainWorkderParameters)">
+            <summary>
+             Ticket 指派 Worker
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.RemoveWorker(System.Guid[],System.Guid)">
+            <summary>
+            Ticket 刪除 Worker
+            </summary>
+            <param name="tauid"></param>
+            <param name="ticketInfoUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.BatchAssignWorker(YAEP.WMS.Model.MaintainWorkderParameters)">
+            <summary>
+             批次加入 Worker 
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetTicketAssignedList(YAEP.WMS.Model.TicketAssignedListParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetTicketGroupAssignedList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="ticketinfouid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetAssignedTicketGroupNameList(System.Guid)">
+            <summary>
+             get group name list
+            </summary>
+            <param name="warehousegroupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetTicketTypeList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetTicketStatusList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.TicketController.GetSearchTicketList(YAEP.WMS.Model.TicketSearchListParameters)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetCurrentUser">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetCurrentUserGroupKeys">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetCurrentUserGroups">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetCurrentUserRoles">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetAllUserRoles">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.GetUserMenu">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.CheckPagePermissions(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.UserController.AddUser(YAEP.Identities.Models.UserModel)">
+            <summary>
+            Create User
+            </summary>
+            <param name="user">user model</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:YAEP.WMS.Controllers.Api.UserController.AddUserWithGroups(YAEP.WMS.API.Models.AddUserWithGroupsRequestModel)" -->
+        <member name="T:YAEP.WMS.Controllers.Api.VendorController">
+            <summary>
+            Customer API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.VendorController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.VendorController.GetPartyFactory">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.VendorController.GetVendorList">
+            <summary>
+            get vendor list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.VendorController.GetVendorInfo(System.Guid)">
+            <summary>
+            get vendor Info
+            </summary>
+            <param name="cid">unique identifier of vendor</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.VendorController.AddVendor(YAEP.WMS.API.Models.Request.VendorRequestModel)">
+            <summary>
+            
+            </summary>
+            <param name="vendor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.WMS.Controllers.Api.WarehouseController">
+            <summary>
+            倉庫、儲位相關存取資料API
+            </summary>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetSlotNameAutocomplete(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="wuid"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetPodSelectList(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="wuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetBinNameAutocomplete(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="wuid"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetLocationInfo(System.Guid,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            取得 Location Info
+            </summary>
+            <param name="warehouseUID">
+            warehouse
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.WarehouseUID"/>
+            </param>
+            <param name="areaUID">
+            area
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.AreaUID"/>
+            </param>
+            <param name="binUID">
+            bin
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.BinUID"/>
+            </param>
+            <param name="slotUID">
+            slot
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetLocationInfoTree(System.Guid,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            取得 Location Info
+            </summary>
+            <param name="warehouseUID">
+            warehouse
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.WarehouseUID"/>
+            </param>
+            <param name="areaUID">
+            area
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.AreaUID"/>
+            </param>
+            <param name="binUID">
+            bin
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.BinUID"/>
+            </param>
+            <param name="slotUID">
+            slot
+            <para /><see cref="P:YAEP.WMS.Interfaces.ISlotModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.AddWarehouse(YAEP.WMS.Model.WarehouseModel)">
+            <summary>
+            新增 Warehouse
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.EditWarehouse(YAEP.WMS.Model.WarehouseModel)">
+            <summary>
+            編輯 Area
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.DeleteWarehouse(System.Guid[])">
+            <summary>
+            刪除Warehouse
+            </summary>
+            <param name="wuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetWarehouseList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetInfo(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="warehouseUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetAreaList(System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="warehouseUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.AddArea(YAEP.WMS.Model.AreaModel)">
+            <summary>
+            新增 Area
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.EditArea(YAEP.WMS.Model.AreaModel)">
+            <summary>
+            編輯 Area
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.DeleteArea(System.Guid[])">
+            <summary>
+            刪除 Area
+            </summary>
+            <param name="auid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.MappingBin(System.Guid,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="areaUID"></param>
+            <param name="binUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetBinList(System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="warehouseUID"></param>
+            <param name="areaUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetBinInfo(System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="BinUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.AddBin(YAEP.WMS.Model.BinModel)">
+            <summary>
+            新增 Area
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.EditBin(YAEP.WMS.Model.BinModel)">
+            <summary>
+            編輯 Bin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.DeleteBin(System.Guid[])">
+            <summary>
+            刪除 Bin
+            </summary>
+            <param name="buid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.MappingSlot(System.Nullable{System.Guid},System.Nullable{System.Guid},System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="binUID"></param>
+            <param name="slotUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetSlotList(System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="warehouseUID"></param>
+            <param name="areaUID"></param>
+            <param name="binUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.AddSlot(YAEP.WMS.Model.SlotModel)">
+            <summary>
+            新增 Slot
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.EditSlot(YAEP.WMS.Model.SlotModel)">
+            <summary>
+            編輯 Slot
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.DeleteSlot(System.Guid[])">
+            <summary>
+            刪除 Slot
+            </summary>
+            <param name="suid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetSlotInfo(System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="SlotUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetHomelocationAreaList(System.Guid,System.Int32)">
+            <summary>
+            取Home location select Area 列表
+            </summary>
+            <param name="warehouseUID"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetHomelocationBinList(System.Guid,System.Int32)">
+            <summary>
+            取Home location select Bin 列表
+            </summary>
+            <param name="areaUID"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetHomelocationSlotList(System.Guid,System.Int32)">
+            <summary>
+            取Home location select Slot 列表
+            </summary>
+            <param name="binUID"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.GetHomelocationList(YAEP.WMS.API.Models.GetHomeAddressListParameters)">
+            <summary>
+            取得 Home location 列表
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.DeleteHomelocation(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            刪除 Home location 資料
+            </summary>
+            <param name="auid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.WMS.Controllers.Api.WarehouseController.AddHomelocation(System.Collections.Generic.IEnumerable{YAEP.WMS.API.Models.HomeAddressRelationRequest})">
+            <summary>
+             新增 Home location 列表
+            </summary>
+            <param name="insertModel"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8279834-FB81-4C41-9FD2-F8104DF87DA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.DAL</RootNamespace>
+    <AssemblyName>YAEP.WMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperParameters, Version=2018.12.7.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.ParameterExtensions.2018.12.7.1\lib\net46\DapperParameters.dll</HintPath>
+    </Reference>
+    <Reference Include="General, Version=1.0.8819.28347, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\General.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YAEP.Core.Item.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Interfaces, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper.Contrib">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Package.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\BatchChangeType.cs" />
+    <Compile Include="Extension\DeepCopyByExpressionTrees.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Model\AllocatedModel.cs" />
+    <Compile Include="Model\AvailableInventoryInnerModel.cs" />
+    <Compile Include="Model\BolInfoViewModel.cs" />
+    <Compile Include="Model\BolViewInnerModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickDataCollection.cs" />
+    <Compile Include="Model\BulkPick\BulkPickInfoViewModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickManifestViewModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickNotificationInfoModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickSaveModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickInfoModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickTicketInfoModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickViewModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickWorkOrderPayloadRelationModel.cs" />
+    <Compile Include="Model\CheckItemUsageStatusInnerModel.cs" />
+    <Compile Include="Model\CheckManifestItemStatusResultModel.cs" />
+    <Compile Include="Model\CheckOnhandInnerModel.cs" />
+    <Compile Include="Model\CloneLabelInnerModel.cs" />
+    <Compile Include="Model\DeallocatedInfoDataInnerModel.cs" />
+    <Compile Include="Model\DeallocatedPayloadInfoModel.cs" />
+    <Compile Include="Model\GetModifyPayloadListModel.cs" />
+    <Compile Include="Model\GetModifyPayloadPackageItem.cs" />
+    <Compile Include="Model\HomeAddrAreaModel.cs" />
+    <Compile Include="Model\HomeAddrBinModel.cs" />
+    <Compile Include="Model\HomeAddressRelationBinModel.cs" />
+    <Compile Include="Model\HomeAddressRelationInnerModel.cs" />
+    <Compile Include="Model\HomeAddressRelationListModel.cs" />
+    <Compile Include="Model\HomeAddrSlotModel.cs" />
+    <Compile Include="Model\HomelocationAreaModel.cs" />
+    <Compile Include="Model\BulkPick\BulkPickInfobyOutboundViewModel.cs" />
+    <Compile Include="Model\InventoryDetailViewModel.cs" />
+    <Compile Include="Model\InventoryInnerModel.cs" />
+    <Compile Include="Model\InventoryViewModel.cs" />
+    <Compile Include="Model\LabelInnerModel.cs" />
+    <Compile Include="Model\LoadingZoneSelectInnerModel.cs" />
+    <Compile Include="Model\LocationItemViewInnerModel.cs" />
+    <Compile Include="Model\LocationMappingInnerModel.cs" />
+    <Compile Include="Model\ManifestInnerModel.cs" />
+    <Compile Include="Model\OnWorkOrderPayloadInfoInnerModel.cs" />
+    <Compile Include="Model\OutboundUnAssignedListInnerModel.cs" />
+    <Compile Include="Model\ParentTicketRelation.cs" />
+    <Compile Include="Model\PayloadInnerModel.cs" />
+    <Compile Include="Model\PayloadLocationInnerModel.cs" />
+    <Compile Include="Model\PayloadTransactionLogViewModel.cs" />
+    <Compile Include="Model\PayloadWithOriginalPayloadTypeModel.cs" />
+    <Compile Include="Model\PickallViewModel.cs" />
+    <Compile Include="Model\PodBarcodeInfo.cs" />
+    <Compile Include="Model\PodInnerModel.cs" />
+    <Compile Include="Model\PodSelectListInnerModel.cs" />
+    <Compile Include="Model\ReceiverInnerModel.cs" />
+    <Compile Include="Model\NotificationSenderTaskModel.cs" />
+    <Compile Include="Model\Replication\AllocatedReplicateModel.cs" />
+    <Compile Include="Model\Replication\ReceiviedReplicateModel.cs" />
+    <Compile Include="Model\Replication\SlotMappingLocationModel.cs" />
+    <Compile Include="Model\RollbackInnerModel.cs" />
+    <Compile Include="Model\SequenceInnerModel.cs" />
+    <Compile Include="Model\ShipMethodInnerModel.cs" />
+    <Compile Include="Model\ShipviaPaymentInfoInnerModel.cs" />
+    <Compile Include="Model\SlotInfoModel.cs" />
+    <Compile Include="Model\SlotSearchViewModel.cs" />
+    <Compile Include="Model\SlotUsageInfoInnerModel.cs" />
+    <Compile Include="Model\SlotInnerModel.cs" />
+    <Compile Include="Model\StatusCheckInnerModel.cs" />
+    <Compile Include="Model\TicketAssignedListInnerViewModel.cs" />
+    <Compile Include="Model\TicketAssignedListInnerViewModelCollection.cs" />
+    <Compile Include="Model\TicketInfoAssigneeRelationModel.cs" />
+    <Compile Include="Model\TicketInfoInnerCollection.cs" />
+    <Compile Include="Model\TicketInfoInnerModel.cs" />
+    <Compile Include="Model\TicketInfoListInnerModel.cs" />
+    <Compile Include="Model\TicketInnerModel.cs" />
+    <Compile Include="Model\TicketListInnerModel.cs" />
+    <Compile Include="Model\LocationInfoViewModel.cs" />
+    <Compile Include="Model\ComponentViewModel.cs" />
+    <Compile Include="Model\SlotViewModel.cs" />
+    <Compile Include="Model\BinViewModel.cs" />
+    <Compile Include="Model\AreaViewModel.cs" />
+    <Compile Include="Model\CalVesselAddItemInnerModel.cs" />
+    <Compile Include="Model\CalVesselAssignItemInnerModel.cs" />
+    <Compile Include="Model\TicketAssignedListInnerModel.cs" />
+    <Compile Include="Model\TicketGeneratoreDataModel.cs" />
+    <Compile Include="Model\TicketInfoAssigneeRelationInnerModel.cs" />
+    <Compile Include="Model\TicketListSearchModel.cs" />
+    <Compile Include="Model\TicketListSlotInfoInnerModel.cs" />
+    <Compile Include="Model\TicketLocationInnerModel.cs" />
+    <Compile Include="Model\TicketProcessInnerModel.cs" />
+    <Compile Include="Model\TicketSummaryViewInnerModel.cs" />
+    <Compile Include="Model\VesselInnerModel.cs" />
+    <Compile Include="Model\VesselManifestInnerViewModel.cs" />
+    <Compile Include="Model\VesselManifestItemListViewInnerModel.cs" />
+    <Compile Include="Model\WarehouseInnerModel.cs" />
+    <Compile Include="Model\WorkOrderPayloadInnerModel.cs" />
+    <Compile Include="Model\WorkOrderPayloadViewInnerModel.cs" />
+    <Compile Include="Model\WorkOrderPayloadWithTicketInfoModel.cs" />
+    <Compile Include="Model\WorkOrderPodInnerModel.cs" />
+    <Compile Include="Model\WorkOrderViewInnerModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AbstractRepository.cs" />
+    <Compile Include="Repository\ApiRepository.cs" />
+    <Compile Include="Repository\BinRepository.cs" />
+    <Compile Include="Repository\BolRepository.cs" />
+    <Compile Include="Repository\BulkPicks\BulkPickTicketInfoRelationRepository.cs" />
+    <Compile Include="Repository\BulkPicks\BulkPickRepository.cs" />
+    <Compile Include="Repository\BulkPicks\BulkPickWorkOrdrPayloadRelationRepository.cs" />
+    <Compile Include="Repository\HomeAddressRelationRepository.cs" />
+    <Compile Include="Repository\InventroyRepository.cs" />
+    <Compile Include="Repository\AreaRepository.cs" />
+    <Compile Include="Repository\ItemMgmt\ItemModel.cs" />
+    <Compile Include="Repository\ItemMgmt\ItemPropertiesModel.cs" />
+    <Compile Include="Repository\ItemMgmt\BuiltinItemRepository.cs" />
+    <Compile Include="Repository\LabelRepository.cs" />
+    <Compile Include="Repository\ManifestItemListRepository.cs" />
+    <Compile Include="Repository\ManifestRepository.cs" />
+    <Compile Include="Repository\NotificationSenderTaskRepository.cs" />
+    <Compile Include="Repository\PackageMgmt\BuiltinPackageRepository.cs" />
+    <Compile Include="Repository\PackageMgmt\PackageVersionViewModel.cs" />
+    <Compile Include="Repository\PayloadRepository.cs" />
+    <Compile Include="Repository\PayloadTransactionLogRepository.cs" />
+    <Compile Include="Repository\PodRepository.cs" />
+    <Compile Include="Repository\NotificationReceiverRepository.cs" />
+    <Compile Include="Repository\ReplicationlogRepository.cs" />
+    <Compile Include="Repository\SequenceRepository.cs" />
+    <Compile Include="Repository\ShipMethodRepository.cs" />
+    <Compile Include="Repository\ShipviaPaymentInfoRepository.cs" />
+    <Compile Include="Repository\SlotRepository.cs" />
+    <Compile Include="Repository\TicketAttachmentFolderRelationRepository.cs" />
+    <Compile Include="Repository\TicketRelationRepository.cs" />
+    <Compile Include="Repository\TicketRepository.cs" />
+    <Compile Include="Repository\TicketInfoRepository.cs" />
+    <Compile Include="Repository\VesselManifestRepository.cs" />
+    <Compile Include="Repository\VesselRepository.cs" />
+    <Compile Include="Repository\WarehouseRepository.cs" />
+    <Compile Include="Repository\TicketInfoAssigneeRelationRepository.cs" />
+    <Compile Include="Repository\WorkOrderPayloadRepository.cs" />
+    <Compile Include="Repository\WorkOrderPodRepository.cs" />
+    <Compile Include="Repository\WorkOrderRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Constant\YAEP.WMS.Constant.csproj">
+      <Project>{6e9437b5-3773-4f46-a3f8-2b954476a4cc}</Project>
+      <Name>YAEP.WMS.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45e7d686-0cfe-4e2d-93ba-df3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

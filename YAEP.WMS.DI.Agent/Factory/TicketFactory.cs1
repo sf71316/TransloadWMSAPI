@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Unity;
+using YAEP.Data.ORM.Dapper.Contrib;
+using YAEP.Data.ORM.Interfaces;
+using YAEP.Data.ORM.Templates;
+using YAEP.Templates.DI.Unity;
+using YAEP.WMS.BLL.Manager;
+using YAEP.WMS.DAL.Repository;
+using YAEP.WMS.Interfaces;
+using YAEP.WMS.Model;
+
+namespace YAEP.WMS.DI.Agent.Factory
+{
+    public class TicketFactory : AbstractMiddleLayerFactory
+    {
+        public TicketFactory(IUnityContainer container) : base(container)
+        {
+            this.CallPublicDIPool();
+            // 注入 Model 定義 
+            base.RegisterType<IModelDescriptor<TicketModel>, GenericModelDescriptor<TicketModel>>();
+            base.RegisterType<IModelDescriptor<TicketInfoModel>, GenericModelDescriptor<TicketInfoModel>>();
+            base.RegisterType<IModelDescriptor<TicketInfoAssigneeRelationModel>, GenericModelDescriptor<TicketInfoAssigneeRelationModel>>();
+            base.RegisterType<IModelDescriptor<TicketRelationModel>, GenericModelDescriptor<TicketRelationModel>>();
+            base.RegisterType<IModelDescriptor<TicketAttachmentFolderRelationModel>, GenericModelDescriptor<TicketAttachmentFolderRelationModel>>();
+            // 注入 Repository 處理器
+
+            container.RegisterType<IRepositoryHandler<TicketModel>, GenericRepositoryHandler<TicketModel>>();
+            container.RegisterType<IRepositoryHandler<TicketInfoModel>, GenericRepositoryHandler<TicketInfoModel>>();
+            container.RegisterType<IRepositoryHandler<TicketInfoAssigneeRelationModel>, GenericRepositoryHandler<TicketInfoAssigneeRelationModel>>();
+            container.RegisterType<IRepositoryHandler<TicketRelationModel>, GenericRepositoryHandler<TicketRelationModel>>();
+            container.RegisterType<IRepositoryHandler<TicketAttachmentFolderRelationModel>, GenericRepositoryHandler<TicketAttachmentFolderRelationModel>>();
+            // 注入 Repository 實作
+            container.RegisterType<ITicketRepository, TicketRepository<TicketModel>>();
+            container.RegisterType<ITicketInfoRepository, TicketInfoRepositoryRepository<TicketInfoModel>>();
+            container.RegisterType<ITicketInfoAssigneeRelationRepository, TicketInfoAssigneeRelationRepository<TicketInfoAssigneeRelationModel>>();
+            container.RegisterType<ITicketRelationRepository, TicketRelationRepository<TicketRelationModel>>();
+            container.RegisterType<ITicketAttachmentFolderRelationRepository, TicketAttachmentFolderRelationRepository<TicketAttachmentFolderRelationModel>>();
+
+            // 注入 Manager 實作
+            base.RegisterType<IInventoryManager, InventoryManager>();
+            base.RegisterType<IWorkOrderManager, ManifestManager>();
+            base.RegisterType<IManifestAgent, SeniorManager>();
+            // 注入 物件
+            container.RegisterType<IVoidTicketParameters, VoidTicketParameters>();
+        }
+        public ITicketManager CreateTicketManager()
+        {
+            var instance = base.Resolve<ITicketManager>();
+            return instance;
+        }
+        public IVoidTicketParameters GenerateVoidTicketParameters()
+        {
+            var instance = base.Resolve<IVoidTicketParameters>();
+            return instance;
+        }
+    }
+}

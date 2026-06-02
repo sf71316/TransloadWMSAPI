@@ -1,0 +1,11 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Start to prepare for items from cache.,$,,,,10,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,null,null
+TRACE,Done prepare for items from cache.,$,,,,13,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,2,null,null
+TRACE,Start to payload data from database.,$,,,,18,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,3,null,null
+TRACE,Start to prepare for items from cache.,$,,,,10,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,null,null
+TRACE,Start to payload data from database.,$,,,,18,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,3,null,null
+TRACE,Done prepare for items from cache.,$,,,,10,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,2,null,null
+TRACE,Got payload data from database.,$,,,,10,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,4,null,null
+TRACE,Start to fill payload data.,$,,,,10,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,5,null,null
+TRACE,Get each qty for item KC10DS(42).,$,,,,21,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,6,null,null
+TRACE,Filled payload data.,$,,,,19,GetModifyPayloadList,willk,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,7,null,null

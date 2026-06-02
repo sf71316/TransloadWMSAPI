@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1147254-0B64-49FA-8426-054EBFECF0B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.Model</RootNamespace>
+    <AssemblyName>YAEP.WMS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.1.50.5\lib\net451\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YAEP.Core.Item.Interfaces, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\BulkPicks\BulkPickModel.cs" />
+    <Compile Include="Model\BulkPicks\BulkPickTicketInfoRelationModel.cs" />
+    <Compile Include="Model\BulkPicks\BulkPickWorkOrderPayloadRelationModel.cs" />
+    <Compile Include="Model\Common\ProductExtendModel.cs" />
+    <Compile Include="Model\Common\ProductPackageExtendModel.cs" />
+    <Compile Include="Model\Common\SeqenceModel.cs" />
+    <Compile Include="Model\ImportItem\PackageSyncModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCItemModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCItemPackagingModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCPackagingModel.cs" />
+    <Compile Include="Model\ImportItem\PBSCVirtualItem.cs" />
+    <Compile Include="Model\Manifest\BOLModel.cs" />
+    <Compile Include="Model\Manifest\ImportInboundParameter.cs" />
+    <Compile Include="Model\Manifest\ManifestItemListModel.cs" />
+    <Compile Include="Model\Manifest\ManifestModel.cs" />
+    <Compile Include="Model\Manifest\NominateReplenishmentModel.cs" />
+    <Compile Include="Model\Manifest\NotificationReceiverModel.cs" />
+    <Compile Include="Model\Manifest\NotificationSenderTaskModel.cs" />
+    <Compile Include="Model\Manifest\ReplenishmentModel.cs" />
+    <Compile Include="Model\Manifest\ShipMethodModel.cs" />
+    <Compile Include="Model\Manifest\ShipviaPaymentInfoModel.cs" />
+    <Compile Include="Model\Manifest\VesselMainifestItemListViewModel.cs" />
+    <Compile Include="Model\Manifest\VesselManifestModel.cs" />
+    <Compile Include="Model\Manifest\VesselModel.cs" />
+    <Compile Include="Model\Manifest\WarehouseModel.cs" />
+    <Compile Include="Model\Manifest\WorkOrderModel.cs" />
+    <Compile Include="Model\Manifest\WorkOrderPayloadModel.cs" />
+    <Compile Include="Model\Manifest\WorkOrderPodModel.cs" />
+    <Compile Include="Model\Parameters\AssignedOutboundWorkOrderCollection.cs" />
+    <Compile Include="Model\Parameters\AssignedWorkOrderCollection.cs" />
+    <Compile Include="Model\Parameters\BatchUploadTicketDataParameter.cs" />
+    <Compile Include="Model\Parameters\BolDeleteParameters.cs" />
+    <Compile Include="Model\Parameters\BolSearchParameters.cs" />
+    <Compile Include="Model\Parameters\BulkPicklistParameters.cs" />
+    <Compile Include="Model\Parameters\BulkPickManifestSearchParameters.cs" />
+    <Compile Include="Model\Parameters\BulkPickSearchParameters.cs" />
+    <Compile Include="Model\Parameters\BulkPickUploadTicketDataParameters.cs" />
+    <Compile Include="Model\Parameters\SetGroupMoveAdjustmentRequest.cs" />
+    <Compile Include="Model\Parameters\CretaeAdjustmentTicket.cs" />
+    <Compile Include="Model\Parameters\GetAddItemListParameters.cs" />
+    <Compile Include="Model\Parameters\GetBulkPickInfoParameters.cs" />
+    <Compile Include="Model\Parameters\GetTicketListParameters.cs" />
+    <Compile Include="Model\Parameters\InventorySearchParameters.cs" />
+    <Compile Include="Model\Parameters\MaintainWorkderParameters.cs" />
+    <Compile Include="Model\Parameters\ManifestDeleteParameters.cs" />
+    <Compile Include="Model\Parameters\ManifestItemListDeleteParameters.cs" />
+    <Compile Include="Model\Parameters\ManifestSearchParameters.cs" />
+    <Compile Include="Model\Parameters\ModifyPayloadListParameters.cs" />
+    <Compile Include="Model\Parameters\PayloadTransactionLogParameters.cs" />
+    <Compile Include="Model\Parameters\PodInSlotParameters.cs" />
+    <Compile Include="Model\Parameters\TicketAssignedListParameters.cs" />
+    <Compile Include="Model\Parameters\TicketGenerateParameter.cs" />
+    <Compile Include="Model\Parameters\TicketSearchListParameters.cs" />
+    <Compile Include="Model\Parameters\TicketUploadAttachmentParameters.cs" />
+    <Compile Include="Model\Parameters\UploadTicketBarcode.cs" />
+    <Compile Include="Model\Parameters\UploadTicketDataParameter.cs" />
+    <Compile Include="Model\Parameters\VesselDeleteParamters.cs" />
+    <Compile Include="Model\Parameters\VesselManifestDeleteParameters.cs" />
+    <Compile Include="Model\Parameters\VesselManifestSearchParameters.cs" />
+    <Compile Include="Model\Parameters\VesselSearchParameters.cs" />
+    <Compile Include="Model\Parameters\VoidTicketParameters.cs" />
+    <Compile Include="Model\Parameters\WarehouseComponentParameters.cs" />
+    <Compile Include="Model\Parameters\WarehouseDeleteParamters.cs" />
+    <Compile Include="Model\Parameters\WorkOrderMergePalletParameter.cs" />
+    <Compile Include="Model\Parameters\WorkOrderPodParameter.cs" />
+    <Compile Include="Model\Replication\ReplicationlogModel.cs" />
+    <Compile Include="Model\Ticket\TicketAttachmentFolderRelationModel.cs" />
+    <Compile Include="Model\Ticket\TicketInfoAssigneeRelationModel.cs" />
+    <Compile Include="Model\Ticket\TicketInfoModel.cs" />
+    <Compile Include="Model\Ticket\TicketModel.cs" />
+    <Compile Include="Model\Ticket\TicketRelationModel.cs" />
+    <Compile Include="Model\ViewModel\ManifestListViewModel.cs" />
+    <Compile Include="Model\Warehouse\ApiModel.cs" />
+    <Compile Include="Model\Warehouse\AreaModel.cs" />
+    <Compile Include="Model\Warehouse\BinModel.cs" />
+    <Compile Include="Model\Warehouse\HomeAddressRelationModel.cs" />
+    <Compile Include="Model\Warehouse\InventoryModel.cs" />
+    <Compile Include="Model\Warehouse\LabelModel.cs" />
+    <Compile Include="Model\Warehouse\PayloadModel.cs" />
+    <Compile Include="Model\Warehouse\PayloadTransactionLogModel.cs" />
+    <Compile Include="Model\Warehouse\PodModel.cs" />
+    <Compile Include="Model\Warehouse\RoleModel.cs" />
+    <Compile Include="Model\Warehouse\SlotModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Cache.Models\YAEP.WMS.Cache.Models.csproj">
+      <Project>{FFC34544-F5C5-4701-BB59-68B2A4451C75}</Project>
+      <Name>YAEP.WMS.Cache.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Constant\YAEP.WMS.Constant.csproj">
+      <Project>{6e9437b5-3773-4f46-a3f8-2b954476a4cc}</Project>
+      <Name>YAEP.WMS.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45E7D686-0CFE-4E2D-93BA-DF3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

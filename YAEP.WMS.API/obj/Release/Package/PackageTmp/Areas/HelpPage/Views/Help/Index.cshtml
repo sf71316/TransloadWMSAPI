@@ -1,0 +1,44 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using YAEP.WMS.Api.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "YAEP WMS Web API Help Page";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<script type='text/javascript'>
+    var c = function (id) {
+        var div1 = document.getElementById(id);
+        div1.style.display = (div1.style.display == 'none') ? 'block' : 'none';
+    };
+</script>
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css?ver=@DateTime.Now.ToString("yyyyMMdd")" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>Introduction</h2>
+            <p>
+                Provide a general description of your APIs here.
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>

@@ -1,0 +1,133 @@
+﻿<#@ template language="C#"  hostspecific="True" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO"#>
+<#@ assembly name="EnvDte" #>
+<#@ output extension=".cs"#>
+<#@ include file="TemplateFilemanager.CS.ttinclude" #>
+<#
+				var _AloneContainer =new string[]{""};
+  var _className="DIRoot";
+  var manager = TemplateFileManager.Create(this);
+  var hostServiceProvider = (IServiceProvider)Host;
+  var dte =(EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
+  var activeSolutionProjects = (Array)dte.ActiveSolutionProjects;
+  var dteProject = (EnvDTE.Project)activeSolutionProjects.GetValue(0);
+  var defaultNamespace =dteProject.Properties.Item("DefaultNamespace").Value;
+  var _currentPath= Host.ResolvePath(string.Empty);
+  var _factoryFiles=Directory.GetFiles(string.Format("{0}\\Factory\\",_currentPath),"*Factory.cs");
+  manager.StartNewFile(_className+".cs");
+  #>
+  using System;
+  using Unity;
+  using Unity.Injection;
+  using YAEP.Data.ORM.Interfaces;
+  using YAEP.Interfaces;
+  using YAEP.WMS.BLL.Module;
+  using YAEP.WMS.Interfaces;
+  using YAEP.WMS.DAL.Repository;
+  using YAEP.Data.ORM.Templates;
+  using YAEP.WMS.Model;
+  using YAEP.Data.ORM.Dapper.Contrib;
+  using YAEP.Identities.Interfaces;
+  using <#=defaultNamespace#>.Factory;
+  using YAEP.Core.Party.Interfaces;
+namespace <#=defaultNamespace#>
+{
+	public sealed class <#=_className#> 
+	{
+		private static readonly Lazy<<#=_className#> > _LazyInstance = new Lazy<<#=_className#>  >(() => new <#=_className#> ());
+		private  IUnityContainer _Container;
+		#region Factory Variable
+		<#
+		foreach	(var fileName in _factoryFiles)
+		{
+			var	_varName=Path.GetFileNameWithoutExtension(fileName);
+				#>
+				private   Lazy<<#=_varName#> > _<#=_varName#>;
+				<#
+		}
+		#>
+		#endregion
+		public <#=_className#>  InitRoot(IAppSettings appSettings,IConnectionSettings connectionsettings,IAuthenticationInfo AuthenticationInfo, IAuthenticationProvider AuthenticationProvider, IGroupManager groupManager, IPartyManager partyManager)
+      {
+      _Container= new UnityContainer();
+	   //注入 AppSettings 
+            this._Container.RegisterInstance<IAppSettings>(appSettings);
+			 //注入 IGroupManager 
+            this._Container.RegisterInstance<IGroupManager>(groupManager);
+            //注入 IPartyManager 
+            this._Container.RegisterInstance<IPartyManager>(partyManager);
+      // 注入 登入驗證提供者
+            this._Container.RegisterInstance<IAuthenticationInfo>(AuthenticationInfo);
+            this._Container.RegisterInstance<IAuthenticationProvider>(AuthenticationProvider);
+        // 注入 連線資訊提供者
+        this._Container.RegisterInstance<IConnectionSettings>(connectionsettings);
+          #region Factory init
+          <#
+				foreach	(var fileName in _factoryFiles)
+				{
+					var	_varName=Path.GetFileNameWithoutExtension(fileName);
+					if(_AloneContainer.Any(p=>p.ToLower()==_varName.ToLower()))
+					{	#> 
+				_<#=_varName#>  = new Lazy<<#=_varName#>  >(() => new <#=_varName#> ());
+
+				<#}else{#>  _<#=_varName#>  = new Lazy<<#=_varName#>  >(() => new <#=_varName#> (this._Container));
+<#
+					}
+				}
+			#>		
+				
+
+				#endregion 
+         // 注入Sequence Agent
+		 DbEntities dbEntities = new DbEntities(connectionsettings);
+		this._Container.RegisterInstance<IObjectRelationalMappingLayer>(dbEntities);
+        //this._Container.RegisterType<IObjectRelationalMappingLayer, DbEntities>();
+        this._Container.RegisterType<IModelDescriptor<SeqenceModel>, GenericModelDescriptor<SeqenceModel>>();
+        this._Container.RegisterType<IRepositoryHandler<SeqenceModel>, GenericRepositoryHandler<SeqenceModel>>();
+        this._Container.RegisterType<ISequenceRepository, SequenceRepository<SeqenceModel>>();
+        this._Container.RegisterType<ISequenceAgent, SequenceAgent>();
+        return this;
+		}
+        public ISequenceAgent GetSequenceAgent()
+        {
+            return this._Container.Resolve<ISequenceAgent>();
+        }
+        public static ILogInfiltrator GetLogger()
+        {
+            return Logger.GetLogger();
+        }
+	//	public static <#=_className#>  Instance { get { return _LazyInstance.Value; } }
+		#region Factory Proerpties
+		<#
+		foreach	(var fileName in _factoryFiles)
+		{
+			var	_varName=Path.GetFileNameWithoutExtension(fileName);
+				#>
+	public   <#=_varName#>  <#=_varName#>
+	{
+		get
+			{
+						 return _<#=_varName#>.Value;
+			}
+	}
+		<#
+		}
+		#>
+		#endregion
+		public IUnityContainer Container
+        {
+            get
+            {
+                return this._Container;
+            }
+        }
+	}
+}
+<#
+
+manager.Process();
+#>

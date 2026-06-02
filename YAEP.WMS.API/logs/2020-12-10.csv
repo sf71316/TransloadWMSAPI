@@ -1,0 +1,2 @@
+Level,Content,ExceptionMessage,ExceptionStackTrace,MachineName,Source,ThreadId,Type,Logger,IP,Application,SubApplication,Alias,BelongToType,BelongToUID,BelongToRemark,ObjectBefore,ObjectAfter
+TRACE,Product cache trace,$,,,,9,test,willyc,,WMS-Web-API-Tracing,,,980,00000000-0000-0000-0000-000000000000,1,"""{\""productid\"":[\""3bd96a66-b466-436d-9f3e-b29ff26e3af3\""],\""CallMemberName\"":\""ResendSynctoPBSC\"",\""ItemMgmtHashCode\"":12552685}""",null

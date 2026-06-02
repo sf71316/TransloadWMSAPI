@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23E53D4D-0153-4E42-977E-058C02A49D7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAEP.WMS.Cache</RootNamespace>
+    <AssemblyName>YAEP.WMS.Cache</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Cache">
+      <HintPath>..\ExternalDll\YAEP.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.DI">
+      <HintPath>..\ExternalDll\YAEP.Common.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Common.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.DI">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Item.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Core.Item.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\YAEP.WMS.BLL\bin\Debug\YAEP.Core.Party.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.DI">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Core.Party.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Core.Party.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.NoSql.Redis">
+      <HintPath>..\ExternalDll\YAEP.Data.NoSql.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Dapper.Contrib">
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Data.ORM.Templates, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Data.ORM.Templates.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Identities.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.DI">
+      <HintPath>..\ExternalDll\YAEP.Identities.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Identities.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Identities.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.DI">
+      <HintPath>..\ExternalDll\YAEP.Package.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Package.Interfaces">
+      <HintPath>..\ExternalDll\YAEP.Package.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Templates.DI.Unity">
+      <HintPath>..\ExternalDll\YAEP.Templates.DI.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="YAEP.Utilities, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDll\YAEP.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1_objectCache\CacheManager.cs" />
+    <Compile Include="2_redis\controllers\1_product\ProductCategoryRelationRedisController.cs" />
+    <Compile Include="2_redis\controllers\1_product\ProductCategoryRedisController.cs" />
+    <Compile Include="2_redis\controllers\2_package\PackageUomRedisController.cs" />
+    <Compile Include="2_redis\controllers\2_package\PackageVersionRedisController.cs" />
+    <Compile Include="2_redis\controllers\5_Identities\UserResourcePermissionRedisController.cs" />
+    <Compile Include="2_redis\controllers\5_Identities\UserRedisController.cs" />
+    <Compile Include="2_redis\controllers\5_Identities\GroupRedisController.cs" />
+    <Compile Include="2_redis\controllers\6_common\ZipRedisController.cs" />
+    <Compile Include="2_redis\controllers\6_common\StateRedisController.cs" />
+    <Compile Include="2_redis\controllers\6_common\CityRedisController.cs" />
+    <Compile Include="2_redis\controllers\6_common\CountryRedisController.cs" />
+    <Compile Include="2_redis\controllers\BoardRedisController.cs" />
+    <Compile Include="2_redis\DrKnowAll.cs" />
+    <Compile Include="0_basic\DrKnowAllKeys.cs" />
+    <Compile Include="2_redis\controllers\2_package\PackageRedisController.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Identities.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Package.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Party.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Product.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Warehouse.cs" />
+    <Compile Include="AuthenticationInfoProvider.cs" />
+    <Compile Include="ConnectionSettings.cs" />
+    <Compile Include="DefaultAppSettings.cs" />
+    <Compile Include="DrKnowAllAuthenticationInfo.cs" />
+    <Compile Include="2_redis\DrKnowAll​.Common.cs" />
+    <Compile Include="FactoryUtils.cs" />
+    <Compile Include="2_redis\controllers\4_warehouse\WarehouseRedisController.cs" />
+    <Compile Include="2_redis\controllers\3_party\CustomerRedisController.cs" />
+    <Compile Include="2_redis\controllers\1_product\ProductRedisController.cs" />
+    <Compile Include="2_redis\controllers\0_basic\AbstractDefaultConnectSettingController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshDrKnowAll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YAEP.WMS.Cache.Models\YAEP.WMS.Cache.Models.csproj">
+      <Project>{ffc34544-f5c5-4701-bb59-68b2a4451c75}</Project>
+      <Name>YAEP.WMS.Cache.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.DAL\YAEP.WMS.DAL.csproj">
+      <Project>{B8279834-FB81-4C41-9FD2-F8104DF87DA2}</Project>
+      <Name>YAEP.WMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Interfaces\YAEP.WMS.Interfaces.csproj">
+      <Project>{45E7D686-0CFE-4E2D-93BA-DF3421286450}</Project>
+      <Name>YAEP.WMS.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAEP.WMS.Model\YAEP.WMS.Model.csproj">
+      <Project>{D1147254-0B64-49FA-8426-054EBFECF0B2}</Project>
+      <Name>YAEP.WMS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

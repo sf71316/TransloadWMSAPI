@@ -1,0 +1,972 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Core.Party.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.Create(YAEP.Core.Party.Interfaces.Models.IPartyModel,System.Guid,System.Collections.Generic.IEnumerable{YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel})">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.Update(YAEP.Core.Party.Interfaces.Models.IPartyModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetParty(System.Guid)">
+            <summary>
+            取得對應識別編號的 Party
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetParties(YAEP.Core.Party.Constants.PartyTypeCategories)">
+            <summary>
+            取得 對應 Party Type Category 的 Party
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetParties(YAEP.Core.Party.Interfaces.IPartyParameterize)">
+            <summary>
+            取得符合條件的 Party 資料
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.SetTypeRelation(System.Guid,System.Guid)">
+            <summary>
+            設定關聯 (已存在則設定成Active)
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.RemoveTypeRelation(System.Guid,System.Guid)">
+            <summary>
+            移除關聯
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.ChangeTypeRelationStatus(System.Guid,System.Guid,YAEP.Core.Party.Constants.PartyTypeRelationStatus)">
+            <summary>
+            
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <param name="status">
+            狀態
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.CreateType(YAEP.Core.Party.Interfaces.Models.IPartyTypeModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.DeleteType(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.UpdateType(YAEP.Core.Party.Interfaces.Models.IPartyTypeModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetPartyTypes(System.Guid,YAEP.Core.Party.Constants.PartyTypeCategories)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="groupUID">Group 識別碼</param>
+            <param name="categories">Type 分類</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetPartyTypes(System.Guid,YAEP.Core.Party.Constants.PartyTypeCategories,System.String)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="groupUID">Group 識別碼</param>
+            <param name="categories">Type 分類</param>
+            <param name="name">名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetPartyTypes(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="groupUID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.GetPartyAddresses(System.Guid)">
+            <summary>
+            取得 Party 設定的 Address 資料
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.CreateAddress(YAEP.Core.Party.Interfaces.Models.IPartyAddressModel)">
+            <summary>
+            建立 Party Address
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.DeleteAddress(System.Guid)">
+            <summary>
+            刪除 Party Address
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyManager.UpdateAddress(YAEP.Core.Party.Interfaces.Models.IPartyAddressModel)">
+            <summary>
+            修改 Party Address
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.PartyUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.TypeUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.DataType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.Models.IPartyModel">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.ID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Country">
+            <summary>
+            國家 (3 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.State">
+            <summary>
+            州 / 省 (2 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Zip">
+            <summary>
+            區號
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Phone">
+            <summary>
+            電話
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.PhoneExtension">
+            <summary>
+            電話分機
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Fax">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.Email">
+            <summary>
+            電子信箱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.CreatedBy">
+            <summary>
+            新增人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.CreatedOn">
+            <summary>
+            新增時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.ModifiedBy">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.ModifiedOn">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.ID">
+            <summary>
+            編號
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Sort">
+            <summary>
+            順序
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Type">
+            <summary>
+            類型 : 
+            <para/> 0 = Vendor(Default)
+            <para/> 100 = Customer
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Level">
+            <summary>
+            等級
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.CreatedBy">
+            <summary>
+            新增人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.CreatedOn">
+            <summary>
+            新增時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.ModifiedBy">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.ModifiedOn">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.PartyUID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.TypeUID">
+            <summary>
+            
+            </summary> 
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.CreatedBy">
+            <summary>
+            新增人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.CreatedOn">
+            <summary>
+            新增時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.ModifiedBy">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.ModifiedOn">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.UID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.PartyUID">
+            <summary>
+            Party 識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.ID">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Name">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Type">
+            <summary>
+            類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Country">
+            <summary>
+            國家 (3 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.State">
+            <summary>
+            州 / 省 (2 codes)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Zip">
+            <summary>
+            區號
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Address1">
+            <summary>
+            地址1
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Address2">
+            <summary>
+            地址2
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Address3">
+            <summary>
+            地址3
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.Email">
+            <summary>
+            電子郵件
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.PhoneHome">
+            <summary>
+            市內電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.PhoneCell">
+            <summary>
+            手機電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.PhoneOffice">
+            <summary>
+            辦公室電話號碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.FaxHome">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.FaxOffice">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.IsDefault">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.CreatedBy">
+            <summary>
+            新增人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.CreatedOn">
+            <summary>
+            新增時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.ModifiedBy">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.ModifiedOn">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyParameterize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.PartyTypeCategory">
+            <summary>
+            Party Type 類型
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyParameterize.PartyTypes">
+            <summary>
+            Party Type 識別編號
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.Create(System.Collections.Generic.IEnumerable{YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel})">
+            <summary>
+            
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.Create(YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.DeleteAllProperties(System.Guid,System.Guid)">
+            <summary>
+            刪除符合條件的 Party 的所有屬性
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.TypeUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.Update(YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyPropertiesRepository.GetProperties(System.Guid,System.Guid)">
+            <summary>
+            取得 Party Properties
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyPropertiesModel.TypeUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.Create(YAEP.Core.Party.Interfaces.Models.IPartyModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.Delete(System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="UID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.Update(YAEP.Core.Party.Interfaces.Models.IPartyModel)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.GetParties(YAEP.Core.Party.Interfaces.IPartyParameterize)">
+            <summary>
+            取得符合條件的 Party
+            </summary>
+            <param name="parameters">條件</param>
+            <returns>list of <see cref="T:YAEP.Core.Party.Interfaces.Models.IPartyModel"/></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.GetParties(YAEP.Core.Party.Constants.PartyTypeCategories)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyRepository.GetParty(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="partyUID">
+            
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyTypeParameterize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.UID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.GroupUID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.Status">
+            <summary>
+            狀態 (0:Inactive 1:Active)
+            </summary>
+        </member>
+        <member name="P:YAEP.Core.Party.Interfaces.IPartyTypeParameterize.Type">
+            <summary>
+            Party Type 類型
+            </summary>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Create(System.Collections.Generic.IEnumerable{YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel})">
+            <summary>
+            建立
+            </summary>
+            <param name="partyTypeRelations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Create(YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel)">
+            <summary>
+            建立
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Create(System.Guid,System.Guid)">
+            <summary>
+            建立
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para/><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para/><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.TypeUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Update(System.Guid,System.Guid,YAEP.Core.Party.Constants.PartyTypeRelationStatus)">
+            <summary>
+            
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.TypeUID"/>
+            </param>
+            <param name="status">
+            狀態
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.Status"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Delete(System.Guid,System.Guid)">
+            <summary>
+            刪除
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.TypeUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRelationRepository.Exists(System.Guid,System.Guid)">
+            <summary>
+            檢查關聯是否存在
+            </summary>
+            <param name="partyUID">
+            Party 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.PartyUID"/>
+            </param>
+            <param name="typeUID">
+            Party Type 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeRelationModel.TypeUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyAddressRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyAddressRepository.Create(YAEP.Core.Party.Interfaces.Models.IPartyAddressModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyAddressRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyAddressModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyAddressRepository.Update(YAEP.Core.Party.Interfaces.Models.IPartyAddressModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyAddressRepository.GetPartyAddresses(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="partyUID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YAEP.Core.Party.Interfaces.IPartyTypeRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.Create(YAEP.Core.Party.Interfaces.Models.IPartyTypeModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.Update(YAEP.Core.Party.Interfaces.Models.IPartyTypeModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.GetPartyTypes(System.Guid)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="groupUID">
+            Group 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.GroupUID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.GetPartyTypes(System.Guid,YAEP.Core.Party.Constants.PartyTypeCategories)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="groupUID">
+            Group 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.GroupUID"/>
+            </param>
+            <param name="categories">
+            Type 分類
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Type"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.GetPartyTypes(System.Guid,System.Nullable{YAEP.Core.Party.Constants.PartyTypeCategories},System.String)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="groupUID">
+            Group 識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.GroupUID"/>
+            </param>
+            <param name="categories">
+            Type 分類
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Type"/>
+            </param>
+            <param name="name">
+            名稱
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.Name"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.GetPartyTypes(YAEP.Core.Party.Interfaces.IPartyTypeParameterize)">
+            <summary>
+            
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.GetPartyType(System.Guid)">
+            <summary>
+            取得 Party Type
+            </summary>
+            <param name="UID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:YAEP.Core.Party.Interfaces.IPartyTypeRepository.Exists(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="typeUID">
+            識別碼
+            <para /><see cref="P:YAEP.Core.Party.Interfaces.Models.IPartyTypeModel.UID"/>
+            </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

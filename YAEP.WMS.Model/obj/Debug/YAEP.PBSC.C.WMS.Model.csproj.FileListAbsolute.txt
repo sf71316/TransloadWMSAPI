@@ -1,0 +1,15 @@
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.PBSC.C.WMS.Model.dll.config
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.PBSC.C.WMS.Model.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.PBSC.C.WMS.Model.pdb
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\Dapper.Contrib.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.Data.ORM.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.PBSC.C.WMS.Interfaces.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\Dapper.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.Data.ORM.pdb
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.Data.ORM.xml
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\bin\Debug\YAEP.PBSC.C.WMS.Interfaces.pdb
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\obj\Debug\YAEP.PBSC.C.WMS.Model.csprojAssemblyReference.cache
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\obj\Debug\YAEP.PBSC.C.WMS.Model.csproj.CoreCompileInputs.cache
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\obj\Debug\YAEP.PBSC.C.WMS.Model.csproj.CopyComplete
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\obj\Debug\YAEP.PBSC.C.WMS.Model.dll
+D:\Project\WMS2\Mainproject\YAEP.PBSC.C.WMS.Model\obj\Debug\YAEP.PBSC.C.WMS.Model.pdb

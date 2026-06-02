@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YAEP.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:YAEP.Interfaces.IActionResult`1">
+            <summary>
+            執行結果
+            </summary>
+            <typeparam name="T">回傳內容的類型</typeparam>
+        </member>
+        <member name="P:YAEP.Interfaces.IActionResult`1.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IActionResult`1.Message">
+            <summary>
+            訊息
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IActionResult`1.InnerException">
+            <summary>
+            例外
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IActionResult`1.Content">
+            <summary>
+            回傳內容
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IActionResult`1.TypeCode">
+            <summary>
+            (預留)
+            </summary>
+        </member>
+        <member name="T:YAEP.Interfaces.IAuthenticationInfo">
+            <summary>
+            認證資訊
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.UID">
+            <summary>
+            使用者識別碼
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.Account">
+            <summary>
+            使用者帳號
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.Identification">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.LoginedTime">
+            <summary>
+            登入時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.MemberName">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.ExpirationTime">
+            <summary>
+            到期時間
+            </summary>
+        </member>
+        <member name="P:YAEP.Interfaces.IAuthenticationInfo.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="T:YAEP.Interfaces.IAuthenticationProvider">
+            <summary>
+            認證資訊提供者
+            </summary>
+        </member>
+        <member name="M:YAEP.Interfaces.IAuthenticationProvider.GetAuthenticationInfo">
+            <summary>
+            取得認證資訊
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

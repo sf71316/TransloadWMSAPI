@@ -1,0 +1,231 @@
+.help-page h1,
+.help-page .h1,
+.help-page h2,
+.help-page .h2,
+.help-page h3,
+.help-page .h3,
+#body.help-page,
+.help-page-table th,
+.help-page-table pre,
+.help-page-table p {
+    font-family: "Tahoma", "Segoe UI Light", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.help-page-table th {
+    background-color: #e0e0e0;
+}
+
+.help-page pre.wrapped {
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+}
+
+.help-page .warning-message-container {
+    margin-top: 20px;
+    padding: 0 10px;
+    color: #525252;
+    background: #EFDCA9;
+    border: 1px solid #CCCCCC;
+}
+
+.help-page-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0px 0px 20px 0px;
+    border-top: 1px solid #D4D4D4;
+}
+
+    .help-page-table th {
+        text-align: left;
+        font-weight: bold;
+        border-bottom: 1px solid #D4D4D4;
+        padding: 5px 6px 5px 6px;
+    }
+
+    .help-page-table td {
+        border-bottom: 1px solid #D4D4D4;
+        padding: 10px 8px 10px 8px;
+        vertical-align: top;
+    }
+
+    .help-page-table pre,
+    .help-page-table p {
+        margin: 0px;
+        padding: 0px;
+        font-family: inherit;
+        font-size: 100%;
+    }
+
+    .help-page-table tbody tr:hover td {
+        background-color: #F3F3F3;
+    }
+
+.help-page a:hover {
+    background-color: transparent;
+}
+
+.help-page .sample-header {
+    border: 2px solid #D4D4D4;
+    background: #00497E;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    border-bottom: none;
+    display: inline-block;
+    margin: 10px 0px 0px 0px;
+}
+
+.help-page .sample-content {
+    display: block;
+    border-width: 0;
+    padding: 15px 20px;
+    background: #FFFFFF;
+    border: 2px solid #D4D4D4;
+    margin: 0px 0px 10px 0px;
+}
+
+.help-page .api-name {
+    width: 50%;
+}
+
+    .help-page .api-name .api-method-GET {
+        font-size: 8pt;
+        color: white;
+        background-color: #00497E;
+        border: 1px solid #cccccc;
+        padding: 3px;
+        width: 52px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .help-page .api-name .api-method-POST {
+        font-size: 8pt;
+        color: white;
+        background-color: #236014;
+        border: 1px solid #cccccc;
+        padding: 3px;
+        width: 52px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .help-page .api-name .api-method-PUT {
+        font-size: 8pt;
+        color: white;
+        background-color: #8b4800;
+        border: 1px solid #cccccc;
+        padding: 3px;
+        width: 52px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .help-page .api-name .api-method-DELETE {
+        font-size: 8pt;
+        color: white;
+        background-color: #82170c;
+        border: 1px solid #cccccc;
+        padding: 3px;
+        width: 52px;
+        text-align: center;
+        display: inline-block;
+    }
+
+.help-page .api-documentation {
+    width: 60%;
+}
+
+.help-page .parameter-name {
+    width: 20%;
+}
+
+.help-page .parameter-documentation {
+    width: 40%;
+}
+
+.help-page .parameter-type {
+    width: 20%;
+}
+
+.help-page .parameter-annotations {
+    width: 20%;
+}
+
+.help-page h1,
+.help-page .h1 {
+    font-size: 36px;
+    line-height: normal;
+}
+
+.help-page h2,
+.help-page .h2 {
+    font-size: 24px;
+}
+
+.help-page h3,
+.help-page .h3 {
+    font-size: 20px;
+}
+
+#body.help-page {
+    font-size: 14px;
+    line-height: 143%;
+    color: #333;
+}
+
+.help-page a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+    .help-page a :hover {
+        color: #b4055a;
+        text-decoration: none;
+    }
+
+
+fieldset {
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #FFF;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: -webkit-liner-gradient(top,#EFDCA9,#FFFFFF);
+    background: linear-gradient(top,#EFDCA9,#FFFFFF);
+    box-shadow: 3px 3px 10px #666;
+    -moz-box-shadow: 3px 3px 10px #666;
+    -webkit-box-shadow: 3px 3px 10px #666;
+    position: relative;
+}
+
+legend {
+    background-color: #FFF;
+    color: #000;
+    position: relative;
+    border: 0px solid black;
+}
+
+
+.legendB {
+    padding: 5px 10px;
+    background-color: #4F709F;
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 2px 2px 4px #666;
+    -moz-box-shadow: 2px 2px 4px #666;
+    -webkit-box-shadow: 2px 2px 4px #666;
+    position: absolute;
+    left: 10px;
+    top: -11px;
+    min-width: 180px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
