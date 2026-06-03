@@ -76,12 +76,15 @@ namespace YAEP.WMS.BLL.Manager
             try
             {
                 var vesselinfo = this.VesselRepository.GetList(new { UID = Parameters.UID });
-                var wkinfo = this.WorkOrderRepository.GetList(new { VesselUID = vesselinfo.Content.Select(p => p.UID) });
+                // [2026-06-03] null/空 防護：vessel 無對應 workorder 時 Content 為 null(原 .Select NRE "source");空陣列丟給 RemoveWorkOrder 也會 NRE(FirstOrDefault null)。
+                var _vessels = vesselinfo.Content ?? Enumerable.Empty<IVesselModel>();
+                var wkinfo = this.WorkOrderRepository.GetList(new { VesselUID = _vessels.Select(p => p.UID) });
+                var _workorderUIDs = (wkinfo.Content ?? Enumerable.Empty<IWorkOrderModel>()).Select(x => x.UID).ToArray();
 
                 IActionResult<bool> rs1 = ActionResultTemplates.Result<bool>();
                 IActionResult<bool> rs2 = ActionResultTemplates.Result<bool>();
                 IActionResult<bool> rs3 = ActionResultTemplates.Result<bool>();
-                rs1 = this.WorkOrderManager.RemoveWorkOrder(wkinfo.Content.Select(x => x.UID).ToArray());
+                rs1 = _workorderUIDs.Length > 0 ? this.WorkOrderManager.RemoveWorkOrder(_workorderUIDs) : ActionResultTemplates.Result<bool>(success: true);
                 if (rs1.Success)
                 {
                     rs2 = this.VesselRepository.DeleteVessel(Parameters);

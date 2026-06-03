@@ -18,6 +18,7 @@ namespace YAEP.WMS.Interfaces
         IActionResult<ICancelReceivingResponse> CancelReceiving(ICancelReceivingRequest request);
         IActionResult<IDeallocateResponse> Deallocated(IDeallocatedRequest request);
         IActionResult<IDeleteManifestResponse> DeleteManifestByOrder(IDeleteManifestRequest request);
+        IActionResult<bool> VoidOutboundByTransload(Guid manifestUID);
         IActionResult<IPickAllResponse> PickAll(IPickAllRequest request);
         IActionResult<dynamic> GetAllCurrentProeccingRequest();
         IActionResult<bool> RemoveProcessingRequestStatus(string actionkey, string requestKey);

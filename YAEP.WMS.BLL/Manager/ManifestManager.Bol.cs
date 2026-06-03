@@ -51,12 +51,13 @@ namespace YAEP.WMS.BLL.Manager
 
             var rs = ActionResultTemplates.Result<bool>();
             var vminfo = this.VesselRepository.GetList(new { BOLUID = Parameters.UID });
-            var wkinfo = this.WorkOrderRepository.GetList(new { VesselUID = vminfo.Content.Select(p => p.UID) });
+            // [2026-06-03] null 防護：outbound 的 BOL 無 vessel 時 vminfo.Content 為 null,原 .Select 會 NRE("Value cannot be null. source")。
+            var vesselUIDs = (vminfo.Content ?? Enumerable.Empty<IVesselModel>()).Select(p => p.UID).ToArray();
 
             try
             {
                 VesselDeleteInnerParamters param = new VesselDeleteInnerParamters();
-                param.UID = vminfo.Content.Select(p => p.UID).ToArray();
+                param.UID = vesselUIDs;
 
                 IActionResult<bool> rs1 = ActionResultTemplates.Result<bool>();
                 IActionResult<bool> rs2 = ActionResultTemplates.Result<bool>();

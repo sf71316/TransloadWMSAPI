@@ -1714,6 +1714,57 @@ namespace YAEP.WMS.BLL.Manager
             }
             return rs;
         }
+
+        /// <summary>
+        /// Transload 出貨作廢（ManifestUID 入口，杜絕 RefNo 跨倉風險）。
+        /// RemoveWorkOrder：void ticket + 還 onhand(DeallocatedByWorkOrderPayload) + 刪 pod/payload/workorder；
+        /// DeleteManifest：刪 manifest+BOL+Vessel+Item+Receiver。
+        /// 全程本地操作、不觸發 ReplicationManager；單一交易，任一步失敗整批 rollback。
+        /// </summary>
+        public IActionResult<bool> VoidOutboundByTransload(Guid manifestUID)
+        {
+            var rs = ActionResultTemplates.Result<bool>();
+            rs.Success = false;
+            try
+            {
+                if (manifestUID == Guid.Empty) { rs.Message = "ManifestUID is required."; return rs; }
+
+                // 1. 以 UID 解析 manifest（避開 RefNo 跨倉）+ 驗出貨單、未作廢
+                var manifest = this.GetManifest(new { UID = manifestUID }).Content;
+                if (manifest == null || manifest.Status <= 0) { rs.Message = "找不到出貨單(或已作廢)"; return rs; }
+                if (manifest.Type != (int)ManifestType.Outbound) { rs.Message = "此單非出貨單(Outbound)。"; return rs; }
+
+                // 2. 單一交易：DeleteManifest 即可。其 cascade「DeleteBol→DeleteVessel→RemoveWorkOrder」
+                //    已含 void ticket + 還 onhand(DeallocatedByWorkOrderPayload) + 刪 pod/payload/workorder/vessel，
+                //    再刪 manifest+BOL+item+receiver。**不可自己先呼 RemoveWorkOrder**，否則 DeleteVessel 取不到 workorder 會 NRE。
+                this.ExistTransactionScope = true;
+                using (var db = this.DbEntities.DbAdapter)
+                {
+                    this.DbEntities.BeginTranaction(System.Data.IsolationLevel.Snapshot);
+
+                    var delParam = new ManifestDeleteInnerParameters { UID = new Guid[] { manifestUID } };
+                    var rsDel = this.DeleteManifest(delParam, true);    // forcedelete=true(完成單非 Open)
+
+                    if (rsDel.Success)
+                    {
+                        this.CommitTransaction();
+                        rs.Success = true; rs.Content = true;
+                    }
+                    else
+                    {
+                        this.RollbackTransaction();
+                        rs.Message = rsDel.Message;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                this.TracingAgent.Trace(ex.Message, ex);
+                rs.Message = ex.Message; rs.TypeCode = FlowStatusCode.OCCUR_EXCEPTION;
+                rs.Success = false; rs.InnerException = ex;
+            }
+            return rs;
+        }
         #endregion
 
         #region 撿貨(Pick)

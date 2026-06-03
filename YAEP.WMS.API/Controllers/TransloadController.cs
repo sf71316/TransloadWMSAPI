@@ -605,6 +605,8 @@ ORDER BY it.ID", cn))
                         {
                             VesselUID = (Guid)g("UID"),                 // 頁面 getRowId
                             BolUID = (Guid)g("UID"),
+                            ManifestUID = (Guid)g("ManifestUID"),       // VoidOutbound 用
+
                             ShipOrderNo = (string)g("ID") ?? (string)g("RefNo"),
                             CustomerUID = partyUID,
                             CustomerName = (partyUID.HasValue && custMap.TryGetValue(partyUID.Value, out var _cn)) ? _cn : null,
@@ -1195,12 +1197,30 @@ COMMIT;", cn))
         }
 
         /// <summary>
-        /// 作廢出貨(Void,非實刪)：把出貨 manifest+BOL 設 Void(Status=0),並把已揀出的量加回 home slot onhand
-        /// (依 WMS_WorkOrder_Payload.Qty,經 WMS_HomeAddressRelation 定位該料 home 儲位)。交易保護。
+        /// 作廢出貨(Void)：改走 BLL VoidOutboundByTransload(ManifestUID 入口,杜絕 RefNo 跨倉風險)。
+        /// RemoveWorkOrder(void ticket + 還 onhand + 刪工單鏈) + DeleteManifest(刪 manifest+BOL+Vessel+Item)；本地操作、不同步。
         /// </summary>
         [HttpPost]
         [ActionName("VoidOutbound")]
-        public IHttpActionResult VoidOutbound([FromUri] string refNo)
+        public IHttpActionResult VoidOutbound([FromUri] Guid manifestUID)
+        {
+            InitDIRoot();
+            if (manifestUID == Guid.Empty) return this.GetFailureResult(-1, "manifestUID required");
+            using (var _instance = this.DIContainer.ManifestFactory.CreateManger().OrderManager)
+            {
+                var rs = _instance.VoidOutboundByTransload(manifestUID);
+                if (!rs.Success) return this.GetFailureResult(-1, rs.Message);
+                return this.Json(this.GetSuccessResult(new { ManifestUID = manifestUID, Voided = true }));
+            }
+        }
+
+        // [2026-06-03] 舊版(refNo + raw SQL + HomeAddressRelation 還庫存) 已由上方 VoidOutboundByTransload 取代,保留供回退參考(無 ActionName,不對外路由)。
+        /// <summary>
+        /// 作廢出貨(Void,非實刪)：把出貨 manifest+BOL 設 Void(Status=0),並把已揀出的量加回 home slot onhand
+        /// (依 WMS_WorkOrder_Payload.Qty,經 WMS_HomeAddressRelation 定位該料 home 儲位)。交易保護。
+        /// </summary>
+        [System.Obsolete("replaced by VoidOutboundByTransload (ManifestUID)")]
+        public IHttpActionResult VoidOutbound_OldRefNo([FromUri] string refNo)
         {
             InitDIRoot();
             if (string.IsNullOrEmpty(refNo)) return this.BadRequest("refNo required");
