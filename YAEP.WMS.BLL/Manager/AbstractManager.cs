@@ -65,7 +65,7 @@ namespace YAEP.WMS.BLL.Manager
         {
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PRODUCT_PACKAGE_CACHE_KEY);
@@ -77,7 +77,7 @@ namespace YAEP.WMS.BLL.Manager
         {
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PRODUCT_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PRODUCT_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PRODUCT_CACHE_KEY);
@@ -85,7 +85,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PRODUCT_PACKAGE_CACHE_KEY);
@@ -98,7 +98,7 @@ namespace YAEP.WMS.BLL.Manager
         {
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PKG_DATA_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PKG_DATA_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PKG_DATA_CACHE_KEY);
@@ -106,7 +106,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear ITEM_PKG_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear ITEM_PKG_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.ITEM_PKG_CACHE_KEY);
@@ -114,7 +114,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PKG_VER_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PKG_VER_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PKG_VER_CACHE_KEY);
@@ -122,7 +122,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PKG_VER_DATA_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PKG_VER_DATA_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PKG_VER_DATA_CACHE_KEY);
@@ -130,7 +130,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PKG_UOM_DATA_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PKG_UOM_DATA_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PKG_UOM_DATA_CACHE_KEY);
@@ -138,7 +138,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear MIN_PKG_PRODUCT_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear MIN_PKG_PRODUCT_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.MIN_PKG_PRODUCT_CACHE_KEY);
@@ -146,7 +146,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PKG_TREE_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PKG_TREE_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PKG_TREE_CACHE_KEY);
@@ -154,7 +154,7 @@ namespace YAEP.WMS.BLL.Manager
 
             Policy.Create().Retry(Policy.DEFAULT_RETRY_COUNT, 2000, (obj, args) =>
             {
-                this.TracingAgent.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
+                this.TracingAgent?.Trace("Clear PRODUCT_PACKAGE_CACHE cache error", args.Exception);
             }).Execute(() =>
             {
                 _Cache.Remove(CacheManager.PRODUCT_PACKAGE_CACHE_KEY);
@@ -359,23 +359,23 @@ namespace YAEP.WMS.BLL.Manager
                 {
                     this.RefreshDrKnowAllManager.RefreshProduct(itemUID.Value);
                 }
-                using (var activity = this.TracingAgent.StartActivity("Clear product cache"))
+                using (var activity = this.TracingAgent?.StartActivity("Clear product cache"))
                 {
                     this.ClearProductCache();
                 }
-                using (var activity = this.TracingAgent.StartActivity("Clear package cache"))
+                using (var activity = this.TracingAgent?.StartActivity("Clear package cache"))
                 {
                     this.ClearPackageCache();
                 }
-                using (var activity = this.TracingAgent.StartActivity("load product cache"))
+                using (var activity = this.TracingAgent?.StartActivity("load product cache"))
                 {
                     this.ProductCacheManager.LoadCache();
                 }
-                using (var activity = this.TracingAgent.StartActivity("load package cache"))
+                using (var activity = this.TracingAgent?.StartActivity("load package cache"))
                 {
                     this.PackageCacheManager.LoadCache();
                 }
-                using (var activity = this.TracingAgent.StartActivity("load product/package cache"))
+                using (var activity = this.TracingAgent?.StartActivity("load product/package cache"))
                 {
                     this.ProductPackageCacheManager.LoadCache();
                 }
@@ -404,7 +404,7 @@ namespace YAEP.WMS.BLL.Manager
                 }
                 catch (Exception ex)
                 {
-                    this.TracingAgent.Trace($"Get spid failure", ex);
+                    this.TracingAgent?.Trace($"Get spid failure", ex);
                 }
             }
         }
@@ -455,7 +455,7 @@ namespace YAEP.WMS.BLL.Manager
                 connectionobj.TransactionId = "TransactionId has disappear";
             }
 
-            //this.TracingAgent.Trace($"Log connection status call by [{memberName}]", connectionobj, GetPreviousActionStack());
+            //this.TracingAgent?.Trace($"Log connection status call by [{memberName}]", connectionobj, GetPreviousActionStack());
         }
         public void BeginTranaction(System.Data.IsolationLevel isolationLevel)
         {
@@ -473,12 +473,12 @@ namespace YAEP.WMS.BLL.Manager
                 }
                 else
                 {
-                    this.TracingAgent.Trace($"Db connection has closed by{memberName}");
+                    this.TracingAgent?.Trace($"Db connection has closed by{memberName}");
                 }
             }
             else
             {
-                this.TracingAgent.Trace($"Not find tran call by{memberName}");
+                this.TracingAgent?.Trace($"Not find tran call by{memberName}");
             }
         }
         public void DisposeConnectionInstance()
@@ -496,11 +496,11 @@ namespace YAEP.WMS.BLL.Manager
             {
 
                 this.DbEntities.Commit();
-                //this.TracingAgent.Trace($"Commit tran complete call by {memberName}");
+                //this.TracingAgent?.Trace($"Commit tran complete call by {memberName}");
             }
             else
             {
-                this.TracingAgent.Trace($"Not find tran call by {memberName}");
+                this.TracingAgent?.Trace($"Not find tran call by {memberName}");
             }
         }
         public void RollbackTransaction([CallerMemberName] string memberName = "")
@@ -509,7 +509,7 @@ namespace YAEP.WMS.BLL.Manager
             if (this.DbEntities.Transaction != null)
             {
 
-                //this.TracingAgent.Trace($"Rollback tran call by {memberName}");
+                //this.TracingAgent?.Trace($"Rollback tran call by {memberName}");
                 try
                 {
                     this.DbEntities.Rollback();
@@ -518,13 +518,13 @@ namespace YAEP.WMS.BLL.Manager
                 catch (Exception ex)
                 {
                     LogConnectionStatus();
-                    this.TracingAgent.Trace($"Rollback tran failure", ex);
+                    this.TracingAgent?.Trace($"Rollback tran failure", ex);
                 }
 
             }
             else
             {
-                this.TracingAgent.Trace($"Not find tran call by{memberName}");
+                this.TracingAgent?.Trace($"Not find tran call by{memberName}");
             }
         }
         protected IEnumerable<IPartyModel> GetCustomer(IEnumerable<Guid> groupUID, string customerID)

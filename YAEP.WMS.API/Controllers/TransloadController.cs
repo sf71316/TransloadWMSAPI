@@ -927,8 +927,8 @@ ORDER BY it.ID", cn))
                 try
                 {
                     DrKnowAll.RefreshProductCategoryRelation(itemUID);
-                    DrKnowAll.RefreshProduct(itemUID);
-                    DrKnowAll.RefreshPackageByItem(itemUID, true, true);
+                    DrKnowAll.RefreshProduct(itemUID, isRefreshProductCategory: true, isRefreshProductCategoryRelation: true);
+                    DrKnowAll.RefreshPackageByItem(itemUID, isRefreshPackageUOM: true, isRefreshPackageVersion: true);
                     this.DIContainer.ManifestFactory.CreateManger().OrderManager.ReloadProductPackageCache();
                 }
                 catch { /* 刷新失敗忽略,下次重載會補 */ }

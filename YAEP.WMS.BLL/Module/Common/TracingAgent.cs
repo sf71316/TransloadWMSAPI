@@ -321,7 +321,7 @@ namespace YAEP.WMS.BLL.Module
 
         public System.Diagnostics.Activity StartActivity(string activityname)
         {
-            return jaegerHelper.GetActivity(activityname);
+            return jaegerHelper?.GetActivity(activityname);
         }
     }
 }
