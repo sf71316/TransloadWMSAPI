@@ -24,6 +24,8 @@ namespace YAEP.WMS.Interfaces
         int? LoadingType { get; }
         int? StackableType { get; }
         DateTime? ArrivalDate { get; }
+        decimal? Weight { get; }
+        decimal? Volume { get; }
         IEnumerable<ITransloadReceivingItem> Items { get; }
     }
 

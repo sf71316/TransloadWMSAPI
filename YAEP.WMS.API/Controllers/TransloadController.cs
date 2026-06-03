@@ -125,50 +125,25 @@ namespace YAEP.WMS.Controllers.Api
                                                                 warehouseItems.Select(w => w.ItemUID).ToArray()
                                                             );
 
-            // per-SKU Loading Type / Stackable → 庫存頁 Loading/Stackable 欄。
-            // **不動正式機 schema**:存 WMS_PayLoad.Description 的 JSON(鍵 lt/st),取該料最近一筆有設定的收貨,C# 解析。
-            var ltByItem = new Dictionary<Guid, int>();
-            var stByItem = new Dictionary<Guid, int>();
-            {
-                var csLt = ConfigurationManager.ConnectionStrings["YAEP.WMS.ConnectString"].ConnectionString;
-                using (var cnLt = new SqlConnection(csLt))
-                using (var cmdLt = new SqlCommand(@"SELECT ItemUID, Description FROM (
-    SELECT pl.ItemUID, pl.Description,
-           ROW_NUMBER() OVER (PARTITION BY pl.ItemUID ORDER BY pl.CreatedOn DESC) AS rn
-    FROM WMS_PayLoad pl
-    WHERE pl.Type=1 AND pl.Status>0 AND pl.Description IS NOT NULL
-          AND (pl.Description LIKE '%""lt""%' OR pl.Description LIKE '%""st""%')
-) x WHERE x.rn = 1", cnLt))
-                {
-                    cnLt.Open();
-                    using (var rdLt = cmdLt.ExecuteReader())
-                    {
-                        while (rdLt.Read())
-                        {
-                            var iid = rdLt.GetGuid(0);
-                            var desc = rdLt.IsDBNull(1) ? null : rdLt.GetString(1);
-                            if (string.IsNullOrWhiteSpace(desc)) continue;
-                            try
-                            {
-                                var j = Newtonsoft.Json.Linq.JObject.Parse(desc);
-                                if (j["lt"] != null && j["lt"].Type != Newtonsoft.Json.Linq.JTokenType.Null) ltByItem[iid] = (int)j["lt"];
-                                if (j["st"] != null && j["st"].Type != Newtonsoft.Json.Linq.JTokenType.Null) stByItem[iid] = (int)j["st"];
-                            }
-                            catch { /* 非 JSON Description 略過 */ }
-                        }
-                    }
-                }
-            }
+            // [2026-06-02 主線移轉] Loading/Stackable 改讀 Vessel(容器層,ReceivingByTransload 寫入),
+            // 連同 Weight/Volume 一併在下方「在庫櫃」查詢中以「最早到倉的櫃」為代表取得(取代原讀 WMS_PayLoad.Description JSON)。
 
-            // per-item 在庫資訊(該料在該倉 on-hand)：最早收貨日(→Received/Aging) + 所在櫃號清單(→ConNo)。
+            // per-item 在庫資訊(該料在該倉 on-hand)：最早收貨日(→Received/Aging) + 所在櫃號清單(→ConNo)
+            //   + 容器屬性 Loading/Stackable/Weight/Volume(讀 Vessel,以「最早到倉的櫃」為代表)。
             // 收貨未寫 ReceivedDate → 退 Vessel.ArrivalDate → 退 p.CreatedOn。逐列聚合,只讀既有欄位,不動 schema。
             var arrivalByItemWh = new Dictionary<string, DateTime>();
             var conNosByItemWh = new Dictionary<string, SortedSet<string>>();
+            var ltByKey = new Dictionary<string, int?>();
+            var stByKey = new Dictionary<string, int?>();
+            var wtByKey = new Dictionary<string, decimal?>();
+            var volByKey = new Dictionary<string, decimal?>();
+            var repArrByKey = new Dictionary<string, DateTime>();   // 代表櫃的到倉日(null 視為 MaxValue,真值優先)
             {
                 var csA = ConfigurationManager.ConnectionStrings["YAEP.WMS.ConnectString"].ConnectionString;
                 using (var cnA = new SqlConnection(csA))
                 using (var cmdA = new SqlCommand(@"SELECT p.ItemUID, sl.WarehouseUID, v.RefNo,
-       COALESCE(p.ReceivedDate, v.ArrivalDate, p.CreatedOn) AS Arr
+       COALESCE(p.ReceivedDate, v.ArrivalDate, p.CreatedOn) AS Arr,
+       v.LoadingType, v.StackableType, v.Weight, v.Volume
 FROM WMS_PayLoad p
 LEFT JOIN WMS_Vessel v ON v.UID = p.VesselUID
 LEFT JOIN WMS_Slot sl ON sl.UID = p.SlotUID
@@ -181,16 +156,26 @@ WHERE p.Type = 1 AND p.Status = 500", cnA))
                         {
                             if (rdA.IsDBNull(0) || rdA.IsDBNull(1)) continue;
                             var key = rdA.GetGuid(0).ToString() + "|" + rdA.GetGuid(1).ToString();
-                            if (!rdA.IsDBNull(3))
+                            DateTime? dt = rdA.IsDBNull(3) ? (DateTime?)null : rdA.GetDateTime(3);
+                            if (dt.HasValue)
                             {
-                                var dt = rdA.GetDateTime(3);
-                                if (!arrivalByItemWh.TryGetValue(key, out var cur) || dt < cur) arrivalByItemWh[key] = dt;
+                                if (!arrivalByItemWh.TryGetValue(key, out var cur) || dt.Value < cur) arrivalByItemWh[key] = dt.Value;
                             }
                             var refNo = rdA.IsDBNull(2) ? null : rdA.GetString(2);
                             if (!string.IsNullOrWhiteSpace(refNo))
                             {
                                 if (!conNosByItemWh.TryGetValue(key, out var set)) { set = new SortedSet<string>(); conNosByItemWh[key] = set; }
                                 set.Add(refNo);
+                            }
+                            // 容器屬性：以「最早到倉的櫃」為代表(null 到倉日排最後,真值優先)
+                            var arrRep = dt ?? DateTime.MaxValue;
+                            if (!repArrByKey.TryGetValue(key, out var curRep) || arrRep < curRep)
+                            {
+                                repArrByKey[key] = arrRep;
+                                ltByKey[key] = rdA.IsDBNull(4) ? (int?)null : rdA.GetInt32(4);
+                                stByKey[key] = rdA.IsDBNull(5) ? (int?)null : rdA.GetInt32(5);
+                                wtByKey[key] = rdA.IsDBNull(6) ? (decimal?)null : rdA.GetDecimal(6);
+                                volByKey[key] = rdA.IsDBNull(7) ? (decimal?)null : rdA.GetDecimal(7);
                             }
                         }
                     }
@@ -268,8 +253,10 @@ WHERE p.Type = 1 AND p.Status = 500", cnA))
                     StorageStatus = storageStatus,
                     // === 以下待 P6 加欄位 / T2 後補（先回 null/0 讓欄位存在、頁面不報錯）===
                     ConNo = conNos,                         // 該料在該倉所在櫃號(Vessel.RefNo,多櫃逗號分隔)
-                    LoadingType = (ltByItem.TryGetValue(i.ItemUID, out var _lt) ? (int?)_lt : (int?)null),  // per-SKU(WMS_PayLoad.LoadingType)
-                    StackableType = (stByItem.TryGetValue(i.ItemUID, out var _st) ? (int?)_st : (int?)null),  // per-SKU(WMS_PayLoad.StackableType)
+                    LoadingType = (ltByKey.TryGetValue(itemWhKey, out var _lt) ? _lt : (int?)null),    // 容器層(Vessel.LoadingType,最早到倉櫃)
+                    StackableType = (stByKey.TryGetValue(itemWhKey, out var _st) ? _st : (int?)null),  // 容器層(Vessel.StackableType,最早到倉櫃)
+                    Weight = (wtByKey.TryGetValue(itemWhKey, out var _wt) ? _wt : (decimal?)null),     // 容器層(Vessel.Weight,最早到倉櫃)
+                    Volume = (volByKey.TryGetValue(itemWhKey, out var _vol) ? _vol : (decimal?)null),  // 容器層(Vessel.Volume,最早到倉櫃)
                     ArrivalDateActual = arrival?.ToString("yyyy-MM-dd"),   // 該料在該倉最早收貨日(Vessel.ArrivalDate/CreatedOn 回推)
                     AgingDays = arrival.HasValue ? (int?)(DateTime.Now.Date - arrival.Value.Date).Days : (int?)null,
                     FreeDays = (int?)null,                  // TODO: T2 S_Contract_Demurrage/S_Client.Free_Days
@@ -416,7 +403,7 @@ GROUP BY m.UID, w.Name, m.CreatedBy, m.CreatedOn, m.ModifiedBy, m.ModifiedOn", c
             var raw = new List<(string ConNo, string Seal, DateTime? Arr, int? CType, double? Wt, double? Vol, string SKU, string Name, int Qty, string Descr, string UOM)>();
             using (var cn = new SqlConnection(cs))
             using (var cmd = new SqlCommand(@"
-SELECT v.RefNo AS ConNo, v.SealNo, v.ArrivalDate, v.ContainerType, v.Weight, v.Volume,
+SELECT v.RefNo AS ConNo, v.SealNo, v.ArrivalDate, v.ContainerSize, v.Weight, v.Volume,
        it.ID AS SKU, it.Name AS ItemName, pl.Quantity AS Qty, pl.Description AS Descr, pk.Name AS UOM
 FROM WMS_Manifest m
 JOIN WMS_BOL b ON b.ManifestUID = m.UID
@@ -460,7 +447,7 @@ ORDER BY v.RefNo, it.ID", cn))
                     ConNo = g.Key,
                     SealNo = h.Seal,
                     ArrivalDate = h.Arr?.ToString("yyyy-MM-dd"),
-                    ContainerSize = h.CType,   // 對外欄位名 ContainerSize(櫃尺寸 enum);實體欄位仍為 WMS_Vessel.ContainerType
+                    ContainerSize = h.CType,   // 對外欄位名 ContainerSize(櫃尺寸 enum);實體欄位即 WMS_Vessel.ContainerSize
                     Weight = h.Wt,
                     Volume = h.Vol,
                     Items = g.Select(r => new { SKU = r.SKU, ItemName = r.Name, Qty = r.Qty, UOM = string.IsNullOrEmpty(r.UOM) ? "Each" : r.UOM, LoadingType = ji(r.Descr, "lt"), StackableType = ji(r.Descr, "st") }).ToList(),
@@ -1343,7 +1330,7 @@ WHERE NOT EXISTS (SELECT 1 FROM WMS_HomeAddressRelation h WHERE h.ItemUID = x.It
 
         /// <summary>
         /// 寫入容器(櫃)屬性到該收貨 manifest 的 Vessel:ConNo(→Vessel.RefNo)/SealNo/ContainerSize/LoadingType/StackableType/ArrivalDate/Weight/Volume。
-        /// (對外欄位名 ContainerSize=櫃尺寸;相容舊 key ContainerType;實體欄位仍為 WMS_Vessel.ContainerType。)
+        /// (對外欄位名 ContainerSize=櫃尺寸;相容舊 request key ContainerType;實體欄位即 WMS_Vessel.ContainerSize。)
         /// Transload 專用路徑(不動核心 Receiving)。核心 Receiving 每 manifest 建 1 個 Vessel → 單櫃直接寫;多櫃目前寫主櫃(N-Vessel 複製為後續)。
         /// 寫入後 ArrivalDate 可供 aging、Vessel.RefNo=ConNo 讓庫存櫃明細(GetInventoryContainers)顯示真 ConNo。
         /// </summary>
@@ -1372,7 +1359,7 @@ WHERE NOT EXISTS (SELECT 1 FROM WMS_HomeAddressRelation h WHERE h.ItemUID = x.It
                 cmd.Parameters.AddWithValue("@ref", refNo);
                 cmd.Parameters.AddWithValue("@conNo", conNo ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@sealNo", S("SealNo") ?? DBNull.Value);
-                // 對外欄位名為 ContainerSize(櫃尺寸);相容舊 key ContainerType。實體欄位仍寫 WMS_Vessel.ContainerType。
+                // 對外欄位名為 ContainerSize(櫃尺寸);相容舊 request key ContainerType。實體欄位即寫 WMS_Vessel.ContainerSize。
                 var ctVal = I("ContainerSize"); if (ctVal is DBNull) ctVal = I("ContainerType");
                 cmd.Parameters.AddWithValue("@ct", ctVal);
                 cmd.Parameters.AddWithValue("@lt", I("LoadingType"));

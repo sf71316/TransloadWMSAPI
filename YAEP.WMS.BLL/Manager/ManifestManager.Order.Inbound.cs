@@ -712,8 +712,16 @@ namespace YAEP.WMS.BLL.Manager
                         Type = 1,
                         BolUID = bol.UID,
                         Status = (int)VesselStatus.Open,
-                        // 櫃資訊(Seal/ContainerType/Loading/Stackable/Arrival)改由既有 SetContainerInfo 端點補寫(避免動 Vessel schema/AddVessel),
-                        // 此處只建立 Vessel 基本欄位;SSCC barcode 不依賴這些欄。
+                        // [主線移轉 2026-06-02] 改為直接寫入 5 容器欄。
+                        // 原(分支)：櫃資訊改由既有 SetContainerInfo 端點補寫(避免動 Vessel schema/AddVessel),此處只建 Vessel 基本欄位。
+                        SealNo = c.SealNo,
+                        ContainerSize = c.ContainerSize,
+                        LoadingType = c.LoadingType,
+                        StackableType = c.StackableType,
+                        ArrivalDate = c.ArrivalDate,
+                        // [2026-06-02] 櫃毛重/材積（user 輸入）→ Vessel.Weight/Volume（原由 SetContainerInfo 補寫）。
+                        Weight = c.Weight,
+                        Volume = c.Volume,
                     };
                     vessels.Add(vessel);
 
@@ -921,9 +929,20 @@ namespace YAEP.WMS.BLL.Manager
                 }
                 this.DbEntities.ReInitConnectionInstance();
 
-                // 生成成功(含 SSCC pallet barcode 落 WorkOrder_Pod)。
-                // 完成段(建 PayLoad Stock+Inventory)改由 facade 接既有 CompleteInbound(會建 home address+上架到可揀位),
-                // 故此處不再內部呼叫 CompleteReceivingByTransload(其 CompleteTicketData 對 transload 生成的票會缺 home address 而 NRE)。
+                // [主線移轉 2026-06-02] 改為生成後內部自呼 CompleteReceivingByTransload → 直接建 PayLoad(Stock)+Inventory。
+                // 原(分支)刻意不呼、改走 CompleteInbound facade，理由保留供回退參考：
+                //   完成段(建 PayLoad Stock+Inventory)改由 facade 接既有 CompleteInbound(會建 home address+上架到可揀位),
+                //   故此處不再內部呼叫 CompleteReceivingByTransload(其 CompleteTicketData 對 transload 生成的票會缺 home address 而 NRE)。
+                if (rs.Success && rs.Content != null)
+                {
+                    var completeRs = this.CompleteReceivingByTransload(rs.Content.ManifestUID);
+                    if (!completeRs.Success)
+                    {
+                        // 生成已 commit 但完成失敗 → 整體回失敗，Content 仍保留已建的 Manifest/Vessels 供追蹤/重試完成
+                        rs.Success = false;
+                        rs.Message = "Generated but complete failed: " + completeRs.Message;
+                    }
+                }
                 return rs;
             }
             catch (Exception ex)

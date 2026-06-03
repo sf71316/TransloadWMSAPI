@@ -50,14 +50,12 @@ namespace YAEP.WMS.BLL.Module
                         var vesselManifestCollection = inboundparameters.VesselItems.Where(x => pallet.Value.Contains(x.UID));
                         foreach (var vesselManifest in vesselManifestCollection)
                         {
-                            // 多品項同櫃:LabelMapping 會把同櫃所有 vessel manifest 關到每個 barcode,
-                            // 此 barcode(rqs) 不含此品項時 rq 為 null → 略過(否則 rq.PackageQty NRE,且會用錯數量找位)。
-                            var rq = rqs.FirstOrDefault(x => x.ItemUID.Contains(vesselManifest.ItemUID));
-                            if (rq == null) continue;
                             var packageModel = inboundparameters.PackageCacheManager.GetPackage(vesselManifest.PackageUID);
                             var latestSlot = homeAddress.FindSlot(vesselManifest.ItemUID, rqs.Sum(x => x.PackageQty), packageModel);
                             if (latestSlot != null)
                             {
+                                var rq = rqs.FirstOrDefault(x => x.ItemUID.Contains(vesselManifest.ItemUID));
+
                                 var am = new AssignedWorkOrderPayloadInnerModel();
                                 am.ItemUID = vesselManifest.ItemUID;
                                 am.ReceivePackageQty = rq.PackageQty;

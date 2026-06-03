@@ -41,6 +41,10 @@ namespace YAEP.WMS.API.Models.Request
         public int? StackableType { get; set; }
         /// <summary>到倉日（user 輸入）→ Vessel.ArrivalDate；aging 來源。</summary>
         public DateTime? ArrivalDate { get; set; }
+        /// <summary>櫃毛重（user 輸入）→ Vessel.Weight。</summary>
+        public decimal? Weight { get; set; }
+        /// <summary>櫃材積/CBM（user 輸入）→ Vessel.Volume。</summary>
+        public decimal? Volume { get; set; }
 
         /// <summary>該櫃的 SKU 明細。</summary>
         public List<TransloadReceivingItemModel> Items { get; set; }
