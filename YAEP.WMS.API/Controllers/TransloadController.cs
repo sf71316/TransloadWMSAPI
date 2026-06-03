@@ -519,19 +519,45 @@ ORDER BY it.ID", cn))
         }
 
         /// <summary>
-        /// 客戶下拉（取 DrKnowAll 客戶快取）。UI 規格：§6.3。回 { UID, ID, Name }。
+        /// 客戶下拉（取 DrKnowAll 客戶快取，依 token 群組過濾）。UI 規格：§6.3。回 { UID, ID, Name }。
         /// </summary>
         [HttpGet]
         [ActionName("GetCustomerList")]
         public IHttpActionResult GetCustomerList()
         {
+            // [2026-06-03] 依 token 所屬群組過濾(原本回全部客戶會跨公司外洩)。客戶 GroupUID=公司層。
+            var groupUIDs = this.tlGetGroupUIDsByUser();
+            if (groupUIDs.Count == 0) return base.GetDataNotFoundResult();
+            var groupSet = new HashSet<Guid>(groupUIDs);
             var data = DrKnowAll.GetCustomer()
                 .Where(c => c.Status > 0)                 // 只回啟用中客戶(Status>0)
+                .Where(c => groupSet.Contains(c.GroupUID)) // 只回 token 群組可見的客戶(避免跨公司外洩)
                 .Select(c => new { c.UID, c.ID, c.Name })
                 .OrderBy(c => c.Name)
                 .ToList();
             var result = this.GetSuccessResult(data);
             return this.Json(result);
+        }
+
+        /// <summary>
+        /// 倉庫下拉（依 token 群組過濾；比照主線）。回 IWarehouseModel 清單(含 UID/ID/Name)。
+        /// BLL GetThirdPartyWarehouseNameList 內已依 GetGroupUserViewByUser 的群組過濾。
+        /// </summary>
+        [HttpGet]
+        [ActionName("GetWarehouseList")]
+        public IHttpActionResult GetWarehouseList([FromUri] string customerPartyName = null)
+        {
+            try
+            {
+                InitDIRoot();
+                using (var _instance = this.DIContainer.WarehouseFactory.CreateWarehouseManger().WarehouseManager)
+                {
+                    var result = _instance.GetThirdPartyWarehouseNameList();
+                    if (result.Success) return this.Json(this.GetSuccessResult(result.Content));
+                    return this.GetFailureResult(-1, result.Message);
+                }
+            }
+            catch (Exception ex) { return this.GetFailureResult(-1, ex.Message); }
         }
 
         /// <summary>
@@ -941,12 +967,41 @@ ORDER BY it.ID", cn))
             }
         }
 
+        /// <summary>取得 token 使用者所屬的全部群組 UID（供清單依群組過濾用）。</summary>
+        private List<Guid> tlGetGroupUIDsByUser()
+        {
+            var authInfo = base.GetAuthenticationInfo();
+            var mgr = this.GetIdentityFactory().CreateGroupManager();
+            var r = mgr.GetGroupKeysByUser(authInfo.UID);
+            return (r != null && r.Success ? r.Content : null)?.ToList() ?? new List<Guid>();
+        }
+
         private Guid tlGetDefaultGroupUID()
         {
             var authInfo = base.GetAuthenticationInfo();
             var mgr = this.GetIdentityFactory().CreateGroupManager();
             var r = mgr.GetGroupKeysByUser(authInfo.UID);
-            return (r != null && r.Success ? r.Content : null)?.FirstOrDefault() ?? Guid.Empty;
+            var groupUIDs = (r != null && r.Success ? r.Content : null)?.ToList();
+            if (groupUIDs == null || groupUIDs.Count == 0) return Guid.Empty;
+
+            // 產品依慣例掛「公司層」(YAEP_Group.Type=200，如 Trucking2000)。
+            // GetGroupKeysByUser 第一個 group 可能是 team(800)/warehouse(400)，直接取會把產品掛錯層級。
+            // → 先看使用者群組是否已含公司層(200)；否則從第一個群組沿 ParentUID 往上走到 200。
+            const int CompanyGroupType = 200;
+            var direct = groupUIDs.Select(uid => DrKnowAll.GetGroup(uid))
+                                  .FirstOrDefault(g => g != null && g.Type == CompanyGroupType);
+            if (direct != null) return direct.UID;
+
+            var cur = DrKnowAll.GetGroup(groupUIDs[0]);
+            int guard = 0;
+            while (cur != null && cur.Type != CompanyGroupType && guard++ < 20)
+            {
+                cur = (!cur.ParentUID.HasValue || cur.ParentUID.Value == Guid.Empty) ? null : DrKnowAll.GetGroup(cur.ParentUID.Value);
+            }
+            if (cur != null && cur.Type == CompanyGroupType) return cur.UID;
+
+            // 找不到公司層 → 退回原行為(第一個群組)，至少不擋流程
+            return groupUIDs[0];
         }
 
         private Guid tlEnsureCategory(Guid groupUID, string categoryName)
