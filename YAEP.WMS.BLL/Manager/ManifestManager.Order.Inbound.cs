@@ -18,6 +18,7 @@ using YAEP.Package.Interfaces.Models;
 using YAEP.Utilities;
 using YAEP.WMS.BLL.Extension;
 using YAEP.WMS.BLL.Model;
+using YAEP.WMS.BLL.Model.Parameters;
 using YAEP.WMS.BLL.Module;
 using YAEP.WMS.Cache.Redis;
 using YAEP.WMS.Constant;
@@ -1201,6 +1202,98 @@ namespace YAEP.WMS.BLL.Manager
             return rs;
 
         }
+
+        /// <summary>
+        /// Transload 進貨作廢（ManifestUID 入口，杜絕 RefNo 跨倉風險）。
+        /// 已完成收貨的 inbound 無法單靠 DeleteManifest：cascade 走到 RemoveWorkOrder 的 inbound 閘門
+        /// （限 ticketInfo 未完成）會被擋。故先以旁路版 RemoveWorkOrder(ignoreInboundStatusGate:true) 退這批收貨
+        /// （void ticket + DeallocatedByWorkOrderPayload 的 inbound 分支真刪 Pod/PayLoad + 扣 onhand + 刪 workorder），
+        /// 再 DeleteManifest(force) 軟刪 manifest/BOL/Vessel。全程本地、單一交易、不觸發 ReplicationManager。
+        /// 安全檢查：若這批收貨的 onhand 已被後續 Outbound/Move 消耗（淨 onhand &lt; 收貨量），拒絕作廢，避免扣成負數。
+        /// </summary>
+        public IActionResult<bool> VoidInboundByTransload(Guid manifestUID)
+        {
+            var rs = ActionResultTemplates.Result<bool>();
+            rs.Success = false;
+            try
+            {
+                if (manifestUID == Guid.Empty) { rs.Message = "ManifestUID is required."; return rs; }
+
+                // 1. 以 UID 解析 manifest + 驗進貨單、未作廢
+                var manifest = this.GetManifest(new { UID = manifestUID }).Content;
+                if (manifest == null || manifest.Status <= 0) { rs.Message = "找不到進貨單(或已作廢)"; return rs; }
+                if (manifest.Type != (int)ManifestType.Inbound) { rs.Message = "此單非進貨單(Inbound)。"; return rs; }
+
+                // 2. 解析 workorder：BOL(ManifestUID) → Vessel(BOLUID) → WorkOrder(VesselUID)
+                var bolUIDs = (this.BolRepository.GetList(new { ManifestUID = manifestUID }).Content
+                              ?? Enumerable.Empty<IBolModel>()).Where(b => b.Status > 0).Select(b => b.UID).ToArray();
+                if (bolUIDs.Length == 0) { rs.Message = "找不到對應 BOL。"; return rs; }
+                var vesselUIDs = (this.VesselRepository.GetList(new { BOLUID = bolUIDs }).Content
+                              ?? Enumerable.Empty<IVesselModel>()).Select(v => v.UID).ToArray();
+                var woUIDs = (this.WorkOrderRepository.GetList(new { VesselUID = vesselUIDs }).Content
+                              ?? Enumerable.Empty<IWorkOrderModel>()).Select(w => w.UID).ToArray();
+
+                // 3. 安全檢查（庫存被消耗就不能刪）：比較本批「收貨量 SUM(workorder_payload.Qty)」與
+                //    「目前仍在庫量 SUM(Active 對應 Stock PayLoad.Quantity)」。配貨/出貨會扣減來源 Stock 的 Quantity
+                //    (歸零則 Inactive)；只有反配貨/作廢才會把 Quantity 加回、Status 還原 Active。
+                //    現量 < 收貨量 → 這批已被後續出貨配置/出貨,拒絕作廢(避免扣成負數)。
+                //    (此即既有 inbound 分支 line 1222-1224 的判斷,在此提前成硬擋;用本批自己的 PayLoad UID 精準對批。)
+                var wpls = (this.WorkOrderPayloadRepository.GetList(new { WorkOrderUID = woUIDs }).Content
+                              ?? Enumerable.Empty<IWorkOrderPayloadModel>()).ToList();
+                if (wpls.Count > 0)
+                {
+                    var stockUIDs = wpls.Select(p => p.PayloadUID).Where(u => u != Guid.Empty).Distinct().ToArray();
+                    var receivedQty = wpls.Sum(p => p.Qty);
+                    var pls = this.InventoryManager.GetPayload(stockUIDs).Content ?? Enumerable.Empty<IPayloadModel>();
+                    var currentQty = pls.Where(p => p.Status > 0).Sum(p => p.Quantity);
+                    if (currentQty < receivedQty)
+                    {
+                        rs.Message = "此進貨的庫存已被後續出貨配置/出貨，無法作廢。";
+                        return rs;
+                    }
+                }
+
+                // 4. 單一交易：先旁路 RemoveWorkOrder 退收貨,再 DeleteManifest 軟刪
+                this.ExistTransactionScope = true;
+                using (var db = this.DbEntities.DbAdapter)
+                {
+                    this.DbEntities.BeginTranaction(System.Data.IsolationLevel.Snapshot);
+
+                    if (woUIDs.Length > 0)
+                    {
+                        var rsRemove = this.RemoveWorkOrder(woUIDs, true);   // ignoreInboundStatusGate:已完成收貨亦可退
+                        if (!rsRemove.Success)
+                        {
+                            this.RollbackTransaction();
+                            rs.Message = "退收貨失敗：" + rsRemove.Message;
+                            return rs;
+                        }
+                    }
+
+                    var delParam = new ManifestDeleteInnerParameters { UID = new Guid[] { manifestUID } };
+                    var rsDel = this.DeleteManifest(delParam, true);   // workorder 已刪 → DeleteVessel 空陣列守衛跳過 RemoveWorkOrder
+
+                    if (rsDel.Success)
+                    {
+                        this.CommitTransaction();
+                        rs.Success = true; rs.Content = true;
+                    }
+                    else
+                    {
+                        this.RollbackTransaction();
+                        rs.Message = rsDel.Message;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                this.TracingAgent.Trace(ex.Message, ex);
+                rs.Message = ex.Message; rs.TypeCode = FlowStatusCode.OCCUR_EXCEPTION;
+                rs.Success = false; rs.InnerException = ex;
+            }
+            return rs;
+        }
+
         public IActionResult<bool> ImportInboundData(IImportInboundParameter parameter)
         {
 

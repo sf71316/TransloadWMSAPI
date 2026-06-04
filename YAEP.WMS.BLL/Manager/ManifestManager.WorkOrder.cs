@@ -429,6 +429,11 @@ namespace YAEP.WMS.BLL.Manager
         }
 
         public IActionResult<bool> RemoveWorkOrder(Guid[] workorderguids)
+            => RemoveWorkOrder(workorderguids, false);
+
+        // [2026-06-04] 旁路多載：ignoreInboundStatusGate=true 時放寬「inbound 限 ticketInfo 未完成」閘門,
+        // 讓已完成收貨的 inbound 也能走既有 void 流程(VoidInboundByTransload 用)。預設 false → 既有呼叫端行為不變。
+        public IActionResult<bool> RemoveWorkOrder(Guid[] workorderguids, bool ignoreInboundStatusGate)
         {
 
 
@@ -452,7 +457,7 @@ namespace YAEP.WMS.BLL.Manager
                 //    .Where(x => x.WorkOrderPayloadUID.HasValue)
                 //    .Select(p => p.WorkOrderPayloadUID.Value);
                 //目前只允許outbound 能夠在ticket 進行中退單
-                if ((ticketInfo.All(x => x.Status <= (int)TicketInfoStatus.Open) &&
+                if (((ignoreInboundStatusGate || ticketInfo.All(x => x.Status <= (int)TicketInfoStatus.Open)) &&
                     tickets.Content.FirstOrDefault().ManifestType == (int)ManifestType.Inbound)
                     ||
                     (tickets.Content.FirstOrDefault().ManifestType == (int)ManifestType.Outbound)

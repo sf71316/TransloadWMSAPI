@@ -1142,13 +1142,32 @@ ORDER BY it.ID", cn))
         }
 
         /// <summary>
+        /// 作廢進貨(Void)：改走 BLL VoidInboundByTransload(ManifestUID 入口,杜絕 RefNo 跨倉風險)。
+        /// 先旁路 RemoveWorkOrder 退收貨(扣 onhand + 刪 pod/payload + void ticket + 刪 workorder),再 DeleteManifest 軟刪
+        /// manifest+BOL+Vessel；本地操作、不同步、不靠 WMS_HomeAddressRelation。庫存已被後續出貨消耗者拒絕作廢。
+        /// </summary>
+        [HttpPost]
+        [ActionName("VoidInbound")]
+        public IHttpActionResult VoidInbound([FromUri] Guid manifestUID)
+        {
+            InitDIRoot();
+            if (manifestUID == Guid.Empty) return this.GetFailureResult(-1, "manifestUID required");
+            using (var _instance = this.DIContainer.ManifestFactory.CreateManger().OrderManager)
+            {
+                var rs = _instance.VoidInboundByTransload(manifestUID);
+                if (!rs.Success) return this.GetFailureResult(-1, rs.Message);
+                return this.Json(this.GetSuccessResult(new { ManifestUID = manifestUID, Voided = true }));
+            }
+        }
+
+        // [2026-06-04] 舊版(refNo + raw SQL + WMS_HomeAddressRelation 退庫存) 已由上方 VoidInboundByTransload 取代,保留供回退參考(無 ActionName,不對外路由)。
+        /// <summary>
         /// 作廢進貨(Void,非實刪)：把 manifest+BOL 設 Void(Status=0),並退掉這批收貨在 home slot 的 onhand
         /// (依 WMS_PayLoad 收貨量,經 WMS_HomeAddressRelation 精準定位該料 home 儲位扣回,扣到 0 為止)。交易保護。
         /// 註:假設一料一 home 儲位(transload 測試倉模型);多 home 儲位需再細分。
         /// </summary>
-        [HttpPost]
-        [ActionName("VoidInbound")]
-        public IHttpActionResult VoidInbound([FromUri] string refNo)
+        [System.Obsolete("replaced by VoidInboundByTransload (ManifestUID)")]
+        public IHttpActionResult VoidInbound_OldRefNo([FromUri] string refNo)
         {
             InitDIRoot();
             if (string.IsNullOrEmpty(refNo)) return this.BadRequest("refNo required");
